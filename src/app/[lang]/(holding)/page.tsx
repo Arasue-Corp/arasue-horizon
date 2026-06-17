@@ -30,10 +30,10 @@ export default async function HorizonPage({
             {dict.horizon.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
-            <Link href={`/${resolvedParams.lang}/forge`} className="px-8 py-4 rounded-full bg-foreground text-background font-bold text-lg hover:scale-105 transition-transform w-full sm:w-auto">
+            <Link href={`/${resolvedParams.lang}/forge`} className="px-8 py-4 rounded-full bg-foreground text-background font-bold text-lg active:scale-[0.97] transition-transform duration-200 ease-out w-full sm:w-auto">
               {dict.horizon.hero.cta}
             </Link>
-            <Link href="#manifesto" className="px-8 py-4 rounded-full border border-foreground/20 font-bold text-lg hover:bg-foreground/5 transition-colors w-full sm:w-auto">
+            <Link href="#manifesto" className="px-8 py-4 rounded-full border border-foreground/20 font-bold text-lg active:scale-[0.97] hover:bg-foreground/5 transition-all duration-200 ease-out w-full sm:w-auto">
               {dict.horizon.hero.secondary_cta}
             </Link>
           </div>
@@ -106,7 +106,7 @@ export default async function HorizonPage({
                 <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.labs.name}</h3>
                 <p className="text-foreground/70">{dict.horizon.subsidiaries.labs.description}</p>
               </div>
-              <div className="mt-8 text-sm font-semibold uppercase tracking-widest text-foreground/40">
+              <div className="mt-8 text-sm font-semibold text-foreground/40">
                 {dict.horizon.subsidiaries.labs.link}
               </div>
             </MotionDiv>
@@ -115,7 +115,7 @@ export default async function HorizonPage({
                 <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.media.name}</h3>
                 <p className="text-foreground/70">{dict.horizon.subsidiaries.media.description}</p>
               </div>
-              <div className="mt-8 text-sm font-semibold uppercase tracking-widest text-foreground/40">
+              <div className="mt-8 text-sm font-semibold text-foreground/40">
                 {dict.horizon.subsidiaries.media.link}
               </div>
             </MotionDiv>

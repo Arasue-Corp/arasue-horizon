@@ -35,7 +35,7 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
           >
             <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
           </Link>
-          <Link href={`/${lang}/forge#contact`} className="px-4 py-2 rounded-full bg-foreground text-background text-sm font-bold hover:scale-105 transition-transform flex items-center gap-1">
+          <Link href={`/${lang}/forge#contact`} className="px-4 py-2 rounded-full bg-foreground text-background text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out flex items-center gap-1">
             {dict.forge_menu.contact} <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

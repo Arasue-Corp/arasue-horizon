@@ -65,12 +65,12 @@ export default async function ForgePage({
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="pt-32 pb-24 px-6 text-center">
+      <section className="pt-32 pb-24 px-6">
         <MotionDiv 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="max-w-4xl mx-auto space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="max-w-5xl mx-auto space-y-8"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-semibold mb-6">
             Arasue Forge LLC
@@ -82,7 +82,7 @@ export default async function ForgePage({
             {dict.forge.hero.subtitle}
           </p>
           <div className="pt-8">
-            <Link href="#services" className="px-8 py-4 rounded-full bg-foreground text-background font-bold text-lg hover:scale-105 transition-transform inline-block">
+            <Link href="#services" className="px-8 py-4 rounded-full bg-foreground text-background font-bold text-lg active:scale-[0.97] transition-transform duration-200 ease-out inline-block">
               {dict.forge.hero.cta}
             </Link>
           </div>
@@ -91,7 +91,7 @@ export default async function ForgePage({
 
       {/* Trust Ticker */}
       <section className="py-12 border-y border-foreground/10 overflow-hidden bg-foreground/5">
-        <div className="text-center text-sm font-bold text-foreground/50 uppercase tracking-widest mb-8">
+        <div className="text-center text-sm font-semibold text-foreground/50 mb-8">
           {dict.forge.ticker.trusted}
         </div>
         <div className="flex gap-16 items-center justify-center opacity-50 grayscale flex-wrap px-6">
@@ -215,7 +215,7 @@ export default async function ForgePage({
           <h2 className="text-5xl font-black tracking-tight">Ready to start?</h2>
           <p className="text-xl text-background/70">Contact us today to schedule a free discovery call and see how we can scale your digital presence.</p>
           <div className="pt-8">
-            <button className="px-8 py-4 rounded-full bg-background text-foreground font-bold text-lg hover:scale-105 transition-transform">
+            <button className="px-8 py-4 rounded-full bg-background text-foreground font-bold text-lg active:scale-[0.97] transition-transform duration-200 ease-out">
               {dict.forge.hero.cta_contact}
             </button>
           </div>
