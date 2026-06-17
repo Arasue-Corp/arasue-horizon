@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "horizon": "Arasue Horizon",
+    "forge": "Arasue Forge",
+    "workshop": "Workshop",
+    "language": "Idioma",
+    "currency_detected": "Moneda",
+    "holding_menu": {
+      "title": "El Holding",
+      "overview": "Visión General",
+      "overview_desc": "Conoce nuestra misión y visión.",
+      "investors": "Relación con Inversores",
+      "investors_desc": "Reportes financieros y noticias.",
+      "careers": "Carreras",
+      "careers_desc": "Únete a nuestro equipo global."
+    },
+    "forge_menu": {
+      "title": "Agencia de Software",
+      "services": "Servicios",
+      "services_desc": "Desarrollo de software premium.",
+      "portfolio": "Portafolio",
+      "portfolio_desc": "Mira nuestro trabajo reciente.",
+      "contact": "Contáctanos",
+      "contact_desc": "Inicia tu próximo proyecto."
+    }
+  },
+  "footer": {
+    "about": "Somos un holding tecnológico dedicado a construir la infraestructura del futuro.",
+    "links": "Enlaces Rápidos",
+    "legal": "Legal",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "address": "Sede Global",
+    "address_val": "123 Innovation Drive, Tech City, Global",
+    "newsletter": "Suscríbete a nuestro Boletín",
+    "newsletter_desc": "Recibe las últimas actualizaciones de Arasue Horizon.",
+    "subscribe": "Suscribirse",
+    "rights": "Todos los derechos reservados."
+  },
+  "horizon": {
+    "hero": {
+      "title": "Diseñando el Futuro Digital",
+      "subtitle": "Arasue Horizon SAS es un holding premium que invierte y construye la próxima generación de infraestructura y servicios digitales.",
+      "cta": "Explora nuestro Ecosistema",
+      "secondary_cta": "Lee nuestro Manifiesto"
+    },
+    "stats": {
+      "companies": "Filiales Activas",
+      "projects": "Proyectos Globales",
+      "valuation": "Millones en Valor Generado"
+    },
+    "subsidiaries": {
+      "title": "Nuestro Ecosistema",
+      "forge": {
+        "name": "Arasue Forge",
+        "description": "Agencia premium de desarrollo de software y estrategia digital creando productos robustos y escalables.",
+        "link": "Visitar Forge"
+      },
+      "labs": {
+        "name": "Arasue Labs",
+        "description": "Nuestra división experimental de I+D enfocada en IA e interfaces del futuro.",
+        "link": "Próximamente"
+      },
+      "media": {
+        "name": "Arasue Media",
+        "description": "Potencia en marketing digital, branding y creación de contenido.",
+        "link": "Próximamente"
+      }
+    },
+    "global": {
+      "title": "Presencia Global",
+      "desc": "Operando de manera fluida en toda Norteamérica y el resto del mundo."
+    }
+  },
+  "forge": {
+    "hero": {
+      "title": "Software Premium, Creado a la Perfección",
+      "subtitle": "Transformamos tus ideas más audaces en productos digitales robustos, escalables y con un diseño impecable.",
+      "cta": "Ver nuestros Servicios",
+      "cta_contact": "Agendar Llamada"
+    },
+    "ticker": {
+      "trusted": "Impulsados por tecnologías líderes en la industria"
+    },
+    "services": {
+      "title": "Nuestra Experiencia",
+      "web_dev": {
+        "title": "Desarrollo Web",
+        "desc": "Experiencias web-scrolling a medida y de alto rendimiento."
+      },
+      "brand_web": {
+        "title": "Web de Marca Personal",
+        "desc": "De Instagram a Web: Una landing page premium para tu marca."
+      },
+      "meta_ads": {
+        "title": "Auditoría Meta Ads",
+        "desc": "Análisis profundo y optimización de tus campañas publicitarias."
+      },
+      "seo_audit": {
+        "title": "Auditoría SEO",
+        "desc": "Auditoría técnica y de contenido para dominar los resultados de búsqueda."
+      },
+      "automations": {
+        "title": "Automatizaciones N8N",
+        "desc": "Ahorra cientos de horas con automatizaciones de flujo de trabajo personalizadas."
+      },
+      "pm": {
+        "title": "Project Management",
+        "desc": "Consultoría independiente y liderazgo de proyectos."
+      }
+    },
+    "process": {
+      "title": "Cómo Trabajamos",
+      "step1": "Descubrimiento y Estrategia",
+      "step1_desc": "Analizamos las necesidades de tu negocio y elaboramos un plan técnico a medida.",
+      "step2": "Diseño y Arquitectura",
+      "step2_desc": "Creamos los planos y la identidad visual de tu plataforma robusta.",
+      "step3": "Desarrollo y Entrega",
+      "step3_desc": "Construcción ágil, pruebas rigurosas y un lanzamiento impecable."
+    },
+    "pricing": {
+      "title": "Precios SaaS Transparentes",
+      "setup": "Inicial",
+      "mo": "/mes",
+      "one_time": "Pago Único",
+      "retainer": "Mensualidad",
+      "features": "Incluye hosting, actualizaciones y soporte prioritario."
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": "¿Ofrecen desarrollo a medida fuera de estos planes?",
+      "a1": "Sí, manejamos aplicaciones personalizadas a nivel empresarial. Contáctanos para una cotización a medida.",
+      "q2": "¿Qué tecnologías utilizan?",
+      "a2": "Nos especializamos en el ecosistema React (Next.js), Node.js y arquitecturas nativas de la nube.",
+      "q3": "¿Cómo funciona el modelo web SaaS?",
+      "a3": "En lugar de un costo inicial masivo, pagas una pequeña tarifa de instalación y una suscripción mensual que cubre alojamiento, mantenimiento y actualizaciones menores para siempre."
+    }
+  }
+}
