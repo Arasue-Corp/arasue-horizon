@@ -22,6 +22,12 @@
       "portfolio_desc": "See our latest work.",
       "contact": "Contact Us",
       "contact_desc": "Start your next project."
+    },
+    "media_menu": {
+      "title": "Media Production"
+    },
+    "labs_menu": {
+      "title": "Organic Products"
     }
   },
   "footer": {
@@ -58,13 +64,13 @@
       },
       "labs": {
         "name": "Arasue Labs",
-        "description": "Our experimental R&D division focused on AI and future interfaces.",
-        "link": "Coming Soon"
+        "description": "Premium organic products, sustainable sourcing, and experimental nature goods.",
+        "link": "Visit Labs"
       },
       "media": {
         "name": "Arasue Media",
-        "description": "Digital marketing, branding, and content creation powerhouse.",
-        "link": "Coming Soon"
+        "description": "Digital marketing, streaming, and content creation powerhouse.",
+        "link": "Visit Media"
       }
     },
     "global": {
@@ -134,6 +140,98 @@
       "a2": "We specialize in the React ecosystem (Next.js), Node.js, and cloud-native architectures.",
       "q3": "How does the SaaS web model work?",
       "a3": "Instead of a massive upfront cost, you pay a small setup fee and a monthly subscription that covers hosting, maintenance, and minor updates forever."
+    },
+    "services_page": {
+      "title": "Engineered for Dominance",
+      "subtitle": "We don't just build websites. We build scalable systems that dominate your market.",
+      "scarcity": "Due to our high-touch process, we only onboard 3 new clients per quarter."
+    },
+    "portfolio_page": {
+      "title": "Our Work",
+      "subtitle": "Case studies of scalable digital products."
+    },
+    "pricing_page": {
+      "title": "Transparent, Scale-Ready Pricing",
+      "subtitle": "No hidden fees. Premium infrastructure packaged into predictable models.",
+      "anchoring_text": "While traditional agencies charge $50k+ upfront, our SaaS model guarantees zero technical debt for a fraction of the cost."
+    },
+    "contact_page": {
+      "title": "Start Your Build",
+      "subtitle": "Schedule a discovery session with our senior architects."
+    }
+  },
+  "media": {
+    "hero": {
+      "title": "Shaping Digital Culture",
+      "subtitle": "Arasue Media is a powerhouse of content creation, streaming, and digital storytelling.",
+      "cta": "Watch Latest",
+      "cta_contact": "Partner with Us"
+    },
+    "services": {
+      "title": "Our Capabilities",
+      "content": "Content Production",
+      "streams": "Live Streaming",
+      "branding": "Digital Branding"
+    },
+    "work_page": {
+      "title": "Selected Campaigns",
+      "subtitle": "High-voltage content that shapes digital culture."
+    },
+    "creators_page": {
+      "title": "The Roster",
+      "subtitle": "Our exclusive network of digital talent and producers."
+    },
+    "contact_page": {
+      "title": "Collaborate",
+      "subtitle": "Ready to go viral? Let's talk strategy."
+    }
+  },
+  "labs": {
+    "hero": {
+      "title": "Nature Meets Science",
+      "subtitle": "Premium organic products, sustainably sourced and meticulously crafted.",
+      "cta": "Shop Collection"
+    },
+    "products": {
+      "title": "Our Collection",
+      "honey": {
+        "title": "Raw Organic Honey",
+        "desc": "100% pure, unpasteurized honey sourced directly from our reserves."
+      },
+      "wellness": {
+        "title": "Wellness Extracts",
+        "desc": "Potent organic tinctures and health supplements."
+      }
+    },
+    "shop_page": {
+      "title": "The Apothecary",
+      "subtitle": "Limited-batch organic harvests. Taste the untouched nature."
+    },
+    "story_page": {
+      "title": "Our Origins",
+      "subtitle": "From deep forests to premium extracts. The journey of Arasue Labs."
+    },
+    "contact_page": {
+      "title": "Wholesale & Support",
+      "subtitle": "Reach out for bulk orders and premium partnerships."
+    }
+  },
+  "corporate": {
+    "about": {
+      "title": "Our Mission",
+      "content": "Arasue Horizon is dedicated to building scalable ecosystems across software, media, and sustainability."
+    },
+    "investors": {
+      "title": "Investor Relations",
+      "content": "Access our latest financial reports, governance documents, and shareholder information."
+    },
+    "newsroom": {
+      "title": "Newsroom",
+      "content": "Latest updates, press releases, and media resources from Arasue Horizon."
+    },
+    "contact": {
+      "title": "Global Headquarters",
+      "content": "Partner with Arasue Horizon. Direct lines to our investment and PR teams."
     }
   }
 }

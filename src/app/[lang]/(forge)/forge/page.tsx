@@ -186,8 +186,7 @@ export default async function ForgePage({
       {/* FAQ Section */}
       <section className="py-32 px-6 container mx-auto max-w-3xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center tracking-tight mb-16">{dict.forge.faq.title}</h2>
-        {/* @ts-expect-error - Radix UI types conflict with React 19 */}
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion className="w-full">
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg font-bold">{dict.forge.faq.q1}</AccordionTrigger>
             <AccordionContent className="text-foreground/70 text-base">

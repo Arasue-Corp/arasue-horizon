@@ -25,14 +25,22 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               {dict.holding_menu.title} <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </span>
             <div className="absolute top-20 left-0 w-64 bg-background border border-foreground/10 rounded-2xl p-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-              <Link href={`/${lang}`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+              <Link href={`/${lang}/about`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
                 <div className="font-bold">{dict.holding_menu.overview}</div>
                 <div className="text-xs text-foreground/60">{dict.holding_menu.overview_desc}</div>
               </Link>
-              <div className="block p-3 opacity-50 cursor-not-allowed">
+              <Link href={`/${lang}/investors`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
                 <div className="font-bold">{dict.holding_menu.investors}</div>
-                <div className="text-xs">{dict.holding_menu.investors_desc}</div>
-              </div>
+                <div className="text-xs text-foreground/60">{dict.holding_menu.investors_desc}</div>
+              </Link>
+              <Link href={`/${lang}/newsroom`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Newsroom</div>
+                <div className="text-xs text-foreground/60">Press and Updates</div>
+              </Link>
+              <Link href={`/${lang}/contact`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Contact HQ</div>
+                <div className="text-xs text-foreground/60">Global inquiries</div>
+              </Link>
             </div>
           </div>
 
@@ -42,14 +50,14 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               {dict.forge_menu.title} <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </Link>
             <div className="absolute top-20 left-0 w-64 bg-background border border-foreground/10 rounded-2xl p-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-              <Link href={`/${lang}/forge`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+              <Link href={`/${lang}/forge/services`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
                 <div className="font-bold">{dict.forge_menu.services}</div>
                 <div className="text-xs text-foreground/60">{dict.forge_menu.services_desc}</div>
               </Link>
-              <div className="block p-3 opacity-50 cursor-not-allowed">
+              <Link href={`/${lang}/forge/portfolio`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
                 <div className="font-bold">{dict.forge_menu.portfolio}</div>
-                <div className="text-xs">{dict.forge_menu.portfolio_desc}</div>
-              </div>
+                <div className="text-xs text-foreground/60">{dict.forge_menu.portfolio_desc}</div>
+              </Link>
             </div>
           </div>
           
@@ -65,8 +73,8 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
           >
             <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
           </Link>
-          <Link href={`/${lang}/forge#contact`} className="px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out">
-            {dict.forge_menu.contact}
+          <Link href={`/${lang}/contact`} className="px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out">
+            Contact HQ
           </Link>
         </div>
 

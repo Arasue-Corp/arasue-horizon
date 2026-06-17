@@ -101,24 +101,28 @@ export default async function HorizonPage({
 
           {/* Secondary Cards */}
           <div className="space-y-8 flex flex-col">
-            <MotionDiv className="bg-foreground/5 border border-foreground/10 p-10 rounded-[2rem] flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.labs.name}</h3>
-                <p className="text-foreground/70">{dict.horizon.subsidiaries.labs.description}</p>
-              </div>
-              <div className="mt-8 text-sm font-semibold text-foreground/40">
-                {dict.horizon.subsidiaries.labs.link}
-              </div>
-            </MotionDiv>
-            <MotionDiv className="bg-foreground/5 border border-foreground/10 p-10 rounded-[2rem] flex-1 flex flex-col justify-between">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.media.name}</h3>
-                <p className="text-foreground/70">{dict.horizon.subsidiaries.media.description}</p>
-              </div>
-              <div className="mt-8 text-sm font-semibold text-foreground/40">
-                {dict.horizon.subsidiaries.media.link}
-              </div>
-            </MotionDiv>
+            <Link href={`/${resolvedParams.lang}/labs`} className="flex-1 group">
+              <MotionDiv className="bg-foreground/5 border border-foreground/10 p-10 rounded-[2rem] h-full flex flex-col justify-between hover:bg-foreground/10 transition-colors cursor-pointer">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.labs.name}</h3>
+                  <p className="text-foreground/70">{dict.horizon.subsidiaries.labs.description}</p>
+                </div>
+                <div className="mt-8 text-sm font-semibold text-foreground/50 group-hover:text-foreground flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {dict.horizon.subsidiaries.labs.link} <span className="text-lg">→</span>
+                </div>
+              </MotionDiv>
+            </Link>
+            <Link href={`/${resolvedParams.lang}/media`} className="flex-1 group">
+              <MotionDiv className="bg-foreground/5 border border-foreground/10 p-10 rounded-[2rem] h-full flex flex-col justify-between hover:bg-foreground/10 transition-colors cursor-pointer">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">{dict.horizon.subsidiaries.media.name}</h3>
+                  <p className="text-foreground/70">{dict.horizon.subsidiaries.media.description}</p>
+                </div>
+                <div className="mt-8 text-sm font-semibold text-foreground/50 group-hover:text-foreground flex items-center gap-1 group-hover:gap-2 transition-all">
+                  {dict.horizon.subsidiaries.media.link} <span className="text-lg">→</span>
+                </div>
+              </MotionDiv>
+            </Link>
           </div>
         </div>
       </section>

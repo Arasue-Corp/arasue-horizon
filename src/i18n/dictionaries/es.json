@@ -22,6 +22,12 @@
       "portfolio_desc": "Mira nuestro trabajo reciente.",
       "contact": "Contáctanos",
       "contact_desc": "Inicia tu próximo proyecto."
+    },
+    "media_menu": {
+      "title": "Producción Multimedia"
+    },
+    "labs_menu": {
+      "title": "Productos Orgánicos"
     }
   },
   "footer": {
@@ -58,13 +64,13 @@
       },
       "labs": {
         "name": "Arasue Labs",
-        "description": "Nuestra división experimental de I+D enfocada en IA e interfaces del futuro.",
-        "link": "Próximamente"
+        "description": "Productos orgánicos premium, suministro sustentable y bienes naturales.",
+        "link": "Visitar Labs"
       },
       "media": {
         "name": "Arasue Media",
-        "description": "Potencia en marketing digital, branding y creación de contenido.",
-        "link": "Próximamente"
+        "description": "Potencia en marketing digital, streams y creación de contenido.",
+        "link": "Visitar Media"
       }
     },
     "global": {
@@ -134,6 +140,98 @@
       "a2": "Nos especializamos en el ecosistema React (Next.js), Node.js y arquitecturas nativas de la nube.",
       "q3": "¿Cómo funciona el modelo web SaaS?",
       "a3": "En lugar de un costo inicial masivo, pagas una pequeña tarifa de instalación y una suscripción mensual que cubre alojamiento, mantenimiento y actualizaciones menores para siempre."
+    },
+    "services_page": {
+      "title": "Diseñados para Dominar",
+      "subtitle": "No solo creamos páginas web. Construimos sistemas escalables que dominan tu mercado.",
+      "scarcity": "Debido a nuestra alta exigencia de calidad, solo aceptamos 3 nuevos clientes por trimestre."
+    },
+    "portfolio_page": {
+      "title": "Nuestro Trabajo",
+      "subtitle": "Casos de estudio de productos digitales escalables."
+    },
+    "pricing_page": {
+      "title": "Precios Transparentes y Escalables",
+      "subtitle": "Sin costos ocultos. Infraestructura premium en modelos predecibles.",
+      "anchoring_text": "Mientras las agencias tradicionales cobran más de $50k USD por adelantado, nuestro modelo SaaS garantiza cero deuda técnica por una fracción del costo."
+    },
+    "contact_page": {
+      "title": "Inicia tu Proyecto",
+      "subtitle": "Agenda una sesión de descubrimiento con nuestros arquitectos senior."
+    }
+  },
+  "media": {
+    "hero": {
+      "title": "Dando Forma a la Cultura Digital",
+      "subtitle": "Arasue Media es una potencia en la creación de contenido, streams y narrativa digital.",
+      "cta": "Ver lo Más Reciente",
+      "cta_contact": "Trabaja con Nosotros"
+    },
+    "services": {
+      "title": "Nuestras Capacidades",
+      "content": "Producción de Contenido",
+      "streams": "Transmisiones en Vivo",
+      "branding": "Branding Digital"
+    },
+    "work_page": {
+      "title": "Campañas Destacadas",
+      "subtitle": "Contenido de alto voltaje que moldea la cultura digital."
+    },
+    "creators_page": {
+      "title": "El Roster",
+      "subtitle": "Nuestra red exclusiva de talento digital y productores."
+    },
+    "contact_page": {
+      "title": "Colabora con Nosotros",
+      "subtitle": "¿Listo para volverte viral? Hablemos de estrategia."
+    }
+  },
+  "labs": {
+    "hero": {
+      "title": "La Naturaleza se Une a la Ciencia",
+      "subtitle": "Productos orgánicos premium, obtenidos de manera sustentable y creados meticulosamente.",
+      "cta": "Ver Colección"
+    },
+    "products": {
+      "title": "Nuestra Colección",
+      "honey": {
+        "title": "Miel Cruda Orgánica",
+        "desc": "Miel 100% pura y sin pasteurizar obtenida directamente de nuestras reservas."
+      },
+      "wellness": {
+        "title": "Extractos de Bienestar",
+        "desc": "Potentes tinturas orgánicas y suplementos para la salud."
+      }
+    },
+    "shop_page": {
+      "title": "La Botica",
+      "subtitle": "Cosechas orgánicas de lote limitado. Prueba la naturaleza intacta."
+    },
+    "story_page": {
+      "title": "Nuestros Orígenes",
+      "subtitle": "De bosques profundos a extractos premium. El viaje de Arasue Labs."
+    },
+    "contact_page": {
+      "title": "Mayoreo y Soporte",
+      "subtitle": "Contáctanos para pedidos por volumen y asociaciones premium."
+    }
+  },
+  "corporate": {
+    "about": {
+      "title": "Nuestra Misión",
+      "content": "Arasue Horizon se dedica a construir ecosistemas escalables de software, medios y sustentabilidad."
+    },
+    "investors": {
+      "title": "Relación con Inversores",
+      "content": "Accede a nuestros últimos reportes financieros, documentos de gobierno corporativo e información para accionistas."
+    },
+    "newsroom": {
+      "title": "Sala de Prensa",
+      "content": "Últimas noticias, comunicados y recursos de medios de Arasue Horizon."
+    },
+    "contact": {
+      "title": "Sede Global",
+      "content": "Asóciate con Arasue Horizon. Línea directa con nuestros equipos de inversión y PR."
     }
   }
 }
