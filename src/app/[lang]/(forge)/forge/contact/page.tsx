@@ -1,5 +1,6 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { MotionDiv } from '@/components/Motion'
+import { ContactForm } from '@/components/ContactForm'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = await params
@@ -41,14 +42,23 @@ export default async function ForgeContactPage({
         </MotionDiv>
         
         
-        {/* Placeholder for future content blocks */}
         <MotionDiv 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-24 w-full h-[40vh] border border-dashed border-current/20 rounded-3xl flex items-center justify-center opacity-50"
+          className="mt-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
-          <p className="font-mono text-sm uppercase tracking-widest">[ Content Placeholder ]</p>
+          <div className="w-full relative aspect-video lg:aspect-square bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10">
+            {/* Image Placeholder */}
+            <img 
+              src="https://placehold.co/800x800/1a1a1a/ffffff?text=Forge+Contact+Image" 
+              alt="Forge Contact" 
+              className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
+            />
+          </div>
+          <div>
+            <ContactForm />
+          </div>
         </MotionDiv>
       </div>
     </div>

@@ -25,6 +25,18 @@ export default async function InvestorsPage({
             {dict.corporate.investors.content}
           </p>
         </MotionDiv>
+        <MotionDiv 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
+        >
+          <img 
+            src="https://placehold.co/1200x675/1a1a1a/ffffff?text=Holding+Investors+Image" 
+            alt="Holding Investors" 
+            className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
+          />
+        </MotionDiv>
       </section>
 
       <section className="py-24 px-6 border-t border-foreground/10">

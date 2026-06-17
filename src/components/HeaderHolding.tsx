@@ -44,19 +44,44 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
             </div>
           </div>
 
-          {/* Forge Dropdown */}
+          {/* Subsidiaries Dropdown */}
           <div className="relative group cursor-pointer h-20 flex items-center">
-            <Link href={`/${lang}/forge`} className="flex items-center gap-1 hover:text-foreground/70 transition-colors">
-              {dict.forge_menu.title} <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
-            </Link>
+            <span className="flex items-center gap-1 hover:text-foreground/70 transition-colors">
+              Subsidiaries <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
+            </span>
+            <div className="absolute top-20 left-0 w-64 bg-background border border-foreground/10 rounded-2xl p-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
+              <Link href={`/${lang}/forge`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Arasue Forge</div>
+                <div className="text-xs text-foreground/60">Digital products & SaaS</div>
+              </Link>
+              <Link href={`/${lang}/media`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Arasue Media</div>
+                <div className="text-xs text-foreground/60">Content & Streaming</div>
+              </Link>
+              <Link href={`/${lang}/labs`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Arasue Labs</div>
+                <div className="text-xs text-foreground/60">Premium organic goods</div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Services Dropdown */}
+          <div className="relative group cursor-pointer h-20 flex items-center">
+            <span className="flex items-center gap-1 hover:text-foreground/70 transition-colors">
+              Services <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
+            </span>
             <div className="absolute top-20 left-0 w-64 bg-background border border-foreground/10 rounded-2xl p-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
               <Link href={`/${lang}/forge/services`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
-                <div className="font-bold">{dict.forge_menu.services}</div>
-                <div className="text-xs text-foreground/60">{dict.forge_menu.services_desc}</div>
+                <div className="font-bold">Web Development</div>
+                <div className="text-xs text-foreground/60">Next.js & React ecosystem</div>
               </Link>
-              <Link href={`/${lang}/forge/portfolio`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
-                <div className="font-bold">{dict.forge_menu.portfolio}</div>
-                <div className="text-xs text-foreground/60">{dict.forge_menu.portfolio_desc}</div>
+              <Link href={`/${lang}/forge/services`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Growth & Ads</div>
+                <div className="text-xs text-foreground/60">Meta Ads & SEO strategies</div>
+              </Link>
+              <Link href={`/${lang}/forge/services`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Automations</div>
+                <div className="text-xs text-foreground/60">AI & Workflow pipelines</div>
               </Link>
             </div>
           </div>
@@ -92,7 +117,13 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
           className="lg:hidden bg-background border-b border-foreground/10 px-6 py-4 flex flex-col gap-4"
         >
           <Link href={`/${lang}`} className="font-bold py-2 border-b border-foreground/5">{dict.holding_menu.title}</Link>
-          <Link href={`/${lang}/forge`} className="font-bold py-2 border-b border-foreground/5">{dict.forge_menu.title}</Link>
+          <div className="font-bold py-2 border-b border-foreground/5 flex flex-col gap-2">
+            <span>Subsidiaries</span>
+            <Link href={`/${lang}/forge`} className="text-sm opacity-70 ml-4">Arasue Forge</Link>
+            <Link href={`/${lang}/media`} className="text-sm opacity-70 ml-4">Arasue Media</Link>
+            <Link href={`/${lang}/labs`} className="text-sm opacity-70 ml-4">Arasue Labs</Link>
+          </div>
+          <Link href={`/${lang}/forge/services`} className="font-bold py-2 border-b border-foreground/5">Services</Link>
           <Link href={`/${lang}/workshop`} className="font-bold py-2 border-b border-foreground/5">{dict.workshop}</Link>
           <Link href={`/${otherLang}`} className="font-bold py-2 flex items-center gap-2 text-foreground/70"><Globe className="w-4 h-4"/> {dict.language}: {otherLang.toUpperCase()}</Link>
         </motion.div>
