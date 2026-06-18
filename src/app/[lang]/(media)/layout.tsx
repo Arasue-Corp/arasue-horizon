@@ -14,8 +14,8 @@ export default async function MediaLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return (
-    <html lang={resolvedParams.lang}>
-      <body className={`antialiased min-h-screen bg-foreground text-background flex flex-col ${playfair.variable}`}>
+    <html lang={resolvedParams.lang} className="dark">
+      <body className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable}`}>
         {/* Notice Media is Dark Mode by default */}
         <HeaderMedia dict={dict} lang={resolvedParams.lang} />
         <main className="flex-1">
