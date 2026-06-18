@@ -10,10 +10,9 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/80 border-b border-foreground/10">
-      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href={`/${lang}`} className="flex items-center gap-2">
-          <span className="font-playfair text-4xl tracking-tight leading-none lowercase">arasue</span>
-          <span className="font-extrabold text-2xl tracking-tighter">Horizon</span>
+      <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
+        <Link href={`/${lang}`} className="flex items-center gap-2 group">
+          <img src="/logo-horizon.png" alt="Arasue Horizon" className="w-48 h-auto max-h-16 object-contain transition-transform group-hover:scale-105" />
         </Link>
         
         <nav className="hidden lg:flex gap-8 text-sm font-semibold">

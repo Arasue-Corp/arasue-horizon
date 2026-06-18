@@ -14,9 +14,9 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
         <span className="opacity-80">An Arasue Horizon Company</span>
         <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href={`/${lang}/forge`} className="font-black text-2xl tracking-tighter flex items-center gap-2">
-          Forge
+      <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
+        <Link href={`/${lang}/forge`} className="group">
+          <img src="/logo-forge.png" alt="Arasue Forge" className="w-48 h-auto max-h-16 object-contain transition-transform group-hover:scale-105" />
         </Link>
         
         <nav className="hidden md:flex gap-6 text-sm font-bold">

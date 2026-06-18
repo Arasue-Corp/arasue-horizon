@@ -6,11 +6,8 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2 space-y-6">
-            <Link href={`/${lang}`} className="font-extrabold text-2xl tracking-tighter flex items-center gap-2">
-              <div className="w-8 h-8 bg-foreground rounded-full flex items-center justify-center">
-                <span className="text-background font-bold text-lg leading-none">A</span>
-              </div>
-              Horizon
+            <Link href={`/${lang}`} className="group inline-block">
+              <img src="/logo-horizon.png" alt="Arasue Horizon" className="w-48 h-auto object-contain transition-transform group-hover:scale-105" />
             </Link>
             <p className="text-foreground/70 max-w-sm">
               {dict.about}
