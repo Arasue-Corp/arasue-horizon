@@ -11,11 +11,9 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/80 border-b border-foreground/10">
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href={`/${lang}`} className="font-extrabold text-2xl tracking-tighter flex items-center gap-2">
-          <div className="w-8 h-8 bg-foreground rounded-full flex items-center justify-center">
-            <span className="text-background font-bold text-lg leading-none">A</span>
-          </div>
-          Horizon
+        <Link href={`/${lang}`} className="flex items-center gap-2">
+          <span className="font-playfair text-4xl tracking-tight leading-none lowercase">arasue</span>
+          <span className="font-extrabold text-2xl tracking-tighter">Horizon</span>
         </Link>
         
         <nav className="hidden lg:flex gap-8 text-sm font-semibold">
@@ -47,7 +45,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
           {/* Subsidiaries Dropdown */}
           <div className="relative group cursor-pointer h-20 flex items-center">
             <span className="flex items-center gap-1 hover:text-foreground/70 transition-colors">
-              Subsidiaries <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
+              {dict.divisions} <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </span>
             <div className="absolute top-20 left-0 w-64 bg-background border border-foreground/10 rounded-2xl p-4 shadow-2xl opacity-0 translate-y-4 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
               <Link href={`/${lang}/forge`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
@@ -118,7 +116,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
         >
           <Link href={`/${lang}`} className="font-bold py-2 border-b border-foreground/5">{dict.holding_menu.title}</Link>
           <div className="font-bold py-2 border-b border-foreground/5 flex flex-col gap-2">
-            <span>Subsidiaries</span>
+            <span>{dict.divisions}</span>
             <Link href={`/${lang}/forge`} className="text-sm opacity-70 ml-4">Arasue Forge</Link>
             <Link href={`/${lang}/media`} className="text-sm opacity-70 ml-4">Arasue Media</Link>
             <Link href={`/${lang}/labs`} className="text-sm opacity-70 ml-4">Arasue Labs</Link>

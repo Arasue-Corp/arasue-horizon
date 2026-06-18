@@ -4,15 +4,29 @@
     "forge": "Arasue Forge",
     "workshop": "Workshop",
     "language": "Idioma",
+    "divisions": "Divisiones",
     "currency_detected": "Moneda",
     "holding_menu": {
-      "title": "El Holding",
+      "title": "El Corporativo",
       "overview": "Visión General",
       "overview_desc": "Conoce nuestra misión y visión.",
       "investors": "Relación con Inversores",
       "investors_desc": "Reportes financieros y noticias.",
       "careers": "Carreras",
-      "careers_desc": "Únete a nuestro equipo global."
+      "careers_desc": "Únete a nuestro equipo global.",
+      "newsroom": "Sala de Prensa",
+      "newsroom_desc": "Prensa y Actualizaciones",
+      "contact": "Sede Global",
+      "contact_desc": "Consultas globales"
+    },
+    "subsidiaries_menu": {
+      "forge_desc": "Productos digitales y SaaS",
+      "media_desc": "Contenido y Streaming",
+      "labs_desc": "Bienes orgánicos premium"
+    },
+    "services_menu": {
+      "growth": "Crecimiento y Anuncios",
+      "growth_desc": "Estrategias SEO y Meta Ads"
     },
     "forge_menu": {
       "title": "Agencia de Software",
@@ -48,41 +62,62 @@
       "title": "Diseñando el Futuro Digital",
       "subtitle": "Arasue Horizon SAS es un holding premium que invierte y construye la próxima generación de infraestructura y servicios digitales.",
       "cta": "Explora nuestro Ecosistema",
-      "secondary_cta": "Lee nuestro Manifiesto"
+      "secondary_cta": "Lee nuestro Manifiesto",
+      "explore_portfolio": "Explorar Portafolio"
     },
     "stats": {
-      "companies": "Filiales Activas",
+      "companies": "Divisiones Activas",
       "projects": "Proyectos Globales",
-      "valuation": "Millones en Valor Generado"
+      "valuation": "Millones en Valor Generado",
+      "offices": "Oficinas Globales"
+    },
+    "vision": {
+      "title": "Impulsando la Innovación",
+      "p1": "En Arasue Horizon, creemos en el poder de la excelencia diversificada. Al incubar y escalar subsidiarias especializadas, creamos un ecosistema robusto donde la tecnología, los medios y los bienes convergen.",
+      "p2": "Nuestro corporativo proporciona dirección estratégica, asignación de capital y recursos compartidos, permitiendo a nuestras divisiones enfocarse puramente en transformar sus respectivos mercados.",
+      "link": "Conoce nuestra visión"
     },
     "subsidiaries": {
       "title": "Nuestro Ecosistema",
+      "investors_link": "Ver Relación con Inversores",
       "forge": {
         "name": "Arasue Forge",
         "description": "Agencia premium de desarrollo de software y estrategia digital creando productos robustos y escalables.",
-        "link": "Visitar Forge"
+        "link": "Visitar Forge",
+        "tag": "Tecnología y Software"
       },
       "labs": {
         "name": "Arasue Labs",
         "description": "Productos orgánicos premium, suministro sustentable y bienes naturales.",
-        "link": "Visitar Labs"
+        "link": "Visitar Labs",
+        "tag": "Bienes Orgánicos"
       },
       "media": {
         "name": "Arasue Media",
         "description": "Potencia en marketing digital, streams y creación de contenido.",
-        "link": "Visitar Media"
+        "link": "Visitar Media",
+        "tag": "Contenido y Streaming"
       }
     },
     "global": {
       "title": "Presencia Global",
       "desc": "Operando de manera fluida en toda Norteamérica y el resto del mundo."
+    },
+    "news": {
+      "title": "Desde la Sala de Prensa",
+      "link": "Ver Todas las Noticias",
+      "tag": "Comunicado de Prensa",
+      "article_title": "Arasue Horizon Anuncia Expansión Estratégica a Nuevos Mercados",
+      "article_desc": "Lee sobre nuestras últimas adquisiciones estratégicas y cómo se alinean con nuestra visión para el próximo año fiscal."
     }
   },
   "forge": {
     "hero": {
+      "badge": "Ingeniería de Software Premium",
       "title": "Software Premium, Creado a la Perfección",
       "subtitle": "Transformamos tus ideas más audaces en productos digitales robustos, escalables y con un diseño impecable.",
       "cta": "Ver nuestros Servicios",
+      "secondary_cta": "Ver Nuestro Trabajo",
       "cta_contact": "Agendar Llamada"
     },
     "ticker": {
@@ -111,18 +146,31 @@
         "desc": "Ahorra cientos de horas con automatizaciones de flujo de trabajo personalizadas."
       },
       "pm": {
-        "title": "Project Management",
+        "title": "Gestión de Proyectos",
         "desc": "Consultoría independiente y liderazgo de proyectos."
       }
     },
+    "work": {
+      "title": "Trabajo Destacado",
+      "subtitle": "Construimos arquitecturas escalables e interfaces hermosas que impulsan métricas de negocio reales.",
+      "project1_category": "Plataforma Fintech",
+      "project1_title": "Dashboard de Pagos Global",
+      "project1_desc": "Una revisión completa de un dashboard financiero heredado, migrando a Next.js y Tailwind para mejorar los tiempos de carga en un 400% y la retención de usuarios en un 35%.",
+      "project2_category": "App de E-Commerce",
+      "project2_title": "Experiencia Retail Premium",
+      "project2_desc": "Aplicación de comercio headless con sensación nativa utilizando React Native y la API de Storefront de Shopify. Aumentó las tasas de conversión móvil en más del 120%."
+    },
     "process": {
       "title": "Cómo Trabajamos",
+      "subtitle": "No solo escribimos código; ingeniamos soluciones diseñadas para escalar desde el primer día.",
       "step1": "Descubrimiento y Estrategia",
       "step1_desc": "Analizamos las necesidades de tu negocio y elaboramos un plan técnico a medida.",
-      "step2": "Diseño y Arquitectura",
-      "step2_desc": "Creamos los planos y la identidad visual de tu plataforma robusta.",
-      "step3": "Desarrollo y Entrega",
-      "step3_desc": "Construcción ágil, pruebas rigurosas y un lanzamiento impecable."
+      "arch_title": "Arquitectura y Diseño",
+      "arch_desc": "Diseñamos arquitecturas de sistemas escalables y una hermosa UI/UX que se alinea con tus objetivos de negocio.",
+      "step2": "Desarrollo y Entrega",
+      "step2_desc": "Construcción ágil, pruebas rigurosas y un lanzamiento impecable.",
+      "step3": "Crecimiento y Soporte",
+      "step3_desc": "Aseguramos que tu producto escale de manera eficiente."
     },
     "pricing": {
       "title": "Precios SaaS Transparentes",
@@ -131,6 +179,19 @@
       "one_time": "Pago Único",
       "retainer": "Mensualidad",
       "features": "Incluye hosting, actualizaciones y soporte prioritario."
+    },
+    "testimonials": {
+      "text1": "Arasue Forge transformó toda nuestra infraestructura digital. Su arquitectura nos permitió escalar de 10k a 500k usuarios activos mensuales sin un solo contratiempo.",
+      "author1": "Sarah Jenkins",
+      "role1": "CTO, Vertex Analytics",
+      "text2": "La pura velocidad y calidad de su desarrollo en React no tiene igual. No solo construyen apps, construyen productos que la gente ama usar.",
+      "author2": "David Chen",
+      "role2": "Fundador, Elevate"
+    },
+    "cta": {
+      "title": "¿Listo para construir?",
+      "subtitle": "Deja de comprometer la calidad de tu ingeniería. Asóciate con nosotros y escala tus productos digitales hoy.",
+      "note": "Respuesta en 24 horas. Sin compromisos."
     },
     "faq": {
       "title": "Preguntas Frecuentes",
@@ -178,7 +239,7 @@
       "subtitle": "Contenido de alto voltaje que moldea la cultura digital."
     },
     "creators_page": {
-      "title": "El Roster",
+      "title": "Nuestro Talento",
       "subtitle": "Nuestra red exclusiva de talento digital y productores."
     },
     "contact_page": {

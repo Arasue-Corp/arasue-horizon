@@ -2,6 +2,7 @@ import '../../globals.css'
 import { HeaderForge } from '@/components/HeaderForge'
 import { FooterForge } from '@/components/FooterForge'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
+import { playfair } from '@/lib/fonts'
 
 export const metadata = {
   title: 'Arasue Forge | Premium Software Agency',
@@ -19,8 +20,8 @@ export default async function ForgeLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <html lang={resolvedParams.lang}>
-      <body className="antialiased min-h-screen flex flex-col bg-background text-foreground">
+    <html lang={resolvedParams.lang} className="dark">
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable}`}>
         <HeaderForge dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>
         <FooterForge dict={dict.footer} lang={resolvedParams.lang} />

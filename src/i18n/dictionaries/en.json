@@ -4,6 +4,7 @@
     "forge": "Arasue Forge",
     "workshop": "Workshop",
     "language": "Language",
+    "divisions": "Divisions",
     "currency_detected": "Currency",
     "holding_menu": {
       "title": "The Holding",
@@ -12,7 +13,20 @@
       "investors": "Investor Relations",
       "investors_desc": "Financial reports and news.",
       "careers": "Careers",
-      "careers_desc": "Join our global team."
+      "careers_desc": "Join our global team.",
+      "newsroom": "Newsroom",
+      "newsroom_desc": "Press and Updates",
+      "contact": "Contact HQ",
+      "contact_desc": "Global inquiries"
+    },
+    "subsidiaries_menu": {
+      "forge_desc": "Digital products & SaaS",
+      "media_desc": "Content & Streaming",
+      "labs_desc": "Premium organic goods"
+    },
+    "services_menu": {
+      "growth": "Growth & Ads",
+      "growth_desc": "Meta Ads & SEO strategies"
     },
     "forge_menu": {
       "title": "Software Agency",
@@ -48,41 +62,62 @@
       "title": "Architecting the Digital Future",
       "subtitle": "Arasue Horizon SAS is a premium holding company investing in and building the next generation of digital infrastructure and services.",
       "cta": "Explore our Ecosystem",
-      "secondary_cta": "Read our Manifesto"
+      "secondary_cta": "Read our Manifesto",
+      "explore_portfolio": "Explore Portfolio"
     },
     "stats": {
-      "companies": "Active Subsidiaries",
+      "companies": "Active Divisions",
       "projects": "Global Projects",
-      "valuation": "Millions in Value Generated"
+      "valuation": "Millions in Value Generated",
+      "offices": "Global Offices"
+    },
+    "vision": {
+      "title": "Driving Innovation Across Industries",
+      "p1": "At Arasue Horizon, we believe in the power of diversified excellence. By incubating and scaling specialized subsidiaries, we create a robust ecosystem where technology, media, and consumer goods converge.",
+      "p2": "Our central holding provides strategic direction, capital allocation, and shared resources, allowing our divisions to focus purely on disrupting their respective markets.",
+      "link": "Learn more about our vision"
     },
     "subsidiaries": {
       "title": "Our Ecosystem",
+      "investors_link": "View Investor Relations",
       "forge": {
         "name": "Arasue Forge",
         "description": "Premium software development and digital strategy agency building robust, scalable products.",
-        "link": "Visit Forge"
+        "link": "Visit Forge",
+        "tag": "Technology & Software"
       },
       "labs": {
         "name": "Arasue Labs",
         "description": "Premium organic products, sustainable sourcing, and experimental nature goods.",
-        "link": "Visit Labs"
+        "link": "Visit Labs",
+        "tag": "Organic Goods"
       },
       "media": {
         "name": "Arasue Media",
         "description": "Digital marketing, streaming, and content creation powerhouse.",
-        "link": "Visit Media"
+        "link": "Visit Media",
+        "tag": "Content & Streaming"
       }
     },
     "global": {
       "title": "Global Presence",
       "desc": "Operating seamlessly across North America and the world."
+    },
+    "news": {
+      "title": "Latest from the Newsroom",
+      "link": "View All News",
+      "tag": "Press Release",
+      "article_title": "Arasue Horizon Announces Strategic Expansion into New Markets",
+      "article_desc": "Read about our latest strategic acquisitions and how they align with our vision for the upcoming fiscal year."
     }
   },
   "forge": {
     "hero": {
+      "badge": "Premium Software Engineering",
       "title": "Premium Software, Crafted to Perfection",
       "subtitle": "We transform your boldest ideas into robust, scalable, and beautifully designed digital products.",
       "cta": "See our Services",
+      "secondary_cta": "View Our Work",
       "cta_contact": "Book a Call"
     },
     "ticker": {
@@ -115,14 +150,27 @@
         "desc": "Independent consulting and project leadership."
       }
     },
+    "work": {
+      "title": "Featured Work",
+      "subtitle": "We build scalable architectures and beautiful interfaces that drive real business metrics.",
+      "project1_category": "Fintech Platform",
+      "project1_title": "Global Payment Dashboard",
+      "project1_desc": "A complete overhaul of a legacy financial dashboard, migrating to Next.js and Tailwind to improve load times by 400% and user retention by 35%.",
+      "project2_category": "E-Commerce App",
+      "project2_title": "Premium Retail Experience",
+      "project2_desc": "Native-feeling headless commerce application using React Native and Shopify Storefront API. Increased mobile conversion rates by over 120%."
+    },
     "process": {
       "title": "How We Work",
+      "subtitle": "We don't just write code; we engineer solutions designed to scale from day one.",
       "step1": "Discovery & Strategy",
       "step1_desc": "We analyze your business needs and craft a tailored technical plan.",
-      "step2": "Design & Architecture",
-      "step2_desc": "Creating the blueprints and visual identity of your robust platform.",
-      "step3": "Development & Delivery",
-      "step3_desc": "Agile building, rigorous testing, and a flawless launch."
+      "arch_title": "Architecture & Design",
+      "arch_desc": "We design scalable system architectures and beautiful UI/UX that align with your business goals.",
+      "step2": "Development & Delivery",
+      "step2_desc": "Agile building, rigorous testing, and a flawless launch.",
+      "step3": "Growth & Maintenance",
+      "step3_desc": "We ensure your product scales efficiently."
     },
     "pricing": {
       "title": "Transparent SaaS Pricing",
@@ -131,6 +179,19 @@
       "one_time": "One-time",
       "retainer": "Retainer (mo)",
       "features": "Includes hosting, updates, and priority support."
+    },
+    "testimonials": {
+      "text1": "Arasue Forge transformed our entire digital infrastructure. Their architecture allowed us to scale from 10k to 500k monthly active users without a single hiccup.",
+      "author1": "Sarah Jenkins",
+      "role1": "CTO, Vertex Analytics",
+      "text2": "The sheer speed and quality of their React development is unmatched. They don't just build apps, they build products that people love to use.",
+      "author2": "David Chen",
+      "role2": "Founder, Elevate"
+    },
+    "cta": {
+      "title": "Ready to build?",
+      "subtitle": "Stop compromising on your engineering quality. Partner with us and scale your digital products today.",
+      "note": "Reply within 24 hours. No obligations."
     },
     "faq": {
       "title": "Frequently Asked Questions",

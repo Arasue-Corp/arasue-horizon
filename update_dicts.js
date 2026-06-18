@@ -103,7 +103,7 @@ esDict.media.work_page = {
   subtitle: "Contenido de alto voltaje que moldea la cultura digital."
 };
 esDict.media.creators_page = {
-  title: "El Roster",
+  title: "Nuestro Talento",
   subtitle: "Nuestra red exclusiva de talento digital y productores."
 };
 esDict.media.contact_page = {

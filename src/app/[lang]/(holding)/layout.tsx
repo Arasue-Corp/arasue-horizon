@@ -2,6 +2,7 @@ import '../../globals.css'
 import { HeaderHolding as Header } from "@/components/HeaderHolding"
 import { FooterHolding as Footer } from "@/components/FooterHolding"
 import { getDictionary, Locale } from '@/i18n/dictionaries'
+import { playfair } from '@/lib/fonts'
 
 export const metadata = {
   title: 'Arasue Horizon',
@@ -24,7 +25,7 @@ export default async function RootLayout({
 
   return (
     <html lang={resolvedParams.lang}>
-      <body className="antialiased min-h-screen flex flex-col">
+      <body className={`antialiased min-h-screen flex flex-col ${playfair.variable}`}>
         <Header dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict.footer} lang={resolvedParams.lang} />
