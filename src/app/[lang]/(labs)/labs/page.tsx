@@ -1,5 +1,8 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { MotionDiv } from '@/components/Motion'
+import { LabsProductQuiz } from '@/components/labs/LabsProductQuiz'
+import { LabsTestimonials } from '@/components/labs/LabsTestimonials'
+import { LabsFAQ } from '@/components/labs/LabsFAQ'
 
 export default async function LabsPage({
   params
@@ -38,6 +41,11 @@ export default async function LabsPage({
             </button>
           </div>
         </MotionDiv>
+      </section>
+
+      {/* 1.5. Interactive Quiz */}
+      <section className="py-32 px-6">
+        <LabsProductQuiz lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Story / Philosophy */}
@@ -117,6 +125,16 @@ export default async function LabsPage({
             </MotionDiv>
           </div>
         </div>
+      </section>
+
+      {/* 3.5. Testimonials */}
+      <section className="py-32 px-6 bg-[#f0eee4]">
+        <LabsTestimonials lang={resolvedParams.lang as 'en' | 'es'} />
+      </section>
+
+      {/* 3.6. FAQ */}
+      <section className="py-32 px-6">
+        <LabsFAQ lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Wholesale / Contact */}

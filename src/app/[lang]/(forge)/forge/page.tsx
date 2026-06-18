@@ -3,6 +3,9 @@ import { cookies } from 'next/headers'
 import { MotionDiv } from '@/components/Motion'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import Link from 'next/link'
+import { ForgeProcess } from '@/components/forge/ForgeProcess'
+import { ForgeEstimator } from '@/components/forge/ForgeEstimator'
+import { ForgeFAQ } from '@/components/forge/ForgeFAQ'
 
 export default async function ForgePage({
   params,
@@ -153,48 +156,7 @@ export default async function ForgePage({
 
       {/* 4. Process Flow */}
       <section className="py-32 px-6 bg-white/[0.02] border-y border-white/5">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">{dict.forge.process.title}</h2>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">{dict.forge.process.subtitle}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-30 -z-10" />
-            
-            <div className="space-y-6 relative group">
-              <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:border-blue-500 transition-colors mx-auto md:mx-0">
-                🗺️
-              </div>
-              <h3 className="text-2xl font-bold">{dict.forge.process.step1}</h3>
-              <p className="text-white/60">{dict.forge.process.step1_desc}</p>
-            </div>
-            
-            <div className="space-y-6 relative group">
-              <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:border-purple-500 transition-colors mx-auto md:mx-0">
-                🎨
-              </div>
-              <h3 className="text-2xl font-bold">{dict.forge.process.arch_title}</h3>
-              <p className="text-white/60">{dict.forge.process.arch_desc}</p>
-            </div>
-
-            <div className="space-y-6 relative group">
-              <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:border-pink-500 transition-colors mx-auto md:mx-0">
-                ⚙️
-              </div>
-              <h3 className="text-2xl font-bold">{dict.forge.process.step2}</h3>
-              <p className="text-white/60">{dict.forge.process.step2_desc}</p>
-            </div>
-
-            <div className="space-y-6 relative group">
-              <div className="w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:border-white transition-colors mx-auto md:mx-0">
-                🚀
-              </div>
-              <h3 className="text-2xl font-bold">{dict.forge.process.step3}</h3>
-              <p className="text-white/60">{dict.forge.process.step3_desc}</p>
-            </div>
-          </div>
-        </div>
+        <ForgeProcess lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* 5. Services & Pricing (Retainer Model) */}
@@ -248,6 +210,16 @@ export default async function ForgePage({
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 5.5. Project Estimator */}
+      <section className="py-24 px-6 relative z-10 border-t border-white/5">
+        <ForgeEstimator lang={resolvedParams.lang as 'en' | 'es'} />
+      </section>
+
+      {/* 5.6. FAQ */}
+      <section className="py-24 px-6 relative z-10 border-t border-white/5 bg-white/[0.01]">
+        <ForgeFAQ lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* 6. Testimonials */}

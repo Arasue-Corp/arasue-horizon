@@ -1,6 +1,9 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import Link from 'next/link'
 import { MotionDiv } from '@/components/Motion'
+import { HorizonEcosystem } from '@/components/holding/HorizonEcosystem'
+import { HorizonLeadership } from '@/components/holding/HorizonLeadership'
+import { HorizonInvestorForm } from '@/components/holding/HorizonInvestorForm'
 
 export default async function HorizonPage({
   params,
@@ -97,68 +100,19 @@ export default async function HorizonPage({
         </div>
       </section>
 
-      {/* 4. Subsidiaries Portfolio (Bento Grid) */}
-      <section id="portfolio" className="py-32 px-6 bg-foreground text-background">
-        <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <h2 className="text-4xl md:text-6xl font-playfair tracking-tight max-w-2xl">{dict.horizon.subsidiaries.title}</h2>
-            <Link href={`/${resolvedParams.lang}/investors`} className="px-6 py-3 rounded-full border border-background/20 font-semibold hover:bg-background/10 transition-colors">
-              {dict.horizon.subsidiaries.investors_link}
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-auto lg:h-[600px]">
-            {/* Arasue Forge - Main Focus */}
-            <Link href={`/${resolvedParams.lang}/forge`} className="lg:col-span-8 group relative overflow-hidden rounded-[2rem] bg-background/5 border border-background/10">
-              <div className="absolute inset-0">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop" alt="Arasue Forge" className="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700 grayscale mix-blend-overlay" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-              </div>
-              <div className="relative z-10 h-full p-10 flex flex-col justify-end">
-                <div className="text-blue-400 font-semibold tracking-widest uppercase mb-4 text-sm">{dict.horizon.subsidiaries.forge.tag}</div>
-                <h3 className="text-4xl md:text-6xl font-playfair mb-4 text-white">{dict.horizon.subsidiaries.forge.name}</h3>
-                <p className="text-xl text-white/80 max-w-lg mb-8">{dict.horizon.subsidiaries.forge.description}</p>
-                <div className="font-bold text-white flex items-center gap-2 group-hover:gap-4 transition-all">
-                  {dict.horizon.subsidiaries.forge.link} <span>→</span>
-                </div>
-              </div>
-            </Link>
+      {/* 3.5. Leadership */}
+      <section className="py-32 px-6 bg-foreground/5">
+        <HorizonLeadership lang={resolvedParams.lang as 'en' | 'es'} />
+      </section>
 
-            <div className="lg:col-span-4 flex flex-col gap-6">
-              {/* Media */}
-              <Link href={`/${resolvedParams.lang}/media`} className="flex-1 group relative overflow-hidden rounded-[2rem] bg-background/5 border border-background/10">
-                <div className="absolute inset-0">
-                  <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop" alt="Arasue Media" className="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700 grayscale mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-                </div>
-                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
-                  <div className="text-purple-400 font-semibold tracking-widest uppercase mb-2 text-xs">{dict.horizon.subsidiaries.media.tag}</div>
-                  <h3 className="text-3xl font-playfair mb-2 text-white">{dict.horizon.subsidiaries.media.name}</h3>
-                  <p className="text-white/70 text-sm mb-4 line-clamp-2">{dict.horizon.subsidiaries.media.description}</p>
-                  <div className="font-bold text-white text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
-                    {dict.horizon.subsidiaries.media.link} <span>→</span>
-                  </div>
-                </div>
-              </Link>
-              
-              {/* Labs */}
-              <Link href={`/${resolvedParams.lang}/labs`} className="flex-1 group relative overflow-hidden rounded-[2rem] bg-background/5 border border-background/10">
-                <div className="absolute inset-0">
-                  <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop" alt="Arasue Labs" className="w-full h-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700 grayscale mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
-                </div>
-                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
-                  <div className="text-green-400 font-semibold tracking-widest uppercase mb-2 text-xs">{dict.horizon.subsidiaries.labs.tag}</div>
-                  <h3 className="text-3xl font-playfair mb-2 text-white">{dict.horizon.subsidiaries.labs.name}</h3>
-                  <p className="text-white/70 text-sm mb-4 line-clamp-2">{dict.horizon.subsidiaries.labs.description}</p>
-                  <div className="font-bold text-white text-sm flex items-center gap-2 group-hover:gap-4 transition-all">
-                    {dict.horizon.subsidiaries.labs.link} <span>→</span>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </div>
+      {/* 4. Ecosystem */}
+      <section id="portfolio" className="py-32 px-6">
+        <HorizonEcosystem lang={resolvedParams.lang as 'en' | 'es'} />
+      </section>
+
+      {/* 4.5. Investor Relations Form */}
+      <section className="py-32 px-6 bg-foreground/5 border-y border-foreground/10">
+        <HorizonInvestorForm lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* 5. Newsroom (Press Releases Placeholder) */}

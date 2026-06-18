@@ -51,7 +51,7 @@ export default async function HoldingContactPage({
           <div className="w-full relative aspect-video lg:aspect-square bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10">
             {/* Image Placeholder */}
             <img 
-              src="https://placehold.co/800x800/1a1a1a/ffffff?text=Contact+HQ+Image" 
+              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&auto=format&fit=crop" 
               alt="Contact HQ" 
               className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
             />

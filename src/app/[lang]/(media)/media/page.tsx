@@ -1,5 +1,8 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { MotionDiv } from '@/components/Motion'
+import { MediaCaseStudies } from '@/components/media/MediaCaseStudies'
+import { MediaProcess } from '@/components/media/MediaProcess'
+import { MediaROICalculator } from '@/components/media/MediaROICalculator'
 
 export default async function MediaPage({
   params
@@ -56,32 +59,7 @@ export default async function MediaPage({
 
       {/* Selected Campaigns */}
       <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter">{dict.media.work_page.title}</h2>
-            <p className="text-xl text-white/50 max-w-sm text-right hidden md:block">{dict.media.work_page.subtitle}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <MotionDiv 
-                key={i}
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: 30 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group cursor-pointer relative aspect-video bg-white/5 rounded-3xl overflow-hidden"
-              >
-                <img src={`https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=800&auto=format&fit=crop&sig=${i}`} alt={`Campaign ${i}`} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-purple-400 font-bold tracking-widest text-sm mb-3">GLOBAL CAMPAIGN</div>
-                  <h3 className="text-3xl md:text-5xl font-black uppercase">Project Title {i}</h3>
-                </div>
-              </MotionDiv>
-            ))}
-          </div>
-        </div>
+        <MediaCaseStudies lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Services/Capabilities Grid */}
@@ -131,6 +109,10 @@ export default async function MediaPage({
           </div>
         </div>
       </section>
+      {/* 4.5. Process */}
+      <section className="py-32 px-6 border-y border-white/10 bg-white/5">
+        <MediaProcess lang={resolvedParams.lang as 'en' | 'es'} />
+      </section>
 
       {/* Creators Roster */}
       <section className="py-32 px-6">
@@ -152,6 +134,11 @@ export default async function MediaPage({
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 5.5. ROI Calculator */}
+      <section className="py-32 px-6">
+        <MediaROICalculator lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Collab CTA */}

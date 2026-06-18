@@ -49,7 +49,7 @@ export default async function NewsroomPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://placehold.co/1200x675/1a1a1a/ffffff?text=Holding+Newsroom+Image" 
+            src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=1200&auto=format&fit=crop" 
             alt="Holding Newsroom" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />

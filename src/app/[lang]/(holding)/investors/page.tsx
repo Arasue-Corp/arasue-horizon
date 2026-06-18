@@ -32,7 +32,7 @@ export default async function InvestorsPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://placehold.co/1200x675/1a1a1a/ffffff?text=Holding+Investors+Image" 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" 
             alt="Holding Investors" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />

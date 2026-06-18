@@ -66,6 +66,7 @@ export function ContactForm() {
           <option>Arasue Forge (Development & Ads)</option>
           <option>Arasue Media (Content Creation)</option>
           <option>Arasue Labs (Products)</option>
+          <option>Arasue Protection (Insurance)</option>
         </select>
       </div>
       <div className="space-y-2">

@@ -60,6 +60,10 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
                 <div className="font-bold">Arasue Labs</div>
                 <div className="text-xs text-foreground/60">Premium organic goods</div>
               </Link>
+              <Link href={`/${lang}/protection`} className="block p-3 hover:bg-foreground/5 rounded-xl transition-colors">
+                <div className="font-bold">Arasue Protection</div>
+                <div className="text-xs text-foreground/60">Life & Health Insurance</div>
+              </Link>
             </div>
           </div>
 
@@ -120,6 +124,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
             <Link href={`/${lang}/forge`} className="text-sm opacity-70 ml-4">Arasue Forge</Link>
             <Link href={`/${lang}/media`} className="text-sm opacity-70 ml-4">Arasue Media</Link>
             <Link href={`/${lang}/labs`} className="text-sm opacity-70 ml-4">Arasue Labs</Link>
+            <Link href={`/${lang}/protection`} className="text-sm opacity-70 ml-4">Arasue Protection</Link>
           </div>
           <Link href={`/${lang}/forge/services`} className="font-bold py-2 border-b border-foreground/5">Services</Link>
           <Link href={`/${lang}/workshop`} className="font-bold py-2 border-b border-foreground/5">{dict.workshop}</Link>
