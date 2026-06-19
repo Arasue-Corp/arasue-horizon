@@ -265,7 +265,7 @@ export function MechanicShop() {
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-[#333333] bg-[#111111] rounded-full text-xs font-bold uppercase tracking-widest text-[#888888] mb-8">
               <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> {t.trust}

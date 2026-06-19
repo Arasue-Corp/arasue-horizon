@@ -2,7 +2,7 @@ import '../../globals.css'
 import { HeaderForge } from '@/components/HeaderForge'
 import { FooterForge } from '@/components/FooterForge'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
-import { playfair } from '@/lib/fonts'
+import { playfair, inter } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
 import { Metadata } from 'next'
 
@@ -47,7 +47,7 @@ export default async function ForgeLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable}`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
         <HeaderForge dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>
         <FooterForge dict={dict.footer} lang={resolvedParams.lang} />

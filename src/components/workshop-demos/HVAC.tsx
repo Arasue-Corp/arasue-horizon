@@ -281,7 +281,7 @@ export function HVAC() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-[#E0F2FE] text-[#0EA5E9] font-black text-xs tracking-widest uppercase mb-6 rounded-full shadow-sm">
               <ShieldCheck className="w-4 h-4" /> {t.trust}
@@ -306,7 +306,7 @@ export function HVAC() {
           <motion.div 
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="relative hidden lg:block"
           >
             <div className="aspect-square rounded-full bg-gradient-to-br from-[#E0F2FE] to-[#FEE2E2] p-8 shadow-2xl">

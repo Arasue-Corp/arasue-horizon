@@ -253,7 +253,7 @@ export function Carpentry() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="font-sans text-[#8B7355] tracking-[0.3em] uppercase text-xs mb-8">
               {t.trust}

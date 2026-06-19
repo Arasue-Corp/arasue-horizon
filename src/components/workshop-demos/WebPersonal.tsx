@@ -256,7 +256,7 @@ export function WebPersonal() {
       {/* Hero Section */}
       <section className="pt-32 pb-24 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <motion.div initial={reduce ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <motion.div initial={reduce ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
             
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono mb-12 text-neutral-300">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>

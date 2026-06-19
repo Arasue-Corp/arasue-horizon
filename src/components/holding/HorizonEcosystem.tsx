@@ -43,7 +43,7 @@ export function HorizonEcosystem({ lang }: { lang: 'en' | 'es' }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
               className="group relative h-[300px] rounded-[2rem] overflow-hidden bg-white border border-neutral-200 p-10 flex flex-col justify-between hover:shadow-2xl transition-all duration-500"
             >
               <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${div.color} opacity-5 group-hover:opacity-10 rounded-full blur-[60px] transition-opacity duration-500 -mr-20 -mt-20`} />

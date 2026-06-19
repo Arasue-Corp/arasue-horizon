@@ -47,7 +47,7 @@ export function ForgeProcess({ lang }: { lang: 'en' | 'es' }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
               className="space-y-6 relative group"
             >
               <div className={`w-24 h-24 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-3xl group-hover:${colors[i]} transition-colors mx-auto md:mx-0`}>

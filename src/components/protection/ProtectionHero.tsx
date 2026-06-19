@@ -22,7 +22,7 @@ export function ProtectionHero({ lang }: { lang: 'en' | 'es' }) {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="flex flex-col items-center"
         >
           <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-8 shadow-2xl border border-slate-700">

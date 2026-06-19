@@ -257,7 +257,7 @@ export function ConcreteCompany() {
           <motion.div
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-6 uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-[#555555]">
               {t.hero.t1}<br/>{t.hero.t2}

@@ -66,7 +66,7 @@ export default async function ForgePage({
         <MotionDiv 
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="container mx-auto max-w-6xl relative z-10"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/10 bg-foreground/5 backdrop-blur-md text-sm font-mono mb-8 text-blue-400">

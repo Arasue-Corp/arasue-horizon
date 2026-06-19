@@ -293,7 +293,7 @@ export function Ecommerce() {
       {/* Hero Section */}
       <section className="bg-[#F5F5F4] relative overflow-hidden border-b border-stone-200">
         <div className="container mx-auto px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={reduce ? false : { opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div initial={reduce ? false : { opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
             <div className="flex items-center gap-2 text-amber-500 mb-6">
               {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
               <span className="text-stone-500 text-xs font-bold ml-2 uppercase tracking-wide">{t.hero.reviews}</span>

@@ -1,7 +1,7 @@
 import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { HeaderMedia } from '@/components/HeaderMedia'
-import { playfair } from '@/lib/fonts'
+import { playfair, inter } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
 import { Metadata } from 'next'
 
@@ -46,7 +46,7 @@ export default async function MediaLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable}`}>
+      <body className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
         {/* Notice Media is Dark Mode by default */}
         <HeaderMedia dict={dict} lang={resolvedParams.lang} />
         <main className="flex-1">

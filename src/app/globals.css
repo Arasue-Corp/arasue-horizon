@@ -55,17 +55,17 @@ body {
 
 /* 2. Theme Forge (Software Agency) */
 .theme-forge {
-  --background: #FAFAFA;
-  --foreground: #0D4373;
+  --background: #0B0F19;
+  --foreground: #F2F2F2;
   --primary: #0511F2;
-  --primary-foreground: #FFFFFF;
-  --secondary: #E6F8FE;
-  --secondary-foreground: #0D4373;
+  --primary-foreground: #F2F2F2;
+  --secondary: #131926;
+  --secondary-foreground: #05F2DB;
   --accent: #05F2DB;
-  --accent-foreground: #0D4373;
-  --muted: #F1F5F9;
+  --accent-foreground: #131926;
+  --muted: #131926;
   --muted-foreground: #64748B;
-  --border: #E2E8F0;
+  --border: #131926;
   --radius: 0.5rem;
 }
 

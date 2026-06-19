@@ -268,7 +268,7 @@ export function ConstructionCompany() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="inline-block px-3 py-1 bg-[#1E293B] text-[#FF5A00] font-bold text-xs tracking-widest mb-6 rounded">
               COMMERCIAL CONTRACTOR
@@ -292,7 +292,7 @@ export function ConstructionCompany() {
           <motion.div 
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="relative hidden lg:block"
           >
             <div className="aspect-[4/5] rounded bg-[#1E293B] overflow-hidden shadow-2xl border-4 border-[#1E293B]">

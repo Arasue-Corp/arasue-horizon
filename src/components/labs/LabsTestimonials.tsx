@@ -41,7 +41,7 @@ export function LabsTestimonials({ lang }: { lang: 'en' | 'es' }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
             className="bg-white p-10 rounded-[2rem] border border-[#1a2e1a]/5 shadow-sm"
           >
             <div className="flex gap-1 mb-8">

@@ -266,7 +266,7 @@ export function Roofing() {
           <motion.div
             initial={reduce ? false : { opacity: 0, x: -24 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DBEAFE] text-[#1D4ED8] font-bold text-xs tracking-widest mb-6 rounded-full">
               <CheckCircle2 className="w-4 h-4" /> {t.trust}
@@ -291,7 +291,7 @@ export function Roofing() {
           <motion.div 
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="relative hidden lg:block"
           >
             <div className="aspect-[4/3] rounded-3xl bg-[#1E3A8A] overflow-hidden shadow-2xl relative">

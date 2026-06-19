@@ -99,7 +99,7 @@ export default async function WorkshopIndexPage({
         <MotionDiv 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="space-y-6 text-center"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-foreground/10 bg-foreground/5 text-sm font-semibold mb-6">

@@ -206,7 +206,7 @@ export function WebCorporativa() {
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
             <h1 className="text-5xl md:text-7xl font-serif font-black tracking-tight leading-[1.1] mb-6 text-[#1A3620]">
               {t.hero.t1} <br/><span className="text-[#3A5A40] italic">{t.hero.t2}</span>
@@ -227,7 +227,7 @@ export function WebCorporativa() {
           <motion.div 
             initial={reduce ? false : { opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="relative"
           >
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl bg-[#E8E6E1]">
@@ -272,7 +272,7 @@ export function WebCorporativa() {
                   initial={reduce ? false : { opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
                   key={i} 
                   className="bg-white p-10 rounded-3xl border border-[#E8E6E1] hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >

@@ -25,7 +25,7 @@ export default async function MediaPage({
         <MotionDiv 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="max-w-7xl mx-auto w-full z-10"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-bold tracking-widest uppercase mb-8">
@@ -72,7 +72,7 @@ export default async function MediaPage({
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="aspect-square bg-black text-white p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden"
             >
               <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:scale-125 transition-transform">

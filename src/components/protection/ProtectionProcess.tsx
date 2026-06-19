@@ -36,7 +36,7 @@ export function ProtectionProcess({ lang }: { lang: 'en' | 'es' }) {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
               className="flex flex-col items-center text-center p-8"
             >
               <div className="w-16 h-16 rounded-full bg-background border-2 border-foreground flex items-center justify-center mb-6">

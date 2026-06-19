@@ -42,7 +42,7 @@ export function MediaProcess({ lang }: { lang: 'en' | 'es' }) {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
             className="group"
           >
             <div className="text-8xl font-black text-white/5 group-hover:text-purple-500/20 transition-colors mb-4">{item.step}</div>

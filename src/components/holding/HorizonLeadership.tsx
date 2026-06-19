@@ -40,7 +40,7 @@ export function HorizonLeadership({ lang }: { lang: 'en' | 'es' }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
             className="group"
           >
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 bg-neutral-100 relative">

@@ -25,7 +25,7 @@ export default async function LabsPage({
         <MotionDiv 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="max-w-5xl mx-auto space-y-8 relative z-10 text-center"
         >
           <span className="text-sm tracking-[0.3em] uppercase font-sans font-bold text-foreground/60">Arasue Labs</span>
@@ -79,7 +79,7 @@ export default async function LabsPage({
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-foreground/5 flex flex-col"
             >
               <div className="aspect-square bg-[#e8e4d9] relative overflow-hidden">
@@ -104,7 +104,7 @@ export default async function LabsPage({
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 30 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
               className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-foreground/5 flex flex-col"
             >
               <div className="aspect-square bg-foreground/5 relative overflow-hidden">

@@ -58,7 +58,7 @@ export function DashboardFacturas() {
 
         {/* Dashboard Content */}
         <div className="p-6 md:p-8 flex-1 overflow-auto">
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}>
             <h1 className="text-2xl font-black mb-8">Resumen Financiero</h1>
             
             {/* KPI Cards (Gamification / Progress) */}

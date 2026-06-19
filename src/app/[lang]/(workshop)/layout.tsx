@@ -1,5 +1,5 @@
 import '../../globals.css'
-import { playfair } from '@/lib/fonts'
+import { playfair, inter } from '@/lib/fonts'
 import Link from 'next/link'
 import { ArrowLeft, Beaker } from 'lucide-react'
 import { WorkshopBanner } from '@/components/workshop/WorkshopBanner'
@@ -25,7 +25,7 @@ export default async function WorkshopLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground pb-16 ${playfair.variable}`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground pb-16 ${playfair.variable} ${inter.variable}`}>
         {/* Subtle Forge-like Header */}
         <header className="h-12 w-full bg-black text-white flex items-center justify-between px-6 text-xs font-medium uppercase tracking-widest z-50 shrink-0">
           <Link 

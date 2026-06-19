@@ -2,7 +2,7 @@ import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { HeaderProtection } from '@/components/HeaderProtection'
 import { FooterHolding } from '@/components/FooterHolding'
-import { playfair } from '@/lib/fonts'
+import { playfair, inter } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
 import { Metadata } from 'next'
 
@@ -46,7 +46,7 @@ export default async function ProtectionLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable}`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
         <HeaderProtection dict={dict} lang={resolvedParams.lang} />
         <main className="flex-grow">
           {children}
