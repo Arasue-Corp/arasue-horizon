@@ -42,7 +42,7 @@ export default async function MediaLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return (
-    <html lang={resolvedParams.lang} className="theme-media">
+    <html lang={resolvedParams.lang} className="theme-media" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>

@@ -42,7 +42,7 @@ export default async function LabsLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return (
-    <html lang={resolvedParams.lang} className="theme-labs">
+    <html lang={resolvedParams.lang} className="theme-labs" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>

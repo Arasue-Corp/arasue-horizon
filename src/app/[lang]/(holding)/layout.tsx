@@ -47,7 +47,7 @@ export default async function RootLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <html lang={resolvedParams.lang} className="theme-horizon">
+    <html lang={resolvedParams.lang} className="theme-horizon" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>

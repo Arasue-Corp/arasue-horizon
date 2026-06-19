@@ -43,7 +43,7 @@ export default async function ForgeLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <html lang={resolvedParams.lang} className="theme-forge">
+    <html lang={resolvedParams.lang} className="theme-forge" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>

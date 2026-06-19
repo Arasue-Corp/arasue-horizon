@@ -42,7 +42,7 @@ export default async function ProtectionLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <html lang={resolvedParams.lang} className="theme-protection">
+    <html lang={resolvedParams.lang} className="theme-protection" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>
