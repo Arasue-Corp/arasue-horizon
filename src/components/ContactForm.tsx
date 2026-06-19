@@ -81,7 +81,7 @@ export function ContactForm() {
       <button 
         type="submit" 
         disabled={status === 'submitting'}
-        className="w-full flex items-center justify-center gap-2 bg-foreground text-background py-4 rounded-2xl font-bold active:scale-[0.98] hover:bg-foreground/90 transition-all disabled:opacity-70"
+        className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 rounded-2xl font-bold active:scale-[0.98] hover:opacity-90 transition-all disabled:opacity-70"
       >
         {status === 'submitting' ? 'Sending...' : (
           <>Send Message <Send className="w-4 h-4" /></>

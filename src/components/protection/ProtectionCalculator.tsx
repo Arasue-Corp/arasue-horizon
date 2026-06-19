@@ -83,7 +83,7 @@ export function ProtectionCalculator({ lang }: { lang: 'en' | 'es' }) {
               </div>
             </div>
             
-            <a href={`/${lang}/contact`} className="block w-full py-4 text-center rounded-xl bg-foreground text-background font-bold hover:opacity-90 transition-opacity">
+            <a href={`/${lang}/contact`} className="block w-full py-4 text-center rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity">
               {dict.cta}
             </a>
             <p className="text-xs text-foreground/40 mt-4 text-center leading-tight">

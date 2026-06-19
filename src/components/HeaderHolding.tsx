@@ -100,7 +100,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
           >
             <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
           </Link>
-          <Link href={`/${lang}/contact`} className="px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out">
+          <Link href={`/${lang}/contact`} className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out">
             Contact HQ
           </Link>
         </div>

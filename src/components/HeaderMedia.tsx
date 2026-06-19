@@ -11,7 +11,7 @@ export function HeaderMedia({ dict, lang }: { dict: any, lang: string }) {
   
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/95 border-b border-border">
-      <div className="bg-foreground text-background text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
+      <div className="bg-primary text-primary-foreground text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
         <span className="opacity-80">An Arasue Horizon Company</span>
         <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
@@ -36,7 +36,7 @@ export function HeaderMedia({ dict, lang }: { dict: any, lang: string }) {
           >
             <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
           </Link>
-          <Link href={`/${lang}/media/contact`} className="px-4 py-2 rounded-full bg-foreground text-background text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out flex items-center gap-1">
+          <Link href={`/${lang}/media/contact`} className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold active:scale-[0.97] transition-transform duration-200 ease-out flex items-center gap-1">
             Partner <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>

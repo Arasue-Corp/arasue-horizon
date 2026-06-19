@@ -13,7 +13,7 @@ export default async function LabsPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <div className="flex flex-col font-serif bg-[#F9F7F1]">
+    <div className="flex flex-col font-serif bg-background">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden">
         {/* Placeholder for nature background image/video */}
@@ -28,15 +28,15 @@ export default async function LabsPage({
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-5xl mx-auto space-y-8 relative z-10 text-center"
         >
-          <span className="text-sm tracking-[0.3em] uppercase font-sans font-bold text-[#1a2e1a]/60">Arasue Labs</span>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-medium tracking-tight leading-none text-[#1a2e1a]">
+          <span className="text-sm tracking-[0.3em] uppercase font-sans font-bold text-foreground/60">Arasue Labs</span>
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-medium tracking-tight leading-none text-foreground">
             {dict.labs.hero.title}
           </h1>
-          <p className="text-xl md:text-2xl mt-8 max-w-2xl mx-auto font-sans opacity-80 text-[#1a2e1a]">
+          <p className="text-xl md:text-2xl mt-8 max-w-2xl mx-auto font-sans opacity-80 text-foreground">
             {dict.labs.hero.subtitle}
           </p>
           <div className="pt-12 font-sans">
-            <button className="px-10 py-5 rounded-full bg-[#1a2e1a] text-[#F9F7F1] font-medium text-lg hover:scale-105 active:scale-[0.97] transition-all shadow-xl">
+            <button className="px-10 py-5 rounded-full bg-foreground text-background font-medium text-lg hover:scale-105 active:scale-[0.97] transition-all shadow-xl">
               {dict.labs.hero.cta}
             </button>
           </div>
@@ -49,14 +49,14 @@ export default async function LabsPage({
       </section>
 
       {/* Story / Philosophy */}
-      <section className="py-32 px-6 bg-[#1a2e1a] text-[#F9F7F1] text-center">
+      <section className="py-32 px-6 bg-foreground text-background text-center">
         <div className="max-w-4xl mx-auto space-y-12">
           <h2 className="text-4xl md:text-6xl font-medium">{dict.labs.story_page.title}</h2>
           <p className="text-2xl md:text-4xl font-light leading-relaxed opacity-90 italic">
             "{dict.labs.story_page.subtitle}"
           </p>
           <div className="pt-8">
-            <div className="w-px h-24 bg-[#F9F7F1]/30 mx-auto" />
+            <div className="w-px h-24 bg-background/30 mx-auto" />
           </div>
         </div>
       </section>
@@ -66,10 +66,10 @@ export default async function LabsPage({
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
-              <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-[#1a2e1a] mb-4">
+              <h2 className="text-5xl md:text-7xl font-medium tracking-tight text-foreground mb-4">
                 {dict.labs.products.title}
               </h2>
-              <p className="text-xl font-sans text-[#1a2e1a]/60 max-w-lg">{dict.labs.shop_page.subtitle}</p>
+              <p className="text-xl font-sans text-foreground/60 max-w-lg">{dict.labs.shop_page.subtitle}</p>
             </div>
           </div>
           
@@ -80,19 +80,19 @@ export default async function LabsPage({
               initial={{ opacity: 0, y: 30 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-[#1a2e1a]/5 flex flex-col"
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-foreground/5 flex flex-col"
             >
               <div className="aspect-square bg-[#e8e4d9] relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1587049352847-4d4b127bc04e?q=80&w=800&auto=format&fit=crop" alt="Honey Product" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-10 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-3xl font-serif text-[#1a2e1a] mb-4">{dict.labs.products.honey.title}</h3>
-                  <p className="text-[#1a2e1a]/70 text-lg leading-relaxed">{dict.labs.products.honey.desc}</p>
+                  <h3 className="text-3xl font-serif text-foreground mb-4">{dict.labs.products.honey.title}</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">{dict.labs.products.honey.desc}</p>
                 </div>
                 <div className="pt-8 flex justify-between items-center">
                   <span className="font-bold text-lg">$45.00</span>
-                  <button className="w-12 h-12 rounded-full border border-[#1a2e1a]/20 flex items-center justify-center group-hover:bg-[#1a2e1a] group-hover:text-white transition-colors">
+                  <button className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-foreground transition-colors">
                     +
                   </button>
                 </div>
@@ -105,19 +105,19 @@ export default async function LabsPage({
               initial={{ opacity: 0, y: 30 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-[#1a2e1a]/5 flex flex-col"
+              className="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all group cursor-pointer border border-foreground/5 flex flex-col"
             >
-              <div className="aspect-square bg-[#1a2e1a]/5 relative overflow-hidden">
+              <div className="aspect-square bg-foreground/5 relative overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1615397323389-1065a3637172?q=80&w=800&auto=format&fit=crop" alt="Wellness Product" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 mix-blend-multiply" />
               </div>
               <div className="p-10 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-3xl font-serif text-[#1a2e1a] mb-4">{dict.labs.products.wellness.title}</h3>
-                  <p className="text-[#1a2e1a]/70 text-lg leading-relaxed">{dict.labs.products.wellness.desc}</p>
+                  <h3 className="text-3xl font-serif text-foreground mb-4">{dict.labs.products.wellness.title}</h3>
+                  <p className="text-foreground/70 text-lg leading-relaxed">{dict.labs.products.wellness.desc}</p>
                 </div>
                 <div className="pt-8 flex justify-between items-center">
                   <span className="font-bold text-lg">$85.00</span>
-                  <button className="w-12 h-12 rounded-full border border-[#1a2e1a]/20 flex items-center justify-center group-hover:bg-[#1a2e1a] group-hover:text-white transition-colors">
+                  <button className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center group-hover:bg-foreground group-hover:text-foreground transition-colors">
                     +
                   </button>
                 </div>
@@ -140,9 +140,9 @@ export default async function LabsPage({
       {/* Wholesale / Contact */}
       <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto bg-[#e8e4d9] rounded-[3rem] p-16 md:p-24 text-center">
-          <h2 className="text-4xl md:text-5xl font-medium mb-6 text-[#1a2e1a]">{dict.labs.contact_page.title}</h2>
-          <p className="text-xl font-sans text-[#1a2e1a]/70 mb-12 max-w-xl mx-auto">{dict.labs.contact_page.subtitle}</p>
-          <button className="px-10 py-5 rounded-full bg-[#1a2e1a] text-[#F9F7F1] font-sans font-bold text-lg hover:scale-105 active:scale-95 transition-all">
+          <h2 className="text-4xl md:text-5xl font-medium mb-6 text-foreground">{dict.labs.contact_page.title}</h2>
+          <p className="text-xl font-sans text-foreground/70 mb-12 max-w-xl mx-auto">{dict.labs.contact_page.subtitle}</p>
+          <button className="px-10 py-5 rounded-full bg-foreground text-background font-sans font-bold text-lg hover:scale-105 active:scale-95 transition-all">
             Contact Partnerships
           </button>
         </div>

@@ -43,7 +43,7 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
             <p className="text-sm text-foreground/70">{dict.newsletter_desc}</p>
             <form className="flex flex-col gap-2">
               <input type="email" placeholder="Email" className="px-4 py-2 rounded-xl border border-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-foreground/50" />
-              <button type="button" className="px-4 py-2 rounded-xl bg-foreground text-background font-bold hover:opacity-90 transition-opacity">
+              <button type="button" className="px-4 py-2 rounded-xl bg-primary text-primary-foreground font-bold hover:opacity-90 transition-opacity">
                 {dict.subscribe}
               </button>
             </form>

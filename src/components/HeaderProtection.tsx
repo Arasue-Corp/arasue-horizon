@@ -11,7 +11,7 @@ export function HeaderProtection({ dict, lang }: { dict: any, lang: string }) {
   
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/95 border-b border-border">
-      <div className="bg-foreground text-background text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
+      <div className="bg-primary text-primary-foreground text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
         <span className="opacity-80">An Arasue Horizon Company</span>
         <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
