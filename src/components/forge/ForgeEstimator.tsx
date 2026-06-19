@@ -1,6 +1,6 @@
 "use client"
-import { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { useState, useTransition } from 'react'
+import { submitLead } from '@/app/actions/lead'
 
 const dict = {
   usa: {
@@ -16,7 +16,10 @@ const dict = {
     ],
     total: 'Estimated Investment',
     note: '*Estimate based on current availability. Final scope requires a discovery session.',
-    cta: 'Request Formal Proposal'
+    cta: 'Request Formal Proposal',
+    submitting: 'Requesting...',
+    success: 'Proposal requested. We will contact you soon.',
+    emailPrompt: 'Enter your work email to receive the proposal:'
   },
   mex: {
     title: 'Estimador de Proyectos',
@@ -31,7 +34,10 @@ const dict = {
     ],
     total: 'Inversión Estimada',
     note: '*Estimación basada en disponibilidad actual. El alcance final requiere una sesión de descubrimiento.',
-    cta: 'Solicitar Propuesta Formal'
+    cta: 'Solicitar Propuesta Formal',
+    submitting: 'Solicitando...',
+    success: 'Propuesta solicitada. Te contactaremos pronto.',
+    emailPrompt: 'Ingresa tu correo laboral para recibir la propuesta:'
   }
 }
 
@@ -43,6 +49,11 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
   const [timeline, setTimeline] = useState('relaxed')
   const [isCalculating, setIsCalculating] = useState(false)
   
+  const [showEmailInput, setShowEmailInput] = useState(false)
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [isPending, startTransition] = useTransition()
+
   const handleTimelineChange = (val: string) => {
     setIsCalculating(true)
     setTimeout(() => {
@@ -63,6 +74,31 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
     const max = Math.round((base * multiplier) * 1.1);
     
     return isMexico ? `$${min.toLocaleString()} - $${max.toLocaleString()} MXN` : `$${min.toLocaleString()} - $${max.toLocaleString()}`
+  }
+
+  const handleRequest = () => {
+    if (!showEmailInput) {
+      setShowEmailInput(true)
+      return
+    }
+
+    if (!email) return
+
+    const formData = new FormData()
+    formData.append('intent', 'forge_proposal_request')
+    formData.append('email', email)
+    formData.append('complexity', String(complexity))
+    formData.append('timeline', timeline)
+    formData.append('estimated_price', getPrice())
+
+    startTransition(async () => {
+      const res = await submitLead(formData)
+      if (res?.success) {
+        setSubmitted(true)
+      } else {
+        alert(res?.error || 'Error')
+      }
+    })
   }
 
   return (
@@ -127,9 +163,33 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
           {t.note}
         </p>
         
-        <button className="w-full bg-white text-black font-bold text-sm py-5 rounded-xl hover:bg-neutral-200 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-          {t.cta}
-        </button>
+        {submitted ? (
+          <div className="bg-white/10 p-4 rounded-xl text-center text-sm font-bold text-white border border-white/20">
+            {t.success}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {showEmailInput && (
+              <div className="space-y-2 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <label className="text-xs text-white/60">{t.emailPrompt}</label>
+                <input 
+                  type="email" 
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 text-white" 
+                  placeholder="name@company.com"
+                />
+              </div>
+            )}
+            <button 
+              onClick={handleRequest}
+              disabled={isPending}
+              className="w-full bg-white text-black font-bold text-sm py-5 rounded-xl hover:bg-neutral-200 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50"
+            >
+              {isPending ? t.submitting : (showEmailInput ? t.cta : t.cta)}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   )

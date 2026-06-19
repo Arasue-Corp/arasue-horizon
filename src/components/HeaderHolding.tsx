@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ChevronDown, Globe, Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { Logo } from '@/components/ui/Logo'
 
 export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
@@ -11,8 +12,8 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/80 border-b border-foreground/10">
       <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
-        <Link href={`/${lang}`} className="flex items-center gap-2 group py-2">
-          <img src="/logo-horizon.png" alt="Arasue Horizon" className="h-16 md:h-24 w-auto object-contain transition-transform group-hover:scale-105" />
+        <Link href={`/${lang}`} className="py-2">
+          <Logo division="Horizon" />
         </Link>
         
         <nav className="hidden lg:flex gap-8 text-sm font-semibold">

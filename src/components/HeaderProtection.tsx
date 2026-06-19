@@ -3,28 +3,21 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Globe, Menu, X, ArrowUpRight } from 'lucide-react'
 import { useState } from 'react'
+import { Logo } from '@/components/ui/Logo'
 
-export function HeaderProtection({ lang }: { lang: string }) {
+export function HeaderProtection({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
-  const isEn = lang === 'en'
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   
-  const dict = {
-    coverage: isEn ? 'Coverage Options' : 'Opciones de Cobertura',
-    process: isEn ? 'How It Works' : 'Cómo Funciona',
-    calculator: isEn ? 'Get a Quote' : 'Cotizar',
-    contact: isEn ? 'Talk to Advisor' : 'Hablar con Asesor'
-  }
-
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/95 border-b border-foreground/10">
-      <div className="bg-slate-900 text-slate-100 text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
-        <span className="opacity-80">{isEn ? 'An Arasue Horizon Company' : 'Una Empresa de Arasue Horizon'}</span>
-        <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">{isEn ? 'Return to Holding' : 'Volver a Holding'}</Link>
+    <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/95 border-b border-border">
+      <div className="bg-foreground text-background text-xs py-1.5 text-center flex justify-center items-center gap-2 font-semibold tracking-wide">
+        <span className="opacity-80">An Arasue Horizon Company</span>
+        <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href={`/${lang}/protection`} className="font-black text-2xl tracking-tighter flex items-center gap-2">
-          Protection
+      <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <Link href={`/${lang}/protection`} className="py-2">
+          <Logo division="Protection" />
         </Link>
         
         <nav className="hidden md:flex gap-6 text-sm font-bold">

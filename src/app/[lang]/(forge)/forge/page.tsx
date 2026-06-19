@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { ForgeProcess } from '@/components/forge/ForgeProcess'
 import { ForgeEstimator } from '@/components/forge/ForgeEstimator'
 import { ForgeFAQ } from '@/components/forge/ForgeFAQ'
-
+import Image from 'next/image'
 export default async function ForgePage({
   params,
 }: {
@@ -95,11 +95,11 @@ export default async function ForgePage({
         <div className="container mx-auto px-6 text-center">
           <p className="text-sm font-mono text-white/40 mb-8 uppercase tracking-widest">{dict.forge.ticker.trusted}</p>
           <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" className="h-10 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js" className="h-10 w-auto invert" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" className="h-10 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" className="h-10 w-auto" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" className="h-10 w-auto invert" />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width={40} height={40} className="h-10 w-auto" />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg" alt="Next.js" width={40} height={40} className="h-10 w-auto invert" />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind" width={40} height={40} className="h-10 w-auto" />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" width={40} height={40} className="h-10 w-auto" />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" width={40} height={40} className="h-10 w-auto invert" />
           </div>
         </div>
       </section>
@@ -127,7 +127,7 @@ export default async function ForgePage({
               </div>
               <div className="order-1 lg:order-2">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-white/5 border border-white/10 relative p-8 group">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Dashboard Mockup" className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Dashboard Mockup" fill className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default async function ForgePage({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-1">
                 <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-white/5 border border-white/10 relative p-8 group">
-                  <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop" alt="Mobile App Mockup" className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop" alt="Mobile App Mockup" fill className="w-full h-full object-cover rounded-xl shadow-2xl group-hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
               <div className="order-2 space-y-8">

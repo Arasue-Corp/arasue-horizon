@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Globe, Menu, X, ArrowUpRight } from 'lucide-react'
 import { useState } from 'react'
+import { Logo } from '@/components/ui/Logo'
 
 export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
@@ -15,8 +16,8 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
         <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
       <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
-        <Link href={`/${lang}/forge`} className="group py-2">
-          <img src="/logo-forge.png" alt="Arasue Forge" className="h-16 md:h-24 w-auto object-contain transition-transform group-hover:scale-105" />
+        <Link href={`/${lang}/forge`} className="py-2">
+          <Logo division="Forge" />
         </Link>
         
         <nav className="hidden md:flex gap-6 text-sm font-bold">

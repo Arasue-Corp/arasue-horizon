@@ -3,10 +3,33 @@ import { HeaderForge } from '@/components/HeaderForge'
 import { FooterForge } from '@/components/FooterForge'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { playfair } from '@/lib/fonts'
+import { Analytics } from '@/components/Analytics'
+import { Metadata } from 'next'
 
-export const metadata = {
-  title: 'Arasue Forge | Premium Software Agency',
-  description: 'Building robust digital products.',
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const resolvedParams = await params
+  const dict = await getDictionary(resolvedParams.lang as Locale)
+  
+  return {
+    title: `${dict.nav.forge} | Premium Software Agency`,
+    description: dict.forge?.hero?.subtitle || 'Building robust digital products.',
+    metadataBase: new URL('https://arasue.com'),
+    alternates: {
+      canonical: `/${resolvedParams.lang}/forge`,
+      languages: {
+        'en': '/en/forge',
+        'es': '/es/forge',
+      },
+    },
+    openGraph: {
+      title: `${dict.nav.forge}`,
+      description: dict.forge?.hero?.subtitle,
+      url: `https://arasue.com/${resolvedParams.lang}/forge`,
+      siteName: dict.nav.forge,
+      locale: resolvedParams.lang,
+      type: 'website',
+    }
+  }
 }
 
 export default async function ForgeLayout({
@@ -20,7 +43,10 @@ export default async function ForgeLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <html lang={resolvedParams.lang} className="dark">
+    <html lang={resolvedParams.lang} className="theme-forge">
+      <head>
+        <Analytics />
+      </head>
       <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable}`}>
         <HeaderForge dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>

@@ -1,5 +1,6 @@
 "use client"
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
+import { submitLead } from '@/app/actions/lead'
 
 const dict = {
   usa: {
@@ -11,6 +12,7 @@ const dict = {
     type: 'Investor Type',
     types: ['Venture Capital', 'Private Equity', 'Family Office', 'Angel / Individual', 'Other'],
     submit: 'Request Access',
+    submitting: 'Requesting...',
     success: 'Request Received. Our IR team will review and respond shortly.'
   },
   mex: {
@@ -22,6 +24,7 @@ const dict = {
     type: 'Tipo de Inversor',
     types: ['Capital de Riesgo', 'Capital Privado', 'Family Office', 'Ángel / Individual', 'Otro'],
     submit: 'Solicitar Acceso',
+    submitting: 'Solicitando...',
     success: 'Solicitud Recibida. Nuestro equipo revisará y responderá en breve.'
   }
 }
@@ -31,10 +34,21 @@ export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
   const t = dict[isMexico ? 'mex' : 'usa']
   
   const [submitted, setSubmitted] = useState(false)
+  const [isPending, startTransition] = useTransition()
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    const formData = new FormData(e.currentTarget)
+    formData.append('intent', 'investor_relations')
+    
+    startTransition(async () => {
+      const res = await submitLead(formData)
+      if (res?.success) {
+        setSubmitted(true)
+      } else {
+        alert(res?.error || 'Error processing request')
+      }
+    })
   }
 
   if (submitted) {
@@ -61,17 +75,17 @@ export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <label className="block text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2">{t.name}</label>
-            <input required type="text" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
+            <input name="name" required type="text" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
           </div>
           <div>
             <label className="block text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2">{t.firm}</label>
-            <input required type="text" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
+            <input name="firm" required type="text" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
           </div>
         </div>
 
         <div>
           <label className="block text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2">{t.email}</label>
-          <input required type="email" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
+          <input name="email" required type="email" className="w-full bg-transparent border-b border-neutral-300 py-4 focus:outline-none focus:border-black transition-colors" />
         </div>
 
         <div>
@@ -79,7 +93,7 @@ export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
           <div className="flex flex-wrap gap-4">
             {t.types.map(type => (
               <label key={type} className="flex items-center gap-2 cursor-pointer group">
-                <input type="radio" name="investor_type" required className="accent-black w-4 h-4" />
+                <input type="radio" name="investor_type" value={type} required className="accent-black w-4 h-4" />
                 <span className="text-neutral-500 group-hover:text-black transition-colors">{type}</span>
               </label>
             ))}
@@ -87,8 +101,8 @@ export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
         </div>
 
         <div className="pt-8">
-          <button type="submit" className="w-full py-5 bg-black text-white font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors">
-            {t.submit}
+          <button type="submit" disabled={isPending} className="w-full py-5 bg-black text-white font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors disabled:opacity-50">
+            {isPending ? t.submitting : t.submit}
           </button>
         </div>
       </form>
