@@ -53,20 +53,20 @@ body {
   --radius: 0.625rem;
 }
 
-/* 2. Theme Forge (Software Agency) */
+/* 2. Theme Forge (Software Agency - Light Clean Apple Style) */
 .theme-forge {
-  --background: #0B0F19;
-  --foreground: #F2F2F2;
-  --primary: #0511F2;
-  --primary-foreground: #F2F2F2;
-  --secondary: #131926;
-  --secondary-foreground: #05F2DB;
-  --accent: #05F2DB;
-  --accent-foreground: #131926;
-  --muted: #131926;
-  --muted-foreground: #64748B;
-  --border: #131926;
-  --radius: 0.5rem;
+  --background: #F5F5F7; /* Apple Light Gray */
+  --foreground: #1D1D1F; /* Apple Dark Text */
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFFFFF;
+  --secondary-foreground: #1D1D1F;
+  --accent: #0066CC; /* Apple Link Blue */
+  --accent-foreground: #FFFFFF;
+  --muted: #E5E5EA;
+  --muted-foreground: #86868B;
+  --border: #D2D2D7;
+  --radius: 1rem;
 }
 
 /* 3. Theme Labs (Organic Products) */

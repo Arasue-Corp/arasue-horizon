@@ -1,30 +1,15 @@
 "use client"
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-const dict = {
-  usa: {
-    title: 'Leadership',
-    subtitle: 'Guided by operators with a track record of asymmetric returns.',
-    leaders: [
-      { name: 'Josue', role: 'Chief Executive Officer', desc: 'Architect of the Arasue ecosystem. Focuses on capital allocation and long-term vision.', img: '1560250097027-c1d30f71ad39' },
-      { name: 'Elena M.', role: 'Head of Forge', desc: 'Former staff engineer at major tech firms. Leads product engineering and platform scale.', img: '1573496359142-b8d87734a5a2' },
-      { name: 'Marcus T.', role: 'Head of Media', desc: 'Cultural strategist who has manufactured multiple global viral moments.', img: '1507003211169-0a1dd7228f2d' }
-    ]
-  },
-  mex: {
-    title: 'Liderazgo',
-    subtitle: 'Guiados por operadores con un historial de retornos asimétricos.',
-    leaders: [
-      { name: 'Josue', role: 'Director Ejecutivo', desc: 'Arquitecto del ecosistema Arasue. Se enfoca en la asignación de capital y la visión a largo plazo.', img: '1560250097027-c1d30f71ad39' },
-      { name: 'Elena M.', role: 'Directora de Forge', desc: 'Ex ingeniera principal en importantes firmas tecnológicas. Lidera la ingeniería de productos y la escala de la plataforma.', img: '1573496359142-b8d87734a5a2' },
-      { name: 'Marcus T.', role: 'Director de Media', desc: 'Estratega cultural que ha fabricado múltiples momentos virales globales.', img: '1507003211169-0a1dd7228f2d' }
-    ]
-  }
-}
+export function HorizonLeadership({ dict }: { dict: any }) {
+  const t = dict.horizon.leadership
 
-export function HorizonLeadership({ lang }: { lang: 'en' | 'es' }) {
-  const isMexico = lang === 'es'
-  const t = dict[isMexico ? 'mex' : 'usa']
+  const leaders = [
+    { name: 'Josue', role: t.josue_role, desc: t.josue_desc, img: '1560250097027-c1d30f71ad39' },
+    { name: 'Elena M.', role: t.elena_role, desc: t.elena_desc, img: '1573496359142-b8d87734a5a2' },
+    { name: 'Marcus T.', role: t.marcus_role, desc: t.marcus_desc, img: '1507003211169-0a1dd7228f2d' }
+  ]
 
   return (
     <div className="max-w-7xl mx-auto px-6">
@@ -34,7 +19,7 @@ export function HorizonLeadership({ lang }: { lang: 'en' | 'es' }) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {t.leaders.map((leader, i) => (
+        {leaders.map((leader, i: number) => (
           <motion.div 
             key={i}
             initial={{ opacity: 0, y: 20 }}
@@ -44,7 +29,13 @@ export function HorizonLeadership({ lang }: { lang: 'en' | 'es' }) {
             className="group"
           >
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 bg-neutral-100 relative">
-              <img src={`https://images.unsplash.com/photo-${leader.img}?q=80&w=600&auto=format&fit=crop`} alt={leader.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+              <Image 
+                src={`https://images.unsplash.com/photo-${leader.img}?q=80&w=600&auto=format&fit=crop`} 
+                alt={leader.name} 
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+              />
             </div>
             <h3 className="text-2xl font-bold mb-2">{leader.name}</h3>
             <div className="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-4">{leader.role}</div>

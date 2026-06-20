@@ -1,13 +1,12 @@
 import '../../globals.css'
 import { playfair, inter } from '@/lib/fonts'
-import Link from 'next/link'
-import { ArrowLeft, Beaker } from 'lucide-react'
 import { WorkshopBanner } from '@/components/workshop/WorkshopBanner'
 import { Analytics } from '@/components/Analytics'
+import { WorkshopFrameClient } from '@/components/workshop/WorkshopFrameClient'
 
 export const metadata = {
-  title: 'Workshop Demo | Arasue Horizon',
-  description: 'Interactive project preview',
+  title: 'Workshop Preview | Arasue Forge',
+  description: 'Interactive project architecture preview.',
 }
 
 export default async function WorkshopLayout({
@@ -18,35 +17,22 @@ export default async function WorkshopLayout({
   params: Promise<{ lang: string }>
 }) {
   const resolvedParams = await params;
-  const lang = resolvedParams.lang;
+  const lang = resolvedParams.lang as 'en' | 'es';
+  
+  const isEn = lang === 'en';
 
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground pb-16 ${playfair.variable} ${inter.variable}`}>
-        {/* Subtle Forge-like Header */}
-        <header className="h-12 w-full bg-black text-white flex items-center justify-between px-6 text-xs font-medium uppercase tracking-widest z-50 shrink-0">
-          <Link 
-            href={`/${lang}/workshop`}
-            className="flex items-center gap-2 text-white/70 hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-3 h-3" />
-            Volver al Workshop
-          </Link>
-          <div className="flex items-center gap-2 opacity-50">
-            <Beaker className="w-3 h-3" />
-            Arasue Forge · Demo Environment
-          </div>
-        </header>
+      <body suppressHydrationWarning className={`antialiased min-h-screen flex flex-col bg-[#FCFCFC] text-[#111111] pb-16 ${playfair.variable} ${inter.variable} font-sans`}>
         
-        {/* Main Content Area */}
-        <main className="flex-1 w-full relative">
+        <WorkshopFrameClient lang={lang} isEn={isEn}>
           {children}
-        </main>
+        </WorkshopFrameClient>
 
-        <WorkshopBanner lang={lang as 'en' | 'es'} />
+        <WorkshopBanner lang={lang} />
       </body>
     </html>
   )

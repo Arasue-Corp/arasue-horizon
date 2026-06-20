@@ -46,7 +46,7 @@ export default async function ProtectionLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
+      <body suppressHydrationWarning className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
         <HeaderProtection dict={dict} lang={resolvedParams.lang} />
         <main className="flex-grow">
           {children}

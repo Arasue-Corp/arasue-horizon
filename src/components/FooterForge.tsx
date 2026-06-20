@@ -16,7 +16,7 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
           
           <div className="flex gap-6 text-sm font-bold">
             <Link href={`/${lang}/forge#services`} className="hover:text-foreground/70 transition-colors">Services</Link>
-            <Link href={`/${lang}/forge#contact`} className="hover:text-foreground/70 transition-colors">Contact</Link>
+            <Link href={`/${lang}/forge/contact`} className="hover:text-foreground/70 transition-colors">Contact</Link>
             <Link href={`/${lang}`} className="hover:text-foreground/70 transition-colors">Arasue Horizon (Holding)</Link>
           </div>
         </div>

@@ -47,7 +47,7 @@ export default async function ForgeLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
+      <body suppressHydrationWarning className={`antialiased min-h-screen flex flex-col bg-background text-foreground ${playfair.variable} ${inter.variable}`}>
         <HeaderForge dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>
         <FooterForge dict={dict.footer} lang={resolvedParams.lang} />

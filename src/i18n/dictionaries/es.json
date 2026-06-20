@@ -59,8 +59,8 @@
   },
   "horizon": {
     "hero": {
-      "title": "Diseñando el Futuro Digital",
-      "subtitle": "Arasue Horizon SAS es un holding premium que invierte y construye la próxima generación de infraestructura y servicios digitales.",
+      "title": "La perspectiva lo cambia todo.",
+      "subtitle": "El mundo se mueve rápido, pero nosotros miramos más allá. Arasue Horizon es la matriz estratégica que conecta mercados, capitales e industrias globales con una visión clara y de largo alcance. No solo gestionamos el presente; diseñamos el mapa del mañana.",
       "cta": "Explora nuestro Ecosistema",
       "secondary_cta": "Lee nuestro Manifiesto",
       "explore_portfolio": "Explorar Portafolio"
@@ -82,21 +82,27 @@
       "investors_link": "Ver Relación con Inversores",
       "forge": {
         "name": "Arasue Forge",
-        "description": "Agencia premium de desarrollo de software y estrategia digital creando productos robustos y escalables.",
+        "description": "Las grandes ideas no sirven de nada si se quedan en el aire. Arasue Forge es el estudio de desarrollo donde el software avanzado y la tecnología crítica cobran vida con precisión, fuerza y un rendimiento impecable. Construimos la infraestructura digital que define industrias.",
         "link": "Visitar Forge",
-        "tag": "Tecnología y Software"
+        "tag": "Ingeniería con carácter."
       },
       "labs": {
         "name": "Arasue Labs",
-        "description": "Productos orgánicos premium, suministro sustentable y bienes naturales.",
+        "description": "La verdadera excelencia no acepta atajos. Arasue Labs une el rigor de la ciencia con la pureza de la naturaleza, controlando la importación y logística de productos premium con una trazabilidad absoluta. Calidad inquebrantable, desde el origen hasta tus manos.",
         "link": "Visitar Labs",
-        "tag": "Bienes Orgánicos"
+        "tag": "Inalterable desde el origen."
       },
       "media": {
         "name": "Arasue Media",
-        "description": "Potencia en marketing digital, streams y creación de contenido.",
+        "description": "En un mar de ruido constante, nosotros creamos profundidad. Arasue Media produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real. Historias potentes respaldadas por una ejecución sofisticada.",
         "link": "Visitar Media",
-        "tag": "Contenido y Streaming"
+        "tag": "Contenido con carácter."
+      },
+      "protection": {
+        "name": "Arasue Protection",
+        "description": "El éxito real no se deja al azar. Arasue Protection blinda tu vida, tu salud y tu patrimonio con soluciones de aseguramiento de alto nivel y total certeza. Cuidamos de tu legado para que tú puedas enfocarte en seguir construyéndolo.",
+        "link": "Visitar Protection",
+        "tag": "Tranquilidad sin condiciones."
       }
     },
     "global": {
@@ -109,6 +115,48 @@
       "tag": "Comunicado de Prensa",
       "article_title": "Arasue Horizon Anuncia Expansión Estratégica a Nuevos Mercados",
       "article_desc": "Lee sobre nuestras últimas adquisiciones estratégicas y cómo se alinean con nuestra visión para el próximo año fiscal."
+    },
+    "leadership": {
+      "title": "Liderazgo",
+      "subtitle": "Guiados por operadores con un historial de retornos asimétricos.",
+      "josue_role": "Director Ejecutivo",
+      "josue_desc": "Arquitecto del ecosistema Arasue. Se enfoca en la asignación de capital y la visión a largo plazo.",
+      "elena_role": "Directora de Forge",
+      "elena_desc": "Ex ingeniera principal en importantes firmas tecnológicas. Lidera la ingeniería de productos y la escala de la plataforma.",
+      "marcus_role": "Director de Media",
+      "marcus_desc": "Estratega cultural que ha fabricado múltiples momentos virales globales."
+    },
+    "investor_form": {
+      "title": "Relaciones con Inversores",
+      "subtitle": "Solicita acceso a nuestra tesis trimestral y divulgaciones financieras.",
+      "name": "Nombre Completo",
+      "firm": "Firma / Organización",
+      "email": "Correo Corporativo",
+      "type": "Tipo de Inversor",
+      "type_vc": "Capital de Riesgo",
+      "type_pe": "Capital Privado",
+      "type_fo": "Family Office",
+      "type_angel": "Ángel / Individual",
+      "type_other": "Otro",
+      "submit": "Solicitar Acceso",
+      "submitting": "Solicitando...",
+      "success": "Solicitud Recibida. Nuestro equipo revisará y responderá en breve."
+    },
+    "philosophy": {
+      "label": "Filosofía Operativa",
+      "statement_1": "No seguimos tendencias.",
+      "statement_2": "Construimos infraestructura.",
+      "statement_3": "El capital es solo una herramienta. La excelencia operativa es el resultado."
+    },
+    "global_impact": {
+      "title": "Impacto Global",
+      "subtitle": "Arquitectando sistemas a través de fronteras. Desde EE.UU. hacia Latinoamérica y el mundo.",
+      "stat_1_val": "3",
+      "stat_1_lbl": "Nodos Centrales",
+      "stat_2_val": "24/7",
+      "stat_2_lbl": "Operaciones",
+      "stat_3_val": "$0",
+      "stat_3_lbl": "Fricción"
     }
   },
   "forge": {
@@ -217,8 +265,36 @@
       "anchoring_text": "Mientras las agencias tradicionales cobran más de $50k USD por adelantado, nuestro modelo SaaS garantiza cero deuda técnica por una fracción del costo."
     },
     "contact_page": {
-      "title": "Inicia tu Proyecto",
-      "subtitle": "Agenda una sesión de descubrimiento con nuestros arquitectos senior."
+      "title": "Inicia tu Construcción",
+      "subtitle": "Programa una sesión de descubrimiento con nuestros arquitectos senior."
+    },
+    "process_section": {
+      "title": "Cómo Construimos",
+      "subtitle": "Un enfoque inflexible hacia la ingeniería.",
+      "steps": [
+        { "title": "Descubrimiento de Arquitectura", "desc": "Mapeamos los requisitos técnicos precisos, modelos de datos y necesidades de infraestructura." },
+        { "title": "Diseño de Sistemas", "desc": "Creación de esquemas de bases de datos escalables y wireframes de alta fidelidad que convierten." },
+        { "title": "Sprints de Ingeniería", "desc": "Desarrollo rápido y ágil utilizando Next.js y arquitecturas sólidas en la nube." },
+        { "title": "Despliegue y Escala", "desc": "Despliegue sin tiempo de inactividad, QA y optimización continua de rendimiento." }
+      ]
+    },
+    "estimator_section": {
+      "title": "Estimador de Proyectos",
+      "subtitle": "Obtén una línea base inmediata para tu software a medida o transformación digital.",
+      "complexity": "Complejidad del Alcance",
+      "timeline": "Urgencia del Cronograma",
+      "min": "MVP / Web App",
+      "max": "Ecosistema Empresarial",
+      "options": [
+        { "id": "relaxed", "label": "Estándar (3-4 Meses)" },
+        { "id": "rush", "label": "Urgente (8-10 Semanas)" }
+      ],
+      "total": "Inversión Estimada",
+      "note": "*Estimación basada en disponibilidad actual. El alcance final requiere una sesión de descubrimiento.",
+      "cta": "Solicitar Propuesta Formal",
+      "submitting": "Solicitando...",
+      "success": "Propuesta solicitada. Te contactaremos pronto.",
+      "emailPrompt": "Ingresa tu correo laboral para recibir la propuesta:"
     }
   },
   "media": {
@@ -291,8 +367,24 @@
       "content": "Últimas noticias, comunicados y recursos de medios de Arasue Horizon."
     },
     "contact": {
-      "title": "Sede Global",
-      "content": "Asóciate con Arasue Horizon. Línea directa con nuestros equipos de inversión y PR."
+      "title": "Cuartel General Global",
+      "content": "Asóciate con Arasue Horizon. Líneas directas a nuestros equipos de inversión y RP.",
+      "form": {
+        "name_lbl": "Nombre Completo",
+        "email_lbl": "Correo Corporativo",
+        "subject_lbl": "Asunto",
+        "message_lbl": "Mensaje",
+        "btn_submit": "Enviar Mensaje",
+        "btn_submitting": "Transmitiendo...",
+        "success_title": "Transmisión Recibida",
+        "success_desc": "Nuestro equipo de operaciones revisará tu consulta y responderá en menos de 24 horas.",
+        "success_btn": "Enviar Otro Mensaje"
+      },
+      "info": {
+        "hq_title": "Nodo Principal",
+        "press": "Consultas de Prensa",
+        "investors": "Relaciones con Inversores"
+      }
     }
   }
 }

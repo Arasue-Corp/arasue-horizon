@@ -29,20 +29,44 @@ export function proxy(request: NextRequest) {
     return NextResponse.next()
   }
 
-  const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  )
+  const country = request.geo?.country || request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || 'US'
+  const simCountry = request.cookies.get('sim_country')?.value || country
 
-  if (!pathnameHasLocale) {
-    const locale = getLocale(request)
-    request.nextUrl.pathname = `/${locale}${pathname}`
-    return NextResponse.redirect(request.nextUrl)
+  let locale = defaultLocale
+  let currency = 'USD'
+  let system = 'metric'
+
+  if (simCountry === 'US') {
+    locale = 'en'
+    currency = 'USD'
+    system = 'imperial'
+  } else if (simCountry === 'MX') {
+    locale = 'es'
+    currency = 'MXN'
+    system = 'metric'
+  } else {
+    locale = getLocale(request)
+    currency = 'USD'
+    system = 'metric'
   }
 
-  const response = NextResponse.next()
+  const pathnameHasLocale = locales.some(
+    (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`
+  )
 
-  const country = request.headers.get('cf-ipcountry') || 'US'
-  response.cookies.set('user-country', country, { path: '/' })
+  let response: NextResponse;
+
+  if (!pathnameHasLocale) {
+    request.nextUrl.pathname = `/${locale}${pathname}`
+    response = NextResponse.redirect(request.nextUrl)
+  } else {
+    locale = pathname.split('/')[1]
+    response = NextResponse.next()
+  }
+
+  const prefs = { currency, system, locale, country: simCountry }
+  response.cookies.set('arasue-locale-prefs', JSON.stringify(prefs), { path: '/' })
+  response.cookies.set('user-country', simCountry, { path: '/' })
   
   return response
 }

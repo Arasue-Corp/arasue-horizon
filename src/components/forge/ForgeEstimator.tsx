@@ -1,49 +1,10 @@
 "use client"
 import { useState, useTransition } from 'react'
 import { submitLead } from '@/app/actions/lead'
+import { motion } from 'framer-motion'
 
-const dict = {
-  usa: {
-    title: 'Project Estimator',
-    subtitle: 'Get an immediate baseline for your custom software or enterprise digital transformation.',
-    complexity: 'Scope Complexity',
-    timeline: 'Timeline Urgency',
-    min: 'MVP / Web App',
-    max: 'Enterprise Ecosystem',
-    options: [
-      { id: 'relaxed', label: 'Standard (3-4 Months)' },
-      { id: 'rush', label: 'Rush (8-10 Weeks)' }
-    ],
-    total: 'Estimated Investment',
-    note: '*Estimate based on current availability. Final scope requires a discovery session.',
-    cta: 'Request Formal Proposal',
-    submitting: 'Requesting...',
-    success: 'Proposal requested. We will contact you soon.',
-    emailPrompt: 'Enter your work email to receive the proposal:'
-  },
-  mex: {
-    title: 'Estimador de Proyectos',
-    subtitle: 'Obtén una línea base inmediata para tu software a medida o transformación digital.',
-    complexity: 'Complejidad del Alcance',
-    timeline: 'Urgencia del Cronograma',
-    min: 'MVP / Web App',
-    max: 'Ecosistema Empresarial',
-    options: [
-      { id: 'relaxed', label: 'Estándar (3-4 Meses)' },
-      { id: 'rush', label: 'Urgente (8-10 Semanas)' }
-    ],
-    total: 'Inversión Estimada',
-    note: '*Estimación basada en disponibilidad actual. El alcance final requiere una sesión de descubrimiento.',
-    cta: 'Solicitar Propuesta Formal',
-    submitting: 'Solicitando...',
-    success: 'Propuesta solicitada. Te contactaremos pronto.',
-    emailPrompt: 'Ingresa tu correo laboral para recibir la propuesta:'
-  }
-}
-
-export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
-  const isMexico = lang === 'es'
-  const t = dict[isMexico ? 'mex' : 'usa']
+export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySymbol: string }) {
+  const t = dict
   
   const [complexity, setComplexity] = useState(1) // 1: MVP, 2: Mid, 3: Enterprise
   const [timeline, setTimeline] = useState('relaxed')
@@ -63,7 +24,9 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
   }
 
   const getPrice = () => {
+    const isMexico = currencySymbol === '$' 
     let base = 0;
+    
     if (complexity === 1) base = isMexico ? 150000 : 8000;
     if (complexity === 2) base = isMexico ? 350000 : 18000;
     if (complexity === 3) base = isMexico ? 800000 : 45000;
@@ -73,7 +36,7 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
     const min = Math.round((base * multiplier) * 0.9);
     const max = Math.round((base * multiplier) * 1.1);
     
-    return isMexico ? `$${min.toLocaleString()} - $${max.toLocaleString()} MXN` : `$${min.toLocaleString()} - $${max.toLocaleString()}`
+    return isMexico ? `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()} MXN` : `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()}`
   }
 
   const handleRequest = () => {
@@ -102,44 +65,47 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
   }
 
   return (
-    <div className="bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-2xl max-w-5xl mx-auto">
-      <div className="flex-1 p-8 lg:p-12">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-2">{t.title}</h2>
-          <p className="text-white/50">{t.subtitle}</p>
+    <div className="bg-white/70 backdrop-blur-3xl border border-white rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row shadow-[0_30px_60px_rgba(0,0,0,0.05)] max-w-6xl mx-auto">
+      {/* Left side: Controls */}
+      <div className="flex-1 p-8 md:p-16">
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">{t.title}</h2>
+          <p className="text-foreground/60 font-inter text-lg">{t.subtitle}</p>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-12">
+          {/* Complexity Slider */}
           <div>
-            <div className="flex justify-between mb-4">
-              <label className="font-mono text-xs uppercase tracking-widest text-blue-400">{t.complexity}</label>
+            <label className="font-mono text-xs uppercase tracking-widest text-foreground/50 mb-8 block">{t.complexity}</label>
+            <div className="relative pt-1">
+              <input 
+                type="range" 
+                min={1} 
+                max={3} 
+                step={1}
+                value={complexity} 
+                onChange={(e) => setComplexity(Number(e.target.value))}
+                className="w-full h-3 bg-muted rounded-full appearance-none cursor-pointer hover:bg-muted-foreground/20 transition-all [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:h-8 [&::-webkit-slider-thumb]:bg-foreground [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-lg"
+              />
             </div>
-            <input 
-              type="range" 
-              min={1} 
-              max={3} 
-              step={1}
-              value={complexity} 
-              onChange={(e) => setComplexity(Number(e.target.value))}
-              className="w-full accent-blue-500 h-2 bg-white/10 rounded-full appearance-none cursor-pointer"
-            />
-            <div className="flex justify-between text-xs text-white/50 mt-4 font-mono uppercase tracking-widest">
+            <div className="flex justify-between text-xs text-foreground/50 mt-8 font-mono uppercase tracking-widest font-bold">
               <span>{t.min}</span>
               <span>{t.max}</span>
             </div>
           </div>
 
+          {/* Timeline Buttons */}
           <div>
-            <label className="font-mono text-xs uppercase tracking-widest text-blue-400 block mb-6">{t.timeline}</label>
-            <div className="flex flex-col sm:flex-row gap-4">
-              {t.options.map(opt => (
+            <label className="font-mono text-xs uppercase tracking-widest text-foreground/50 mb-6 block">{t.timeline}</label>
+            <div className="flex flex-col sm:flex-row gap-4 bg-muted/50 p-2 rounded-3xl">
+              {t.options.map((opt: any) => (
                 <button 
                   key={opt.id}
                   onClick={() => handleTimelineChange(opt.id)}
-                  className={`flex-1 py-4 px-6 rounded-xl border text-sm font-bold transition-all duration-200 active:scale-95 ${
+                  className={`flex-1 py-5 px-6 rounded-2xl text-sm font-bold font-inter transition-all duration-300 ${
                     timeline === opt.id 
-                    ? 'border-blue-500 bg-blue-500/20 text-white' 
-                    : 'border-white/10 text-white/50 hover:border-white/30'
+                    ? 'bg-white text-foreground shadow-md' 
+                    : 'text-foreground/50 hover:bg-white/50'
                   }`}
                 >
                   {opt.label}
@@ -150,46 +116,57 @@ export function ForgeEstimator({ lang }: { lang: 'en' | 'es' }) {
         </div>
       </div>
 
-      <div className="md:w-[400px] bg-gradient-to-br from-blue-900/20 to-black border-l border-white/10 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
-        <h3 className="font-mono uppercase tracking-widest text-xs text-white/50 mb-6">{t.total}</h3>
+      {/* Right side: Calculation & Output */}
+      <div className="lg:w-[450px] bg-foreground text-background p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group">
         
-        <div className={`mb-6 transition-all duration-200 ${isCalculating ? 'blur-sm opacity-50' : 'blur-0 opacity-100'}`}>
-          <div className="text-3xl lg:text-4xl font-black tracking-tighter mb-2 text-white">
-            {getPrice()}
+        <div className="relative z-10">
+          <h3 className="font-mono uppercase tracking-widest text-xs text-background/50 mb-6">{t.total}</h3>
+          
+          <div className={`mb-6 transition-all duration-300 ${isCalculating ? 'blur-md opacity-50 scale-95' : 'blur-0 opacity-100 scale-100'}`}>
+            <div className="text-4xl md:text-5xl font-black tracking-tighter">
+              {getPrice()}
+            </div>
           </div>
-        </div>
-        
-        <p className="text-white/40 text-xs mb-8 leading-relaxed font-medium">
-          {t.note}
-        </p>
-        
-        {submitted ? (
-          <div className="bg-white/10 p-4 rounded-xl text-center text-sm font-bold text-white border border-white/20">
-            {t.success}
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {showEmailInput && (
-              <div className="space-y-2 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <label className="text-xs text-white/60">{t.emailPrompt}</label>
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 text-white" 
-                  placeholder="name@company.com"
-                />
-              </div>
-            )}
-            <button 
-              onClick={handleRequest}
-              disabled={isPending}
-              className="w-full bg-white text-black font-bold text-sm py-5 rounded-xl hover:bg-neutral-200 active:scale-95 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] disabled:opacity-50"
+          
+          <p className="text-background/50 text-sm mb-12 leading-relaxed font-medium font-inter">
+            {t.note}
+          </p>
+          
+          {submitted ? (
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+              className="bg-accent/10 p-6 rounded-2xl text-center text-sm font-bold text-accent border border-accent/20"
             >
-              {isPending ? t.submitting : (showEmailInput ? t.cta : t.cta)}
-            </button>
-          </div>
-        )}
+              {t.success}
+            </motion.div>
+          ) : (
+            <div className="space-y-4 font-inter">
+              {showEmailInput && (
+                <motion.div 
+                  initial={{ opacity: 0, height: 0 }} 
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="space-y-3"
+                >
+                  <label className="text-xs font-bold text-background/60 uppercase tracking-wider">{t.emailPrompt}</label>
+                  <input 
+                    type="email" 
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:bg-white/20 text-white transition-all placeholder:text-white/30" 
+                    placeholder="corporate@domain.com"
+                  />
+                </motion.div>
+              )}
+              <button 
+                onClick={handleRequest}
+                disabled={isPending}
+                className="w-full bg-white text-foreground font-bold text-base py-5 rounded-2xl hover:bg-neutral-200 active:scale-95 transition-all disabled:opacity-50"
+              >
+                {isPending ? t.submitting : t.cta}
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

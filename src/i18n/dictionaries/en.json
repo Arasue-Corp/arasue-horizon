@@ -59,8 +59,8 @@
   },
   "horizon": {
     "hero": {
-      "title": "Architecting the Digital Future",
-      "subtitle": "Arasue Horizon SAS is a premium holding company investing in and building the next generation of digital infrastructure and services.",
+      "title": "Perspective changes everything.",
+      "subtitle": "The world moves fast, but we look further. Arasue Horizon is the strategic matrix connecting global markets, capital, and industries with a clear, long-range vision. We don't just manage the present; we blueprint tomorrow.",
       "cta": "Explore our Ecosystem",
       "secondary_cta": "Read our Manifesto",
       "explore_portfolio": "Explore Portfolio"
@@ -82,21 +82,27 @@
       "investors_link": "View Investor Relations",
       "forge": {
         "name": "Arasue Forge",
-        "description": "Premium software development and digital strategy agency building robust, scalable products.",
+        "description": "Great ideas mean nothing if they stay in the air. Arasue Forge is the development studio where advanced software and critical tech come to life with precision, power, and flawless performance. We build the digital infrastructure that defines industries.",
         "link": "Visit Forge",
-        "tag": "Technology & Software"
+        "tag": "Engineering with character."
       },
       "labs": {
         "name": "Arasue Labs",
-        "description": "Premium organic products, sustainable sourcing, and experimental nature goods.",
+        "description": "True excellence accepts no shortcuts. Arasue Labs bridges scientific rigor with nature's purity, managing the import and logistics of premium products with absolute traceability. Unwavering quality, from the source to your hands.",
         "link": "Visit Labs",
-        "tag": "Organic Goods"
+        "tag": "Unaltered from the source."
       },
       "media": {
         "name": "Arasue Media",
-        "description": "Digital marketing, streaming, and content creation powerhouse.",
+        "description": "In a sea of constant noise, we create depth. Arasue Media produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark. Powerful storytelling backed by sophisticated execution.",
         "link": "Visit Media",
-        "tag": "Content & Streaming"
+        "tag": "Content with character."
+      },
+      "protection": {
+        "name": "Arasue Protection",
+        "description": "Real success is never left to chance. Arasue Protection shields your life, health, and wealth with high-tier insurance solutions and absolute certainty. We protect your legacy so you can focus on building it.",
+        "link": "Visit Protection",
+        "tag": "Unconditional peace of mind."
       }
     },
     "global": {
@@ -109,6 +115,48 @@
       "tag": "Press Release",
       "article_title": "Arasue Horizon Announces Strategic Expansion into New Markets",
       "article_desc": "Read about our latest strategic acquisitions and how they align with our vision for the upcoming fiscal year."
+    },
+    "leadership": {
+      "title": "Leadership",
+      "subtitle": "Guided by operators with a track record of asymmetric returns.",
+      "josue_role": "Chief Executive Officer",
+      "josue_desc": "Architect of the Arasue ecosystem. Focuses on capital allocation and long-term vision.",
+      "elena_role": "Head of Forge",
+      "elena_desc": "Former staff engineer at major tech firms. Leads product engineering and platform scale.",
+      "marcus_role": "Head of Media",
+      "marcus_desc": "Cultural strategist who has manufactured multiple global viral moments."
+    },
+    "investor_form": {
+      "title": "Investor Relations",
+      "subtitle": "Request access to our quarterly thesis and financial disclosures.",
+      "name": "Full Name",
+      "firm": "Firm / Organization",
+      "email": "Corporate Email",
+      "type": "Investor Type",
+      "type_vc": "Venture Capital",
+      "type_pe": "Private Equity",
+      "type_fo": "Family Office",
+      "type_angel": "Angel / Individual",
+      "type_other": "Other",
+      "submit": "Request Access",
+      "submitting": "Requesting...",
+      "success": "Request Received. Our IR team will review and respond shortly."
+    },
+    "philosophy": {
+      "label": "Operating Philosophy",
+      "statement_1": "We don't follow trends.",
+      "statement_2": "We build infrastructure.",
+      "statement_3": "Capital is merely a tool. Operational excellence is the outcome."
+    },
+    "global_impact": {
+      "title": "Global Footprint",
+      "subtitle": "Architecting systems across borders. From the US to Latin America and beyond.",
+      "stat_1_val": "3",
+      "stat_1_lbl": "Core Hubs",
+      "stat_2_val": "24/7",
+      "stat_2_lbl": "Operations",
+      "stat_3_val": "$0",
+      "stat_3_lbl": "Friction"
     }
   },
   "forge": {
@@ -219,6 +267,34 @@
     "contact_page": {
       "title": "Start Your Build",
       "subtitle": "Schedule a discovery session with our senior architects."
+    },
+    "process_section": {
+      "title": "How We Build",
+      "subtitle": "An uncompromising approach to engineering.",
+      "steps": [
+        { "title": "Architecture Discovery", "desc": "We map out the precise technical requirements, data models, and infrastructure needs." },
+        { "title": "System Design", "desc": "Creating scalable database schemas and high-fidelity wireframes that convert." },
+        { "title": "Engineering Sprints", "desc": "Rapid, agile development using Next.js and robust cloud architectures." },
+        { "title": "Deployment & Scale", "desc": "Zero-downtime deployment, QA, and continuous performance optimization." }
+      ]
+    },
+    "estimator_section": {
+      "title": "Project Estimator",
+      "subtitle": "Get an immediate baseline for your custom software or enterprise digital transformation.",
+      "complexity": "Scope Complexity",
+      "timeline": "Timeline Urgency",
+      "min": "MVP / Web App",
+      "max": "Enterprise Ecosystem",
+      "options": [
+        { "id": "relaxed", "label": "Standard (3-4 Months)" },
+        { "id": "rush", "label": "Rush (8-10 Weeks)" }
+      ],
+      "total": "Estimated Investment",
+      "note": "*Estimate based on current availability. Final scope requires a discovery session.",
+      "cta": "Request Formal Proposal",
+      "submitting": "Requesting...",
+      "success": "Proposal requested. We will contact you soon.",
+      "emailPrompt": "Enter your work email to receive the proposal:"
     }
   },
   "media": {
@@ -292,7 +368,23 @@
     },
     "contact": {
       "title": "Global Headquarters",
-      "content": "Partner with Arasue Horizon. Direct lines to our investment and PR teams."
+      "content": "Partner with Arasue Horizon. Direct lines to our investment and PR teams.",
+      "form": {
+        "name_lbl": "Full Name",
+        "email_lbl": "Corporate Email",
+        "subject_lbl": "Subject",
+        "message_lbl": "Message",
+        "btn_submit": "Send Message",
+        "btn_submitting": "Transmitting...",
+        "success_title": "Transmission Received",
+        "success_desc": "Our operations team will review your inquiry and respond within 24 hours.",
+        "success_btn": "Send Another Message"
+      },
+      "info": {
+        "hq_title": "Primary Hub",
+        "press": "Press Inquiries",
+        "investors": "Investor Relations"
+      }
     }
   }
 }

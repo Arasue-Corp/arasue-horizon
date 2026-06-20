@@ -1,527 +1,691 @@
 "use client"
-import { motion, useReducedMotion } from 'framer-motion'
-import { ArrowRight, HardHat, Pickaxe, Ruler, Truck, ChevronDown, Star, CheckCircle2, ChevronRight } from 'lucide-react'
+import { motion, useReducedMotion, AnimatePresence } from 'framer-motion'
+import { ArrowRight, HardHat, Pickaxe, Ruler, Truck, ChevronDown, CheckCircle2, ChevronRight, Activity, Cpu, Hammer, Box, Layers, ArrowLeft, Phone, Mail } from 'lucide-react'
 import { useState } from 'react'
 
 const dict = {
   usa: {
-    nav: { srv: 'Services', port: 'Projects', proc: 'Process', faq: 'FAQ', est: 'Calculator', book: 'Get Quote' },
+    nav: { srv: 'Capabilities', port: 'Deployments', proc: 'Architecture', faq: 'Specs', est: 'Calculator', book: 'Dispatch', back: 'Abort & Return' },
     hero: { 
-      t1: 'SOLID.', 
-      t2: 'UNBREAKABLE.', 
-      p: 'Industrial-grade concrete solutions for commercial and residential foundations. Built to withstand everything.',
-      btn1: 'Calculate Volume',
-      btn2: 'View Past Work'
+      t1: 'MONOLITHIC.', 
+      t2: 'EXECUTION.', 
+      p: 'Industrial-grade concrete infrastructure. Engineered for maximum load capacity and zero structural degradation. Built to withstand everything.',
+      btn1: 'Dispatch Engineering',
+      btn2: 'View Blueprints'
     },
-    trust: 'Engineered For',
+    trust: 'Engineered for Heavy Industry',
+    stats: [
+      { num: '85K+', label: 'Cubic Yards Poured' },
+      { num: '0.001%', label: 'Tolerance Variance' },
+      { num: '400+', label: 'Active Deployments' }
+    ],
     srv: {
-      title: 'Our Capabilities',
-      p: 'Heavy-duty pours and structural reinforcement executed with absolute precision.',
+      tag: 'Capabilities',
+      title: 'Structural Superiority.',
+      p: 'Heavy-duty pours and reinforcement executed with absolute precision. No delays, no stress fractures.',
       items: [
-        { icon: Truck, title: "Commercial Pouring", desc: "Large-scale continuous pours for warehouses, parking structures, and industrial facilities." },
-        { icon: Ruler, title: "Precision Flatwork", desc: "Driveways, patios, and sidewalks with perfect grading and flawless finishing." },
-        { icon: Pickaxe, title: "Demolition & Prep", desc: "Complete site clearing, excavation, and structural reinforcement before the pour." }
-      ]
-    },
-    portfolio: {
-      title: 'Selected Projects',
-      p: 'We let our structural integrity speak for itself. Filter by project scope.',
-      filters: ['All', 'Commercial', 'Residential', 'Infrastructure'],
-      items: [
-        { cat: 'Commercial', title: 'Logistics Hub Alpha', desc: '15,000 sq ft warehouse floor poured in a single continuous 24-hour shift.', img: 'https://placehold.co/800x600/222222/ffffff?text=Warehouse+Floor' },
-        { cat: 'Infrastructure', title: 'Highway 42 Retaining', desc: 'Reinforced 30ft retaining walls engineered for extreme soil pressure.', img: 'https://placehold.co/800x600/333333/ffffff?text=Retaining+Wall' },
-        { cat: 'Residential', title: 'Estate Driveway', desc: 'Premium exposed aggregate finish for a luxury 400ft driveway.', img: 'https://placehold.co/800x600/444444/ffffff?text=Exposed+Aggregate' },
-        { cat: 'Commercial', title: 'Downtown Plaza', desc: 'Colored and stamped concrete designed for heavy pedestrian traffic.', img: 'https://placehold.co/800x600/111111/ffffff?text=Stamped+Concrete' }
+        { icon: Truck, title: "Commercial Pouring", desc: "Large-scale continuous pours for warehouses, logistics hubs, and industrial facilities. 24-hour shift capacity." },
+        { icon: Ruler, title: "Precision Flatwork", desc: "Laser-leveled flatwork with flawless finishing. Engineered for heavy machinery and constant load stress." },
+        { icon: Pickaxe, title: "Demolition & Sub-Base", desc: "Complete site clearing, excavation, and foundational reinforcement prior to the monolithic pour." }
       ]
     },
     process: {
-      title: 'How We Pour',
-      p: 'Eliminating delays and costly mistakes through rigorous planning and execution.',
-      steps: [
-        { num: '01', title: 'Site Engineering & Specs', desc: 'We verify soil conditions, load requirements, and grading before a single truck is dispatched.' },
-        { num: '02', title: 'Prep, Forms & Rebar', desc: 'Flawless formwork and dense rebar grids laid out by master steelworkers for maximum tensile strength.' },
-        { num: '03', title: 'The Pour & Cure', desc: 'Continuous pouring with industrial vibrators to eliminate air pockets, followed by chemical curing for surface hardness.' }
+      tag: 'Architecture',
+      title: 'Deployment Protocol.',
+      items: [
+        { num: '01', title: 'Site Engineering', desc: 'Load requirement verification, soil stress testing, and laser-guided grading.' },
+        { num: '02', title: 'Steel Reinforcement', desc: 'Dense rebar grids installed by master steelworkers for maximum tensile strength.' },
+        { num: '03', title: 'Monolithic Pour', desc: 'Continuous extrusion with industrial vibrators to eliminate void pockets.' }
       ]
     },
-    testimonials: {
-      title: 'Built on Trust',
+    portfolio: {
+      tag: 'Deployments',
+      title: 'Recent Infrastructure',
+      p: 'Structural integrity speaks for itself. Review our latest high-load environments.',
       items: [
-        { name: 'David R.', role: 'General Contractor', text: '"Other crews delayed our warehouse schedule for weeks due to logistics. Slabworks coordinated 40 trucks and poured 15,000 sq ft perfectly in one weekend. Unbelievable efficiency."' },
-        { name: 'Sarah M.', role: 'Property Developer', text: '"Their attention to the sub-base preparation is what separates them. No cracking, no settling. Just a perfectly level foundation that passed inspection instantly."' }
+        { cat: 'Commercial', title: 'Logistics Hub Alpha', desc: '15,000 sq ft warehouse floor poured in a single continuous 24-hour shift.', metric: '15,000 SQ FT' },
+        { cat: 'Infrastructure', title: 'Highway 42 Retaining', desc: 'Reinforced 30ft retaining walls engineered for extreme soil pressure.', metric: '8,000 CUBIC YARDS' },
+        { cat: 'Industrial', title: 'Manufacturing Plant Sigma', desc: 'High-density foundation designed for extreme vibration absorption.', metric: '12,000 SQ FT' }
       ]
     },
     faq: {
-      title: 'Common Questions',
+      tag: 'Specs',
+      title: 'Technical Specifications',
       items: [
-        { q: 'How do you prevent the concrete from cracking?', a: 'All concrete eventually experiences micro-cracking, but we control it strategically using perfectly spaced expansion joints, high-grade rebar grids, and proper chemical curing compounds to minimize shrinkage.' },
-        { q: 'Can you pour in cold or rainy weather?', a: 'Yes, but it requires specific additives. We use accelerators and thermal blankets in winter, and vapor retarders during rain to ensure the water-cement ratio is never compromised.' },
-        { q: 'Do you handle the excavation and site prep?', a: 'Absolutely. We prefer handling the excavation and sub-base grading ourselves. If the base isn\'t perfect, the concrete won\'t last. We control the whole process.' }
+        { q: 'How do you mitigate thermal cracking during large pours?', a: 'We control thermal expansion using strategically mapped control joints, high-grade rebar matrices, and chemical curing compounds that regulate internal temperature.' },
+        { q: 'What is the standard tolerance for laser leveling?', a: 'Our precision flatwork operates within a +/- 1/8 inch tolerance over 10 feet (F-Number system), ensuring perfect operation for automated warehouse robotics.' },
+        { q: 'Do you manage sub-base excavation?', a: 'Yes. The sub-base dictates the lifespan of the slab. We execute all grading and compaction internally to guarantee the foundational integrity.' }
       ]
     },
     quote: {
-      title: 'Concrete Calculator',
-      p: 'Calculate your required cubic yardage and estimate costs instantly.',
-      areaTitle: 'Surface Area',
-      areaUnit: 'sq ft',
-      areaMin: 'Small Patio (100)',
-      areaMax: 'Warehouse (10,000+)',
-      reqTitle: 'Thickness / Depth',
+      title: 'Yield Calculator',
+      p: 'Calculate your required cubic yardage and estimate baseline costs instantly.',
+      areaTitle: 'Surface Area (SQ FT)',
+      reqTitle: 'Slab Depth',
       reqOptions: [
-        { id: '4', label: '4 Inches (Standard)' },
-        { id: '6', label: '6 Inches (Heavy)' },
-        { id: '8', label: '8 Inches (Industrial)' }
+        { id: '4', label: '4" (Standard Load)' },
+        { id: '6', label: '6" (Heavy Load)' },
+        { id: '8', label: '8" (Industrial Load)' }
       ],
-      totalTitle: 'Material Estimate',
-      totalDesc: '*Price includes standard mix and delivery. Labor and site prep are quoted separately.',
-      ctaTitle: 'Schedule Site Visit',
-      ctaBtn: 'Dispatch Estimator'
+      totalTitle: 'Material Volume Estimate',
+      totalDesc: 'This is an algorithmic yield estimate. Labor, steel, and site preparation are quoted separately.',
+      ctaBtn: 'Dispatch Engineering Team'
     },
     footer: {
-      desc: 'The backbone of modern infrastructure. We pour the foundations of the future.',
-      contact: 'Dispatch',
-      legal: 'Legal',
+      desc: 'The monolithic backbone of modern industrial infrastructure.',
       rights: '© 2026 Arasue Forge LLC. All rights reserved.',
-      tag: 'Forged in concrete.'
+      tag: 'Forged in Concrete.'
+    },
+    contactPage: {
+      tag: 'Dispatch',
+      title: 'Initiate Core Deployment.',
+      desc: 'Submit your architectural blueprints or structural requirements. Our engineering team will review load capacities and initiate dispatch protocol.',
+      form: {
+        fn: 'Commander / First Name',
+        ln: 'Last Name',
+        email: 'Secure Comms / Email',
+        scope: 'Project Specifications / Load Requirements',
+        submit: 'Authorize Dispatch'
+      }
     }
   },
   mex: {
-    nav: { srv: 'Servicios', port: 'Proyectos', proc: 'Proceso', faq: 'FAQ', est: 'Calculadora', book: 'Cotizar' },
+    nav: { srv: 'Capacidades', port: 'Despliegues', proc: 'Arquitectura', faq: 'Specs', est: 'Calculadora', book: 'Despacho', back: 'Abortar y Volver' },
     hero: { 
-      t1: 'SÓLIDO.', 
-      t2: 'IRROMPIBLE.', 
-      p: 'Soluciones de concreto de grado industrial para cimientos comerciales y residenciales. Construido para resistir todo.',
-      btn1: 'Calcular Volumen',
-      btn2: 'Ver Trabajo Previo'
+      t1: 'EJECUCIÓN.', 
+      t2: 'MONOLÍTICA.', 
+      p: 'Infraestructura de concreto de grado industrial. Diseñada para máxima capacidad de carga y cero degradación estructural.',
+      btn1: 'Despachar Ingeniería',
+      btn2: 'Ver Planos'
     },
-    trust: 'Diseñado Para',
+    trust: 'Diseñado para Industria Pesada',
+    stats: [
+      { num: '85K+', label: 'Yardas Cúbicas Coladas' },
+      { num: '0.001%', label: 'Varianza de Tolerancia' },
+      { num: '400+', label: 'Despliegues Activos' }
+    ],
     srv: {
-      title: 'Nuestras Capacidades',
-      p: 'Colados de uso rudo y refuerzo estructural ejecutados con absoluta precisión.',
+      tag: 'Capacidades',
+      title: 'Superioridad Estructural.',
+      p: 'Colados de uso rudo y refuerzo estructural ejecutados con precisión absoluta. Sin retrasos, sin fisuras por estrés.',
       items: [
-        { icon: Truck, title: "Colado Comercial", desc: "Colados continuos a gran escala para almacenes, estructuras de estacionamiento e instalaciones industriales." },
-        { icon: Ruler, title: "Trabajo Plano de Precisión", desc: "Entradas, patios y aceras con nivelación perfecta y acabados impecables." },
-        { icon: Pickaxe, title: "Demolición y Prep", desc: "Limpieza completa del sitio, excavación y refuerzo estructural antes del colado." }
-      ]
-    },
-    portfolio: {
-      title: 'Proyectos Seleccionados',
-      p: 'Dejamos que nuestra integridad estructural hable por sí misma. Filtra por tipo de proyecto.',
-      filters: ['Todos', 'Comercial', 'Residencial', 'Infraestructura'],
-      items: [
-        { cat: 'Comercial', title: 'Centro Logístico Alfa', desc: 'Piso de almacén de 1,500 m² colado en un solo turno continuo de 24 horas.', img: 'https://placehold.co/800x600/222222/ffffff?text=Piso+Industrial' },
-        { cat: 'Infraestructura', title: 'Muro Autopista 42', desc: 'Muros de contención de 9 metros diseñados para extrema presión de suelo.', img: 'https://placehold.co/800x600/333333/ffffff?text=Muro+de+Contencion' },
-        { cat: 'Residencial', title: 'Entrada de Finca', desc: 'Acabado premium de agregado expuesto para una entrada de lujo de 120m.', img: 'https://placehold.co/800x600/444444/ffffff?text=Concreto+Lavado' },
-        { cat: 'Comercial', title: 'Plaza Centro', desc: 'Concreto coloreado y estampado diseñado para tráfico peatonal pesado.', img: 'https://placehold.co/800x600/111111/ffffff?text=Concreto+Estampado' }
+        { icon: Truck, title: "Colado Comercial", desc: "Colados continuos a gran escala para almacenes, centros logísticos e instalaciones industriales. Capacidad de turnos de 24 horas." },
+        { icon: Ruler, title: "Planicidad de Precisión", desc: "Superficies niveladas por láser con acabado impecable. Diseñado para maquinaria pesada y estrés de carga constante." },
+        { icon: Pickaxe, title: "Demolición y Sub-Base", desc: "Limpieza completa del sitio, excavación y refuerzo de cimientos antes del colado monolítico." }
       ]
     },
     process: {
-      title: 'Cómo Colamos',
-      p: 'Eliminamos retrasos y errores costosos a través de una planeación y ejecución rigurosa.',
-      steps: [
-        { num: '01', title: 'Ingeniería de Sitio', desc: 'Verificamos condiciones del suelo, carga y nivelación antes de enviar un solo camión.' },
-        { num: '02', title: 'Cimbras y Acero', desc: 'Cimbrado impecable y parrillas de varilla armadas por maestros fierreros para máxima fuerza de tensión.' },
-        { num: '03', title: 'Colado y Curado', desc: 'Colado continuo con vibradores industriales para eliminar bolsas de aire, seguido de curado químico.' }
+      tag: 'Arquitectura',
+      title: 'Protocolo de Despliegue.',
+      items: [
+        { num: '01', title: 'Ingeniería del Sitio', desc: 'Verificación de requisitos de carga, pruebas de estrés del suelo y nivelación guiada por láser.' },
+        { num: '02', title: 'Refuerzo de Acero', desc: 'Mallas de varilla densas instaladas por maestros acereros para máxima resistencia a la tracción.' },
+        { num: '03', title: 'Colado Monolítico', desc: 'Extrusión continua con vibradores industriales para eliminar bolsas de vacío.' }
       ]
     },
-    testimonials: {
-      title: 'Construido con Confianza',
+    portfolio: {
+      tag: 'Despliegues',
+      title: 'Infraestructura Reciente',
+      p: 'La integridad estructural habla por sí sola. Revise nuestros últimos entornos de alta carga.',
       items: [
-        { name: 'David R.', role: 'Contratista General', text: '"Otros contratistas retrasaron nuestra bodega por semanas. Slabworks coordinó 40 ollas y coló 1,500 m² a la perfección en un fin de semana. Eficiencia increíble."' },
-        { name: 'Sarah M.', role: 'Desarrolladora Inmobiliaria', text: '"Su atención a la preparación de la base es lo que los separa del resto. Sin grietas, sin hundimientos. Solo una cimentación perfectamente nivelada."' }
+        { cat: 'Comercial', title: 'Hub Logístico Alpha', desc: '15,000 pies cuadrados de piso de almacén colado en un turno continuo de 24 horas.', metric: '15,000 SQ FT' },
+        { cat: 'Infraestructura', title: 'Muro de Contención Autopista 42', desc: 'Muros de contención de 30 pies reforzados para presión extrema del suelo.', metric: '8,000 YARDAS CÚBICAS' },
+        { cat: 'Industrial', title: 'Planta de Manufactura Sigma', desc: 'Fundación de alta densidad diseñada para absorción extrema de vibraciones.', metric: '12,000 SQ FT' }
       ]
     },
     faq: {
-      title: 'Preguntas Comunes',
+      tag: 'Specs',
+      title: 'Especificaciones Técnicas',
       items: [
-        { q: '¿Cómo evitan que el concreto se agriete?', a: 'Todo el concreto experimenta micro-fisuras, pero las controlamos estratégicamente usando juntas de dilatación perfectas, acero de alta resistencia y curado químico.' },
-        { q: '¿Pueden colar en clima frío o con lluvia?', a: 'Sí, pero requiere aditivos. Usamos acelerantes y mantas térmicas en invierno, y retardadores de vapor en la lluvia para asegurar que la proporción agua-cemento no se altere.' },
-        { q: '¿Se encargan de la excavación y preparación del terreno?', a: 'Absolutamente. Preferimos hacer el movimiento de tierras nosotros mismos. Si la base no es perfecta, el concreto fallará. Nosotros controlamos todo el proceso.' }
+        { q: '¿Cómo mitigan el agrietamiento térmico durante colados grandes?', a: 'Controlamos la expansión térmica usando juntas de control estratégicamente mapeadas, matrices de acero de alto grado y compuestos químicos de curado que regulan la temperatura interna.' },
+        { q: '¿Cuál es la tolerancia estándar para la nivelación láser?', a: 'Nuestra planicidad de precisión opera dentro de una tolerancia de +/- 1/8 de pulgada sobre 10 pies (sistema F-Number), asegurando operación perfecta para robótica de almacén.' },
+        { q: '¿Manejan la excavación de la sub-base?', a: 'Sí. La sub-base dicta la vida útil de la losa. Ejecutamos toda la nivelación y compactación internamente para garantizar la integridad fundacional.' }
       ]
     },
     quote: {
-      title: 'Calculadora de Concreto',
-      p: 'Calcula los metros cúbicos requeridos y estima costos al instante.',
-      areaTitle: 'Área de Superficie',
-      areaUnit: 'm²',
-      areaMin: 'Patio Pequeño (10)',
-      areaMax: 'Almacén (1,000+)',
-      reqTitle: 'Grosor / Profundidad',
+      title: 'Calculadora de Rendimiento',
+      p: 'Calcule su volumen en yardas cúbicas y estime costos base al instante.',
+      areaTitle: 'Área de Superficie (SQ FT)',
+      reqTitle: 'Profundidad de Losa',
       reqOptions: [
-        { id: '10', label: '10 cm (Estándar)' },
-        { id: '15', label: '15 cm (Pesado)' },
-        { id: '20', label: '20 cm (Industrial)' }
+        { id: '4', label: '4" (Carga Estándar)' },
+        { id: '6', label: '6" (Carga Pesada)' },
+        { id: '8', label: '8" (Carga Industrial)' }
       ],
-      totalTitle: 'Presupuesto de Material',
-      totalDesc: '*El precio incluye mezcla estándar y entrega. La mano de obra y prep se cotizan por separado.',
-      ctaTitle: 'Programar Visita',
-      ctaBtn: 'Enviar Estimador'
+      totalTitle: 'Estimación de Volumen',
+      totalDesc: 'Esta es una estimación algorítmica de rendimiento. La mano de obra, el acero y la preparación del sitio se cotizan por separado.',
+      ctaBtn: 'Despachar Equipo de Ingeniería'
     },
     footer: {
-      desc: 'La columna vertebral de la infraestructura moderna. Colamos los cimientos del futuro.',
-      contact: 'Despacho',
-      legal: 'Legal',
+      desc: 'La columna vertebral monolítica de la infraestructura industrial moderna.',
       rights: '© 2026 Arasue Forge LLC. Todos los derechos reservados.',
-      tag: 'Forjado en concreto.'
+      tag: 'Forjado en Concreto.'
+    },
+    contactPage: {
+      tag: 'Despacho',
+      title: 'Iniciar Despliegue Central.',
+      desc: 'Envíe sus planos arquitectónicos o requisitos estructurales. Nuestro equipo de ingeniería revisará las capacidades de carga e iniciará el protocolo de despacho.',
+      form: {
+        fn: 'Nombre',
+        ln: 'Apellido',
+        email: 'Comunicaciones Seguras / Email',
+        scope: 'Especificaciones del Proyecto / Requisitos de Carga',
+        submit: 'Autorizar Despacho'
+      }
     }
   }
 }
 
+// UI Components (Arasue Forge Standard)
+const SectionTag = ({ text }: { text: string }) => (
+  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm border border-[#05F2DB]/20 bg-[#05F2DB]/5 text-[10px] font-mono font-bold uppercase tracking-widest mb-6 text-[#05F2DB]">
+    <div className="w-1.5 h-1.5 bg-[#05F2DB] shadow-[0_0_8px_#05F2DB]" />
+    {text}
+  </div>
+)
+
+// Rebar/Steel Grid Wireframe for Industrial feel
+const RebarWireframe = ({ type = 'hero' }: { type?: 'hero' | 'card' }) => {
+  return (
+    <div className="absolute inset-0 bg-[#0B0F19] overflow-hidden group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+      {/* Heavy Industrial Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#131926_2px,transparent_2px),linear-gradient(to_bottom,#131926_2px,transparent_2px)] bg-[size:48px_48px]" />
+      
+      {/* Diagonal Rebar Bracing */}
+      <div className="absolute inset-0 opacity-20 bg-[repeating-linear-gradient(45deg,transparent,transparent_20px,#05F2DB_20px,#05F2DB_21px)]" />
+
+      {/* Abstract Concrete Blocks */}
+      <div className="absolute inset-0 p-8 flex items-center justify-center z-10">
+        <div className="w-full h-full border-2 border-[#131926] bg-[#0B0F19]/80 backdrop-blur-sm flex flex-col justify-between p-6">
+          <div className="flex justify-between items-start">
+             <div className="flex gap-2">
+                <div className="w-4 h-4 bg-[#131926] border border-white/10" />
+                <div className="w-4 h-4 bg-[#131926] border border-white/10" />
+             </div>
+             <div className="text-[10px] font-mono font-bold text-[#F2F2F2]/40 tracking-widest uppercase">
+               SECTOR {type === 'hero' ? '01-ALPHA' : '02-BETA'}
+             </div>
+          </div>
+          
+          <div className="w-full h-24 bg-[#131926] border border-white/5 relative overflow-hidden flex items-center justify-center mt-auto">
+            {/* Laser Leveling Scan Effect */}
+            <motion.div 
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
+              className="absolute left-0 right-0 h-[1px] bg-[#05F2DB] shadow-[0_0_10px_#05F2DB]"
+            />
+            <Activity className="w-8 h-8 text-[#05F2DB]/40" />
+          </div>
+        </div>
+      </div>
+      
+      {/* HUD Data */}
+      <div className="absolute bottom-4 right-4 text-[10px] font-mono font-bold text-[#05F2DB]/60 flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-[#05F2DB] animate-pulse" />
+        LOAD OK
+      </div>
+    </div>
+  )
+}
+
 export function ConcreteCompany() {
   const [region, setRegion] = useState<'usa' | 'mex'>('usa')
-  const [yardSize, setYardSize] = useState(1000) 
-  const [thickness, setThickness] = useState(region === 'usa' ? '4' : '10')
+  const [currentView, setCurrentView] = useState<'landing' | 'contact'>('landing')
+  const [area, setArea] = useState(5000)
+  const [depth, setDepth] = useState('6')
   const [isCalculating, setIsCalculating] = useState(false)
-  const [filter, setFilter] = useState('All')
   const [openFaq, setOpenFaq] = useState<number | null>(0)
   
   const reduce = useReducedMotion()
   const t = dict[region]
 
-  // Translation sync
+  // Spring physics setup (Arasue Kowalski standard)
+  const springTransition = { type: "spring", stiffness: 300, damping: 30 }
+
   const toggleRegion = () => {
     setIsCalculating(true)
     setTimeout(() => {
-      if (region === 'usa') {
-        setRegion('mex')
-        setYardSize(Math.round(yardSize / 10.764))
-        setThickness('10')
-        setFilter('Todos')
-      } else {
-        setRegion('usa')
-        setYardSize(Math.round(yardSize * 10.764))
-        setThickness('4')
-        setFilter('All')
-      }
-      setIsCalculating(false)
-    }, 300)
-  }
-
-  const handleThicknessChange = (val: string) => {
-    setIsCalculating(true)
-    setTimeout(() => {
-      setThickness(val)
+      setRegion(region === 'usa' ? 'mex' : 'usa')
       setIsCalculating(false)
     }, 200)
   }
 
-  const getPrice = () => {
-    if (region === 'usa') {
-      const areaSqFt = yardSize;
-      const thickInches = parseInt(thickness);
-      const cubicYards = (areaSqFt * (thickInches / 12)) / 27;
-      return Math.round(cubicYards * 150);
-    } else {
-      const areaM2 = yardSize;
-      const thickCm = parseInt(thickness);
-      const cubicMeters = areaM2 * (thickCm / 100);
-      return Math.round(cubicMeters * 130);
-    }
+  const getYield = () => {
+    // Formula: Area (sq ft) * Depth (ft) = Cubic Feet / 27 = Cubic Yards
+    const depthFt = parseInt(depth) / 12
+    const cubicFeet = area * depthFt
+    const cubicYards = cubicFeet / 27
+    return cubicYards.toFixed(1)
   }
 
-  const filteredPortfolio = filter === 'All' || filter === 'Todos' 
-    ? t.portfolio.items 
-    : t.portfolio.items.filter(item => item.cat === filter)
-
   return (
-    <div className="min-h-screen bg-[#111111] text-[#EEEEEE] font-sans selection:bg-[#FF3300] selection:text-white">
-      {/* Navigation - Brutalist */}
-      <nav className="w-full bg-[#111111] border-b border-[#333333] sticky top-0 z-40">
-        <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="font-black text-2xl tracking-tighter uppercase flex items-center gap-2">
-            SLAB<span className="text-[#666666]">WORKS</span>
+    <div className="min-h-screen bg-[#0B0F19] text-[#F2F2F2] font-sans selection:bg-[#05F2DB] selection:text-[#0B0F19] overflow-hidden flex flex-col">
+      
+      {/* Tactical Nav */}
+      <nav className="w-full border-b border-white/5 sticky top-0 bg-[#0B0F19]/90 backdrop-blur-xl z-50">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <div 
+            className="font-sans font-black text-2xl tracking-tighter flex items-center gap-3 cursor-pointer"
+            onClick={() => setCurrentView('landing')}
+          >
+            <div className="w-8 h-8 bg-[#05F2DB] text-[#0B0F19] flex items-center justify-center">
+              <Layers className="w-5 h-5" />
+            </div>
+            SLABWORKS.
           </div>
-          <div className="hidden lg:flex gap-6 font-bold text-xs tracking-widest uppercase text-[#888888]">
-            <a href="#services" className="hover:text-white transition-colors duration-200">{t.nav.srv}</a>
-            <a href="#portfolio" className="hover:text-white transition-colors duration-200">{t.nav.port}</a>
-            <a href="#process" className="hover:text-white transition-colors duration-200">{t.nav.proc}</a>
-            <a href="#quote" className="hover:text-white transition-colors duration-200">{t.nav.est}</a>
-          </div>
+          
+          {currentView === 'landing' ? (
+            <div className="hidden lg:flex gap-8 font-mono text-xs font-bold text-[#F2F2F2]/60 uppercase tracking-widest">
+              <a href="#services" className="hover:text-[#05F2DB] transition-colors">{t.nav.srv}</a>
+              <a href="#portfolio" className="hover:text-[#05F2DB] transition-colors">{t.nav.port}</a>
+              <a href="#process" className="hover:text-[#05F2DB] transition-colors">{t.nav.proc}</a>
+              <a href="#faq" className="hover:text-[#05F2DB] transition-colors">{t.nav.faq}</a>
+            </div>
+          ) : (
+            <div className="hidden lg:flex" />
+          )}
+
           <div className="flex items-center gap-4">
             <button 
               onClick={toggleRegion}
-              className="flex items-center gap-2 px-3 py-1.5 border border-[#333333] hover:bg-[#222222] transition-colors text-sm font-bold uppercase active:scale-[0.97]"
+              className="flex items-center gap-2 px-3 py-1 rounded-sm border border-white/10 text-[#F2F2F2]/60 hover:text-[#05F2DB] hover:border-[#05F2DB]/30 transition-colors text-xs font-mono font-bold uppercase"
             >
-              {region === 'usa' ? '🇺🇸 USA' : '🇲🇽 MEX'}
+              {region === 'usa' ? 'US' : 'MX'}
             </button>
-            <a href="#quote" className="hidden sm:inline-block bg-[#EEEEEE] text-[#111111] px-6 py-2.5 font-black uppercase tracking-wider hover:bg-white transition-all duration-200 active:scale-[0.97]">
-              {t.nav.book}
-            </a>
+            {currentView === 'landing' ? (
+              <button 
+                onClick={() => { window.scrollTo(0,0); setCurrentView('contact') }}
+                className="hidden sm:inline-flex bg-[#F2F2F2] text-[#0B0F19] px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-[#05F2DB] transition-colors items-center gap-2 uppercase tracking-wide"
+              >
+                {t.nav.book} <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <button 
+                onClick={() => { window.scrollTo(0,0); setCurrentView('landing') }}
+                className="hidden sm:inline-flex border border-white/20 text-[#05F2DB] px-6 py-2.5 rounded-sm font-bold text-sm hover:bg-white/5 transition-colors items-center gap-2 uppercase tracking-wide"
+              >
+                <ArrowLeft className="w-4 h-4" /> {t.nav.back}
+              </button>
+            )}
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/concrete-wall.png")' }}></div>
-        <div className="container mx-auto relative z-10 text-center">
-          <motion.div
-            initial={reduce ? false : { opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
-            <h1 className="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-6 uppercase text-transparent bg-clip-text bg-gradient-to-b from-white to-[#555555]">
-              {t.hero.t1}<br/>{t.hero.t2}
-            </h1>
-            <p className="text-xl md:text-2xl text-[#888888] mb-12 max-w-2xl mx-auto font-medium">
-              {t.hero.p}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a href="#quote" className="bg-[#EEEEEE] text-[#111111] px-10 py-5 font-black text-xl uppercase tracking-wider hover:bg-white transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-3">
-                {t.hero.btn1} <ArrowRight className="w-6 h-6" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="py-24 px-6 bg-[#0A0A0A] border-t border-[#333333]">
-        <div className="container mx-auto">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">{t.srv.title}</h2>
-            <p className="text-xl text-[#888888] max-w-2xl">{t.srv.p}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.srv.items.map((srv, i) => {
-              const Icon = srv.icon
-              return (
-                <div key={i} className="bg-[#111111] p-10 border border-[#333333] hover:border-[#666666] transition-colors duration-300">
-                  <Icon className="w-12 h-12 text-[#EEEEEE] mb-8" strokeWidth={1.5} />
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-4">{srv.title}</h3>
-                  <p className="text-[#888888] font-medium leading-relaxed">{srv.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* V2: Portfolio Section */}
-      <section id="portfolio" className="py-24 px-6 bg-[#111111] border-t border-[#333333]">
-        <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-            <div>
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">{t.portfolio.title}</h2>
-              <p className="text-xl text-[#888888] max-w-xl">{t.portfolio.p}</p>
-            </div>
-            {/* Filters */}
-            <div className="flex flex-wrap gap-2">
-              {t.portfolio.filters.map(f => (
-                <button 
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`px-4 py-2 border font-bold uppercase text-xs tracking-widest transition-colors ${filter === f ? 'bg-[#EEEEEE] text-[#111111] border-[#EEEEEE]' : 'bg-transparent text-[#888888] border-[#333333] hover:border-[#666666]'}`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {filteredPortfolio.map((item, i) => (
-              <div key={i} className="group relative aspect-video bg-[#222222] overflow-hidden border border-[#333333] cursor-pointer">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/20 to-transparent flex flex-col justify-end p-8">
-                  <span className="text-[#FF3300] font-black uppercase tracking-widest text-xs mb-2">{item.cat}</span>
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{item.title}</h3>
-                  <p className="text-[#888888] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* V2: The Process */}
-      <section id="process" className="py-24 px-6 bg-[#0A0A0A] border-t border-[#333333]">
-        <div className="container mx-auto">
-          <div className="mb-20 text-center">
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">{t.process.title}</h2>
-            <p className="text-xl text-[#888888] max-w-2xl mx-auto">{t.process.p}</p>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative">
-            {/* Connecting Line */}
-            <div className="hidden lg:block absolute top-[40px] left-[15%] right-[15%] h-[2px] bg-[#333333] -z-10"></div>
-            
-            {t.process.steps.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="w-20 h-20 bg-[#111111] border-2 border-[#EEEEEE] rounded-full flex items-center justify-center text-3xl font-black text-[#EEEEEE] mb-8 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                  {step.num}
-                </div>
-                <h3 className="text-2xl font-black uppercase tracking-tight mb-4">{step.title}</h3>
-                <p className="text-[#888888] font-medium leading-relaxed max-w-sm">{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* V2: Social Proof / Testimonials */}
-      <section className="py-24 px-6 bg-[#111111] border-t border-[#333333]">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-black uppercase tracking-tighter mb-16 text-center">{t.testimonials.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {t.testimonials.items.map((test, i) => (
-              <div key={i} className="bg-[#0A0A0A] p-10 border border-[#333333] relative">
-                <div className="absolute top-6 right-6 text-[#333333]">
-                  <Star className="w-8 h-8 fill-current" />
-                </div>
-                <p className="text-xl text-[#EEEEEE] font-medium leading-relaxed italic mb-8">
-                  {test.text}
-                </p>
-                <div>
-                  <h4 className="font-black uppercase tracking-wider">{test.name}</h4>
-                  <p className="text-[#888888] text-sm font-bold uppercase">{test.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* V2: FAQ */}
-      <section className="py-24 px-6 bg-[#0A0A0A] border-t border-[#333333]">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-12 text-center">{t.faq.title}</h2>
-          <div className="space-y-4">
-            {t.faq.items.map((item, i) => (
-              <div key={i} className="border border-[#333333] bg-[#111111] overflow-hidden">
-                <button 
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between p-6 text-left active:bg-[#1A1A1A] transition-colors"
-                >
-                  <span className="font-black uppercase tracking-wide text-lg">{item.q}</span>
-                  <ChevronDown className={`w-6 h-6 text-[#666666] transform transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
-                </button>
-                {openFaq === i && (
-                  <div className="p-6 pt-0 text-[#888888] leading-relaxed font-medium">
-                    {item.a}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator */}
-      <section id="quote" className="py-24 px-6 bg-[#111111] border-t border-[#333333]">
-        <div className="container mx-auto">
-          <div className="bg-[#0A0A0A] border border-[#333333] flex flex-col xl:flex-row shadow-2xl">
-            
-            <div className="flex-1 p-10 lg:p-16">
-              <div className="mb-12">
-                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-3">{t.quote.title}</h2>
-                <p className="text-[#888888] text-lg">{t.quote.p}</p>
-              </div>
-
-              <div className="space-y-12">
-                <div>
-                  <div className="flex justify-between mb-6">
-                    <label className="font-black uppercase tracking-widest text-[#666666]">{t.quote.areaTitle}</label>
-                    <span className="font-black text-2xl">{yardSize.toLocaleString()} {t.quote.areaUnit}</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min={region === 'usa' ? 100 : 10} 
-                    max={region === 'usa' ? 10000 : 1000} 
-                    step={region === 'usa' ? 100 : 10}
-                    value={yardSize} 
-                    onChange={(e) => setYardSize(Number(e.target.value))}
-                    className="w-full accent-[#EEEEEE] h-1 bg-[#333333] appearance-none cursor-pointer"
-                  />
-                  <div className="flex justify-between text-xs text-[#555555] mt-4 font-bold uppercase tracking-widest">
-                    <span>{t.quote.areaMin}</span>
-                    <span>{t.quote.areaMax}</span>
-                  </div>
-                </div>
-
-                <div>
-                  <label className="font-black uppercase tracking-widest text-[#666666] block mb-6">{t.quote.reqTitle}</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {t.quote.reqOptions.map(opt => (
+      <main className="flex-grow flex flex-col">
+        <AnimatePresence mode="wait">
+          {currentView === 'landing' && (
+            <motion.div 
+              key="landing"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col"
+            >
+              {/* Hero Section */}
+              <section className="pt-24 pb-16 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                  <motion.div 
+                    initial={reduce ? false : { opacity: 0, y: 20 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    transition={springTransition}
+                  >
+                    <SectionTag text={t.trust} />
+                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-[0.95] text-[#F2F2F2]">
+                      {t.hero.t1} <br />
+                      <span className="text-[#131926]" style={{ WebkitTextStroke: '1px #F2F2F2' }}>{t.hero.t2}</span>
+                    </h1>
+                    <p className="text-lg text-[#F2F2F2]/60 mb-10 max-w-lg font-medium leading-relaxed">
+                      {t.hero.p}
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4">
                       <button 
-                        key={opt.id}
-                        onClick={() => handleThicknessChange(opt.id)}
-                        className={`p-5 border-2 font-black uppercase text-sm transition-all duration-200 ease-out active:scale-[0.97] ${
-                          thickness === opt.id 
-                          ? 'border-[#EEEEEE] bg-[#EEEEEE] text-[#111111]' 
-                          : 'border-[#333333] text-[#888888] hover:border-[#666666]'
-                        }`}
+                        onClick={() => { window.scrollTo(0,0); setCurrentView('contact') }}
+                        className="bg-[#05F2DB] text-[#0B0F19] px-8 py-4 rounded-sm font-bold hover:bg-white transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wide"
                       >
-                        {opt.label}
+                        {t.hero.btn1} <ArrowRight className="w-4 h-4" />
                       </button>
+                      <a href="#portfolio" className="px-8 py-4 rounded-sm font-bold border border-white/10 text-[#F2F2F2] hover:bg-white/5 transition-colors flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+                        {t.hero.btn2}
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  <motion.div 
+                    initial={reduce ? false : { opacity: 0, scale: 0.95 }} 
+                    animate={{ opacity: 1, scale: 1 }} 
+                    transition={{ ...springTransition, delay: 0.1 }}
+                    className="w-full h-[500px]"
+                  >
+                    <div className="w-full h-full border border-white/10 bg-[#131926] relative group overflow-hidden">
+                       <RebarWireframe type="hero" />
+                       <div className="absolute top-6 right-6 border border-[#05F2DB]/30 bg-[#0B0F19]/90 backdrop-blur-md p-4 text-[#F2F2F2]">
+                         <div className="text-[10px] font-mono text-[#05F2DB] mb-1">SYSTEM STATUS</div>
+                         <div className="font-bold flex items-center gap-2 text-sm"><CheckCircle2 className="w-4 h-4 text-[#05F2DB]" /> DISPATCH READY</div>
+                       </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </section>
+
+              {/* Tactical Stats Banner */}
+              <section className="py-8 border-y border-white/5 bg-[#131926]">
+                <div className="max-w-7xl mx-auto px-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    {t.stats.map((stat, i) => (
+                      <div key={i} className="flex flex-col items-center justify-center py-4 text-center">
+                        <div className="text-4xl font-black mb-1 text-[#F2F2F2]">{stat.num}</div>
+                        <div className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#05F2DB]">{stat.label}</div>
+                      </div>
                     ))}
                   </div>
                 </div>
+              </section>
 
-              </div>
-            </div>
+              {/* Capabilities Section */}
+              <section id="services" className="py-24 px-6 bg-[#0B0F19]">
+                <div className="max-w-7xl mx-auto">
+                  <div className="mb-16 md:w-2/3">
+                    <SectionTag text={t.srv.tag} />
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">{t.srv.title}</h2>
+                    <p className="text-[#F2F2F2]/60 text-lg font-medium">{t.srv.p}</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {t.srv.items.map((srv, i) => {
+                      const Icon = srv.icon
+                      return (
+                        <div key={i} className="bg-[#131926] border border-white/5 p-8 hover:border-[#05F2DB]/30 transition-colors group relative overflow-hidden">
+                          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <Icon className="w-32 h-32 text-white" />
+                          </div>
+                          <div className="w-12 h-12 bg-[#0B0F19] border border-white/10 flex items-center justify-center mb-8 relative z-10">
+                            <Icon className="w-5 h-5 text-[#05F2DB]" />
+                          </div>
+                          <h3 className="text-xl font-black uppercase tracking-wide mb-3 relative z-10">{srv.title}</h3>
+                          <p className="text-[#F2F2F2]/50 text-sm leading-relaxed relative z-10">{srv.desc}</p>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              </section>
 
-            <div className="xl:w-[450px] bg-[#EEEEEE] text-[#111111] p-10 lg:p-16 flex flex-col justify-center">
-              <h3 className="font-black uppercase tracking-widest text-[#666666] mb-6">{t.quote.totalTitle}</h3>
-              
-              <div className={`flex items-start gap-1 mb-6 transition-all duration-200 ${isCalculating ? 'blur-md opacity-50' : 'blur-0 opacity-100'}`}>
-                <span className="text-3xl font-black mt-2 text-[#666666]">$</span>
-                <span className="text-7xl md:text-8xl font-black tracking-tighter leading-none">
-                  {getPrice().toLocaleString()}
-                </span>
-              </div>
-              
-              <p className="text-[#666666] text-sm font-bold mb-12 pb-12 border-b border-[#CCCCCC] leading-relaxed">
-                {t.quote.totalDesc}
-              </p>
-              
-              <div className="space-y-4">
-                <label className="block text-xs font-black uppercase tracking-widest text-[#666666]">{t.quote.ctaTitle}</label>
-                <input 
-                  type="email" 
-                  placeholder="name@example.com" 
-                  className="w-full bg-white border-2 border-[#CCCCCC] px-5 py-5 text-[#111111] placeholder-[#999999] outline-none focus:border-[#111111] font-bold transition-colors" 
-                />
-                <button className="w-full bg-[#111111] text-[#EEEEEE] font-black uppercase tracking-wider py-5 hover:bg-[#333333] active:scale-[0.97] transition-all duration-200 ease-out">
-                  {t.quote.ctaBtn}
-                </button>
-              </div>
-            </div>
+              {/* Deployment Protocol (Process) */}
+              <section id="process" className="py-24 px-6 border-y border-white/5 bg-[#131926]">
+                <div className="max-w-7xl mx-auto">
+                  <div className="mb-16 text-center">
+                    <SectionTag text={t.process.tag} />
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter">{t.process.title}</h2>
+                  </div>
 
-          </div>
-        </div>
-      </section>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-[1px] bg-white/10" />
+                    
+                    {t.process.items.map((item, i) => (
+                      <div key={i} className="relative z-10 flex flex-col items-center text-center">
+                        <div className="w-24 h-24 bg-[#0B0F19] border border-white/10 flex items-center justify-center text-2xl font-mono font-bold text-[#05F2DB] mb-8 shadow-xl">
+                          {item.num}
+                        </div>
+                        <h3 className="text-lg font-black uppercase mb-3">{item.title}</h3>
+                        <p className="text-[#F2F2F2]/50 text-sm leading-relaxed max-w-sm">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* Deployments (Portfolio) */}
+              <section id="portfolio" className="py-24 px-6 bg-[#0B0F19]">
+                <div className="max-w-7xl mx-auto">
+                  <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                    <div>
+                      <SectionTag text={t.portfolio.tag} />
+                      <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-4">{t.portfolio.title}</h2>
+                      <p className="text-[#F2F2F2]/60 text-lg font-medium">{t.portfolio.p}</p>
+                    </div>
+                    <button className="hidden md:flex items-center gap-2 font-bold text-sm hover:text-[#05F2DB] transition-colors uppercase tracking-widest pb-2 border-b-2 border-white/10 hover:border-[#05F2DB]">
+                      ALL DEPLOYMENTS <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {t.portfolio.items.map((project, i) => (
+                      <div key={i} className="group cursor-pointer">
+                        <div className="aspect-[4/3] border border-white/5 bg-[#131926] overflow-hidden relative mb-6">
+                          <RebarWireframe type="card" />
+                          <div className="absolute inset-0 bg-[#0B0F19]/50 group-hover:bg-transparent transition-colors duration-500" />
+                          <div className="absolute top-4 right-4 bg-[#0B0F19] border border-[#05F2DB]/30 text-[#05F2DB] text-[10px] font-mono font-bold px-3 py-1.5 uppercase tracking-widest">
+                            {project.metric}
+                          </div>
+                        </div>
+                        <div className="text-[10px] font-mono font-bold text-[#05F2DB] mb-2 uppercase tracking-widest">{project.cat}</div>
+                        <h3 className="text-xl font-black uppercase mb-2 group-hover:text-[#05F2DB] transition-colors">{project.title}</h3>
+                        <p className="text-sm text-[#F2F2F2]/50">{project.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* Technical Specifications (FAQ) */}
+              <section id="faq" className="py-24 px-6 border-t border-white/5 bg-[#131926]">
+                <div className="max-w-4xl mx-auto">
+                  <div className="mb-16 text-center">
+                    <SectionTag text={t.faq.tag} />
+                    <h2 className="text-4xl md:text-5xl font-black tracking-tighter">{t.faq.title}</h2>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    {t.faq.items.map((faq, i) => (
+                      <div key={i} className="border border-white/5 bg-[#0B0F19] overflow-hidden">
+                        <button 
+                          onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                          className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                        >
+                          <span className="font-bold text-lg uppercase tracking-wide">{faq.q}</span>
+                          <ChevronDown className={`w-5 h-5 text-[#05F2DB] transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`} />
+                        </button>
+                        <motion.div 
+                          initial={false}
+                          animate={{ height: openFaq === i ? 'auto' : 0, opacity: openFaq === i ? 1 : 0 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="p-6 pt-0 text-[#F2F2F2]/50 leading-relaxed text-sm">
+                            {faq.a}
+                          </div>
+                        </motion.div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+
+              {/* Yield Calculator */}
+              <section id="quote" className="py-24 px-6 bg-[#0B0F19] border-t border-white/5 relative overflow-hidden">
+                {/* Background Tech Details */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                  <div className="absolute top-10 left-10 text-[200px] font-black text-transparent" style={{ WebkitTextStroke: '2px #05F2DB' }}>
+                    YIELD
+                  </div>
+                </div>
+
+                <div className="max-w-5xl mx-auto relative z-10">
+                  <div className="bg-[#131926] border border-white/10 p-8 md:p-12 flex flex-col md:flex-row gap-12">
+                    
+                    <div className="flex-1">
+                      <div className="mb-10">
+                        <SectionTag text="Engineering" />
+                        <h2 className="text-3xl font-black tracking-tighter mb-3 uppercase">{t.quote.title}</h2>
+                        <p className="text-[#F2F2F2]/50 text-sm font-mono">{t.quote.p}</p>
+                      </div>
+
+                      <div className="space-y-10">
+                        <div>
+                          <div className="flex justify-between items-end mb-6">
+                            <label className="text-xs font-mono font-bold text-[#05F2DB] uppercase tracking-widest">{t.quote.areaTitle}</label>
+                            <span className="text-2xl font-black">{area.toLocaleString()}</span>
+                          </div>
+                          <input 
+                            type="range" 
+                            min={1000} 
+                            max={50000} 
+                            step={500}
+                            value={area} 
+                            onChange={(e) => setArea(Number(e.target.value))}
+                            className="w-full h-1 bg-[#0B0F19] appearance-none cursor-pointer focus:outline-none accent-[#05F2DB]"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="text-xs font-mono font-bold text-[#05F2DB] mb-4 block uppercase tracking-widest">{t.quote.reqTitle}</label>
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            {t.quote.reqOptions.map(opt => (
+                              <button 
+                                key={opt.id}
+                                onClick={() => {
+                                  setIsCalculating(true); 
+                                  setTimeout(() => { setDepth(opt.id); setIsCalculating(false) }, 200)
+                                }}
+                                className={`p-4 border transition-colors text-xs font-bold uppercase tracking-wide text-center ${
+                                  depth === opt.id 
+                                  ? 'border-[#05F2DB] bg-[#05F2DB]/10 text-[#05F2DB]' 
+                                  : 'border-white/10 bg-[#0B0F19] text-[#F2F2F2]/50 hover:border-white/30'
+                                }`}
+                              >
+                                {opt.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="md:w-[320px] bg-[#0B0F19] border border-white/5 p-8 flex flex-col justify-center">
+                      <h3 className="text-[10px] font-mono font-bold text-[#05F2DB] uppercase tracking-widest mb-6 flex items-center gap-2">
+                        <Activity className="w-3 h-3" /> {t.quote.totalTitle}
+                      </h3>
+                      
+                      <div className={`mb-6 transition-all duration-200 ${isCalculating ? 'opacity-30' : 'opacity-100'}`}>
+                        <div className="text-5xl font-black tracking-tighter mb-1 text-[#F2F2F2]">
+                          {getYield()}
+                        </div>
+                        <div className="text-xs font-bold text-[#F2F2F2]/40 uppercase tracking-widest">
+                          Cubic Yards
+                        </div>
+                      </div>
+                      
+                      <p className="text-[#F2F2F2]/40 text-xs mb-8 font-mono leading-relaxed">
+                        {t.quote.totalDesc}
+                      </p>
+                      
+                      <button 
+                        onClick={() => { window.scrollTo(0,0); setCurrentView('contact') }}
+                        className="w-full bg-[#05F2DB] text-[#0B0F19] font-bold text-sm py-4 hover:bg-white active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 uppercase tracking-wide"
+                      >
+                        {t.quote.ctaBtn} <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </motion.div>
+          )}
+
+          {currentView === 'contact' && (
+            <motion.div 
+              key="contact"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="flex-grow flex items-center bg-[#0B0F19] py-24 px-6 relative"
+            >
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#131926_1px,transparent_1px),linear-gradient(to_bottom,#131926_1px,transparent_1px)] bg-[size:64px_64px] opacity-30" />
+              
+              <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                <div>
+                  <SectionTag text={t.contactPage.tag} />
+                  <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-[#F2F2F2] uppercase leading-[0.9]">
+                    {t.contactPage.title}
+                  </h2>
+                  <p className="text-[#F2F2F2]/60 text-lg mb-12 max-w-md font-mono leading-relaxed">
+                    {t.contactPage.desc}
+                  </p>
+
+                  <div className="space-y-6 text-sm font-mono font-bold text-[#05F2DB]">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-[#131926] border border-white/10 flex items-center justify-center">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <span className="text-lg tracking-widest">+1 (800) 555-SLAB</span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-[#131926] border border-white/10 flex items-center justify-center">
+                        <Mail className="w-5 h-5" />
+                      </div>
+                      <span className="text-lg tracking-widest">dispatch@slabworks.com</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-[#131926] border border-white/10 p-10 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#05F2DB]/5 rounded-full blur-3xl" />
+                  
+                  <form className="space-y-6 relative z-10" onSubmit={(e) => { e.preventDefault(); setCurrentView('landing'); }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-[10px] font-mono font-bold text-[#05F2DB] uppercase tracking-widest mb-2">
+                          {t.contactPage.form.fn}
+                        </label>
+                        <input type="text" className="w-full bg-[#0B0F19] border border-white/10 p-4 text-[#F2F2F2] focus:outline-none focus:border-[#05F2DB] transition-colors font-mono text-sm" />
+                      </div>
+                      <div>
+                        <label className="block text-[10px] font-mono font-bold text-[#05F2DB] uppercase tracking-widest mb-2">
+                          {t.contactPage.form.ln}
+                        </label>
+                        <input type="text" className="w-full bg-[#0B0F19] border border-white/10 p-4 text-[#F2F2F2] focus:outline-none focus:border-[#05F2DB] transition-colors font-mono text-sm" />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-mono font-bold text-[#05F2DB] uppercase tracking-widest mb-2">
+                        {t.contactPage.form.email}
+                      </label>
+                      <input type="email" className="w-full bg-[#0B0F19] border border-white/10 p-4 text-[#F2F2F2] focus:outline-none focus:border-[#05F2DB] transition-colors font-mono text-sm" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-mono font-bold text-[#05F2DB] uppercase tracking-widest mb-2">
+                        {t.contactPage.form.scope}
+                      </label>
+                      <textarea rows={5} className="w-full bg-[#0B0F19] border border-white/10 p-4 text-[#F2F2F2] focus:outline-none focus:border-[#05F2DB] transition-colors font-mono text-sm"></textarea>
+                    </div>
+                    <button type="submit" className="w-full bg-[#05F2DB] text-[#0B0F19] font-black py-5 hover:bg-white transition-colors uppercase tracking-widest flex items-center justify-center gap-2">
+                      <Cpu className="w-5 h-5" /> {t.contactPage.form.submit}
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-[#0A0A0A] text-[#EEEEEE] pt-24 pb-12 border-t border-[#333333]">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-            <div className="md:col-span-2">
-              <div className="font-black text-3xl tracking-tighter uppercase mb-6">
-                SLAB<span className="text-[#666666]">WORKS</span>
-              </div>
-              <p className="text-[#888888] font-medium max-w-sm mb-8 leading-relaxed">
-                {t.footer.desc}
-              </p>
+      <footer className="py-12 border-t border-white/5 bg-[#0B0F19]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="font-sans font-black text-xl tracking-tighter flex items-center gap-2">
+            <div className="w-6 h-6 bg-[#05F2DB] text-[#0B0F19] flex items-center justify-center">
+              <Layers className="w-3 h-3" />
             </div>
-            <div>
-              <h4 className="font-black mb-6 tracking-widest text-xs uppercase text-[#555555]">{t.footer.contact}</h4>
-              <ul className="space-y-4 font-bold text-[#888888]">
-                <li>+1 (555) CON-CRET</li>
-                <li>dispatch@slabworks.com</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-black mb-6 tracking-widest text-xs uppercase text-[#555555]">{t.footer.legal}</h4>
-              <ul className="space-y-4 font-bold text-[#888888]">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
-              </ul>
-            </div>
+            SLABWORKS.
           </div>
-          <div className="pt-8 border-t border-[#333333] flex justify-between items-center text-xs font-black tracking-widest text-[#555555] uppercase">
-            <p>{t.footer.rights}</p>
-            <p>{t.footer.tag}</p>
+          
+          <div className="text-[#F2F2F2]/40 text-xs font-mono text-center md:text-left">
+            {t.footer.desc}
+          </div>
+          
+          <div className="text-[#05F2DB] text-xs font-mono font-bold uppercase tracking-widest">
+            {t.footer.tag}
           </div>
         </div>
       </footer>

@@ -2,36 +2,9 @@
 import { useState, useTransition } from 'react'
 import { submitLead } from '@/app/actions/lead'
 
-const dict = {
-  usa: {
-    title: 'Investor Relations',
-    subtitle: 'Request access to our quarterly thesis and financial disclosures.',
-    name: 'Full Name',
-    firm: 'Firm / Organization',
-    email: 'Corporate Email',
-    type: 'Investor Type',
-    types: ['Venture Capital', 'Private Equity', 'Family Office', 'Angel / Individual', 'Other'],
-    submit: 'Request Access',
-    submitting: 'Requesting...',
-    success: 'Request Received. Our IR team will review and respond shortly.'
-  },
-  mex: {
-    title: 'Relaciones con Inversores',
-    subtitle: 'Solicita acceso a nuestra tesis trimestral y divulgaciones financieras.',
-    name: 'Nombre Completo',
-    firm: 'Firma / Organización',
-    email: 'Correo Corporativo',
-    type: 'Tipo de Inversor',
-    types: ['Capital de Riesgo', 'Capital Privado', 'Family Office', 'Ángel / Individual', 'Otro'],
-    submit: 'Solicitar Acceso',
-    submitting: 'Solicitando...',
-    success: 'Solicitud Recibida. Nuestro equipo revisará y responderá en breve.'
-  }
-}
-
-export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
-  const isMexico = lang === 'es'
-  const t = dict[isMexico ? 'mex' : 'usa']
+export function HorizonInvestorForm({ dict }: { dict: any }) {
+  const t = dict.horizon.investor_form
+  const types = [t.type_vc, t.type_pe, t.type_fo, t.type_angel, t.type_other]
   
   const [submitted, setSubmitted] = useState(false)
   const [isPending, startTransition] = useTransition()
@@ -91,7 +64,7 @@ export function HorizonInvestorForm({ lang }: { lang: 'en' | 'es' }) {
         <div>
           <label className="block text-sm font-bold uppercase tracking-widest text-neutral-400 mb-4">{t.type}</label>
           <div className="flex flex-wrap gap-4">
-            {t.types.map(type => (
+            {types.map(type => (
               <label key={type} className="flex items-center gap-2 cursor-pointer group">
                 <input type="radio" name="investor_type" value={type} required className="accent-black w-4 h-4" />
                 <span className="text-neutral-500 group-hover:text-black transition-colors">{type}</span>

@@ -51,7 +51,7 @@ export default async function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen flex flex-col ${playfair.variable} ${inter.variable}`}>
+      <body suppressHydrationWarning className={`antialiased min-h-screen flex flex-col ${playfair.variable} ${inter.variable}`}>
         <Header dict={dict.nav} lang={resolvedParams.lang} />
         <main className="flex-1">{children}</main>
         <Footer dict={dict.footer} lang={resolvedParams.lang} />

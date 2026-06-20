@@ -1,6 +1,7 @@
 import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { HeaderLabs } from '@/components/HeaderLabs'
+import { FooterLabs } from '@/components/FooterLabs'
 import { playfair, inter } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
 import { Metadata } from 'next'
@@ -46,11 +47,12 @@ export default async function LabsLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
+      <body suppressHydrationWarning className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
         <HeaderLabs dict={dict} lang={resolvedParams.lang} />
         <main className="flex-1">
           {children}
         </main>
+        <FooterLabs dict={dict} lang={resolvedParams.lang} />
       </body>
     </html>
   )

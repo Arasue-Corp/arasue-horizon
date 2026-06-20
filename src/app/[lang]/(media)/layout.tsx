@@ -46,7 +46,7 @@ export default async function MediaLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
+      <body suppressHydrationWarning className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
         {/* Notice Media is Dark Mode by default */}
         <HeaderMedia dict={dict} lang={resolvedParams.lang} />
         <main className="flex-1">
