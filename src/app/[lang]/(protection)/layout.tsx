@@ -56,3 +56,8 @@ export default async function ProtectionLayout({
     </html>
   )
 }
+
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }]
+}

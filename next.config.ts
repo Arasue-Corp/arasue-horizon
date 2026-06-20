@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
+const isGithubPages = process.env.IS_GITHUB_PAGES === 'true';
+
 const nextConfig: NextConfig = {
+  output: isGithubPages ? 'export' : undefined,
+  basePath: isGithubPages ? '/arasue-horizon' : '',
   images: {
+    unoptimized: isGithubPages,
     remotePatterns: [
       {
         protocol: 'https',

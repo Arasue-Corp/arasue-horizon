@@ -37,3 +37,8 @@ export default async function WorkshopLayout({
     </html>
   )
 }
+
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }]
+}

@@ -57,3 +57,8 @@ export default async function LabsLayout({
     </html>
   )
 }
+
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }]
+}

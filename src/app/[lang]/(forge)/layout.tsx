@@ -55,3 +55,8 @@ export default async function ForgeLayout({
     </html>
   )
 }
+
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }]
+}
