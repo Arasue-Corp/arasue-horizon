@@ -29,7 +29,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.next()
   }
 
-  const country = request.geo?.country || request.headers.get('x-vercel-ip-country') || request.headers.get('cf-ipcountry') || 'US'
+  const country = (request as any).geo?.country || request.headers.get('x-vercel-ip-country') || request.headers.get('CF-IPCountry') || 'US'
   const simCountry = request.cookies.get('sim_country')?.value || country
 
   let locale = defaultLocale

@@ -36,7 +36,7 @@ export default async function MediaCreatorsPage({
             {dict.media.creators_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.media.creators_page.subtitle || dict.media.creators_page.content}
+            {dict.media.creators_page.subtitle }
           </p>
         </MotionDiv>
         

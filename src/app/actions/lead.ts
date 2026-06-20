@@ -1,4 +1,4 @@
-'use server'
+
 
 export async function submitLead(formData: FormData) {
   // In a real app, this is where you'd connect to HubSpot, Salesforce, PostgreSQL, etc.

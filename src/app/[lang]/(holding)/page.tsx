@@ -1,4 +1,4 @@
-import { getDictionary, Locale } from '@/i18n/dictionaries'
+import { getDictionary, type Locale } from '@/i18n/dictionaries'
 import Link from 'next/link'
 import { HorizonEcosystem } from '@/components/holding/HorizonEcosystem'
 import { HorizonLeadership } from '@/components/holding/HorizonLeadership'
@@ -20,14 +20,7 @@ export default async function HorizonPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   // Read locale preferences from middleware cookie
-  const cookieStore = await cookies()
-  const prefsCookie = cookieStore.get('arasue-locale-prefs')
   let prefs = { currency: 'USD', system: 'metric', country: 'US' }
-  if (prefsCookie) {
-    try {
-      prefs = JSON.parse(prefsCookie.value)
-    } catch(e) {}
-  }
   
   return (
     <div className="flex flex-col bg-[#F2F2F2]">

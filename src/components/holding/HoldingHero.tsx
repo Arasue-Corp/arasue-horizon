@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { useRef } from 'react'
 
-const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 }
+const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 
 // High-quality architecture image from Unsplash
 const bgImageUrl = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"

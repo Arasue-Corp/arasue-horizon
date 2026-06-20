@@ -13,7 +13,7 @@ const INVOICES = [
 ]
 
 // Smooth Spring Physics
-const springConfig = { type: "spring", stiffness: 300, damping: 30 }
+const springConfig = { type: "spring", stiffness: 300, damping: 30 } as const
 
 export function DashboardFacturas() {
   const [currentView, setCurrentView] = useState<'overview' | 'invoices' | 'new'>('overview')

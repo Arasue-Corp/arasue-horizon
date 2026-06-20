@@ -1,5 +1,4 @@
-import { getDictionary, Locale } from '@/i18n/dictionaries'
-import { cookies } from 'next/headers'
+import { getDictionary, type Locale } from '@/i18n/dictionaries'
 import { ForgeHero } from '@/components/forge/ForgeHero'
 import { ForgeTechMarquee } from '@/components/forge/ForgeTechMarquee'
 import { ForgePortfolio } from '@/components/forge/ForgePortfolio'
@@ -16,9 +15,7 @@ export default async function ForgePage({
 }) {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale)
-  const cookieStore = await cookies()
-  const country = cookieStore.get('user-country')?.value || 'US'
-  const isMexico = country === 'MX'
+  const isMexico = false
   
   const currencySymbol = isMexico ? '$' : '$'
 

@@ -165,8 +165,8 @@ const dict = {
   }
 }
 
-const springConfig = { type: "spring", stiffness: 300, damping: 30 }
-const layoutSpring = { type: "spring", stiffness: 200, damping: 25 }
+const springConfig = { type: "spring", stiffness: 300, damping: 30 } as const
+const layoutSpring = { type: "spring", stiffness: 200, damping: 25 } as const
 
 export function Ecommerce() {
   const [region, setRegion] = useState<'usa' | 'mex'>('usa')

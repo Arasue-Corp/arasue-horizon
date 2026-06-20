@@ -36,7 +36,7 @@ export default async function LabsShopPage({
             {dict.labs.shop_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.labs.shop_page.subtitle || dict.labs.shop_page.content}
+            {dict.labs.shop_page.subtitle }
           </p>
         </MotionDiv>
         

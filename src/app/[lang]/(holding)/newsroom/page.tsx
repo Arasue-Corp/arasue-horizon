@@ -36,7 +36,7 @@ export default async function NewsroomPage({
             {dict.corporate.newsroom.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.corporate.newsroom.subtitle || dict.corporate.newsroom.content}
+            {dict.corporate.newsroom.content}
           </p>
         </MotionDiv>
         

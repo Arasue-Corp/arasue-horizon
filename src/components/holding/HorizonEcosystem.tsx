@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 }
+const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 
 const dict = {
   usa: {

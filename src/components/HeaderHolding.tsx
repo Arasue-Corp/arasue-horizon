@@ -6,7 +6,7 @@ import { ChevronDown, Globe, Menu, X, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/ui/Logo'
 
 // Spring physics
-const spring = { type: "spring", stiffness: 300, damping: 30 }
+const spring = { type: "spring", stiffness: 300, damping: 30 } as const
 
 export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'

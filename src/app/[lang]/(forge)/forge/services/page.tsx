@@ -36,7 +36,7 @@ export default async function ForgeServicesPage({
             {dict.forge.services_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.forge.services_page.subtitle || dict.forge.services_page.content}
+            {dict.forge.services_page.subtitle}
           </p>
         </MotionDiv>
         

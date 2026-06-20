@@ -109,28 +109,28 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                   </div>
                   
                   <div className="flex flex-row md:flex-col gap-8 md:gap-2 text-left md:text-right">
-                    {service.priceSetup && (
+                    {(service as any).priceSetup && (
                       <div>
                         <span className="block text-xs font-mono uppercase tracking-widest text-foreground/40 mb-1">{dict.pricing.setup}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{service.priceSetup}</span>
+                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceSetup}</span>
                       </div>
                     )}
-                    {service.priceMo && (
+                    {(service as any).priceMo && (
                       <div>
                         <span className="block text-xs font-mono uppercase tracking-widest text-accent mb-1">{dict.pricing.mo}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{service.priceMo}</span>
+                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceMo}</span>
                       </div>
                     )}
-                    {service.priceOneTime && (
+                    {(service as any).priceOneTime && (
                       <div>
                         <span className="block text-xs font-mono uppercase tracking-widest text-foreground/40 mb-1">{dict.pricing.one_time}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{service.priceOneTime}</span>
+                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceOneTime}</span>
                       </div>
                     )}
-                    {service.priceRetainer && (
+                    {(service as any).priceRetainer && (
                       <div>
                         <span className="block text-xs font-mono uppercase tracking-widest text-accent mb-1">{dict.pricing.retainer}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{service.priceRetainer}</span>
+                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceRetainer}</span>
                       </div>
                     )}
                   </div>

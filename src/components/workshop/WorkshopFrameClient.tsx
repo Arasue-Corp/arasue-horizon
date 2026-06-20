@@ -4,7 +4,9 @@ import Link from 'next/link'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Monitor, Smartphone, ExternalLink } from 'lucide-react'
 
-export function WorkshopFrameClient({ 
+import { Suspense } from 'react'
+
+function WorkshopFrameClientInner({ 
   children, 
   lang, 
   isEn 
@@ -130,5 +132,23 @@ export function WorkshopFrameClient({
         )}
       </main>
     </>
+  )
+}
+
+export function WorkshopFrameClient({ 
+  children, 
+  lang, 
+  isEn 
+}: { 
+  children: React.ReactNode
+  lang: string
+  isEn: boolean 
+}) {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-[#0A0A0B] flex items-center justify-center"><div className="w-8 h-8 rounded-full border-2 border-white/20 border-t-white animate-spin" /></div>}>
+      <WorkshopFrameClientInner lang={lang} isEn={isEn}>
+        {children}
+      </WorkshopFrameClientInner>
+    </Suspense>
   )
 }

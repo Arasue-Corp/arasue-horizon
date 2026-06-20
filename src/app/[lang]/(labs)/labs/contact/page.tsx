@@ -37,7 +37,7 @@ export default async function LabsContactPage({
             {dict.labs.contact_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.labs.contact_page.subtitle || dict.labs.contact_page.content}
+            {dict.labs.contact_page.subtitle }
           </p>
         </MotionDiv>
         

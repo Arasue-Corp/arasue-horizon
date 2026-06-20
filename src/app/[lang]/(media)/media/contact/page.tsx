@@ -37,7 +37,7 @@ export default async function MediaContactPage({
             {dict.media.contact_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.media.contact_page.subtitle || dict.media.contact_page.content}
+            {dict.media.contact_page.subtitle }
           </p>
         </MotionDiv>
         

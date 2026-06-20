@@ -36,7 +36,7 @@ export default async function MediaWorkPage({
             {dict.media.work_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.media.work_page.subtitle || dict.media.work_page.content}
+            {dict.media.work_page.subtitle }
           </p>
         </MotionDiv>
         

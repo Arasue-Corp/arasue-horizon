@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import Image from 'next/image'
 
-const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 }
+const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 
 function TiltCard({ children, href, className }: { children: React.ReactNode, href: string, className: string }) {
   const ref = useRef<HTMLAnchorElement>(null)

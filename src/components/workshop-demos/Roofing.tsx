@@ -234,7 +234,7 @@ export function Roofing() {
   const t = dict[region]
 
   // Spring physics
-  const springTransition = { type: "spring", stiffness: 300, damping: 30 }
+  const springTransition = { type: "spring", stiffness: 300, damping: 30 } as const
 
   const toggleRegion = () => {
     setIsCalculating(true)
@@ -575,7 +575,7 @@ export function Roofing() {
                         <div>
                           <div className="flex justify-between items-end mb-6">
                             <label className="text-[10px] font-mono font-bold text-[#3B82F6] tracking-widest uppercase">{t.quote.areaTitle}</label>
-                            <span className="text-2xl font-black text-white">{size} <span className="text-xs font-mono text-[#94A3B8]">{t.quote.areaUnit}</span></span>
+                            <span className="flex items-baseline gap-2"><span className="text-4xl font-black text-white">{size}</span> <span className="text-xs font-mono text-[#94A3B8]">{(t.quote as any).areaUnit}</span></span>
                           </div>
                           <input 
                             type="range" 
