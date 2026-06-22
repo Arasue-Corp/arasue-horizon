@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { getDictionary, type Locale } from '@/i18n/dictionaries'
 import Link from 'next/link'
 import { HorizonEcosystem } from '@/components/holding/HorizonEcosystem'

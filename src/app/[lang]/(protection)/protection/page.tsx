@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import { ProtectionClient } from './ProtectionClient'
 
 export default async function ProtectionPage({
