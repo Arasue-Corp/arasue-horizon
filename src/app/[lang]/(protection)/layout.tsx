@@ -1,4 +1,3 @@
-export const runtime = 'edge';
 import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { HeaderProtection } from '@/components/HeaderProtection'
