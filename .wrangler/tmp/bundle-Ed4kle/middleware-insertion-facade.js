@@ -1,0 +1,11 @@
+				import worker, * as OTHER_EXPORTS from "/home/alex-ai/Documents/Josue Personal/Trabajo/Arasue Corp/Arasue Horizon/.wrangler/tmp/pages-9rjhY1/functionsWorker-0.848577960996961.mjs";
+				import * as __MIDDLEWARE_0__ from "/home/alex-ai/.npm/_npx/d77349f55c2be1c0/node_modules/wrangler/templates/middleware/middleware-ensure-req-body-drained.ts";
+import * as __MIDDLEWARE_1__ from "/home/alex-ai/.npm/_npx/d77349f55c2be1c0/node_modules/wrangler/templates/middleware/middleware-miniflare3-json-error.ts";
+
+				export * from "/home/alex-ai/Documents/Josue Personal/Trabajo/Arasue Corp/Arasue Horizon/.wrangler/tmp/pages-9rjhY1/functionsWorker-0.848577960996961.mjs";
+				const MIDDLEWARE_TEST_INJECT = "__INJECT_FOR_TESTING_WRANGLER_MIDDLEWARE__";
+				export const __INTERNAL_WRANGLER_MIDDLEWARE__ = [
+					
+					__MIDDLEWARE_0__.default,__MIDDLEWARE_1__.default
+				]
+				export default worker;

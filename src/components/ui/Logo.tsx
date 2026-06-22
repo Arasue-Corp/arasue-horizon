@@ -30,13 +30,10 @@ export function Logo({ division, className = '', iconSize = 28 }: LogoProps) {
     return (
       <div className={`flex items-center group ${className}`}>
         {/* The image itself contains the text and logo mark */}
-        <Image 
+        <img 
           src={imageSrc} 
           alt={`Arasue ${division} Logo`} 
-          width={180} 
-          height={60} 
-          className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-          priority
+          className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
         />
       </div>
     )

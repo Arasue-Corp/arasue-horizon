@@ -29,13 +29,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       siteName: dict.nav.horizon,
       locale: resolvedParams.lang,
       type: 'website',
-    },
-    icons: {
-      icon: [
-        { url: '/icono-horizon-negro.png', media: '(prefers-color-scheme: light)' },
-        { url: '/icono-horizon-blanco.png', media: '(prefers-color-scheme: dark)' },
-      ],
-      apple: '/icono-horizon-negro.png',
     }
   }
 }
