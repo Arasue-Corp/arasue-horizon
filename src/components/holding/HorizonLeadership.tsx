@@ -14,8 +14,8 @@ export function HorizonLeadership({ dict }: { dict: any }) {
   return (
     <div className="max-w-7xl mx-auto px-6">
       <div className="text-center mb-24">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">{t.title}</h2>
-        <p className="text-xl text-neutral-500 max-w-2xl mx-auto">{t.subtitle}</p>
+        <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-[#162D59]">{t.title}</h2>
+        <p className="text-xl text-neutral-600 max-w-2xl mx-auto">{t.subtitle}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -28,7 +28,8 @@ export function HorizonLeadership({ dict }: { dict: any }) {
             transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
             className="group"
           >
-            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 bg-neutral-100 relative">
+            <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 bg-[#162D59]/10 relative">
+              {/* Para usar tus propias fotos, cambia src a '/leadership/tu-foto.jpg' */}
               <Image 
                 src={`https://images.unsplash.com/photo-${leader.img}?q=80&w=600&auto=format&fit=crop`} 
                 alt={leader.name} 
@@ -37,9 +38,11 @@ export function HorizonLeadership({ dict }: { dict: any }) {
                 className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
               />
             </div>
-            <h3 className="text-2xl font-bold mb-2">{leader.name}</h3>
-            <div className="text-sm font-bold uppercase tracking-widest text-neutral-400 mb-4">{leader.role}</div>
-            <p className="text-neutral-500 leading-relaxed">{leader.desc}</p>
+            <h3 className="text-2xl font-bold mb-2 text-[#162D59]">{leader.name}</h3>
+            <div className="text-sm font-bold uppercase tracking-widest text-[#A65E44] mb-4">{leader.role}</div>
+            <p className="text-neutral-600 leading-relaxed">{leader.desc}</p>
+            {/* Ejemplo para descargar CV */}
+            {/* <a href="/leadership/tu-cv.pdf" download className="mt-4 inline-block text-sm font-bold text-[#162D59] underline">Descargar CV</a> */}
           </motion.div>
         ))}
       </div>
