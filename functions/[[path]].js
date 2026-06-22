@@ -16,15 +16,16 @@ export async function onRequest(context) {
   const locales = ['es', 'en'];
   const defaultLocale = 'es';
 
-  // Cloudflare provides country code via cf.country or cf-ipcountry header
-  let country = 'US';
-  if (request.cf && request.cf.country) {
-    country = request.cf.country;
-  } else {
-    country = request.headers.get('cf-ipcountry') || 'US';
+  // 1. Detect locale from pathname if present
+  let urlLocale = null;
+  for (const l of locales) {
+    if (pathname.startsWith(`/${l}/`) || pathname === `/${l}`) {
+      urlLocale = l;
+      break;
+    }
   }
-  
-  // Parse cookies
+
+  // 2. Parse existing cookie preferences
   const cookieHeader = request.headers.get('Cookie') || '';
   const cookies = {};
   cookieHeader.split(';').forEach(cookie => {
@@ -34,20 +35,30 @@ export async function onRequest(context) {
     }
   });
 
+  let existingPrefs = {};
+  try {
+    if (cookies['arasue-locale-prefs']) {
+      existingPrefs = JSON.parse(decodeURIComponent(cookies['arasue-locale-prefs']));
+    }
+  } catch(e) {}
+
+  // 3. Determine base country
+  let country = 'US';
+  if (request.cf && request.cf.country) {
+    country = request.cf.country;
+  } else {
+    country = request.headers.get('cf-ipcountry') || 'US';
+  }
   const simCountry = cookies['sim_country'] || country;
 
+  // 4. Determine Locale
+  // Precedence: URL > Cookie > Browser > Default
   let locale = defaultLocale;
-  let currency = 'USD';
-  let system = 'metric';
-
-  if (simCountry === 'US') {
-    locale = 'en';
-    currency = 'USD';
-    system = 'imperial';
-  } else if (simCountry === 'MX') {
-    locale = 'es';
-    currency = 'MXN';
-    system = 'metric';
+  
+  if (urlLocale) {
+    locale = urlLocale;
+  } else if (existingPrefs.locale) {
+    locale = existingPrefs.locale;
   } else {
     const acceptLanguage = request.headers.get('accept-language');
     if (acceptLanguage) {
@@ -58,9 +69,17 @@ export async function onRequest(context) {
     }
   }
 
-  const pathnameHasLocale = locales.some(
-    (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`
-  );
+  // 5. Determine Currency and System based on Country
+  let currency = 'USD';
+  let system = 'metric';
+
+  if (simCountry === 'US') {
+    currency = 'USD';
+    system = 'imperial';
+  } else if (simCountry === 'MX') {
+    currency = 'MXN';
+    system = 'metric';
+  }
 
   const prefs = { currency, system, locale, country: simCountry };
   
