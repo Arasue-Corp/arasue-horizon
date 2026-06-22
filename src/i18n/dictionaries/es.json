@@ -386,5 +386,42 @@
         "investors": "Relaciones con Inversores"
       }
     }
+  },
+  "josue_profile": {
+    "title": "Josue Daniel Lopez Barreras",
+    "role": "CEO & Co-Fundador, Arasue Horizon | Technical Product Manager",
+    "download_cv": "Descargar CV",
+    "linkedin": "Conectar",
+    "summary": "Technical Product Manager impulsado por resultados con amplia experiencia entregando productos SaaS empresariales en la intersección de InsurTech, HealthTech y automatización por Inteligencia Artificial. Con un fuerte enfoque en la excelencia operativa y arquitectura de sistemas complejos, ha diseñado integraciones API de alto calibre y motores LLM \"Zero-Touch\" para escalar empresas a nivel global sin comprometer el cumplimiento regulatorio o la seguridad.",
+    "experience_title": "Trayectoria Ejecutiva y Técnica",
+    "skills_title": "Competencias Fundamentales",
+    "education_title": "Formación y Reconocimientos",
+    "exp_alex": {
+      "role": "Head of Product & Technical Program Manager",
+      "company": "Alex AI (MoRe Engineering LLC)",
+      "date": "Oct 2024 – Presente",
+      "desc": "Lideró el ciclo de vida completo para una plataforma empresarial de seguros impulsada por IA. Consolidó 4 sistemas heredados, reduciendo el TCO en 75% y desarrolló un motor de automatización LLM \"Zero-Touch\" que aceleró los tiempos de procesamiento de 40 a menos de 5 minutos."
+    },
+    "exp_tesla": {
+      "role": "Regional Head of Product — LatAm",
+      "company": "Tesla Insurtech SPA",
+      "date": "Ene 2020 – Oct 2024",
+      "desc": "Arquitectó el API Gateway Multi-Carrier integrando a Liberty Mutual, SURA y HDI. Lideró la expansión del producto en más de 5 mercados latinoamericanos, automatizando un 85% de las tareas operativas de seguros."
+    },
+    "exp_primex": {
+      "role": "Senior Program Manager — Healthcare & IoT",
+      "company": "Global Primex Tecnología",
+      "date": "Jun 2020 – Oct 2024",
+      "desc": "Gestionó un portafolio de $5M+ en sistemas de mantenimiento predictivo IoT para equipamiento médico crítico, logrando 99.9% de uptime y coordinando ingenieros de hardware/software globales."
+    },
+    "skills_categories": {
+      "architecture": "Arquitectura y Sistemas",
+      "ai": "Automatización IA (LLM / n8n)",
+      "product": "Product Management & SaaS",
+      "domain": "Regulación InsurTech / HealthTech"
+    },
+    "edu_degree": "Licenciatura en Ingeniería Biomédica (Biónica)",
+    "edu_school": "Tecnológico Nacional de México",
+    "edu_honors": "Valedictorian (GPA 99/100) — Mejor Graduado, Clase 2018 | Premio Estatal al Mérito Académico en Ingeniería"
   }
 }

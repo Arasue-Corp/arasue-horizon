@@ -386,5 +386,42 @@
         "investors": "Investor Relations"
       }
     }
+  },
+  "josue_profile": {
+    "title": "Josue Daniel Lopez Barreras",
+    "role": "CEO & Co-Founder, Arasue Horizon | Technical Product Manager",
+    "download_cv": "Download CV",
+    "linkedin": "Connect",
+    "summary": "Results-driven Technical Product Manager with 8+ years of experience delivering enterprise SaaS products at the intersection of InsurTech, HealthTech, and AI automation. With a strong focus on operational excellence and complex system architecture, he has engineered high-caliber multi-carrier API integrations and \"Zero-Touch\" LLM engines to scale businesses globally without compromising regulatory compliance or security.",
+    "experience_title": "Executive & Technical Experience",
+    "skills_title": "Core Competencies",
+    "education_title": "Education & Honors",
+    "exp_alex": {
+      "role": "Head of Product & Technical Program Manager",
+      "company": "Alex AI (MoRe Engineering LLC)",
+      "date": "Oct 2024 – Present",
+      "desc": "Owned end-to-end product lifecycle for an AI-powered enterprise insurance platform. Consolidated 4 legacy systems, reducing TCO by 75%, and engineered a Zero-Touch LLM automation engine that cut processing times from 40 to under 5 minutes."
+    },
+    "exp_tesla": {
+      "role": "Regional Head of Product — LatAm",
+      "company": "Tesla Insurtech SPA",
+      "date": "Jan 2020 – Oct 2024",
+      "desc": "Architected a Multi-Carrier API Gateway integrating Liberty Mutual, SURA, and HDI. Led product expansion across 5+ Latin American markets, automating 85% of insurance operational tasks."
+    },
+    "exp_primex": {
+      "role": "Senior Program Manager — Healthcare & IoT",
+      "company": "Global Primex Tecnología",
+      "date": "Jun 2020 – Oct 2024",
+      "desc": "Managed a $5M+ portfolio of IoT-based predictive maintenance systems for critical healthcare equipment across 15,000+ sites, achieving 99.9% uptime and coordinating global hardware/software engineers."
+    },
+    "skills_categories": {
+      "architecture": "Architecture & Systems",
+      "ai": "AI Automation (LLM / n8n)",
+      "product": "Product Management & SaaS",
+      "domain": "InsurTech / HealthTech Regs"
+    },
+    "edu_degree": "B.S. in Biomedical Engineering (Bionics)",
+    "edu_school": "Tecnológico Nacional de México",
+    "edu_honors": "Valedictorian (GPA 3.96/4.0) — Best Graduate, Class of 2018 | State Award for Academic Merit in Engineering"
   }
 }
