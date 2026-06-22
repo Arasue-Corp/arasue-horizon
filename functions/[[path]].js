@@ -87,7 +87,7 @@ export async function onRequest(context) {
   const prefsCookie = `arasue-locale-prefs=${JSON.stringify(prefs)}; Path=/; SameSite=Lax`;
   const countryCookie = `user-country=${simCountry}; Path=/; SameSite=Lax`;
 
-  if (!pathnameHasLocale) {
+  if (!urlLocale) {
     url.pathname = `/${locale}${pathname}`;
     const headers = new Headers();
     headers.append('Location', url.toString());
