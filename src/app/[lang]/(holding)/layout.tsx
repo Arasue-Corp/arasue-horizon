@@ -1,3 +1,4 @@
+export const dynamicParams = false;
 import '../../globals.css'
 import { HeaderHolding as Header } from "@/components/HeaderHolding"
 import { FooterHolding as Footer } from "@/components/FooterHolding"

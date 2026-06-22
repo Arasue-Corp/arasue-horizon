@@ -1,3 +1,4 @@
+export const dynamicParams = false;
 import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { HeaderLabs } from '@/components/HeaderLabs'

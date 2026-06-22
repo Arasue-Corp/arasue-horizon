@@ -1,3 +1,4 @@
+export const dynamicParams = false;
 import dynamic from 'next/dynamic'
 
 const WebCorporativa = dynamic(() => import('@/components/workshop-demos/WebCorporativa').then(mod => mod.WebCorporativa))
