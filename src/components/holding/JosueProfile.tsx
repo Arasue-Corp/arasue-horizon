@@ -1,7 +1,7 @@
 "use client";
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowDownToLine, Link as LinkIcon } from 'lucide-react'
+import { ArrowDownToLine, Link as LinkIcon, Trophy } from 'lucide-react'
 import Link from 'next/link'
 import { useRef } from 'react'
 
@@ -127,23 +127,25 @@ export function JosueProfile({ dict }: { dict: any }) {
             </div>
           </div>
 
-          {/* Skills Grid */}
+          {/* Technical Skills Grid */}
           <div className="mb-32">
             <div className="flex items-center gap-4 mb-16">
               <div className="w-12 h-[1px] bg-[#ffcc00]" />
-              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.skills_title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.tech_skills_title || p.skills_title}</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <PremiumSkillCard title={p.skills_categories.architecture} items={["Multi-Carrier API Gateway", "Zero-Trust Architecture", "RESTful APIs & Webhooks"]} delay={0} />
-              <PremiumSkillCard title={p.skills_categories.ai} items={["LLM Agents & Prompt Eng", "n8n Workflow Automation", "Claude & Gemini APIs"]} delay={0.1} />
-              <PremiumSkillCard title={p.skills_categories.product} items={["Enterprise SaaS Lifecycle", "Agile / Scrum / SAFe", "Go-to-Market Strategy"]} delay={0.2} />
-              <PremiumSkillCard title={p.skills_categories.domain} items={["HIPAA & SOC 2 Compliance", "P&C Insurance Core", "EHR/EMR Systems"]} delay={0.3} />
+              <PremiumSkillCard title={p.tech_skills.pm.label} items={p.tech_skills.pm.items.split(', ')} delay={0} />
+              <PremiumSkillCard title={p.tech_skills.ai.label} items={p.tech_skills.ai.items.split(', ')} delay={0.1} />
+              <PremiumSkillCard title={p.tech_skills.api.label} items={p.tech_skills.api.items.split(', ')} delay={0.2} />
+              <PremiumSkillCard title={p.tech_skills.domain.label} items={p.tech_skills.domain.items.split(', ')} delay={0.3} />
+              <PremiumSkillCard title={p.tech_skills.data.label} items={p.tech_skills.data.items.split(', ')} delay={0.4} />
+              <PremiumSkillCard title={p.tech_skills.eng.label} items={p.tech_skills.eng.items.split(', ')} delay={0.5} />
             </div>
           </div>
 
           {/* Education */}
-          <div className="mb-24">
+          <div className="mb-32">
             <div className="flex items-center gap-4 mb-16">
               <div className="w-12 h-[1px] bg-[#ffcc00]" />
               <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.education_title}</h3>
@@ -163,6 +165,36 @@ export function JosueProfile({ dict }: { dict: any }) {
                 {p.edu_honors}
               </p>
             </motion.div>
+          </div>
+
+          {/* Honors & Awards */}
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-12 h-[1px] bg-[#ffcc00]" />
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.honors_title}</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {p.honors?.map((honor: any, i: number) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.1 }}
+                  className="bg-white/[0.02] border border-white/5 p-8 backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500 flex flex-col justify-between"
+                >
+                  <div>
+                    <Trophy className="w-6 h-6 text-[#ffcc00] mb-4 opacity-80" />
+                    <h4 className="font-bold text-white mb-4 text-lg leading-tight">{honor.title}</h4>
+                  </div>
+                  <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
+                    <span className="text-[#ffcc00]/80 text-xs font-bold uppercase tracking-widest">{honor.issuer}</span>
+                    <span className="text-white/40 font-mono text-sm">{honor.year}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
         </div>

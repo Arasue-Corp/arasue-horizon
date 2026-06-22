@@ -432,6 +432,22 @@
     },
     "edu_degree": "Licenciatura en Ingeniería Biomédica (Biónica)",
     "edu_school": "Tecnológico Nacional de México",
-    "edu_honors": "Valedictorian (GPA 99/100) — Mejor Graduado, Clase 2018 | Premio Estatal al Mérito Académico en Ingeniería"
+    "edu_honors": "Valedictorian (GPA 99/100) — Mejor Graduado, Clase 2018 | Premio Estatal al Mérito Académico en Ingeniería",
+    "tech_skills_title": "Habilidades Técnicas",
+    "tech_skills": {
+      "pm": { "label": "Product & PM Tools", "items": "JIRA, Asana, Monday.com, Confluence, Aha!, Productboard, Miro, Linear, Notion" },
+      "ai": { "label": "IA & Automatización", "items": "Claude API, Gemini API, n8n, OpenAI API, LLM Prompt Engineering, AI Agent Design" },
+      "api": { "label": "Integración & APIs", "items": "RESTful APIs, Multi-carrier APIs (Liberty, SURA, HDI), Postman, Swagger/OpenAPI, Webhooks" },
+      "domain": { "label": "HealthTech & InsurTech", "items": "EHR/EMR (Epic, Cerner), Cumplimiento HIPAA, Plataformas P&C, Guidewire, Ciclo de vida de pólizas" },
+      "data": { "label": "Data & Analytics", "items": "SQL, Python, Looker, Google Analytics, A/B Testing, Frameworks de Métricas" },
+      "eng": { "label": "Colaboración Técnica", "items": "Git, Agile/Scrum, SAFe, Sprint Planning, PRD Authoring, Acceptance Criteria, API Specs" }
+    },
+    "honors_title": "Premios y Reconocimientos",
+    "honors": [
+      { "title": "Premio Estatal al Mérito Académico en Ingeniería", "issuer": "Gobierno de Sonora", "year": "2017" },
+      { "title": "Valedictorian & Mejor Graduado", "issuer": "TecNM-ITH", "year": "2018–2019" },
+      { "title": "1er Lugar — Competencia Nacional ENEIT (Categoría Producto/Servicio)", "issuer": "ENEIT", "year": "2017" },
+      { "title": "Galardón a la Excelencia ITH (Doble Nominación)", "issuer": "TecNM-ITH", "year": "2017 & 2018" }
+    ]
   }
 }

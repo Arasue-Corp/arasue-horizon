@@ -432,6 +432,22 @@
     },
     "edu_degree": "B.S. in Biomedical Engineering (Bionics)",
     "edu_school": "Tecnológico Nacional de México",
-    "edu_honors": "Valedictorian (GPA 3.96/4.0) — Best Graduate, Class of 2018 | State Award for Academic Merit in Engineering"
+    "edu_honors": "Valedictorian (GPA 3.96/4.0) — Best Graduate, Class of 2018 | State Award for Academic Merit in Engineering",
+    "tech_skills_title": "Technical Skills",
+    "tech_skills": {
+      "pm": { "label": "Product & PM Tools", "items": "JIRA, Asana, Monday.com, Confluence, Aha!, Productboard, Miro, Linear, Notion" },
+      "ai": { "label": "AI & Automation", "items": "Claude API, Gemini API, n8n, OpenAI API, LLM Prompt Engineering, AI Agent Design" },
+      "api": { "label": "Integration & APIs", "items": "RESTful APIs, Multi-carrier APIs (Liberty, SURA, HDI), Postman, Swagger/OpenAPI, Webhooks" },
+      "domain": { "label": "HealthTech & InsurTech", "items": "EHR/EMR (Epic, Cerner), HIPAA Compliance, P&C Platforms, Guidewire, Policy Lifecycle" },
+      "data": { "label": "Data & Analytics", "items": "SQL, Python, Looker, Google Analytics, A/B Testing, Product Metrics Frameworks" },
+      "eng": { "label": "Engineering Collab", "items": "Git, Agile/Scrum, SAFe, Sprint Planning, PRD Authoring, Acceptance Criteria, API Specs" }
+    },
+    "honors_title": "Honors & Awards",
+    "honors": [
+      { "title": "State Award for Academic Merit in Engineering", "issuer": "Government of Sonora", "year": "2017" },
+      { "title": "Valedictorian & Best Graduate", "issuer": "TecNM-ITH", "year": "2018–2019" },
+      { "title": "1st Place — ENEIT National Engineering Competition (Product/Service)", "issuer": "ENEIT", "year": "2017" },
+      { "title": "ITH Excellence Award (2× recipient)", "issuer": "TecNM-ITH", "year": "2017 & 2018" }
+    ]
   }
 }
