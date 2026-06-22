@@ -16,8 +16,9 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
         <Link href={`/${lang}`} className="underline hover:opacity-100 transition-opacity">Return to Holding</Link>
       </div>
       <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
-        <Link href={`/${lang}/forge`} className="py-2">
-          <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
+        <Link href={`/${lang}/forge`} className="relative z-50 flex-shrink-0 flex items-center h-full py-2">
+          <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="absolute top-1/2 -translate-y-1/2 left-0 h-16 md:h-24 w-auto object-contain transition-transform hover:scale-105 drop-shadow-2xl" />
+          <div className="w-16 md:w-24 h-8" />
         </Link>
         
         <nav className="hidden md:flex gap-6 text-sm font-bold">

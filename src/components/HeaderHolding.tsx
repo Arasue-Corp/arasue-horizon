@@ -31,12 +31,14 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
       <motion.div 
         layout
         transition={spring}
-        className={`pointer-events-auto flex flex-col bg-secondary/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden ${scrolled ? 'rounded-[2rem] px-4 py-2' : 'w-full max-w-7xl rounded-[2rem] px-6 py-4'}`}
+        className={`pointer-events-auto flex flex-col bg-secondary/90 backdrop-blur-xl border border-white/10 shadow-2xl ${scrolled ? 'rounded-[2rem] px-4 py-2' : 'w-full max-w-7xl rounded-[2rem] px-6 py-4'}`}
       >
-        <div className="flex items-center justify-between w-full gap-8">
-          {/* Logo */}
-          <Link href={`/${lang}`} className="relative z-10 flex-shrink-0" onClick={() => setActiveMenu(null)}>
-            <img src="/icono-horizon-oro.png" alt="Arasue Horizon Icon" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
+        <div className="flex items-center justify-between w-full gap-8 relative">
+          {/* Logo - Pops out of the container */}
+          <Link href={`/${lang}`} className="relative z-50 flex-shrink-0 flex items-center h-full" onClick={() => setActiveMenu(null)}>
+            <img src="/icono-horizon-oro.png" alt="Arasue Horizon Icon" className="absolute top-1/2 -translate-y-1/2 left-0 h-16 md:h-24 w-auto object-contain transition-transform hover:scale-105 drop-shadow-2xl" />
+            {/* Spacer */}
+            <div className="w-16 md:w-24 h-8" />
           </Link>
           
           {/* Desktop Nav */}
@@ -91,7 +93,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={spring}
-              className="w-full pt-6"
+              className="w-full pt-6 overflow-hidden"
             >
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-4">
                 <MenuLink title={dict.holding_menu.overview} desc={dict.holding_menu.overview_desc} href={`/${lang}/about`} />
@@ -107,7 +109,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={spring}
-              className="w-full pt-6"
+              className="w-full pt-6 overflow-hidden"
             >
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-4">
                 <MenuLink title="Arasue Forge" desc="Digital products & SaaS" href={`/${lang}/forge`} color="#0511F2" />
@@ -123,7 +125,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={spring}
-              className="w-full pt-6"
+              className="w-full pt-6 overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-white/10 pt-4">
                 <MenuLink title="Web Development" desc="Next.js & React ecosystem" href={`/${lang}/forge/services`} />
@@ -138,7 +140,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={spring}
-              className="w-full flex flex-col gap-4 pt-6 border-t border-white/10 mt-4"
+              className="w-full flex flex-col gap-4 pt-6 border-t border-white/10 mt-4 overflow-hidden"
             >
               <Link href={`/${lang}/forge`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Forge</Link>
               <Link href={`/${lang}/media`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Media</Link>
