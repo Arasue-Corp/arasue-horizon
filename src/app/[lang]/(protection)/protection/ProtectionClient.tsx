@@ -1,9 +1,22 @@
 "use client"
 import { motion } from 'framer-motion'
 import { Shield, Server, Lock, AlertTriangle, ArrowRight, ShieldCheck, Database, Network, Eye, Crosshair } from 'lucide-react'
+import { useState, useTransition } from 'react'
+import { submitLead } from '@/app/actions/lead'
 
 export function ProtectionClient({ lang }: { lang: 'en' | 'es' }) {
   const isEn = lang === 'en'
+  const [isPending, startTransition] = useTransition()
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    startTransition(async () => {
+      await submitLead(formData)
+      setIsSuccess(true)
+    })
+  }
 
   return (
     <div className="flex flex-col font-sans bg-background selection:bg-primary selection:text-primary-foreground">
@@ -290,35 +303,44 @@ export function ProtectionClient({ lang }: { lang: 'en' | 'es' }) {
               &gt; Secure your digital assets before a breach occurs. Run our preliminary assessment to receive a custom security and infrastructure roadmap.
             </p>
 
-            <form className="space-y-6 font-mono text-sm">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-white/50">organization_name</label>
-                  <input type="text" className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Acme Corp" />
+            {isSuccess ? (
+              <div className="text-green-400 font-mono text-sm space-y-2">
+                <p>&gt; Request transmitted securely.</p>
+                <p>&gt; Our security architects will contact you shortly.</p>
+                <button onClick={() => setIsSuccess(false)} className="mt-8 text-white/50 hover:text-white underline decoration-white/30 underline-offset-4">Reset Terminal</button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6 font-mono text-sm">
+                <input type="hidden" name="source" value="ProtectionClientForm" />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-white/50">organization_name</label>
+                    <input name="organization" required type="text" className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Acme Corp" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-white/50">corporate_email</label>
+                    <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="cto@acmecorp.com" />
+                  </div>
                 </div>
+
                 <div className="space-y-2">
-                  <label className="text-white/50">corporate_email</label>
-                  <input type="email" className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="cto@acmecorp.com" />
+                  <label className="text-white/50">primary_concern</label>
+                  <select name="concern" className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
+                    <option className="bg-slate-900" value="Cyber Insurance Policy">Cyber Insurance Policy</option>
+                    <option className="bg-slate-900" value="Compliance Audit (SOC 2 / GDPR)">Compliance Audit (SOC 2 / GDPR)</option>
+                    <option className="bg-slate-900" value="Infrastructure Hardening">Infrastructure Hardening</option>
+                    <option className="bg-slate-900" value="General Security Assessment">General Security Assessment</option>
+                  </select>
                 </div>
-              </div>
 
-              <div className="space-y-2">
-                <label className="text-white/50">primary_concern</label>
-                <select className="w-full bg-white/5 border border-white/10 p-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
-                  <option className="bg-slate-900">Cyber Insurance Policy</option>
-                  <option className="bg-slate-900">Compliance Audit (SOC 2 / GDPR)</option>
-                  <option className="bg-slate-900">Infrastructure Hardening</option>
-                  <option className="bg-slate-900">General Security Assessment</option>
-                </select>
-              </div>
-
-              <div className="pt-6">
-                <button type="button" className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
-                  <Lock className="w-4 h-4" />
-                  Execute Query
-                </button>
-              </div>
-            </form>
+                <div className="pt-6">
+                  <button type="submit" disabled={isPending} className="w-full md:w-auto px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
+                    <Lock className="w-4 h-4" />
+                    {isPending ? 'Executing...' : 'Execute Query'}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </section>

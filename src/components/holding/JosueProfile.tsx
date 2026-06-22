@@ -127,11 +127,35 @@ export function JosueProfile({ dict }: { dict: any }) {
             </div>
           </div>
 
+          {/* Core Competencies Grid */}
+          <div className="mb-32">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-12 h-[1px] bg-[#ffcc00]" />
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.skills_title}</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {Object.entries(p.skills_categories || {}).map(([key, label]: [string, any], i: number) => (
+                <motion.div 
+                  key={key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", stiffness: 200, damping: 20, delay: i * 0.1 }}
+                  className="bg-white/[0.02] border border-white/5 p-8 backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500"
+                >
+                  <div className="w-2 h-2 bg-[#ffcc00] mb-6 shadow-[0_0_10px_rgba(255,204,0,0.5)]" />
+                  <h4 className="font-bold text-white text-lg leading-tight">{label}</h4>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
           {/* Technical Skills Grid */}
           <div className="mb-32">
             <div className="flex items-center gap-4 mb-16">
               <div className="w-12 h-[1px] bg-[#ffcc00]" />
-              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.tech_skills_title || p.skills_title}</h3>
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.tech_skills_title}</h3>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

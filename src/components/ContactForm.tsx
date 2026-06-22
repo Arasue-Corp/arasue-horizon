@@ -1,18 +1,20 @@
 "use client"
-import { useState } from 'react'
+import { useState, useTransition } from 'react'
 import { motion } from 'framer-motion'
+import { submitLead } from '@/app/actions/lead'
 import { Send, CheckCircle2 } from 'lucide-react'
 
 export function ContactForm() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
+  const [isPending, startTransition] = useTransition()
+  const [status, setStatus] = useState<'idle' | 'success'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setStatus('submitting')
-    // Simulate API call
-    setTimeout(() => {
+    const formData = new FormData(e.currentTarget)
+    startTransition(async () => {
+      await submitLead(formData)
       setStatus('success')
-    }, 1500)
+    })
   }
 
   if (status === 'success') {
@@ -39,10 +41,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <input type="hidden" name="source" value="ContactForm" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm font-semibold px-2">Name</label>
           <input 
+            name="name"
             type="text" 
             required
             placeholder="John Doe"
@@ -52,6 +56,7 @@ export function ContactForm() {
         <div className="space-y-2">
           <label className="text-sm font-semibold px-2">Email</label>
           <input 
+            name="email"
             type="email" 
             required
             placeholder="john@example.com"
@@ -61,17 +66,18 @@ export function ContactForm() {
       </div>
       <div className="space-y-2">
         <label className="text-sm font-semibold px-2">Subject</label>
-        <select className="w-full bg-background border border-foreground/10 rounded-2xl px-6 py-4 outline-none focus:border-foreground/30 focus:ring-4 focus:ring-foreground/5 transition-all appearance-none">
-          <option>General Inquiry</option>
-          <option>Arasue Forge (Development & Ads)</option>
-          <option>Arasue Media (Content Creation)</option>
-          <option>Arasue Labs (Products)</option>
-          <option>Arasue Protection (Insurance)</option>
+        <select name="subject" className="w-full bg-background border border-foreground/10 rounded-2xl px-6 py-4 outline-none focus:border-foreground/30 focus:ring-4 focus:ring-foreground/5 transition-all appearance-none">
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Arasue Forge">Arasue Forge (Development & Ads)</option>
+          <option value="Arasue Media">Arasue Media (Content Creation)</option>
+          <option value="Arasue Labs">Arasue Labs (Products)</option>
+          <option value="Arasue Protection">Arasue Protection (Insurance)</option>
         </select>
       </div>
       <div className="space-y-2">
         <label className="text-sm font-semibold px-2">Message</label>
         <textarea 
+          name="message"
           required
           rows={4}
           placeholder="How can we help you?"
@@ -80,10 +86,10 @@ export function ContactForm() {
       </div>
       <button 
         type="submit" 
-        disabled={status === 'submitting'}
+        disabled={isPending}
         className="w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 rounded-2xl font-bold active:scale-[0.98] hover:opacity-90 transition-all disabled:opacity-70"
       >
-        {status === 'submitting' ? 'Sending...' : (
+        {isPending ? 'Sending...' : (
           <>Send Message <Send className="w-4 h-4" /></>
         )}
       </button>

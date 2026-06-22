@@ -50,6 +50,7 @@ export function HorizonContactForm({ dict }: { dict: any }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      <input type="hidden" name="source" value="HorizonContactForm" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
           <label className="text-sm font-semibold tracking-wide text-[#F2F2F2]/80 px-2">{t.name_lbl}</label>

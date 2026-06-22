@@ -45,6 +45,7 @@ export function HorizonInvestorForm({ dict }: { dict: any }) {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-8">
+        <input type="hidden" name="source" value="HorizonInvestorForm" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <label className="block text-sm font-bold uppercase tracking-widest text-neutral-400 mb-2">{t.name}</label>

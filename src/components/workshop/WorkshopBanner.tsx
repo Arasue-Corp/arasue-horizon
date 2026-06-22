@@ -28,6 +28,7 @@ export function WorkshopBanner({ lang }: { lang: 'en' | 'es' }) {
 
     const formData = new FormData()
     formData.append('intent', 'workshop_template_request')
+    formData.append('source', 'WorkshopBanner')
     formData.append('email', email)
 
     startTransition(async () => {

@@ -49,6 +49,7 @@ export function ForgeContactForm({ dict }: { dict: any }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-10">
+      <input type="hidden" name="source" value="ForgeContactForm" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="relative group">
           <input 

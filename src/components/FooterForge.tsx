@@ -5,9 +5,9 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
     <footer className="mt-20 border-t border-foreground/10 bg-background pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-4 text-center md:text-left flex flex-col items-center md:items-start">
             <Link href={`/${lang}/forge`} className="group inline-block w-full max-w-[200px] md:max-w-[260px]">
-              <img src="/logo-forge-blanco.png" alt="Arasue Forge" className="w-full h-auto object-contain transition-transform group-hover:scale-105" />
+              <img src="/logo-forge-blanco.png" alt="Arasue Forge" className="w-full h-auto object-contain transition-transform group-hover:scale-105 mx-auto md:mx-0" />
             </Link>
             <p className="text-foreground/60 text-sm max-w-sm">
               Premium software development and digital strategy agency.
