@@ -5,6 +5,8 @@
     "workshop": "Workshop",
     "language": "Language",
     "divisions": "Divisions",
+    "services": "Services",
+    "switch_lang": "Switch to",
     "currency_detected": "Currency",
     "holding_menu": {
       "title": "The Holding",
@@ -22,11 +24,17 @@
     "subsidiaries_menu": {
       "forge_desc": "Digital products & SaaS",
       "media_desc": "Content & Streaming",
-      "labs_desc": "Premium organic goods"
+      "labs_desc": "Premium organic goods",
+      "protection_desc": "Life & Health Insurance"
     },
     "services_menu": {
+      "title": "Services",
+      "web": "Web Development",
+      "web_desc": "Next.js & React ecosystem",
       "growth": "Growth & Ads",
-      "growth_desc": "Meta Ads & SEO strategies"
+      "growth_desc": "Meta Ads & SEO strategies",
+      "automations": "Automations",
+      "automations_desc": "AI & Workflow pipelines"
     },
     "forge_menu": {
       "title": "Software Agency",
@@ -389,6 +397,7 @@
     }
   },
   "josue_profile": {
+    "return_horizon": "Return to Horizon",
     "title": "Josue Daniel Lopez Barreras",
     "role": "CEO & Co-Founder, Arasue Horizon | Technical Product Manager",
     "download_cv": "Download CV",

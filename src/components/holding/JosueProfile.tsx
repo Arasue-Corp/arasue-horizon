@@ -48,7 +48,7 @@ export function JosueProfile({ dict }: { dict: any }) {
         <div className="p-6 md:p-12 lg:p-24 max-w-4xl mx-auto pt-12 lg:pt-32">
           
           <Link href="/" className="inline-flex items-center text-white/40 hover:text-white mb-16 transition-colors text-xs font-bold uppercase tracking-[0.2em] group">
-            <span className="transform group-hover:-translate-x-2 transition-transform duration-300 mr-2">←</span> Return to Horizon
+            <span className="transform group-hover:-translate-x-2 transition-transform duration-300 mr-2">←</span> {p.return_horizon || 'Return to Horizon'}
           </Link>
 
           {/* Desktop Hero Title */}

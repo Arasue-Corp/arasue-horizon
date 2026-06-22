@@ -5,28 +5,36 @@
     "workshop": "Workshop",
     "language": "Idioma",
     "divisions": "Divisiones",
+    "services": "Servicios",
+    "switch_lang": "Cambiar a",
     "currency_detected": "Moneda",
     "holding_menu": {
-      "title": "El Corporativo",
+      "title": "El Holding",
       "overview": "Visión General",
       "overview_desc": "Conoce nuestra misión y visión.",
-      "investors": "Relación con Inversores",
+      "investors": "Relaciones con Inversores",
       "investors_desc": "Reportes financieros y noticias.",
       "careers": "Carreras",
       "careers_desc": "Únete a nuestro equipo global.",
-      "newsroom": "Sala de Prensa",
-      "newsroom_desc": "Prensa y Actualizaciones",
-      "contact": "Sede Global",
-      "contact_desc": "Consultas globales"
+      "newsroom": "Prensa",
+      "newsroom_desc": "Noticias y actualizaciones",
+      "contact": "Contacto Global",
+      "contact_desc": "Consultas internacionales"
     },
     "subsidiaries_menu": {
       "forge_desc": "Productos digitales y SaaS",
       "media_desc": "Contenido y Streaming",
-      "labs_desc": "Bienes orgánicos premium"
+      "labs_desc": "Productos orgánicos premium",
+      "protection_desc": "Seguros de Vida y Salud"
     },
     "services_menu": {
-      "growth": "Crecimiento y Anuncios",
-      "growth_desc": "Estrategias SEO y Meta Ads"
+      "title": "Servicios",
+      "web": "Desarrollo Web",
+      "web_desc": "Ecosistema Next.js y React",
+      "growth": "Growth & Ads",
+      "growth_desc": "Estrategias SEO y Meta Ads",
+      "automations": "Automatizaciones",
+      "automations_desc": "IA y flujos de trabajo"
     },
     "forge_menu": {
       "title": "Agencia de Software",
@@ -389,6 +397,7 @@
     }
   },
   "josue_profile": {
+    "return_horizon": "Volver a Horizon",
     "title": "Josue Daniel Lopez Barreras",
     "role": "CEO & Co-Fundador, Arasue Horizon | Technical Product Manager",
     "download_cv": "Descargar CV",
