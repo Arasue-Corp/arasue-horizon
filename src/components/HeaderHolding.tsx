@@ -142,11 +142,41 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               transition={spring}
               className="w-full flex flex-col gap-4 pt-6 border-t border-white/10 mt-4 overflow-hidden"
             >
-              <Link href={`/${lang}/forge`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Forge</Link>
-              <Link href={`/${lang}/media`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Media</Link>
-              <Link href={`/${lang}/labs`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Labs</Link>
-              <Link href={`/${lang}/protection`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Protection</Link>
-              <Link href={`/${otherLang}`} className="text-primary font-bold text-lg pt-4 flex items-center gap-2"><Globe/> Switch to {otherLang.toUpperCase()}</Link>
+              <div className="space-y-6 max-h-[70vh] overflow-y-auto pr-2 pb-4">
+                <div>
+                  <h3 className="text-white/50 text-xs uppercase tracking-widest font-bold mb-3">{dict.holding_menu?.title || 'Holding'}</h3>
+                  <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                    <Link href={`/${lang}/about`} className="text-white font-semibold text-lg">{dict.holding_menu?.overview || 'Overview'}</Link>
+                    <Link href={`/${lang}/investors`} className="text-white font-semibold text-lg">{dict.holding_menu?.investors || 'Investors'}</Link>
+                    <Link href={`/${lang}/newsroom`} className="text-white font-semibold text-lg">Newsroom</Link>
+                    <Link href={`/${lang}/contact`} className="text-white font-semibold text-lg">Contact HQ</Link>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 className="text-white/50 text-xs uppercase tracking-widest font-bold mb-3">{dict.divisions || 'Divisions'}</h3>
+                  <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                    <Link href={`/${lang}/forge`} className="text-white font-semibold text-lg">Arasue Forge</Link>
+                    <Link href={`/${lang}/media`} className="text-white font-semibold text-lg">Arasue Media</Link>
+                    <Link href={`/${lang}/labs`} className="text-white font-semibold text-lg">Arasue Labs</Link>
+                    <Link href={`/${lang}/protection`} className="text-white font-semibold text-lg">Arasue Protection</Link>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-white/50 text-xs uppercase tracking-widest font-bold mb-3">Services</h3>
+                  <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
+                    <Link href={`/${lang}/forge/services`} className="text-white font-semibold text-lg">Web Development</Link>
+                    <Link href={`/${lang}/forge/services`} className="text-white font-semibold text-lg">Growth & Ads</Link>
+                    <Link href={`/${lang}/forge/services`} className="text-white font-semibold text-lg">Automations</Link>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-white/10 flex flex-col gap-4">
+                  <Link href={`/${lang}/workshop`} className="text-white font-bold text-lg">{dict.workshop || 'Workshop'}</Link>
+                  <Link href={`/${otherLang}`} className="text-primary font-bold text-lg flex items-center gap-2"><Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}</Link>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
