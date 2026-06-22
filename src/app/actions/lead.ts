@@ -1,5 +1,3 @@
-"use server"
-
 export async function submitLead(formData: FormData) {
   try {
     // Convert FormData to a regular object
@@ -13,7 +11,7 @@ export async function submitLead(formData: FormData) {
     
     console.log(`[Lead Captured] Form Source: ${payload.source || 'Unknown'}`, payload)
 
-    const webhookUrl = process.env.N8N_WEBHOOK_URL
+    const webhookUrl = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
 
     if (webhookUrl) {
       const response = await fetch(webhookUrl, {
@@ -31,7 +29,7 @@ export async function submitLead(formData: FormData) {
     } else {
       // Simulate network latency if no webhook is configured
       await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('[Action] No N8N_WEBHOOK_URL provided. Simulated success.')
+      console.log('[Action] No NEXT_PUBLIC_N8N_WEBHOOK_URL provided. Simulated success.')
     }
 
     return { success: true, message: 'Submission received successfully' }
