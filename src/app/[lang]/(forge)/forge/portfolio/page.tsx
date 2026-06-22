@@ -1,5 +1,5 @@
+"use client";
 export const runtime = 'edge';
-"use client"
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'

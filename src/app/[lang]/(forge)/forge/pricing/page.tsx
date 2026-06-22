@@ -1,5 +1,5 @@
+"use client";
 export const runtime = 'edge';
-"use client"
 import { motion } from 'framer-motion'
 import { CheckCircle2, Zap } from 'lucide-react'
 import Link from 'next/link'
