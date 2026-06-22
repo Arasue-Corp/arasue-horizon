@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   basePath: isGithubPages ? '/arasue-horizon' : '',
   images: {
-    unoptimized: isGithubPages,
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
