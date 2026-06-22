@@ -36,7 +36,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
         <div className="flex items-center justify-between w-full gap-8">
           {/* Logo */}
           <Link href={`/${lang}`} className="relative z-10 flex-shrink-0" onClick={() => setActiveMenu(null)}>
-            <Logo division="Horizon" className="h-6 w-auto text-white" />
+            <img src="/icono-horizon-oro.png" alt="Arasue Horizon Icon" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
           </Link>
           
           {/* Desktop Nav */}

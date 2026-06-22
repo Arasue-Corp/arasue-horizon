@@ -17,7 +17,7 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
       </div>
       <div className="container mx-auto px-6 min-h-24 py-4 flex items-center justify-between">
         <Link href={`/${lang}/forge`} className="py-2">
-          <Logo division="Forge" />
+          <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
         </Link>
         
         <nav className="hidden md:flex gap-6 text-sm font-bold">
