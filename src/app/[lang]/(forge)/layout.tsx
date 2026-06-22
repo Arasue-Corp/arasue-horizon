@@ -29,6 +29,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       siteName: dict.nav.forge,
       locale: resolvedParams.lang,
       type: 'website',
+    },
+    icons: {
+      icon: [
+        { url: '/icono-forge-negro.png', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/icono-forge-negro.png', type: 'image/png' }
+      ]
     }
   }
 }
