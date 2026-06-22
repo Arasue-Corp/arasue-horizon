@@ -70,11 +70,14 @@ export async function onRequest(context) {
 
   if (!pathnameHasLocale) {
     url.pathname = `/${locale}${pathname}`;
-    // Use 302 for temporary redirect
-    const response = Response.redirect(url.toString(), 302);
-    response.headers.append('Set-Cookie', prefsCookie);
-    response.headers.append('Set-Cookie', countryCookie);
-    return response;
+    const headers = new Headers();
+    headers.append('Location', url.toString());
+    headers.append('Set-Cookie', prefsCookie);
+    headers.append('Set-Cookie', countryCookie);
+    return new Response(null, {
+      status: 302,
+      headers: headers
+    });
   }
 
   // Continue to the requested page
