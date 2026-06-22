@@ -1,157 +1,228 @@
 "use client";
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowDownToLine, Briefcase, GraduationCap, Link as LinkIcon, Blocks } from 'lucide-react'
+import { ArrowDownToLine, Link as LinkIcon } from 'lucide-react'
 import Link from 'next/link'
+import { useRef } from 'react'
 
 export function JosueProfile({ dict }: { dict: any }) {
   const p = dict.josue_profile
+  const containerRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: containerRef })
+  
+  // Parallax effect on the left image
+  const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
+  const opacityHero = useTransform(scrollYProgress, [0, 0.2], [1, 0])
 
   return (
-    <div className="max-w-6xl mx-auto px-6">
-      {/* Back Link */}
-      <Link href="/" className="inline-flex items-center text-white/50 hover:text-white mb-12 transition-colors text-sm font-bold uppercase tracking-widest">
-        ← Return to Holding
-      </Link>
-
-      {/* Hero Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="lg:col-span-5"
-        >
-          <div className="aspect-[3/4] relative rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-white/10">
-            <Image 
-              src="/leadership/josue-profile.jpg"
-              alt={p.title}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
+    <div ref={containerRef} className="relative min-h-screen bg-[#0B0F19] selection:bg-[#ffcc00] selection:text-black">
+      
+      {/* Sticky Left Column / Background */}
+      <div className="lg:fixed lg:top-0 lg:left-0 lg:w-[45vw] lg:h-screen lg:overflow-hidden relative h-[70vh] w-full">
+        <motion.div style={{ y: yImage }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
+          <Image 
+            src="/leadership/josue-profile.jpg"
+            alt={p.title}
+            fill
+            className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+            priority
+            quality={100}
+            sizes="(max-width: 1024px) 100vw, 45vw"
+          />
         </motion.div>
-
+        {/* Gradient overlays to blend with background on mobile and right side on desktop */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/40 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#0B0F19]/20 lg:to-[#0B0F19]" />
+        
+        {/* Hero Content Overlay (Mobile only, fades out on scroll) */}
         <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="lg:col-span-7 flex flex-col justify-center"
+          style={{ opacity: opacityHero }}
+          className="absolute bottom-0 left-0 p-8 w-full lg:hidden z-10"
         >
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">{p.title}</h1>
-          <h2 className="text-xl md:text-2xl text-[#ffcc00] font-medium mb-8 leading-relaxed">
-            {p.role}
-          </h2>
+          <h1 className="text-5xl font-bold tracking-tighter text-white mb-2 leading-[0.9] font-serif">{p.title}</h1>
+          <p className="text-[#ffcc00] uppercase tracking-widest text-xs font-bold mt-4">{p.role}</p>
+        </motion.div>
+      </div>
+
+      {/* Right Scrollable Column */}
+      <div className="relative z-10 lg:ml-[45vw] lg:w-[55vw] lg:min-h-screen bg-[#0B0F19] lg:bg-transparent">
+        <div className="p-6 md:p-12 lg:p-24 max-w-4xl mx-auto pt-12 lg:pt-32">
           
-          <div className="bg-white/5 border border-white/10 p-6 md:p-8 rounded-3xl mb-8 backdrop-blur-sm">
-            <p className="text-white/70 leading-relaxed text-lg">
+          <Link href="/" className="inline-flex items-center text-white/40 hover:text-white mb-16 transition-colors text-xs font-bold uppercase tracking-[0.2em] group">
+            <span className="transform group-hover:-translate-x-2 transition-transform duration-300 mr-2">←</span> Return to Horizon
+          </Link>
+
+          {/* Desktop Hero Title */}
+          <div className="hidden lg:block mb-32">
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="text-7xl xl:text-8xl font-bold tracking-tighter text-white mb-8 leading-[0.85] font-serif"
+            >
+              {p.title.split(' ').map((word:string, i:number) => (
+                <span key={i} className="block">{word}</span>
+              ))}
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="text-[#ffcc00] uppercase tracking-[0.3em] text-sm font-bold"
+            >
+              {p.role}
+            </motion.p>
+          </div>
+
+          {/* Intro Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="prose prose-invert prose-lg mb-16"
+          >
+            <p className="text-white/80 leading-relaxed text-xl lg:text-2xl font-light">
               {p.summary}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-wrap gap-4">
+          {/* Action Buttons */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap gap-4 mb-32"
+          >
             <a 
               href="/leadership/Resume_Josue_Lopez_TPM_InsurTech_2026.docx" 
               download
-              className="flex items-center gap-2 bg-[#ffcc00] text-[#171425] px-6 py-3 rounded-xl font-bold hover:bg-white transition-colors"
+              className="group relative flex items-center gap-3 bg-[#ffcc00] text-black px-8 py-4 rounded-none overflow-hidden"
             >
-              <ArrowDownToLine className="w-5 h-5" />
-              {p.download_cv}
+              <div className="absolute inset-0 bg-white translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+              <ArrowDownToLine className="w-5 h-5 relative z-10" />
+              <span className="font-bold text-sm tracking-widest uppercase relative z-10">{p.download_cv}</span>
             </a>
             <a 
               href="https://linkedin.com/in/josue-techpm" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/10 text-white border border-white/20 px-6 py-3 rounded-xl font-bold hover:bg-white/20 transition-colors"
+              className="flex items-center gap-3 bg-transparent text-white border border-white/20 px-8 py-4 hover:bg-white/5 hover:border-white/40 transition-all duration-300"
             >
               <LinkIcon className="w-5 h-5" />
-              {p.linkedin}
+              <span className="font-bold text-sm tracking-widest uppercase">{p.linkedin}</span>
             </a>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-        {/* Main Column - Experience */}
-        <div className="lg:col-span-2 space-y-12">
-          <div className="flex items-center gap-3 border-b border-white/10 pb-4">
-            <Briefcase className="w-6 h-6 text-[#ffcc00]" />
-            <h3 className="text-2xl font-bold">{p.experience_title}</h3>
-          </div>
-
-          <div className="space-y-8">
-            <ExperienceItem data={p.exp_alex} />
-            <ExperienceItem data={p.exp_tesla} />
-            <ExperienceItem data={p.exp_primex} />
-          </div>
-        </div>
-
-        {/* Sidebar - Skills & Education */}
-        <div className="space-y-12">
-          {/* Skills */}
-          <div>
-            <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-8">
-              <Blocks className="w-6 h-6 text-[#ffcc00]" />
-              <h3 className="text-2xl font-bold">{p.skills_title}</h3>
+          {/* Experience Timeline */}
+          <div className="mb-32">
+            <div className="flex items-center gap-4 mb-20">
+              <div className="w-12 h-[1px] bg-[#ffcc00]" />
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.experience_title}</h3>
             </div>
-            <div className="flex flex-col gap-4">
-              <SkillCard title={p.skills_categories.architecture} items={["Multi-Carrier API Gateway", "Zero-Trust Architecture", "RESTful APIs & Webhooks"]} />
-              <SkillCard title={p.skills_categories.ai} items={["LLM Agents & Prompt Eng", "n8n Workflow Automation", "Claude & Gemini APIs"]} />
-              <SkillCard title={p.skills_categories.product} items={["Enterprise SaaS Lifecycle", "Agile / Scrum / SAFe", "Go-to-Market Strategy"]} />
-              <SkillCard title={p.skills_categories.domain} items={["HIPAA & SOC 2 Compliance", "P&C Insurance Core", "EHR/EMR Systems"]} />
+
+            <div className="space-y-16">
+              <ExperienceBlock data={p.exp_alex} index={0} />
+              <ExperienceBlock data={p.exp_tesla} index={1} />
+              <ExperienceBlock data={p.exp_primex} index={2} />
+            </div>
+          </div>
+
+          {/* Skills Grid */}
+          <div className="mb-32">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-12 h-[1px] bg-[#ffcc00]" />
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.skills_title}</h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PremiumSkillCard title={p.skills_categories.architecture} items={["Multi-Carrier API Gateway", "Zero-Trust Architecture", "RESTful APIs & Webhooks"]} delay={0} />
+              <PremiumSkillCard title={p.skills_categories.ai} items={["LLM Agents & Prompt Eng", "n8n Workflow Automation", "Claude & Gemini APIs"]} delay={0.1} />
+              <PremiumSkillCard title={p.skills_categories.product} items={["Enterprise SaaS Lifecycle", "Agile / Scrum / SAFe", "Go-to-Market Strategy"]} delay={0.2} />
+              <PremiumSkillCard title={p.skills_categories.domain} items={["HIPAA & SOC 2 Compliance", "P&C Insurance Core", "EHR/EMR Systems"]} delay={0.3} />
             </div>
           </div>
 
           {/* Education */}
-          <div>
-            <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-8">
-              <GraduationCap className="w-6 h-6 text-[#ffcc00]" />
-              <h3 className="text-2xl font-bold">{p.education_title}</h3>
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-16">
+              <div className="w-12 h-[1px] bg-[#ffcc00]" />
+              <h3 className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white font-serif">{p.education_title}</h3>
             </div>
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-              <h4 className="font-bold text-lg mb-1">{p.edu_degree}</h4>
-              <div className="text-[#ffcc00] text-sm font-bold uppercase tracking-widest mb-4">{p.edu_school}</div>
-              <p className="text-white/60 text-sm leading-relaxed">
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 lg:p-12 border border-white/10 bg-white/[0.02] backdrop-blur-3xl hover:bg-white/[0.04] transition-colors duration-500 relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ffcc00]/5 rounded-full blur-3xl group-hover:bg-[#ffcc00]/10 transition-colors duration-700" />
+              
+              <h4 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-serif relative z-10">{p.edu_degree}</h4>
+              <div className="text-[#ffcc00] text-sm font-bold uppercase tracking-widest mb-6 relative z-10">{p.edu_school}</div>
+              <p className="text-white/50 text-base lg:text-lg leading-relaxed max-w-2xl relative z-10 font-light">
                 {p.edu_honors}
               </p>
-            </div>
+            </motion.div>
           </div>
+
         </div>
       </div>
     </div>
   )
 }
 
-function ExperienceItem({ data }: { data: any }) {
+function ExperienceBlock({ data, index }: { data: any, index: number }) {
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="group"
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ type: "spring", stiffness: 100, damping: 20, delay: index * 0.1 }}
+      className="group relative pl-8 md:pl-0 border-l border-white/10 md:border-none"
     >
-      <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
-        <h4 className="text-xl font-bold text-white group-hover:text-[#ffcc00] transition-colors">{data.role}</h4>
-        <span className="text-white/50 text-sm font-medium mt-1 md:mt-0 font-mono">{data.date}</span>
+      {/* Timeline Node Mobile */}
+      <div className="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full bg-white/20 group-hover:bg-[#ffcc00] group-hover:shadow-[0_0_15px_rgba(255,204,0,0.5)] transition-all duration-300 md:hidden" />
+      
+      <div className="flex flex-col md:flex-row md:gap-12">
+        <div className="md:w-1/3 mb-4 md:mb-0 md:text-right shrink-0">
+          <span className="text-[#ffcc00]/60 text-sm font-bold font-mono block tracking-wider">{data.date}</span>
+          <div className="text-white/40 text-xs font-bold uppercase tracking-widest mt-2 hidden md:block">{data.company}</div>
+        </div>
+        <div className="md:w-2/3 md:border-l md:border-white/10 md:pl-12 relative">
+          {/* Timeline Node Desktop */}
+          <div className="absolute left-[-5px] top-2 w-[9px] h-[9px] rounded-full bg-white/20 group-hover:bg-[#ffcc00] group-hover:shadow-[0_0_15px_rgba(255,204,0,0.5)] transition-all duration-300 hidden md:block" />
+          
+          <h4 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-[#ffcc00] transition-colors duration-500 font-serif">{data.role}</h4>
+          <div className="text-[#ffcc00]/80 text-xs font-bold uppercase tracking-widest mb-6 md:hidden">{data.company}</div>
+          <p className="text-white/60 leading-relaxed font-light text-lg">
+            {data.desc}
+          </p>
+        </div>
       </div>
-      <div className="text-[#ffcc00]/80 text-sm font-bold uppercase tracking-widest mb-4">{data.company}</div>
-      <p className="text-white/70 leading-relaxed text-sm md:text-base">
-        {data.desc}
-      </p>
     </motion.div>
   )
 }
 
-function SkillCard({ title, items }: { title: string, items: string[] }) {
+function PremiumSkillCard({ title, items, delay }: { title: string, items: string[], delay: number }) {
   return (
-    <div className="bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 transition-colors">
-      <h4 className="font-bold text-[#ffcc00] mb-3 text-sm uppercase tracking-wider">{title}</h4>
-      <div className="flex flex-wrap gap-2">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ type: "spring", stiffness: 200, damping: 20, delay }}
+      className="bg-white/[0.02] border border-white/5 p-8 backdrop-blur-xl hover:bg-white/[0.05] hover:border-white/20 transition-all duration-500"
+    >
+      <h4 className="font-bold text-white mb-6 text-xs uppercase tracking-[0.2em]">{title}</h4>
+      <div className="flex flex-col gap-4">
         {items.map((item, i) => (
-          <span key={i} className="bg-black/30 text-white/80 text-xs px-3 py-1.5 rounded-md border border-white/5">
-            {item}
-          </span>
+          <div key={i} className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-[#ffcc00] shrink-0 opacity-80" />
+            <span className="text-white/70 text-sm tracking-wide font-light">
+              {item}
+            </span>
+          </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }

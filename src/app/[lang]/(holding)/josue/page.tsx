@@ -10,7 +10,7 @@ export default async function JosueProfilePage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return (
-    <main className="bg-[#171425] min-h-screen text-white pt-32 pb-24">
+    <main className="bg-[#0B0F19] min-h-screen text-white">
       <JosueProfile dict={dict} />
     </main>
   )

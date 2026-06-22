@@ -119,12 +119,13 @@
     "leadership": {
       "title": "Liderazgo",
       "subtitle": "Guiados por operadores con un historial de retornos asimétricos.",
-      "josue_role": "Director Ejecutivo",
+      "josue_role": "Chief Executive Officer",
       "josue_desc": "Arquitecto del ecosistema Arasue. Se enfoca en la asignación de capital y la visión a largo plazo.",
-      "elena_role": "Directora de Forge",
-      "elena_desc": "Ex ingeniera principal en importantes firmas tecnológicas. Lidera la ingeniería de productos y la escala de la plataforma.",
-      "marcus_role": "Director de Media",
-      "marcus_desc": "Estratega cultural que ha fabricado múltiples momentos virales globales."
+      "elena_role": "Head of Forge",
+      "elena_desc": "Ex ingeniera principal en firmas tecnológicas clave. Dirige la ingeniería de producto y la escala de la plataforma.",
+      "marcus_role": "Head of Media",
+      "marcus_desc": "Estratega cultural que ha fabricado múltiples momentos virales globales.",
+      "view_profile": "Ver Perfil"
     },
     "investor_form": {
       "title": "Relaciones con Inversores",

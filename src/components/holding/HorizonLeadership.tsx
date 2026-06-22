@@ -45,8 +45,8 @@ export function HorizonLeadership({ dict }: { dict: any }) {
                   className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
                 />
                 {leader.link && (
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
-                    <span className="bg-white text-[#162D59] font-bold px-6 py-3 rounded-full text-sm">View Profile</span>
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 group-hover:backdrop-blur-md transition-all duration-300 flex items-center justify-center">
+                    <span className="bg-white text-[#162D59] font-bold px-6 py-3 rounded-full text-sm">{t.view_profile || 'View Profile'}</span>
                   </div>
                 )}
               </div>

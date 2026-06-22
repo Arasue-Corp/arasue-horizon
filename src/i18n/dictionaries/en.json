@@ -124,7 +124,8 @@
       "elena_role": "Head of Forge",
       "elena_desc": "Former staff engineer at major tech firms. Leads product engineering and platform scale.",
       "marcus_role": "Head of Media",
-      "marcus_desc": "Cultural strategist who has manufactured multiple global viral moments."
+      "marcus_desc": "Cultural strategist who has manufactured multiple global viral moments.",
+      "view_profile": "View Profile"
     },
     "investor_form": {
       "title": "Investor Relations",
