@@ -6,7 +6,7 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="space-y-4 text-center md:text-left">
-            <Link href={`/${lang}/forge`} className="group inline-block w-full max-w-[280px] md:max-w-[400px]">
+            <Link href={`/${lang}/forge`} className="group inline-block w-full max-w-[200px] md:max-w-[260px]">
               <img src="/logo-forge-blanco.png" alt="Arasue Forge" className="w-full h-auto object-contain transition-transform group-hover:scale-105" />
             </Link>
             <p className="text-foreground/60 text-sm max-w-sm">

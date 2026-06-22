@@ -58,7 +58,8 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               isActive={activeMenu === 'services'}
               onToggle={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}
             />
-            <Link href={`/${lang}/workshop`} className="px-4 py-2 text-sm font-semibold text-white/70 hover:text-white transition-colors rounded-full hover:bg-white/5">
+            <Link href={`/${lang}/workshop`} className="px-4 py-1.5 text-sm font-bold text-[#ffcc00] border border-[#ffcc00]/30 hover:bg-[#ffcc00] hover:text-[#171425] transition-all rounded-full flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#ffcc00] animate-pulse"></span>
               {dict.workshop}
             </Link>
           </nav>
@@ -173,8 +174,11 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
                 </div>
 
                 <div className="pt-4 border-t border-white/10 flex flex-col gap-4">
-                  <Link href={`/${lang}/workshop`} className="text-white font-bold text-lg">{dict.workshop || 'Workshop'}</Link>
-                  <Link href={`/${otherLang}`} className="text-primary font-bold text-lg flex items-center gap-2"><Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}</Link>
+                  <Link href={`/${lang}/workshop`} className="w-full text-center py-4 rounded-xl bg-[#ffcc00]/10 text-[#ffcc00] border border-[#ffcc00]/30 font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3">
+                    <span className="w-2 h-2 rounded-full bg-[#ffcc00] animate-pulse"></span>
+                    {dict.workshop || 'Workshop'}
+                  </Link>
+                  <Link href={`/${otherLang}`} className="text-primary font-bold text-lg flex items-center justify-center gap-2 py-2"><Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}</Link>
                 </div>
               </div>
             </motion.div>

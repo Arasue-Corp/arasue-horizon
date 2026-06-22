@@ -4,9 +4,9 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
   return (
     <footer className="mt-32 border-t border-foreground/10 bg-foreground/5 pt-20 pb-10">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          <div className="lg:col-span-2 space-y-6">
-            <Link href={`/${lang}`} className="group inline-block w-full max-w-[280px] md:max-w-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="space-y-6">
+            <Link href={`/${lang}`} className="group inline-block w-full max-w-[200px] md:max-w-[260px]">
               <img src="/logo-horizon-oro.png" alt="Arasue Horizon" className="w-full h-auto object-contain transition-transform group-hover:scale-105" />
             </Link>
             <p className="text-foreground/70 max-w-sm">
