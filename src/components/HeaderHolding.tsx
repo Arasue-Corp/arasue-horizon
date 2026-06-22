@@ -31,7 +31,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
       <motion.div 
         layout
         transition={spring}
-        className={`pointer-events-auto flex flex-col bg-[#131926]/80 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden ${scrolled ? 'rounded-[2rem] px-4 py-2' : 'w-full max-w-7xl rounded-[2rem] px-6 py-4'}`}
+        className={`pointer-events-auto flex flex-col bg-secondary/90 backdrop-blur-xl border border-white/10 shadow-2xl overflow-hidden ${scrolled ? 'rounded-[2rem] px-4 py-2' : 'w-full max-w-7xl rounded-[2rem] px-6 py-4'}`}
       >
         <div className="flex items-center justify-between w-full gap-8">
           {/* Logo */}
@@ -69,7 +69,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
             >
               <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
             </Link>
-            <Link href={`/${lang}/contact`} className="px-5 py-2 rounded-full bg-[#F2D3AC] text-[#131926] text-sm font-bold active:scale-[0.97] transition-transform duration-200">
+            <Link href={`/${lang}/contact`} className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold active:scale-[0.97] transition-transform duration-200">
               Contact HQ
             </Link>
           </div>
@@ -144,7 +144,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
               <Link href={`/${lang}/media`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Media</Link>
               <Link href={`/${lang}/labs`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Labs</Link>
               <Link href={`/${lang}/protection`} className="text-white font-bold text-lg border-b border-white/10 pb-2">Arasue Protection</Link>
-              <Link href={`/${otherLang}`} className="text-[#F2D3AC] font-bold text-lg pt-4 flex items-center gap-2"><Globe/> Switch to {otherLang.toUpperCase()}</Link>
+              <Link href={`/${otherLang}`} className="text-primary font-bold text-lg pt-4 flex items-center gap-2"><Globe/> Switch to {otherLang.toUpperCase()}</Link>
             </motion.div>
           )}
         </AnimatePresence>

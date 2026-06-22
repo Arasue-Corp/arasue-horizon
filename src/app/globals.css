@@ -39,17 +39,17 @@ body {
 
 /* 1. Theme Horizon (The Holding) */
 :root, .theme-horizon {
-  --background: #F2F2F2;
-  --foreground: #162D59;
-  --primary: #162D59;
-  --primary-foreground: #F2D3AC;
-  --secondary: #F2D3AC;
-  --secondary-foreground: #162D59;
-  --accent: #F28F6B;
-  --accent-foreground: #F2F2F2;
-  --muted: #E5E5E5;
-  --muted-foreground: #A65E44;
-  --border: #E5E5E5;
+  --background: #171425;
+  --foreground: #F2F2F2;
+  --primary: #ffcc00;
+  --primary-foreground: #171425;
+  --secondary: #2b2646;
+  --secondary-foreground: #ffffff;
+  --accent: #ffd633;
+  --accent-foreground: #171425;
+  --muted: #3f3867;
+  --muted-foreground: #ffe066;
+  --border: #3f3867;
   --radius: 0.625rem;
 }
 

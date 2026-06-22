@@ -1,5 +1,6 @@
 import React from 'react'
 import { Hexagon, Zap, Leaf, PlaySquare, ShieldCheck } from 'lucide-react'
+import Image from 'next/image'
 
 type Division = 'Horizon' | 'Forge' | 'Labs' | 'Media' | 'Protection'
 
@@ -21,10 +22,26 @@ export function Logo({ division, className = '', iconSize = 28 }: LogoProps) {
 
   const Icon = Icons[division]
 
-  // Mapping of primary brand colors per division (using the Tailwind vars we set in CSS)
-  // We use inline styles for the icon color to guarantee it matches the theme, 
-  // or we can just use `text-primary`. Since we set `--primary` in CSS, `text-primary` works perfectly!
-  
+  // Use custom image logos for Horizon and Forge
+  const useCustomImage = division === 'Horizon' || division === 'Forge'
+  const imageSrc = division === 'Horizon' ? '/logo-horizon-oro.png' : '/logo-forge-negro.png'
+
+  if (useCustomImage) {
+    return (
+      <div className={`flex items-center group ${className}`}>
+        {/* The image itself contains the text and logo mark */}
+        <Image 
+          src={imageSrc} 
+          alt={`Arasue ${division} Logo`} 
+          width={180} 
+          height={60} 
+          className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+          priority
+        />
+      </div>
+    )
+  }
+
   return (
     <div className={`flex items-center gap-2 group ${className}`}>
       <div className="flex items-center justify-center bg-primary text-primary-foreground rounded-lg transition-transform group-hover:scale-105" style={{ width: iconSize + 8, height: iconSize + 8 }}>
