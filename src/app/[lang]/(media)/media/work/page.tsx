@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { MotionDiv } from '@/components/Motion'
 

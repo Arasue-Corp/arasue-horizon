@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import '../../globals.css'
 import { HeaderForge } from '@/components/HeaderForge'
 import { FooterForge } from '@/components/FooterForge'

@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { ForgeContactForm } from '@/components/forge/ForgeContactForm'
 import { Metadata } from 'next'

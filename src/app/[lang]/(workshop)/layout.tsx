@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import '../../globals.css'
 import { playfair, inter } from '@/lib/fonts'
 import { WorkshopBanner } from '@/components/workshop/WorkshopBanner'

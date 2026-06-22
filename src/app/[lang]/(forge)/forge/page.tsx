@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { getDictionary, type Locale } from '@/i18n/dictionaries'
 import { ForgeHero } from '@/components/forge/ForgeHero'
 import { ForgeTechMarquee } from '@/components/forge/ForgeTechMarquee'

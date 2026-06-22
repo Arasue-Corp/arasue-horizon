@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import { WorkshopGalleryClient } from './WorkshopGalleryClient'
 
 export async function generateMetadata() {
