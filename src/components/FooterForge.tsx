@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
@@ -25,14 +25,14 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
               {dict.forge.hero.subtitle || "Premium software development and digital strategy agency. We build the infrastructure that defines industries."}
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors">
-                <Twitter className="w-4 h-4" />
+              <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors text-xs font-bold font-mono">
+                X
               </a>
-              <a href="#" className="p-2 rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors">
-                <Linkedin className="w-4 h-4" />
+              <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors text-xs font-bold font-mono">
+                IN
               </a>
-              <a href="#" className="p-2 rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors">
-                <Instagram className="w-4 h-4" />
+              <a href="#" className="w-8 h-8 flex items-center justify-center rounded-full bg-secondary text-foreground/50 hover:text-primary hover:bg-primary/10 transition-colors text-xs font-bold font-mono">
+                IG
               </a>
             </div>
           </div>
