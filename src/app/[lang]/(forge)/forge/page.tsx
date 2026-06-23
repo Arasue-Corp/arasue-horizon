@@ -7,6 +7,7 @@ import { ForgeProcess } from '@/components/forge/ForgeProcess'
 import { ForgeServices } from '@/components/forge/ForgeServices'
 import { ForgeEstimator } from '@/components/forge/ForgeEstimator'
 import { ForgeFAQ } from '@/components/forge/ForgeFAQ'
+import { ForgeCTA } from '@/components/forge/ForgeCTA'
 import Link from 'next/link'
 
 export default async function ForgePage({
@@ -47,18 +48,8 @@ export default async function ForgePage({
       {/* 7. FAQ */}
       <ForgeFAQ dict={dict.forge.faq} />
 
-      {/* 8. Clean CTA */}
-      <section className="py-32 px-6 bg-secondary relative overflow-hidden">
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h2 className="text-6xl md:text-[6rem] font-bold tracking-tighter mb-8 leading-none">{dict.forge.cta.title}</h2>
-          <p className="text-2xl text-foreground/60 mb-16 font-inter font-medium">{dict.forge.cta.subtitle}</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href={`/${resolvedParams.lang}/forge/contact`} className="px-16 py-8 rounded-full bg-foreground text-background font-bold text-xl hover:scale-105 active:scale-95 transition-all shadow-2xl">
-              {dict.forge.hero.cta_contact}
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* 8. Forge CTA */}
+      <ForgeCTA dict={dict.forge.cta} lang={resolvedParams.lang} contactLabel={dict.forge.hero.cta_contact} />
     </div>
   )
 }
