@@ -281,13 +281,14 @@
       "view_demo": "Ver Demo"
     },
     "faq": {
-      "title": "Preguntas Frecuentes",
-      "q1": "¿Ofrecen desarrollo a medida fuera de estos planes?",
-      "a1": "Sí, manejamos aplicaciones personalizadas a nivel empresarial. Contáctanos para una cotización a medida.",
-      "q2": "¿Qué tecnologías utilizan?",
-      "a2": "Nos especializamos en el ecosistema React (Next.js), Node.js y arquitecturas nativas de la nube.",
-      "q3": "¿Cómo funciona el modelo web SaaS?",
-      "a3": "En lugar de un costo inicial masivo, pagas una pequeña tarifa de instalación y una suscripción mensual que cubre alojamiento, mantenimiento y actualizaciones menores para siempre."
+      "title": "Operaciones & FAQ",
+      "questions": [
+        { "q": "¿Trabajan con código existente (Legacy)?", "a": "Nuestra especialidad es la construcción y modernización de sistemas de alto rendimiento. Evaluamos arquitecturas existentes, pero frecuentemente recomendamos migraciones a Next.js y ecosistemas Cloud-native para garantizar escabilidad." },
+        { "q": "¿Cómo funciona el modelo Web SaaS?", "a": "En lugar de cobrar grandes sumas por adelantado, nuestro ecosistema SaaS requiere un costo de Setup accesible y una membresía mensual que cubre alojamiento premium, mantenimiento continuo, analíticas y soporte directo." },
+        { "q": "¿Qué tecnologías utilizan en Forge?", "a": "Desplegamos aplicaciones utilizando React (Next.js), Node.js, Bases de datos Serverless (PostgreSQL/MongoDB) e infraestructura de borde global, además de orquestadores como n8n para Agentes de IA." },
+        { "q": "¿Cuánto tiempo toma un sprint de ingeniería?", "a": "La ingeniería de precisión requiere rigor. Para iteraciones ágiles y MVPs, promediamos de 8 a 10 semanas. Ecosistemas empresariales complejos se planifican en fases de 3 a 6 meses." },
+        { "q": "¿Cómo funciona la tarifa regional USD/MXN?", "a": "Ajustamos nuestros precios algorítmicamente para brindar el mismo nivel de ingeniería de élite tanto a corporaciones en Estados Unidos (USD) como a empresas escalando en México (MXN), sin fricciones de tipo de cambio." }
+      ]
     },
     "services_page": {
       "title": "Diseñados para Dominar",

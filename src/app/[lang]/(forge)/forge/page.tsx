@@ -45,9 +45,7 @@ export default async function ForgePage({
       </section>
 
       {/* 7. FAQ */}
-      <section className="py-32 px-6 bg-background">
-        <ForgeFAQ dict={dict.forge.faq} />
-      </section>
+      <ForgeFAQ dict={dict.forge.faq} />
 
       {/* 8. Clean CTA */}
       <section className="py-32 px-6 bg-secondary relative overflow-hidden">

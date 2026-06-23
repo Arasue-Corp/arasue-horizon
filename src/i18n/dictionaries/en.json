@@ -281,13 +281,14 @@
       "view_demo": "View Demo"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "q1": "Do you offer custom development outside these plans?",
-      "a1": "Yes, we handle enterprise-grade custom applications. Contact us for a custom quote.",
-      "q2": "What technologies do you use?",
-      "a2": "We specialize in the React ecosystem (Next.js), Node.js, and cloud-native architectures.",
-      "q3": "How does the SaaS web model work?",
-      "a3": "Instead of a massive upfront cost, you pay a small setup fee and a monthly subscription that covers hosting, maintenance, and minor updates forever."
+      "title": "Operations & FAQ",
+      "questions": [
+        { "q": "Do you work with existing legacy codebases?", "a": "Our specialty is building and modernizing high-performance systems. We assess existing architectures, but we frequently recommend migrations to Next.js and Cloud-native ecosystems to guarantee scalability." },
+        { "q": "How does the Web SaaS model work?", "a": "Instead of charging massive upfront fees, our SaaS ecosystem requires an accessible Setup cost and a monthly membership that covers premium hosting, ongoing maintenance, analytics, and direct support." },
+        { "q": "What technologies do you use in Forge?", "a": "We deploy applications using React (Next.js), Node.js, Serverless Databases (PostgreSQL/MongoDB), and global edge infrastructure, along with orchestrators like n8n for AI Agents." },
+        { "q": "How long does an engineering sprint take?", "a": "Precision engineering requires rigor. For agile iterations and MVPs, we average 8 to 10 weeks. Complex enterprise ecosystems are planned in phases of 3 to 6 months." },
+        { "q": "How does the regional USD/MXN pricing work?", "a": "We algorithmically adjust our prices to deliver the exact same elite-level engineering to corporations in the US (USD) and scaling companies in Mexico (MXN), without exchange-rate friction." }
+      ]
     },
     "services_page": {
       "title": "Engineered for Dominance",
