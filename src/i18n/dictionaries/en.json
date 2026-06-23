@@ -8,6 +8,8 @@
     "services": "Services",
     "switch_lang": "Switch to",
     "currency_detected": "Currency",
+    "company_tag": "An Arasue Horizon Company",
+    "return_holding": "Return to Holding",
     "holding_menu": {
       "title": "The Holding",
       "overview": "Overview",

@@ -8,6 +8,8 @@
     "services": "Servicios",
     "switch_lang": "Cambiar a",
     "currency_detected": "Moneda",
+    "company_tag": "Una Empresa de Arasue Horizon",
+    "return_holding": "Regresar al Holding",
     "holding_menu": {
       "title": "El Holding",
       "overview": "Visión General",
