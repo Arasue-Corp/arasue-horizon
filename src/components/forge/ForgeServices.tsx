@@ -19,6 +19,14 @@ const servicesData = [
   {
     id: 'automations',
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 'mechanical_design',
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: 'pm',
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 
@@ -64,6 +72,19 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
       desc: dict.services.automations.desc,
       priceSetup: isMexico ? '16,000' : '800',
       priceMo: isMexico ? '4,000' : '200',
+    },
+    {
+      ...servicesData[4],
+      title: dict.services.mechanical_design.title,
+      desc: dict.services.mechanical_design.desc,
+      priceSetup: isMexico ? '12,000' : '600',
+      priceMo: isMexico ? '8,000' : '400',
+    },
+    {
+      ...servicesData[5],
+      title: dict.services.pm.title,
+      desc: dict.services.pm.desc,
+      priceRetainer: isMexico ? '10,000' : '500',
     }
   ]
 

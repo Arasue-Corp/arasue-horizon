@@ -208,6 +208,10 @@
       "pm": {
         "title": "Gestión de Proyectos",
         "desc": "Consultoría independiente y liderazgo de proyectos."
+      },
+      "mechanical_design": {
+        "title": "Diseño Mecánico",
+        "desc": "Modelado CAD, simulaciones FEA, planos de ingeniería y desarrollo mecánico integral en línea."
       }
     },
     "work": {

@@ -208,6 +208,10 @@
       "pm": {
         "title": "Project Management",
         "desc": "Independent consulting and project leadership."
+      },
+      "mechanical_design": {
+        "title": "Mechanical Design",
+        "desc": "CAD modeling, FEA simulations, blueprints, and end-to-end mechanical engineering online."
       }
     },
     "work": {
