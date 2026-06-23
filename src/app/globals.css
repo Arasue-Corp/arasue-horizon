@@ -53,20 +53,20 @@ body {
   --radius: 0.625rem;
 }
 
-/* 2. Theme Forge (Software Agency - Light Clean Apple Style) */
+/* 2. Theme Forge (Dark & Gold Aesthetic) */
 .theme-forge {
-  --background: #F5F5F7; /* Apple Light Gray */
-  --foreground: #1D1D1F; /* Apple Dark Text */
-  --primary: #000000;
-  --primary-foreground: #FFFFFF;
-  --secondary: #FFFFFF;
-  --secondary-foreground: #1D1D1F;
-  --accent: #0066CC; /* Apple Link Blue */
-  --accent-foreground: #FFFFFF;
-  --muted: #E5E5EA;
-  --muted-foreground: #86868B;
-  --border: #D2D2D7;
-  --radius: 1rem;
+  --background: #0c0c0c;
+  --foreground: #FFFFFF;
+  --primary: #bc9665;
+  --primary-foreground: #0c0c0c;
+  --secondary: #262626;
+  --secondary-foreground: #FFFFFF;
+  --accent: #a67d48;
+  --accent-foreground: #0c0c0c;
+  --muted: #3f3f3f;
+  --muted-foreground: #a0a0a0;
+  --border: #262626;
+  --radius: 0.5rem; /* sharper, more tactical radius */
 }
 
 /* 3. Theme Labs (Organic Products) */

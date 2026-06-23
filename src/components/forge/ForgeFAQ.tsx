@@ -23,7 +23,7 @@ export function ForgeFAQ({ dict }: { dict: any }) {
           <div key={i} className="border border-border rounded-2xl bg-secondary/50 overflow-hidden">
             <button 
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full flex items-center justify-between p-6 text-left hover:bg-black/5 transition-colors"
+              className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
             >
               <span className="font-bold text-lg text-foreground pr-8 tracking-tight">{item.q}</span>
               <ChevronDown className={`w-5 h-5 text-foreground/50 flex-shrink-0 transform transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />

@@ -79,7 +79,7 @@ export function ForgeProcess({ dict }: { dict: any }) {
           </div>
 
           {/* Right Side: Sticky Image Crossfade */}
-          <div className="hidden lg:block relative h-[70vh] rounded-3xl overflow-hidden shadow-2xl bg-black">
+          <div className="hidden lg:block relative h-[70vh] rounded-3xl overflow-hidden shadow-2xl bg-secondary">
             {images.map((src, i) => {
               const stepStart = i * stepSize;
               const stepEnd = (i + 1) * stepSize;
@@ -113,7 +113,7 @@ export function ForgeProcess({ dict }: { dict: any }) {
                     className="object-cover"
                     sizes="50vw"
                   />
-                  <div className="absolute inset-0 bg-black/5" />
+                  <div className="absolute inset-0 bg-white/5" />
                 </motion.div>
               )
             })}

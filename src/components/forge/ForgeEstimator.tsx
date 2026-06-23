@@ -65,7 +65,7 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
   }
 
   return (
-    <div className="bg-white/70 backdrop-blur-3xl border border-white rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row shadow-[0_30px_60px_rgba(0,0,0,0.05)] max-w-6xl mx-auto">
+    <div className="bg-secondary/50 backdrop-blur-3xl border border-border rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl shadow-black max-w-6xl mx-auto">
       {/* Left side: Controls */}
       <div className="flex-1 p-8 md:p-16">
         <div className="mb-16">
@@ -104,8 +104,8 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
                   onClick={() => handleTimelineChange(opt.id)}
                   className={`flex-1 py-5 px-6 rounded-2xl text-sm font-bold font-inter transition-all duration-300 ${
                     timeline === opt.id 
-                    ? 'bg-white text-foreground shadow-md' 
-                    : 'text-foreground/50 hover:bg-white/50'
+                    ? 'bg-primary text-primary-foreground shadow-md' 
+                    : 'text-foreground/50 hover:bg-primary/20 hover:text-foreground'
                   }`}
                 >
                   {opt.label}
@@ -152,7 +152,7 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
                     type="email" 
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    className="w-full bg-white/10 border border-white/20 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:bg-white/20 text-white transition-all placeholder:text-white/30" 
+                    className="w-full bg-black/5 border border-black/10 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:bg-black/10 text-black transition-all placeholder:text-black/30" 
                     placeholder="corporate@domain.com"
                   />
                 </motion.div>
@@ -160,7 +160,7 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
               <button 
                 onClick={handleRequest}
                 disabled={isPending}
-                className="w-full bg-white text-foreground font-bold text-base py-5 rounded-2xl hover:bg-neutral-200 active:scale-95 transition-all disabled:opacity-50"
+                className="w-full bg-background border border-border text-foreground font-bold text-base py-5 rounded-2xl hover:bg-secondary active:scale-95 transition-all disabled:opacity-50"
               >
                 {isPending ? t.submitting : t.cta}
               </button>

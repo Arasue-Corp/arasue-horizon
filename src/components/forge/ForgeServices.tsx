@@ -96,7 +96,7 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                 key={service.id}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="group border-b border-border py-12 cursor-pointer transition-colors hover:bg-black/5 px-8 -mx-8 rounded-3xl"
+                className="group border-b border-border py-12 cursor-pointer transition-colors hover:bg-white/5 px-8 -mx-8 rounded-3xl"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                   <div className="flex-1">
