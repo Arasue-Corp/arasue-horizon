@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { ChevronDown, Globe, Menu, X, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/ui/Logo'
@@ -12,6 +13,14 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return `/${locale}`
+    const segments = pathname.split('/')
+    segments[1] = locale
+    return segments.join('/')
+  }
 
   // Detect scroll for island effect
   useEffect(() => {
@@ -67,7 +76,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
           {/* Actions */}
           <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
             <Link 
-              href={`/${otherLang}`}
+              href={redirectedPathName(otherLang)}
               className="flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white transition-colors px-3 py-1.5 rounded-full hover:bg-white/5"
             >
               <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
@@ -178,7 +187,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
                     <span className="w-2 h-2 rounded-full bg-[#ffcc00] animate-pulse"></span>
                     {dict.workshop || 'Workshop'}
                   </Link>
-                  <Link href={`/${otherLang}`} className="text-primary font-bold text-lg flex items-center justify-center gap-2 py-2"><Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}</Link>
+                  <Link href={redirectedPathName(otherLang)} className="text-primary font-bold text-lg flex items-center justify-center gap-2 py-2"><Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}</Link>
                 </div>
               </div>
             </motion.div>

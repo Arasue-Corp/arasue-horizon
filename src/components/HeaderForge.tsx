@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Globe, Menu, X, ArrowUpRight } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 // Spring physics for tactical feel
 const spring = { type: "spring", stiffness: 350, damping: 35 } as const
@@ -11,6 +12,14 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return `/${locale}/forge`
+    const segments = pathname.split('/')
+    segments[1] = locale
+    return segments.join('/')
+  }
 
   // Detect scroll for island effect
   useEffect(() => {
@@ -70,7 +79,7 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
             {/* Actions */}
             <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
               <Link 
-                href={`/${otherLang}/forge`}
+                href={redirectedPathName(otherLang)}
                 className="flex items-center gap-2 text-sm font-semibold text-foreground/60 hover:text-foreground transition-colors px-3 py-1.5 rounded-lg hover:bg-white/5"
               >
                 <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
@@ -110,7 +119,7 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
                       <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_var(--color-primary)]"></span>
                       {dict.forge_menu.workshop || 'Workshop'}
                     </Link>
-                    <Link href={`/${otherLang}/forge`} className="text-foreground/70 font-bold text-lg flex items-center justify-center gap-2 py-2">
+                    <Link href={redirectedPathName(otherLang)} className="text-foreground/70 font-bold text-lg flex items-center justify-center gap-2 py-2">
                       <Globe className="w-5 h-5"/> Switch to {otherLang.toUpperCase()}
                     </Link>
                     <Link href={`/${lang}`} className="text-foreground/50 text-sm text-center underline">

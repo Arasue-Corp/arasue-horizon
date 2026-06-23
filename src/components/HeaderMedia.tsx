@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 import { Globe, Menu, X, ArrowUpRight } from 'lucide-react'
 import { useState } from 'react'
 import { Logo } from '@/components/ui/Logo'
@@ -8,6 +9,14 @@ import { Logo } from '@/components/ui/Logo'
 export function HeaderMedia({ dict, lang }: { dict: any, lang: string }) {
   const otherLang = lang === 'es' ? 'en' : 'es'
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  const redirectedPathName = (locale: string) => {
+    if (!pathname) return `/${locale}/media`
+    const segments = pathname.split('/')
+    segments[1] = locale
+    return segments.join('/')
+  }
   
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/95 border-b border-border">
@@ -31,7 +40,7 @@ export function HeaderMedia({ dict, lang }: { dict: any, lang: string }) {
 
         <div className="hidden md:flex items-center gap-4">
           <Link 
-            href={`/${otherLang}/media`}
+            href={redirectedPathName(otherLang)}
             className="flex items-center gap-2 text-xs font-bold hover:opacity-70 transition-opacity"
           >
             <Globe className="w-4 h-4" /> {otherLang.toUpperCase()}
@@ -57,7 +66,7 @@ export function HeaderMedia({ dict, lang }: { dict: any, lang: string }) {
           <Link href={`/${lang}/media/work`} className="font-bold py-2 border-b border-foreground/5">Work</Link>
           <Link href={`/${lang}/media/creators`} className="font-bold py-2 border-b border-foreground/5">Creators</Link>
           <Link href={`/${lang}/media/contact`} className="font-bold py-2 border-b border-foreground/5">Partner</Link>
-          <Link href={`/${otherLang}/media`} className="font-bold py-2 flex items-center gap-2 text-foreground/70"><Globe className="w-4 h-4"/> {dict.nav?.language || "Language"}: {otherLang.toUpperCase()}</Link>
+          <Link href={redirectedPathName(otherLang)} className="font-bold py-2 flex items-center gap-2 text-foreground/70"><Globe className="w-4 h-4"/> {dict.nav?.language || "Language"}: {otherLang.toUpperCase()}</Link>
         </motion.div>
       )}
     </header>
