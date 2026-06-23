@@ -306,7 +306,26 @@
     },
     "contact_page": {
       "title": "Inicia tu Construcción",
-      "subtitle": "Programa una sesión de descubrimiento con nuestros arquitectos senior."
+      "subtitle": "Programa una sesión de descubrimiento con nuestros arquitectos senior.",
+      "project_details_title": "Detalles del Proyecto",
+      "project_details_subtitle": "Completa el formulario y prepararemos una propuesta de ingeniería a medida para tu empresa.",
+      "talk_directly_title": "¿Prefieres hablar directamente?",
+      "talk_directly_subtitle": "Agenda una videollamada de descubrimiento de 30 minutos con nuestros arquitectos.",
+      "book_call": "Agendar Llamada",
+      "or_write_to_us": "O escríbenos",
+      "system_online": "Sistema En Línea",
+      "response_time_lbl": "Tiempo de Respuesta",
+      "response_time_val": "Menos de 2 horas",
+      "direct_access_lbl": "Acceso Directo",
+      "direct_access_val": "Arquitectos Senior"
+    },
+    "contact_form": {
+      "project_scope": "Alcance del Proyecto",
+      "web_app": "Web App / SaaS",
+      "ecommerce": "E-Commerce / Retail",
+      "enterprise": "Herramienta Empresarial Interna",
+      "mobile": "App Móvil",
+      "other": "Otro"
     },
     "process_section": {
       "title": "Cómo Construimos",

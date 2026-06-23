@@ -37,7 +37,7 @@ export default async function ForgeContactPage({
           <div className="relative z-10">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-[#262626]/50 backdrop-blur-md mb-8">
               <span className="w-2 h-2 rounded-full bg-[#bc9665] animate-pulse" />
-              <span className="text-xs font-mono text-[#bc9665] tracking-widest uppercase">System Online</span>
+              <span className="text-xs font-mono text-[#bc9665] tracking-widest uppercase">{dict.forge.contact_page.system_online}</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-6">
@@ -49,12 +49,12 @@ export default async function ForgeContactPage({
 
             <div className="mt-16 grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
               <div>
-                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">Response Time</p>
-                <p className="font-bold text-lg text-white">Under 2 hours</p>
+                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">{dict.forge.contact_page.response_time_lbl}</p>
+                <p className="font-bold text-lg text-white">{dict.forge.contact_page.response_time_val}</p>
               </div>
               <div>
-                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">Direct Access</p>
-                <p className="font-bold text-lg text-white">Senior Architects</p>
+                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">{dict.forge.contact_page.direct_access_lbl}</p>
+                <p className="font-bold text-lg text-white">{dict.forge.contact_page.direct_access_val}</p>
               </div>
             </div>
           </div>
@@ -64,24 +64,24 @@ export default async function ForgeContactPage({
         <div className="lg:w-1/2 flex items-center justify-center p-6 py-24 lg:p-24 relative">
           <div className="w-full max-w-xl relative z-10">
             <div className="mb-10">
-              <h2 className="text-3xl font-bold tracking-tight text-white mb-3">Project Details</h2>
-              <p className="text-white/50 font-inter">Fill out the form below and we will prepare a tailored engineering proposal for your company.</p>
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-3">{dict.forge.contact_page.project_details_title}</h2>
+              <p className="text-white/50 font-inter">{dict.forge.contact_page.project_details_subtitle}</p>
             </div>
 
             <div className="mb-10 p-6 md:p-8 rounded-2xl border border-white/10 bg-[#262626]/50 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-[#bc9665]/30 transition-colors">
                <div className="text-center sm:text-left">
-                  <h3 className="font-bold text-lg text-white mb-1">Prefer to talk directly?</h3>
-                  <p className="text-sm text-white/50 font-inter">Schedule a 30-min discovery video call with our architects.</p>
+                  <h3 className="font-bold text-lg text-white mb-1">{dict.forge.contact_page.talk_directly_title}</h3>
+                  <p className="text-sm text-white/50 font-inter">{dict.forge.contact_page.talk_directly_subtitle}</p>
                </div>
                <a href="#" className="flex-shrink-0 px-6 py-3 rounded-full bg-[#bc9665] text-[#0c0c0c] font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(188,150,101,0.2)]">
                  <Video className="w-4 h-4" />
-                 Book Call
+                 {dict.forge.contact_page.book_call}
                </a>
             </div>
 
             <div className="flex items-center gap-4 mb-10">
               <div className="flex-1 h-[1px] bg-white/10"></div>
-              <span className="text-xs font-mono text-white/30 uppercase tracking-widest">Or write to us</span>
+              <span className="text-xs font-mono text-white/30 uppercase tracking-widest">{dict.forge.contact_page.or_write_to_us}</span>
               <div className="flex-1 h-[1px] bg-white/10"></div>
             </div>
 

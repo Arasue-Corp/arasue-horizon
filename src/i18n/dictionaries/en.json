@@ -306,7 +306,26 @@
     },
     "contact_page": {
       "title": "Start Your Build",
-      "subtitle": "Schedule a discovery session with our senior architects."
+      "subtitle": "Schedule a discovery session with our senior architects.",
+      "project_details_title": "Project Details",
+      "project_details_subtitle": "Fill out the form below and we will prepare a tailored engineering proposal for your company.",
+      "talk_directly_title": "Prefer to talk directly?",
+      "talk_directly_subtitle": "Schedule a 30-min discovery video call with our architects.",
+      "book_call": "Book Call",
+      "or_write_to_us": "Or write to us",
+      "system_online": "System Online",
+      "response_time_lbl": "Response Time",
+      "response_time_val": "Under 2 hours",
+      "direct_access_lbl": "Direct Access",
+      "direct_access_val": "Senior Architects"
+    },
+    "contact_form": {
+      "project_scope": "Project Scope",
+      "web_app": "Web App / SaaS",
+      "ecommerce": "E-Commerce / Retail",
+      "enterprise": "Internal Enterprise Tool",
+      "mobile": "Mobile App",
+      "other": "Other"
     },
     "process_section": {
       "title": "How We Build",

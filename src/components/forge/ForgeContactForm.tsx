@@ -10,6 +10,7 @@ export function ForgeContactForm({ dict }: { dict: any }) {
   
   // Reuse the global form translations for labels
   const t = dict.corporate.contact.form
+  const ft = dict.forge.contact_form
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -84,17 +85,17 @@ export function ForgeContactForm({ dict }: { dict: any }) {
           name="service"
           className="w-full bg-transparent border-b-2 border-white/10 px-0 py-4 text-xl text-white outline-none focus:border-[#bc9665] transition-all appearance-none cursor-pointer"
         >
-          <option value="Web App / SaaS" className="bg-[#262626]">Web App / SaaS</option>
-          <option value="E-Commerce / Retail" className="bg-[#262626]">E-Commerce / Retail</option>
-          <option value="Internal Enterprise Tool" className="bg-[#262626]">Internal Enterprise Tool</option>
-          <option value="Mobile App" className="bg-[#262626]">Mobile App</option>
-          <option value="Other" className="bg-[#262626]">Other</option>
+          <option value="Web App / SaaS" className="bg-[#262626]">{ft.web_app}</option>
+          <option value="E-Commerce / Retail" className="bg-[#262626]">{ft.ecommerce}</option>
+          <option value="Internal Enterprise Tool" className="bg-[#262626]">{ft.enterprise}</option>
+          <option value="Mobile App" className="bg-[#262626]">{ft.mobile}</option>
+          <option value="Other" className="bg-[#262626]">{ft.other}</option>
         </select>
         <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-white/40 group-focus-within:text-[#bc9665]">
           ▼
         </div>
         <label className="absolute left-0 -top-3.5 text-xs font-bold uppercase tracking-widest text-white/50 group-focus-within:text-[#bc9665]">
-          Project Scope
+          {ft.project_scope}
         </label>
       </div>
 
