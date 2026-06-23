@@ -27,7 +27,7 @@ const dict = {
   }
 }
 
-export function MediaCaseStudies({ lang }: { lang: 'en' | 'es' }) {
+export function StudiosCaseStudies({ lang }: { lang: 'en' | 'es' }) {
   const isMexico = lang === 'es'
   const t = dict[isMexico ? 'mex' : 'usa']
   const [filter, setFilter] = useState(isMexico ? 'Todos' : 'All')

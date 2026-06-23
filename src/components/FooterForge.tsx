@@ -53,7 +53,7 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
               <h4 className="text-foreground font-bold tracking-wide uppercase text-xs font-mono mb-2">Corporate</h4>
               <Link href={`/${lang}/forge/contact`} className="text-sm text-foreground/60 hover:text-primary transition-colors">Contact HQ</Link>
               <Link href={`/${lang}`} className="text-sm text-foreground/60 hover:text-primary transition-colors">Arasue Horizon (Holding)</Link>
-              <Link href={`/${lang}/media`} className="text-sm text-foreground/60 hover:text-primary transition-colors">Arasue Media</Link>
+              <Link href={`/${lang}/studios`} className="text-sm text-foreground/60 hover:text-primary transition-colors">Arasue Studios</Link>
               <Link href={`/${lang}/labs`} className="text-sm text-foreground/60 hover:text-primary transition-colors">Arasue Labs</Link>
             </div>
 

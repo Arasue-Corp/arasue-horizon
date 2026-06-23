@@ -49,7 +49,7 @@
       "contact_desc": "Start your next project."
     },
     "media_menu": {
-      "title": "Media Production"
+      "title": "Studios Production"
     },
     "labs_menu": {
       "title": "Organic Products"
@@ -84,7 +84,7 @@
     },
     "vision": {
       "title": "Driving Innovation Across Industries",
-      "p1": "At Arasue Horizon, we believe in the power of diversified excellence. By incubating and scaling specialized subsidiaries, we create a robust ecosystem where technology, media, and consumer goods converge.",
+      "p1": "At Arasue Horizon, we believe in the power of diversified excellence. By incubating and scaling specialized subsidiaries, we create a robust ecosystem where technology, studios, and consumer goods converge.",
       "p2": "Our central holding provides strategic direction, capital allocation, and shared resources, allowing our divisions to focus purely on disrupting their respective markets.",
       "link": "Learn more about our vision"
     },
@@ -103,9 +103,9 @@
         "link": "Visit Labs",
         "tag": "Unaltered from the source."
       },
-      "media": {
-        "name": "Arasue Media",
-        "description": "In a sea of constant noise, we create depth. Arasue Media produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark. Powerful storytelling backed by sophisticated execution.",
+      "studios": {
+        "name": "Arasue Studios",
+        "description": "In a sea of constant noise, we create depth. Arasue Studios produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark. Powerful storytelling backed by sophisticated execution.",
         "link": "Visit Media",
         "tag": "Content with character."
       },
@@ -362,10 +362,10 @@
       "emailPrompt": "Enter your work email to receive the proposal:"
     }
   },
-  "media": {
+  "studios": {
     "hero": {
       "title": "Shaping Digital Culture",
-      "subtitle": "Arasue Media is a powerhouse of content creation, streaming, and digital storytelling.",
+      "subtitle": "Arasue Studios is a powerhouse of content creation, streaming, and digital storytelling.",
       "cta": "Watch Latest",
       "cta_contact": "Partner with Us"
     },
@@ -421,7 +421,7 @@
   "corporate": {
     "about": {
       "title": "Our Mission",
-      "content": "Arasue Horizon is dedicated to building scalable ecosystems across software, media, and sustainability."
+      "content": "Arasue Horizon is dedicated to building scalable ecosystems across software, studios, and sustainability."
     },
     "investors": {
       "title": "Investor Relations",
@@ -429,7 +429,7 @@
     },
     "newsroom": {
       "title": "Newsroom",
-      "content": "Latest updates, press releases, and media resources from Arasue Horizon."
+      "content": "Latest updates, press releases, and studios resources from Arasue Horizon."
     },
     "contact": {
       "title": "Global Headquarters",

@@ -1,8 +1,8 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { MotionDiv } from '@/components/Motion'
-import { MediaCaseStudies } from '@/components/media/MediaCaseStudies'
-import { MediaProcess } from '@/components/media/MediaProcess'
-import { MediaROICalculator } from '@/components/media/MediaROICalculator'
+import { StudiosCaseStudies } from '@/components/studios/StudiosCaseStudies'
+import { StudiosProcess } from '@/components/studios/StudiosProcess'
+import { StudiosROICalculator } from '@/components/studios/StudiosROICalculator'
 
 export default async function MediaPage({
   params
@@ -29,20 +29,20 @@ export default async function MediaPage({
           className="max-w-7xl mx-auto w-full z-10"
         >
           <div className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-bold tracking-widest uppercase mb-8">
-            Arasue Media
+            Arasue Studios
           </div>
           <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85] bg-clip-text text-transparent bg-gradient-to-br from-white to-white/40">
-            {dict.media.hero.title}
+            {dict.studios.hero.title}
           </h1>
           <p className="text-xl md:text-3xl mt-12 max-w-2xl font-light opacity-80 leading-relaxed border-l-4 border-purple-500 pl-6">
-            {dict.media.hero.subtitle}
+            {dict.studios.hero.subtitle}
           </p>
           <div className="pt-16 flex flex-wrap gap-6">
             <button className="px-10 py-5 rounded-full bg-white text-black font-black text-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-wide">
-              {dict.media.hero.cta}
+              {dict.studios.hero.cta}
             </button>
             <button className="px-10 py-5 rounded-full border-2 border-white/20 font-bold text-lg hover:bg-white/10 active:scale-95 transition-all uppercase tracking-wide">
-              {dict.media.hero.cta_contact}
+              {dict.studios.hero.cta_contact}
             </button>
           </div>
         </MotionDiv>
@@ -59,13 +59,13 @@ export default async function MediaPage({
 
       {/* Selected Campaigns */}
       <section className="py-32 px-6">
-        <MediaCaseStudies lang={resolvedParams.lang as 'en' | 'es'} />
+        <StudiosCaseStudies lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Services/Capabilities Grid */}
       <section className="py-32 px-6 bg-white text-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-16 uppercase">{dict.media.services.title}</h2>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-16 uppercase">{dict.studios.services.title}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <MotionDiv 
@@ -78,7 +78,7 @@ export default async function MediaPage({
               <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:scale-125 transition-transform">
                 🎥
               </div>
-              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.media.services.content}</h3>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.content}</h3>
             </MotionDiv>
             
             <MotionDiv 
@@ -91,7 +91,7 @@ export default async function MediaPage({
               <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-black/5 group-hover:bg-white/10 flex items-center justify-center transition-colors">
                 🔴
               </div>
-              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.media.services.streams}</h3>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.streams}</h3>
             </MotionDiv>
             
             <MotionDiv 
@@ -104,21 +104,21 @@ export default async function MediaPage({
               <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-black/5 group-hover:bg-white/10 flex items-center justify-center transition-colors">
                 ✨
               </div>
-              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.media.services.branding}</h3>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.branding}</h3>
             </MotionDiv>
           </div>
         </div>
       </section>
       {/* 4.5. Process */}
       <section className="py-32 px-6 border-y border-white/10 bg-white/5">
-        <MediaProcess lang={resolvedParams.lang as 'en' | 'es'} />
+        <StudiosProcess lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Creators Roster */}
       <section className="py-32 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">{dict.media.creators_page.title}</h2>
-          <p className="text-xl text-white/50 mb-16">{dict.media.creators_page.subtitle}</p>
+          <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">{dict.studios.creators_page.title}</h2>
+          <p className="text-xl text-white/50 mb-16">{dict.studios.creators_page.subtitle}</p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[1, 2, 3, 4].map((i) => (
@@ -138,14 +138,14 @@ export default async function MediaPage({
 
       {/* 5.5. ROI Calculator */}
       <section className="py-32 px-6">
-        <MediaROICalculator lang={resolvedParams.lang as 'en' | 'es'} />
+        <StudiosROICalculator lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 
       {/* Collab CTA */}
       <section className="py-32 px-6 border-t border-white/10 text-center">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8">{dict.media.contact_page.title}</h2>
-          <p className="text-2xl text-white/60 mb-12">{dict.media.contact_page.subtitle}</p>
+          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8">{dict.studios.contact_page.title}</h2>
+          <p className="text-2xl text-white/60 mb-12">{dict.studios.contact_page.subtitle}</p>
           <button className="px-12 py-6 rounded-full bg-purple-600 text-white font-black text-xl hover:bg-purple-500 active:scale-95 transition-all uppercase tracking-wide shadow-[0_0_40px_rgba(147,51,234,0.3)]">
             Send Brief
           </button>

@@ -24,7 +24,7 @@ const dict = {
   }
 }
 
-export function MediaProcess({ lang }: { lang: 'en' | 'es' }) {
+export function StudiosProcess({ lang }: { lang: 'en' | 'es' }) {
   const isMexico = lang === 'es'
   const t = dict[isMexico ? 'mex' : 'usa']
 

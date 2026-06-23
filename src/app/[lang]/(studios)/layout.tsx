@@ -1,7 +1,7 @@
 export const dynamicParams = false;
 import '../../globals.css'
 import { getDictionary, Locale } from '@/i18n/dictionaries'
-import { HeaderMedia } from '@/components/HeaderMedia'
+import { HeaderStudios } from '@/components/HeaderStudios'
 import { playfair, inter } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
 import { Metadata } from 'next'
@@ -11,21 +11,21 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return {
-    title: `Arasue Media | ${dict.media?.hero?.title || 'Media Production'}`,
-    description: dict.media?.hero?.subtitle || 'Digital marketing, streaming, and content creation powerhouse.',
+    title: `Arasue Studios | ${dict.studios?.hero?.title || 'Studios Production'}`,
+    description: dict.studios?.hero?.subtitle || 'Digital marketing, streaming, and content creation powerhouse.',
     metadataBase: new URL('https://arasue.com'),
     alternates: {
-      canonical: `/${resolvedParams.lang}/media`,
+      canonical: `/${resolvedParams.lang}/studios`,
       languages: {
-        'en': '/en/media',
-        'es': '/es/media',
+        'en': '/en/studios',
+        'es': '/es/studios',
       },
     },
     openGraph: {
-      title: 'Arasue Media',
-      description: dict.media?.hero?.subtitle,
-      url: `https://arasue.com/${resolvedParams.lang}/media`,
-      siteName: 'Arasue Media',
+      title: 'Arasue Studios',
+      description: dict.studios?.hero?.subtitle,
+      url: `https://arasue.com/${resolvedParams.lang}/studios`,
+      siteName: 'Arasue Studios',
       locale: resolvedParams.lang,
       type: 'website',
     }
@@ -43,13 +43,13 @@ export default async function MediaLayout({
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return (
-    <html lang={resolvedParams.lang} className="theme-media" suppressHydrationWarning>
+    <html lang={resolvedParams.lang} className="theme-studios" suppressHydrationWarning>
       <head>
         <Analytics />
       </head>
       <body suppressHydrationWarning className={`antialiased min-h-screen bg-background text-foreground flex flex-col ${playfair.variable} ${inter.variable}`}>
         {/* Notice Media is Dark Mode by default */}
-        <HeaderMedia dict={dict} lang={resolvedParams.lang} />
+        <HeaderStudios dict={dict} lang={resolvedParams.lang} />
         <main className="flex-1">
           {children}
         </main>

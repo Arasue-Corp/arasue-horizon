@@ -10,7 +10,7 @@ const dict = {
     subtitle: 'Five interconnected divisions driving cultural and commercial momentum.',
     divisions: [
       { id: 'forge', name: 'Arasue Forge', desc: 'Great ideas mean nothing if they stay in the air. Arasue Forge is the development studio where advanced software and critical tech come to life with precision, power, and flawless performance.', color: 'from-[#0511F2] to-[#05F2DB]', link: '/forge' },
-      { id: 'media', name: 'Arasue Media', desc: 'In a sea of constant noise, we create depth. Arasue Media produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark.', color: 'from-[#F28F6B] to-[#A65E44]', link: '/media' },
+      { id: 'media', name: 'Arasue Studios', desc: 'In a sea of constant noise, we create depth. Arasue Studios produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark.', color: 'from-[#fbe288] to-[#f9d657]', link: '/studios' },
       { id: 'labs', name: 'Arasue Labs', desc: 'True excellence accepts no shortcuts. Arasue Labs bridges scientific rigor with nature\'s purity, managing the import and logistics of premium products with absolute traceability.', color: 'from-[#1a2e1a] to-emerald-800', link: '/labs' },
       { id: 'protection', name: 'Arasue Protection', desc: 'Real success is never left to chance. Arasue Protection shields your life, health, and wealth with high-tier insurance solutions and absolute certainty.', color: 'from-[#162D59] to-slate-500', link: '/protection' }
     ]
@@ -20,7 +20,7 @@ const dict = {
     subtitle: 'Cinco divisiones interconectadas impulsando el momento cultural y comercial.',
     divisions: [
       { id: 'forge', name: 'Arasue Forge', desc: 'Las grandes ideas no sirven de nada si se quedan en el aire. Arasue Forge es el estudio de desarrollo donde el software avanzado y la tecnología crítica cobran vida con precisión, fuerza y un rendimiento impecable.', color: 'from-[#0511F2] to-[#05F2DB]', link: '/es/forge' },
-      { id: 'media', name: 'Arasue Media', desc: 'En un mar de ruido constante, nosotros creamos profundidad. Arasue Media produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real.', color: 'from-[#F28F6B] to-[#A65E44]', link: '/es/media' },
+      { id: 'media', name: 'Arasue Studios', desc: 'En un mar de ruido constante, nosotros creamos profundidad. Arasue Studios produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real.', color: 'from-[#fbe288] to-[#f9d657]', link: '/es/studios' },
       { id: 'labs', name: 'Arasue Labs', desc: 'La verdadera excelencia no acepta atajos. Arasue Labs une el rigor de la ciencia con la pureza de la naturaleza, controlando la importación y logística de productos premium con una trazabilidad absoluta.', color: 'from-[#1a2e1a] to-emerald-800', link: '/es/labs' },
       { id: 'protection', name: 'Arasue Protection', desc: 'El éxito real no se deja al azar. Arasue Protection blinda tu vida, tu salud y tu patrimonio con soluciones de aseguramiento de alto nivel y total certeza.', color: 'from-[#162D59] to-slate-500', link: '/es/protection' }
     ]

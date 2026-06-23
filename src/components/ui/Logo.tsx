@@ -2,7 +2,7 @@ import React from 'react'
 import { Hexagon, Zap, Leaf, PlaySquare, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
 
-type Division = 'Horizon' | 'Forge' | 'Labs' | 'Media' | 'Protection'
+type Division = 'Horizon' | 'Forge' | 'Labs' | 'Studios' | 'Protection'
 
 interface LogoProps {
   division: Division
@@ -16,15 +16,15 @@ export function Logo({ division, className = '', iconSize = 28 }: LogoProps) {
     Horizon: Hexagon,
     Forge: Zap,
     Labs: Leaf,
-    Media: PlaySquare,
+    Studios: PlaySquare,
     Protection: ShieldCheck,
   }
 
   const Icon = Icons[division]
 
-  // Use custom image logos for Horizon and Forge
-  const useCustomImage = division === 'Horizon' || division === 'Forge'
-  const imageSrc = division === 'Horizon' ? '/logo-horizon-oro.png' : '/logo-forge-negro.png'
+  // Use custom image logos for Horizon, Forge, Studios
+  const useCustomImage = division === 'Horizon' || division === 'Forge' || division === 'Studios'
+  const imageSrc = division === 'Horizon' ? '/logo-horizon-oro.png' : division === 'Forge' ? '/logo-forge-negro.png' : '/logo-studios-blanco.png'
 
   if (useCustomImage) {
     return (

@@ -34,7 +34,7 @@ const dict = {
   }
 }
 
-export function MediaROICalculator({ lang }: { lang: 'en' | 'es' }) {
+export function StudiosROICalculator({ lang }: { lang: 'en' | 'es' }) {
   const isMexico = lang === 'es'
   const t = dict[isMexico ? 'mex' : 'usa']
   

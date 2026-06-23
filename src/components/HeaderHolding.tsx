@@ -123,7 +123,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
             >
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-white/10 pt-4">
                 <MenuLink title="Arasue Forge" desc="Digital products & SaaS" href={`/${lang}/forge`} color="#0511F2" />
-                <MenuLink title="Arasue Media" desc="Content & Streaming" href={`/${lang}/media`} color="#F28F6B" />
+                <MenuLink title="Arasue Studios" desc="Content & Streaming" href={`/${lang}/studios`} color="#f9d657" />
                 <MenuLink title="Arasue Labs" desc="Premium organic goods" href={`/${lang}/labs`} color="#1a2e1a" />
                 <MenuLink title="Arasue Protection" desc="Life & Health Insurance" href={`/${lang}/protection`} color="#162D59" />
               </div>
@@ -167,7 +167,7 @@ export function HeaderHolding({ dict, lang }: { dict: any, lang: string }) {
                   <h3 className="text-white/50 text-xs uppercase tracking-widest font-bold mb-3">{dict.divisions || 'Divisions'}</h3>
                   <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
                     <Link href={`/${lang}/forge`} className="text-white font-semibold text-lg">Arasue Forge</Link>
-                    <Link href={`/${lang}/media`} className="text-white font-semibold text-lg">Arasue Media</Link>
+                    <Link href={`/${lang}/studios`} className="text-white font-semibold text-lg">Arasue Studios</Link>
                     <Link href={`/${lang}/labs`} className="text-white font-semibold text-lg">Arasue Labs</Link>
                     <Link href={`/${lang}/protection`} className="text-white font-semibold text-lg">Arasue Protection</Link>
                   </div>

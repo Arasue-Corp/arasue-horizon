@@ -84,7 +84,7 @@ export function HorizonContactForm({ dict }: { dict: any }) {
           <option value="Investor Relations">Investor Relations</option>
           <option value="Press / Media">Press / Media</option>
           <option value="Arasue Forge">Arasue Forge</option>
-          <option value="Arasue Media">Arasue Media</option>
+          <option value="Arasue Studios">Arasue Studios</option>
         </select>
       </div>
 

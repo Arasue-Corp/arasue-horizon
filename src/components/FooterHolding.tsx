@@ -38,7 +38,7 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
             <ul className="space-y-3 text-sm text-foreground/70">
               <li><Link href={`/${lang}`} className="hover:text-foreground transition-colors">Arasue Horizon</Link></li>
               <li><Link href={`/${lang}/forge`} className="hover:text-foreground transition-colors">Arasue Forge</Link></li>
-              <li><Link href={`/${lang}/media`} className="hover:text-foreground transition-colors">Arasue Media</Link></li>
+              <li><Link href={`/${lang}/studios`} className="hover:text-foreground transition-colors">Arasue Studios</Link></li>
               <li><Link href={`/${lang}/labs`} className="hover:text-foreground transition-colors">Arasue Labs</Link></li>
               <li><Link href={`/${lang}/protection`} className="hover:text-foreground transition-colors">Arasue Protection</Link></li>
               <li><Link href={`/${lang}/workshop`} className="hover:text-foreground transition-colors">Workshop</Link></li>

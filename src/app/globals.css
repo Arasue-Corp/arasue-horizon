@@ -85,20 +85,20 @@ body {
   --radius: 0.75rem;
 }
 
-/* 4. Theme Media (Content & Streaming) */
-.theme-media {
-  --background: #FFFFFF;
-  --foreground: #171717;
-  --primary: #FF2E93;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F5F5F5;
-  --secondary-foreground: #171717;
-  --accent: #8A2BE2;
-  --accent-foreground: #FFFFFF;
-  --muted: #F5F5F5;
-  --muted-foreground: #737373;
-  --border: #E5E5E5;
-  --radius: 0rem; /* Edgy, brutalist */
+/* 4. Theme Studios (Content & Production) */
+.theme-studios {
+  --background: #181818;
+  --foreground: #fdeeb9;
+  --primary: #f9d657;
+  --primary-foreground: #181818;
+  --secondary: #323232;
+  --secondary-foreground: #fdeeb9;
+  --accent: #fbe288;
+  --accent-foreground: #181818;
+  --muted: #4b4b4b;
+  --muted-foreground: #fbe288;
+  --border: #323232;
+  --radius: 0.5rem;
 }
 
 /* 5. Theme Protection (Security) */

@@ -6,8 +6,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   // Resolve title and description dynamically
-  const title = (dict as any).media.creators_page?.title || 'MediaCreatorsPage'
-  const description = (dict as any).media.creators_page?.subtitle || 'Arasue Horizon'
+  const title = (dict as any).studios.creators_page?.title || 'StudiosCreatorsPage'
+  const description = (dict as any).studios.creators_page?.subtitle || 'Arasue Horizon'
 
   return {
     title: `${title} | Arasue`,
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 }
 
-export default async function MediaCreatorsPage({
+export default async function StudiosCreatorsPage({
   params
 }: {
   params: Promise<{ lang: string }>
@@ -33,10 +33,10 @@ export default async function MediaCreatorsPage({
           className="space-y-6"
         >
           <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-tight">
-            {dict.media.creators_page.title}
+            {dict.studios.creators_page.title}
           </h1>
           <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.media.creators_page.subtitle }
+            {dict.studios.creators_page.subtitle }
           </p>
         </MotionDiv>
         

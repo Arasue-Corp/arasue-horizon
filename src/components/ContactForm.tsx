@@ -69,7 +69,7 @@ export function ContactForm() {
         <select name="subject" className="w-full bg-background border border-foreground/10 rounded-2xl px-6 py-4 outline-none focus:border-foreground/30 focus:ring-4 focus:ring-foreground/5 transition-all appearance-none">
           <option value="General Inquiry">General Inquiry</option>
           <option value="Arasue Forge">Arasue Forge (Development & Ads)</option>
-          <option value="Arasue Media">Arasue Media (Content Creation)</option>
+          <option value="Arasue Studios">Arasue Studios (Content Creation)</option>
           <option value="Arasue Labs">Arasue Labs (Products)</option>
           <option value="Arasue Protection">Arasue Protection (Insurance)</option>
         </select>

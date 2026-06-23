@@ -103,9 +103,9 @@
         "link": "Visitar Labs",
         "tag": "Inalterable desde el origen."
       },
-      "media": {
-        "name": "Arasue Media",
-        "description": "En un mar de ruido constante, nosotros creamos profundidad. Arasue Media produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real. Historias potentes respaldadas por una ejecución sofisticada.",
+      "studios": {
+        "name": "Arasue Studios",
+        "description": "En un mar de ruido constante, nosotros creamos profundidad. Arasue Studios produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real. Historias potentes respaldadas por una ejecución sofisticada.",
         "link": "Visitar Media",
         "tag": "Contenido con carácter."
       },
@@ -362,10 +362,10 @@
       "emailPrompt": "Ingresa tu correo laboral para recibir la propuesta:"
     }
   },
-  "media": {
+  "studios": {
     "hero": {
       "title": "Dando Forma a la Cultura Digital",
-      "subtitle": "Arasue Media es una potencia en la creación de contenido, streams y narrativa digital.",
+      "subtitle": "Arasue Studios es una potencia en la creación de contenido, streams y narrativa digital.",
       "cta": "Ver lo Más Reciente",
       "cta_contact": "Trabaja con Nosotros"
     },
