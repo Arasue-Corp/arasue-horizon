@@ -469,6 +469,25 @@
         "cta": "Asegura Tu Frasco",
         "shipping": "Envío rápido a todo EE.UU."
       },
+      "origin": {
+        "title": "Deja de comer miel muerta.",
+        "subtitle": "La mayoría de la miel de los supermercados ha sido despojada de las propiedades que la hacen un superalimento. Calentarla y filtrarla te deja solo con jarabe de azúcar glorificado. La miel Arasue es diferente.",
+        "use1_title": "Extracción en Frío",
+        "use1_desc": "Procesada a temperatura de la colmena para proteger nutrientes vivos y enzimas vitales.",
+        "use2_title": "Sin Filtrar",
+        "use2_desc": "Rica en polen beneficioso y antioxidantes, manteniendo su textura espesa natural.",
+        "use3_title": "Origen Único",
+        "use3_desc": "Obtenida directamente del Desierto de Sonora. Pruebas exactamente lo que la colmena creó."
+      },
+      "map": {
+        "map_desc": "Nuestros nodos de extracción están situados en las profundidades de las reservas vírgenes del Desierto de Sonora. Lejos de la agricultura comercial y pesticidas.",
+        "title": "Nacida en el Entorno Más Duro.",
+        "subtitle": "El Desierto de Sonora es implacable. Solo la flora más resistente sobrevive aquí, produciendo una dulzura compleja y sin adulterar.",
+        "type1_title": "Miel de Mezquite",
+        "type1_desc": "Terrosa, ahumada y profundamente rica. Recolectada de los resistentes árboles de Mezquite que anclan el ecosistema del desierto.",
+        "type2_title": "Multiflora del Desierto",
+        "type2_desc": "Una mezcla compleja de Palo Verde, Palo Fierro (Ironwood) y flores silvestres del desierto. Textura mantecosa con notas florales brillantes."
+      },
       "press": {
         "tag": "Amada por chefs y foodies en todo el país"
       },
