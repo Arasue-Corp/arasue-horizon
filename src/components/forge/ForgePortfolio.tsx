@@ -64,7 +64,7 @@ function PortfolioItem({ dict, project, index }: { dict: any, project: any, inde
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="group relative w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-[#131926] shadow-2xl"
+      className="group relative w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-[#262626] shadow-2xl"
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -75,14 +75,14 @@ function PortfolioItem({ dict, project, index }: { dict: any, project: any, inde
           className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)]"
         />
         {/* Deep Slate Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
       </div>
 
       {/* Content Overlay */}
       <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
         <div className="overflow-hidden mb-4">
-          <div className="text-[#05F2DB] font-mono text-xs md:text-sm uppercase tracking-widest flex items-center gap-3 translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
-            <span className="w-8 h-[1px] bg-[#05F2DB]"></span>
+          <div className="text-[#bc9665] font-mono text-xs md:text-sm uppercase tracking-widest flex items-center gap-3 translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+            <span className="w-8 h-[1px] bg-[#bc9665]"></span>
             {dict[`project${project.dictKey}_category`]}
           </div>
         </div>
@@ -122,12 +122,12 @@ export function ForgePortfolio({ dict }: { dict: any }) {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"])
 
   return (
-    <section ref={targetRef} id="work" className="relative h-[600vh] bg-[#0B0F19]">
+    <section ref={targetRef} id="work" className="relative h-[600vh] bg-[#0c0c0c]">
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden border-y border-white/5">
         
         {/* Background ambient glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-[#0511F2]/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-[#a67d48]/10 blur-[150px] rounded-full pointer-events-none" />
 
         {/* Section Header */}
         <div className="container mx-auto px-6 md:px-12 w-full flex-shrink-0 mb-12 relative z-20">
@@ -135,7 +135,7 @@ export function ForgePortfolio({ dict }: { dict: any }) {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0511F2]/20 border border-[#0511F2]/30 text-[#05F2DB] text-xs font-bold font-mono tracking-widest uppercase mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#a67d48]/20 border border-[#a67d48]/30 text-[#bc9665] text-xs font-bold font-mono tracking-widest uppercase mb-6"
           >
             Showcase
           </motion.div>

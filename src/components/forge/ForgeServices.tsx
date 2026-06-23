@@ -68,14 +68,14 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
   ]
 
   return (
-    <section id="services" className="py-32 px-6 relative bg-[#0B0F19] overflow-hidden">
+    <section id="services" className="py-32 px-6 relative bg-[#0c0c0c] overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#162D59]/30 via-[#0B0F19] to-[#0B0F19] pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#826239]/30 via-[#0c0c0c] to-[#0c0c0c] pointer-events-none" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
         <div className="mb-20 text-center md:text-left">
-          <div className="text-[#05F2DB] font-mono text-xs uppercase tracking-widest mb-6 flex items-center justify-center md:justify-start gap-3">
-            <span className="w-8 h-[1px] bg-[#05F2DB]"></span>
+          <div className="text-[#bc9665] font-mono text-xs uppercase tracking-widest mb-6 flex items-center justify-center md:justify-start gap-3">
+            <span className="w-8 h-[1px] bg-[#bc9665]"></span>
             Ecosistema de Soluciones
           </div>
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-white leading-tight">{dict.pricing.title}</h2>
@@ -89,7 +89,7 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
               initial="rest"
               whileHover="hover"
               animate="rest"
-              className="group relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#131926] p-8 md:p-12 flex flex-col justify-between min-h-[480px]"
+              className="group relative rounded-[2rem] overflow-hidden border border-white/10 bg-[#262626] p-8 md:p-12 flex flex-col justify-between min-h-[480px]"
             >
               {/* Background Image with Parallax & Color Reveal */}
               <motion.div 
@@ -107,17 +107,17 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                   className="object-cover"
                 />
                 {/* Gradients to ensure text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/80 to-transparent" />
-                <div className="absolute inset-0 bg-[#0511F2]/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-[#0c0c0c]/80 to-transparent" />
+                <div className="absolute inset-0 bg-[#a67d48]/10 mix-blend-overlay" />
               </motion.div>
 
               {/* Glowing Hover Border */}
-              <div className="absolute inset-0 border-2 border-[#05F2DB]/0 group-hover:border-[#05F2DB]/20 rounded-[2rem] transition-colors duration-500 z-20 pointer-events-none" />
+              <div className="absolute inset-0 border-2 border-[#bc9665]/0 group-hover:border-[#bc9665]/20 rounded-[2rem] transition-colors duration-500 z-20 pointer-events-none" />
 
               {/* Content Header */}
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-8 bg-black/50 backdrop-blur-md group-hover:border-[#05F2DB] group-hover:shadow-[0_0_20px_rgba(5,242,219,0.4)] transition-all duration-500">
-                  <span className="font-mono text-white/50 group-hover:text-[#05F2DB] transition-colors text-xs">0{i+1}</span>
+                <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center mb-8 bg-black/50 backdrop-blur-md group-hover:border-[#bc9665] group-hover:shadow-[0_0_20px_rgba(188,150,101,0.4)] transition-all duration-500">
+                  <span className="font-mono text-white/50 group-hover:text-[#bc9665] transition-colors text-xs">0{i+1}</span>
                 </div>
                 <h3 className="text-3xl md:text-4xl font-bold mb-4 text-white tracking-tight leading-tight">{service.title}</h3>
                 <p className="text-white/60 font-inter text-lg leading-relaxed max-w-sm">{service.desc}</p>
@@ -130,7 +130,7 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                   hover: { y: -5, backgroundColor: 'rgba(0,0,0,0.6)' }
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="relative z-10 mt-12 p-6 rounded-2xl border border-white/10 backdrop-blur-xl flex flex-col gap-4 group-hover:border-[#05F2DB]/30"
+                className="relative z-10 mt-12 p-6 rounded-2xl border border-white/10 backdrop-blur-xl flex flex-col gap-4 group-hover:border-[#bc9665]/30"
               >
                 {/* Setup / One Time */}
                 {((service as any).priceSetup || (service as any).priceOneTime) && (
@@ -140,7 +140,7 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                     </span>
                     <span className="font-bold text-white tracking-tight">
                       {currencySymbol}{(service as any).priceSetup || (service as any).priceOneTime} 
-                      <span className="text-[10px] text-[#05F2DB] ml-1">{isMexico ? 'MXN' : 'USD'}</span>
+                      <span className="text-[10px] text-[#bc9665] ml-1">{isMexico ? 'MXN' : 'USD'}</span>
                     </span>
                   </div>
                 )}
@@ -148,8 +148,8 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                 {/* Monthly / Retainer */}
                 {((service as any).priceMo || (service as any).priceRetainer) && (
                   <div className="flex justify-between items-center pt-2">
-                    <span className="text-xs font-mono uppercase tracking-widest text-[#05F2DB] flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#05F2DB] animate-pulse" />
+                    <span className="text-xs font-mono uppercase tracking-widest text-[#bc9665] flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#bc9665] animate-pulse" />
                       {(service as any).priceMo ? dict.pricing.mo : dict.pricing.retainer}
                     </span>
                     <span className="font-black text-3xl text-white tracking-tighter">

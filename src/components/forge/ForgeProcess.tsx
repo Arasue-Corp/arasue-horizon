@@ -22,7 +22,7 @@ export function ForgeProcess({ dict }: { dict: any }) {
   const stepSize = 1 / numSteps;
 
   return (
-    <div ref={containerRef} className="relative h-[400vh] bg-[#0B0F19] selection:bg-[#0511F2] selection:text-white">
+    <div ref={containerRef} className="relative h-[400vh] bg-[#0c0c0c] selection:bg-[#a67d48] selection:text-white">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
@@ -34,8 +34,8 @@ export function ForgeProcess({ dict }: { dict: any }) {
           {/* Left Side: Text and Steps */}
           <div className="space-y-12">
             <div className="mb-12">
-              <div className="text-[#05F2DB] font-mono text-xs uppercase tracking-widest mb-6 flex items-center gap-3">
-                <span className="w-8 h-[1px] bg-[#05F2DB]"></span>
+              <div className="text-[#bc9665] font-mono text-xs uppercase tracking-widest mb-6 flex items-center gap-3">
+                <span className="w-8 h-[1px] bg-[#bc9665]"></span>
                 Ingeniería de Precisión
               </div>
               <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 leading-[1.1]">{dict.title}</h2>
@@ -88,11 +88,11 @@ export function ForgeProcess({ dict }: { dict: any }) {
                     {/* The glowing active border */}
                     <motion.div 
                       style={{ height: borderHeight }}
-                      className="absolute left-[14px] top-0 w-[3px] bg-[#05F2DB] shadow-[0_0_15px_rgba(5,242,219,0.5)] z-10"
+                      className="absolute left-[14px] top-0 w-[3px] bg-[#bc9665] shadow-[0_0_15px_rgba(188,150,101,0.5)] z-10"
                     />
 
                     {/* Number Indicator */}
-                    <div className="absolute left-0 top-9 w-8 h-8 rounded-full bg-[#131926] border border-white/10 flex items-center justify-center text-xs font-mono text-white/50 group-hover:text-[#05F2DB] transition-colors z-20">
+                    <div className="absolute left-0 top-9 w-8 h-8 rounded-full bg-[#262626] border border-white/10 flex items-center justify-center text-xs font-mono text-white/50 group-hover:text-[#bc9665] transition-colors z-20">
                       0{i + 1}
                     </div>
 
@@ -105,12 +105,12 @@ export function ForgeProcess({ dict }: { dict: any }) {
           </div>
 
           {/* Right Side: Sticky Image Crossfade & Instrumentation */}
-          <div className="hidden lg:block relative h-[75vh] w-full rounded-2xl overflow-hidden shadow-2xl bg-[#131926] border border-white/10 group">
+          <div className="hidden lg:block relative h-[75vh] w-full rounded-2xl overflow-hidden shadow-2xl bg-[#262626] border border-white/10 group">
             
             {/* Cybernetic HUD Overlay */}
             <div className="absolute inset-0 z-20 pointer-events-none p-6 flex flex-col justify-between">
               <div className="flex justify-between items-start">
-                <div className="w-12 h-12 border-t border-l border-white/20 group-hover:border-[#05F2DB]/50 transition-colors duration-700" />
+                <div className="w-12 h-12 border-t border-l border-white/20 group-hover:border-[#bc9665]/50 transition-colors duration-700" />
                 <div className="text-white/30 font-mono text-[10px] tracking-widest bg-black/40 px-2 py-1 backdrop-blur-sm rounded-sm">SYS.OP.RUNNING</div>
               </div>
               
@@ -121,10 +121,10 @@ export function ForgeProcess({ dict }: { dict: any }) {
 
               <div className="flex justify-between items-end">
                 <div className="text-white/30 font-mono text-[10px] tracking-widest bg-black/40 px-2 py-1 backdrop-blur-sm rounded-sm flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#05F2DB] animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#bc9665] animate-pulse" />
                   LAT: 0.04MS
                 </div>
-                <div className="w-12 h-12 border-b border-r border-white/20 group-hover:border-[#05F2DB]/50 transition-colors duration-700" />
+                <div className="w-12 h-12 border-b border-r border-white/20 group-hover:border-[#bc9665]/50 transition-colors duration-700" />
               </div>
             </div>
 
@@ -170,8 +170,8 @@ export function ForgeProcess({ dict }: { dict: any }) {
                       priority={isFirst}
                     />
                     {/* Inner shadow/gradient for blending */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-[#0B0F19]/50 opacity-80" />
-                    <div className="absolute inset-0 bg-[#0511F2]/10 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0c] via-transparent to-[#0c0c0c]/50 opacity-80" />
+                    <div className="absolute inset-0 bg-[#a67d48]/10 mix-blend-overlay" />
                   </motion.div>
                 </motion.div>
               )
