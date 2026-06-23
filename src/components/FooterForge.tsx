@@ -78,7 +78,7 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
         
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-foreground/40 font-inter">
-          <p>© {new Date().getFullYear()} Arasue Forge LLC. An Arasue Horizon Company. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Arasue Forge LLC. {lang === 'es' ? 'Una empresa de Arasue Horizon SAS.' : 'An Arasue Horizon SAS company.'}</p>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link>

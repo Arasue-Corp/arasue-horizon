@@ -6,6 +6,9 @@
     "language": "Idioma",
     "divisions": "Divisiones",
     "services": "Servicios",
+    "process": "Proceso de Extracción",
+    "sustainability": "Sustentabilidad",
+    "wholesale": "Mayoreo y Contacto",
     "switch_lang": "Cambiar a",
     "currency_detected": "Moneda",
     "company_tag": "Una Empresa de Arasue Horizon",
@@ -487,6 +490,10 @@
         "type1_desc": "Terrosa, ahumada y profundamente rica. Recolectada de los resistentes árboles de Mezquite que anclan el ecosistema del desierto.",
         "type2_title": "Multiflora del Desierto",
         "type2_desc": "Una mezcla compleja de Palo Verde, Palo Fierro (Ironwood) y flores silvestres del desierto. Textura mantecosa con notas florales brillantes."
+      },
+      "gallery": {
+        "title": "Visualizando el Estándar",
+        "subtitle": "Un vistazo a la Estética de Arasue Labs"
       },
       "press": {
         "tag": "Amada por chefs y foodies en todo el país"

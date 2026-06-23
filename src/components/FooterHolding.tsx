@@ -73,7 +73,7 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
         </div>
         
         <div className="pt-8 border-t border-foreground/10 text-center flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
-          <p>© {new Date().getFullYear()} Arasue Horizon SAS. {dict.rights}</p>
+          <p>© {new Date().getFullYear()} Arasue Horizon SAS. {lang === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}</p>
           <div className="flex gap-4 justify-center">
             <a href="#" className="hover:text-foreground transition-colors">LinkedIn</a>
             <a href="#" className="hover:text-foreground transition-colors">X (Twitter)</a>

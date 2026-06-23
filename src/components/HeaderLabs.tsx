@@ -51,12 +51,21 @@ export function HeaderLabs({ dict, lang }: { dict: any, lang: string }) {
               <div className="w-12 md:w-16 h-8" />
             </Link>
             
-            <nav className="hidden lg:flex items-center gap-2">
-              <Link href={`/${lang}/labs/shop`} className="px-4 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
-                Shop
+            <nav className="hidden lg:flex items-center gap-1">
+              <Link href={`/${lang}/labs/shop`} className="px-3 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                {dict.nav?.shop || 'Shop'}
               </Link>
-              <Link href={`/${lang}/labs/story`} className="px-4 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
-                Our Story
+              <Link href={`/${lang}/labs/story`} className="px-3 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                {dict.nav?.story || 'Our Story'}
+              </Link>
+              <Link href={`/${lang}/labs/process`} className="px-3 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                {dict.nav?.process || 'Process'}
+              </Link>
+              <Link href={`/${lang}/labs/sustainability`} className="px-3 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                {dict.nav?.sustainability || 'Sustainability'}
+              </Link>
+              <Link href={`/${lang}/labs/contact`} className="px-3 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
+                {dict.nav?.wholesale || 'Wholesale & Contact'}
               </Link>
             </nav>
 

@@ -5,6 +5,7 @@ import { LabsComparison } from '@/components/labs/LabsComparison'
 import { LabsOriginClient } from '@/components/labs/LabsOriginClient'
 import { LabsDesertMap } from '@/components/labs/LabsDesertMap'
 import { LabsRitualClient } from '@/components/labs/LabsRitualClient'
+import { LabsGallery } from '@/components/labs/LabsGallery'
 import { LabsShopGrid } from '@/components/labs/LabsShopGrid'
 import { LabsTestimonials } from '@/components/labs/LabsTestimonials'
 import { LabsFAQ } from '@/components/labs/LabsFAQ'
@@ -31,6 +32,7 @@ export default async function LabsPage({ params }: { params: Promise<{ lang: str
       <LabsComparison dict={labsDict.comparison} />
       <LabsOriginClient dict={labsDict.origin} />
       <LabsDesertMap dict={labsDict.map} />
+      <LabsGallery dict={labsDict.gallery} />
       <LabsRitualClient dict={labsDict.ritual} />
       <LabsShopGrid dict={labsDict.shop} />
       <LabsTestimonials dict={labsDict.testimonials} />

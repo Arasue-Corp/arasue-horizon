@@ -6,6 +6,9 @@
     "language": "Language",
     "divisions": "Divisions",
     "services": "Services",
+    "process": "Extraction Process",
+    "sustainability": "Sustainability",
+    "wholesale": "Wholesale & Contact",
     "switch_lang": "Switch to",
     "currency_detected": "Currency",
     "company_tag": "An Arasue Horizon Company",
@@ -490,6 +493,10 @@
         "type1_desc": "Earthy, smoky, and deeply rich. Foraged from the resilient Mesquite trees that anchor the desert ecosystem.",
         "type2_title": "Desert Multiflora",
         "type2_desc": "A complex blend of Palo Verde, Ironwood, and wild desert wildflowers. Buttery texture with bright floral notes."
+      },
+      "gallery": {
+        "title": "Visualizing the Standard",
+        "subtitle": "A Glimpse into the Arasue Labs Aesthetic"
       },
       "comparison": {
         "title": "Stop Eating Dead Honey.",

@@ -76,7 +76,7 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
       </div>
 
       <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-sm text-white/60 font-light">
-        <p>© {new Date().getFullYear()} Arasue Horizon SAS. {dict.footer?.rights || "All rights reserved."}</p>
+        <p>© {new Date().getFullYear()} Arasue Labs LLC. {lang === 'es' ? 'Una empresa de Arasue Horizon SAS.' : 'An Arasue Horizon SAS company.'}</p>
         <p className="mt-4 md:mt-0 uppercase tracking-widest text-white/80 font-medium">Premium Organic Goods</p>
       </div>
     </footer>
