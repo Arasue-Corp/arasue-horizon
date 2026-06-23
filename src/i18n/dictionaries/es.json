@@ -385,7 +385,18 @@
     },
     "contact_page": {
       "title": "Colabora con Nosotros",
-      "subtitle": "¿Listo para volverte viral? Hablemos de estrategia."
+      "subtitle": "¿Listo para volverte viral? Hablemos de estrategia.",
+      "project_details_title": "Detalles de Campaña",
+      "project_details_subtitle": "Llena el formulario y prepararemos una estrategia de contenido a la medida para tu marca.",
+      "talk_directly_title": "¿Prefieres hablar directamente?",
+      "talk_directly_subtitle": "Agenda una videollamada de 30 mins con nuestros productores.",
+      "book_call": "Agendar Llamada",
+      "or_write_to_us": "O escríbenos",
+      "system_online": "Studios Activo",
+      "response_time_lbl": "Tiempo de Respuesta",
+      "response_time_val": "Menos de 2 hrs",
+      "direct_access_lbl": "Acceso Directo",
+      "direct_access_val": "Productores Senior"
     }
   },
   "labs": {

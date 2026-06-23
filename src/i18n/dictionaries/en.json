@@ -385,7 +385,18 @@
     },
     "contact_page": {
       "title": "Collaborate",
-      "subtitle": "Ready to go viral? Let's talk strategy."
+      "subtitle": "Ready to go viral? Let's talk strategy.",
+      "project_details_title": "Campaign Details",
+      "project_details_subtitle": "Fill out the form below and we will prepare a tailored content strategy for your brand.",
+      "talk_directly_title": "Prefer to talk directly?",
+      "talk_directly_subtitle": "Schedule a 30-min discovery video call with our producers.",
+      "book_call": "Book Call",
+      "or_write_to_us": "Or write to us",
+      "system_online": "Studios Active",
+      "response_time_lbl": "Response Time",
+      "response_time_val": "Under 2 hours",
+      "direct_access_lbl": "Direct Access",
+      "direct_access_val": "Senior Producers"
     }
   },
   "labs": {

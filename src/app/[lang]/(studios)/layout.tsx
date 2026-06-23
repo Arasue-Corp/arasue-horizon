@@ -28,9 +28,19 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       siteName: 'Arasue Studios',
       locale: resolvedParams.lang,
       type: 'website',
+    },
+    icons: {
+      icon: [
+        { url: '/icono-studios-negro.png', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/icono-studios-negro.png', type: 'image/png' }
+      ]
     }
   }
 }
+
+import { FooterStudios } from '@/components/FooterStudios'
 
 export default async function MediaLayout({
   children,
@@ -53,6 +63,7 @@ export default async function MediaLayout({
         <main className="flex-1">
           {children}
         </main>
+        <FooterStudios dict={dict} lang={resolvedParams.lang} />
       </body>
     </html>
   )
