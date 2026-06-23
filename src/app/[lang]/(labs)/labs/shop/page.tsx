@@ -24,8 +24,12 @@ export default async function LabsShopPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <div className="flex flex-col min-h-[80vh] pt-32 pb-24 px-6 font-serif text-foreground">
-      <div className="max-w-5xl mx-auto w-full">
+    <div className="flex flex-col min-h-[80vh] pt-40 pb-24 px-6 font-serif text-foreground relative">
+      {/* Tactical Grid Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ad102f1a_1px,transparent_1px),linear-gradient(to_bottom,#ad102f1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      </div>
+      <div className="max-w-5xl mx-auto w-full relative z-10">
         <MotionDiv 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
