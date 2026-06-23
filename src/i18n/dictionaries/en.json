@@ -550,7 +550,13 @@
     },
     "contact_page": {
       "title": "Wholesale & Partnerships",
-      "subtitle": "Get in touch for bulk honey orders and premium retail partnerships."
+      "subtitle": "Get in touch for bulk honey orders and premium retail partnerships.",
+      "project_details_title": "Wholesale Inquiries",
+      "project_details_subtitle": "Tell us about your volume needs.",
+      "talk_directly_title": "Talk to a Specialist",
+      "talk_directly_subtitle": "Skip the form. Let's discuss your requirements via video call.",
+      "book_call": "Book a Call",
+      "or_write_to_us": "Or write to us"
     }
   },
   "corporate": {

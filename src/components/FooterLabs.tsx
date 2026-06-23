@@ -27,7 +27,7 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
             <img src="/icono-labs-negro.png" alt="Arasue Labs" className="h-12 w-auto invert" />
             <h2 className="text-3xl font-serif">Arasue Labs.</h2>
           </div>
-          <p className="text-background/60 max-w-sm font-light">
+          <p className="text-white/90 max-w-sm font-light text-base leading-relaxed">
             {dict.footer?.newsletter_desc || "Subscribe to The Apothecary Journal for early access to limited harvests."}
           </p>
           {isSuccess ? (
@@ -42,9 +42,9 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
                 required
                 type="email" 
                 placeholder="Your email address" 
-                className="bg-transparent w-full outline-none text-background placeholder:text-background/30"
+                className="bg-transparent w-full outline-none text-white text-base placeholder:text-white/50"
               />
-              <button type="submit" disabled={isPending} className="uppercase tracking-widest text-xs font-bold text-accent hover:text-primary-foreground transition-colors disabled:opacity-50">
+              <button type="submit" disabled={isPending} className="uppercase tracking-widest text-sm font-bold text-accent hover:text-white transition-colors disabled:opacity-50">
                 {isPending ? '...' : (dict.footer?.subscribe || "Subscribe")}
               </button>
             </form>
@@ -54,7 +54,7 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
         {/* Links */}
         <div>
           <h4 className="text-xs uppercase tracking-widest text-background/50 mb-6">{dict.footer?.links || "Quick Links"}</h4>
-          <ul className="space-y-4 text-sm font-light text-background/80">
+          <ul className="space-y-4 text-base font-light text-white/80">
             <li><Link href={`/${lang}/labs`} className="hover:text-accent transition-colors">Shop All</Link></li>
             <li><Link href={`/${lang}/labs/story`} className="hover:text-accent transition-colors">Our Story</Link></li>
             <li><Link href={`/${lang}/labs/contact`} className="hover:text-accent transition-colors">Wholesale</Link></li>
@@ -65,7 +65,7 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
         {/* Legal & Address */}
         <div>
           <h4 className="text-xs uppercase tracking-widest text-background/50 mb-6">{dict.footer?.legal || "Legal & Contact"}</h4>
-          <ul className="space-y-4 text-sm font-light text-background/80">
+          <ul className="space-y-4 text-base font-light text-white/80">
             <li>{dict.footer?.address_val || "Global Headquarters"}</li>
             <li>hello@arasue.com</li>
             <li><Link href="#" className="hover:text-accent transition-colors">{dict.footer?.privacy || "Privacy Policy"}</Link></li>
@@ -75,9 +75,9 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
 
       </div>
 
-      <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center text-xs text-background/40 font-light">
+      <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-sm text-white/60 font-light">
         <p>© {new Date().getFullYear()} Arasue Horizon SAS. {dict.footer?.rights || "All rights reserved."}</p>
-        <p className="mt-4 md:mt-0 uppercase tracking-widest">Premium Organic Goods</p>
+        <p className="mt-4 md:mt-0 uppercase tracking-widest text-white/80 font-medium">Premium Organic Goods</p>
       </div>
     </footer>
   )

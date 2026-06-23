@@ -93,6 +93,38 @@ export default async function LabsContactPage({
             transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.1 }}
             className="w-full max-w-xl mx-auto"
           >
+            <div className="mb-10">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground mb-3">
+                {dict.labs.contact_page?.project_details_title || "Wholesale Inquiries"}
+              </h2>
+              <p className="text-foreground/50 font-sans">
+                {dict.labs.contact_page?.project_details_subtitle || "Tell us about your volume needs."}
+              </p>
+            </div>
+
+            <div className="mb-10 p-6 md:p-8 rounded-2xl border border-primary/20 bg-background/50 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-primary/40 transition-colors">
+               <div className="text-center sm:text-left">
+                  <h3 className="font-bold text-lg text-foreground mb-1">
+                    {dict.labs.contact_page?.talk_directly_title || "Talk to a Specialist"}
+                  </h3>
+                  <p className="text-sm text-foreground/50 font-sans">
+                    {dict.labs.contact_page?.talk_directly_subtitle || "Skip the form. Let's discuss your requirements via video call."}
+                  </p>
+               </div>
+               <a href="https://cal.com/arasue/30min" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 px-6 py-3 rounded-full bg-primary text-white font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(220,20,60,0.2)]">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>
+                 {dict.labs.contact_page?.book_call || "Book a Call"}
+               </a>
+            </div>
+
+            <div className="flex items-center gap-4 mb-10">
+              <div className="flex-1 h-[1px] bg-foreground/10"></div>
+              <span className="text-xs font-mono text-foreground/40 uppercase tracking-widest">
+                {dict.labs.contact_page?.or_write_to_us || "Or write to us"}
+              </span>
+              <div className="flex-1 h-[1px] bg-foreground/10"></div>
+            </div>
+
             <LabsContactForm dict={dict.labs} />
           </MotionDiv>
         </div>

@@ -550,7 +550,13 @@
     },
     "contact_page": {
       "title": "Mayoreo y Alianzas",
-      "subtitle": "Contáctanos para pedidos de miel por volumen y asociaciones premium."
+      "subtitle": "Contáctanos para pedidos de miel por volumen y asociaciones premium.",
+      "project_details_title": "Consultas de Mayoreo",
+      "project_details_subtitle": "Cuéntanos sobre tus necesidades de volumen.",
+      "talk_directly_title": "Habla con un Especialista",
+      "talk_directly_subtitle": "Sáltate el formulario. Discutamos tus requisitos por videollamada.",
+      "book_call": "Agendar Llamada",
+      "or_write_to_us": "O escríbenos"
     }
   },
   "corporate": {
