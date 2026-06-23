@@ -214,9 +214,18 @@
       "project1_category": "Fintech Platform",
       "project1_title": "Global Payment Dashboard",
       "project1_desc": "A complete overhaul of a legacy financial dashboard, migrating to Next.js and Tailwind to improve load times by 400% and user retention by 35%.",
-      "project2_category": "E-Commerce App",
-      "project2_title": "Premium Retail Experience",
-      "project2_desc": "Native-feeling headless commerce application using React Native and Shopify Storefront API. Increased mobile conversion rates by over 120%."
+      "project2_category": "Mobile App",
+      "project2_title": "E-Commerce App",
+      "project2_desc": "High converting e-commerce application.",
+      "project3_category": "Local Business",
+      "project3_title": "Carpentry Studio",
+      "project3_desc": "High-performance landing page designed for a premium carpentry studio, increasing organic lead flow.",
+      "project4_category": "Automotive Services",
+      "project4_title": "Auto Repair Shop",
+      "project4_desc": "Lead generation website with integrated appointment booking for a local mechanic shop.",
+      "project5_category": "Construction",
+      "project5_title": "Roofing Contractor",
+      "project5_desc": "Digital solution for roofing companies including an interactive estimator and project galleries."
     },
     "process": {
       "title": "How We Work",

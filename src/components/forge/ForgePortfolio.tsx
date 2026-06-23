@@ -6,15 +6,32 @@ import { useRef } from 'react'
 const projects = [
   {
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-    tags: ["Next.js", "PostgreSQL", "Stripe API"]
+    tags: ["Next.js", "PostgreSQL", "Stripe API"],
+    dictKey: 1
   },
   {
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop",
-    tags: ["React Native", "GraphQL", "Shopify"]
+    tags: ["React Native", "GraphQL", "Shopify"],
+    dictKey: 2
+  },
+  {
+    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop",
+    tags: ["Next.js", "Tailwind CSS"],
+    dictKey: 3
+  },
+  {
+    image: "https://images.unsplash.com/photo-1503375894024-5db6050b4d45?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Next.js", "Framer Motion"],
+    dictKey: 4
+  },
+  {
+    image: "https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Next.js", "Tailwind CSS", "React"],
+    dictKey: 5
   }
 ]
 
-function PortfolioItem({ dict, project, index }: { dict: any, project: any, index: number }) {
+function PortfolioItem({ dict, project }: { dict: any, project: any }) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -43,13 +60,13 @@ function PortfolioItem({ dict, project, index }: { dict: any, project: any, inde
         className="relative z-10 text-center text-white p-6 max-w-sm flex flex-col items-center"
       >
         <div className="text-white/70 font-mono text-xs uppercase tracking-widest mb-2">
-          {index === 0 ? dict.project1_category : dict.project2_category}
+          {dict[`project${project.dictKey}_category`]}
         </div>
         <h3 className="text-2xl md:text-3xl font-black mb-3 tracking-tight leading-tight">
-          {index === 0 ? dict.project1_title : dict.project2_title}
+          {dict[`project${project.dictKey}_title`]}
         </h3>
         <p className="text-xs text-white/80 font-medium mb-6 font-inter leading-relaxed">
-          {index === 0 ? dict.project1_desc : dict.project2_desc}
+          {dict[`project${project.dictKey}_desc`]}
         </p>
         
         <div className="flex flex-wrap gap-2 justify-center font-mono">
@@ -90,7 +107,7 @@ export function ForgePortfolio({ dict }: { dict: any }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 border border-border bg-background">
           {projects.map((project, i) => (
-            <PortfolioItem key={i} dict={dict} project={project} index={i} />
+            <PortfolioItem key={i} dict={dict} project={project} />
           ))}
         </div>
       </div>
