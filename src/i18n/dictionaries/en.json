@@ -306,9 +306,57 @@
       "subtitle": "Case studies of scalable digital products."
     },
     "pricing_page": {
-      "title": "Transparent, Scale-Ready Pricing",
-      "subtitle": "No hidden fees. Premium infrastructure packaged into predictable models.",
-      "anchoring_text": "While traditional agencies charge $50k+ upfront, our SaaS model guarantees zero technical debt for a fraction of the cost."
+      "title": "Transparent & Scalable Pricing",
+      "subtitle": "No hidden costs. Premium infrastructure on predictable models.",
+      "anchoring_text": "While traditional agencies charge $50k+ upfront, our SaaS model guarantees zero technical debt for a fraction of the cost.",
+      "plans": [
+        {
+          "name": "Launchpad",
+          "subtitle": "For startups & MVPs",
+          "price": "$2,500",
+          "period": "one-time setup",
+          "monthly": "$499/mo",
+          "featured": false,
+          "features": [
+            "Next.js Architecture Setup",
+            "Premium UI/UX Design (Up to 5 views)",
+            "Standard Database & Auth",
+            "Managed Hosting & Domains",
+            "Email Support"
+          ]
+        },
+        {
+          "name": "Growth",
+          "subtitle": "For scaling businesses",
+          "price": "$8,500",
+          "period": "one-time setup",
+          "monthly": "$999/mo",
+          "featured": true,
+          "features": [
+            "Custom Microservices Architecture",
+            "Advanced UI/UX with Framer Motion",
+            "Complex Database Models (PostgreSQL)",
+            "Headless CMS Integration",
+            "Performance & SEO Optimization",
+            "Priority Slack Channel"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "subtitle": "Custom digital ecosystems",
+          "price": "Custom",
+          "period": "retainer available",
+          "monthly": "Custom",
+          "featured": false,
+          "features": [
+            "Multi-platform Ecosystem (Web & Mobile)",
+            "Legacy Codebase Migration",
+            "Compliance & High-Security Infrastructure",
+            "Dedicated Engineering Team",
+            "24/7 SLA Uptime Guarantee"
+          ]
+        }
+      ]
     },
     "contact_page": {
       "title": "Start Your Build",

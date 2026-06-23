@@ -308,7 +308,55 @@
     "pricing_page": {
       "title": "Precios Transparentes y Escalables",
       "subtitle": "Sin costos ocultos. Infraestructura premium en modelos predecibles.",
-      "anchoring_text": "Mientras las agencias tradicionales cobran más de $50k USD por adelantado, nuestro modelo SaaS garantiza cero deuda técnica por una fracción del costo."
+      "anchoring_text": "Mientras las agencias tradicionales cobran más de $50k USD por adelantado, nuestro modelo SaaS garantiza cero deuda técnica por una fracción del costo.",
+      "plans": [
+        {
+          "name": "Launchpad",
+          "subtitle": "Para startups y MVPs",
+          "price": "$2,500",
+          "period": "pago inicial",
+          "monthly": "$499/mes",
+          "featured": false,
+          "features": [
+            "Configuración de Arquitectura Next.js",
+            "Diseño UI/UX Premium (Hasta 5 vistas)",
+            "Base de Datos y Autenticación Estándar",
+            "Hosting y Dominios Administrados",
+            "Soporte por Correo"
+          ]
+        },
+        {
+          "name": "Growth",
+          "subtitle": "Para negocios en escala",
+          "price": "$8,500",
+          "period": "pago inicial",
+          "monthly": "$999/mes",
+          "featured": true,
+          "features": [
+            "Arquitectura de Microservicios",
+            "UI/UX Avanzada con Framer Motion",
+            "Modelos de Datos Complejos (PostgreSQL)",
+            "Integración CMS Headless",
+            "Optimización de Rendimiento y SEO",
+            "Canal de Slack Prioritario"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "subtitle": "Ecosistemas digitales a medida",
+          "price": "A medida",
+          "period": "mensualidad disponible",
+          "monthly": "A medida",
+          "featured": false,
+          "features": [
+            "Ecosistema Multiplataforma (Web y Móvil)",
+            "Migración de Código Legacy",
+            "Infraestructura de Alta Seguridad",
+            "Equipo de Ingeniería Dedicado",
+            "Garantía de Tiempo de Actividad SLA 24/7"
+          ]
+        }
+      ]
     },
     "contact_page": {
       "title": "Inicia tu Construcción",
