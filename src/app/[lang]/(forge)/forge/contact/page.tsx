@@ -21,54 +21,55 @@ export default async function ForgeContactPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <div className="min-h-screen bg-background flex flex-col lg:flex-row relative overflow-hidden">
+    <div className="min-h-screen bg-[#0c0c0c] text-white flex flex-col relative overflow-hidden">
       
-      {/* Left Side: Immersive Imagery & Branding */}
-      <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen flex flex-col justify-end p-12 lg:p-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" 
-            alt="Office" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        </div>
-        
-        <div className="relative z-10 text-white">
-          <div className="inline-block px-4 py-2 rounded-full border border-white/20 backdrop-blur-md text-xs font-mono tracking-widest uppercase mb-8">
-            Global Engineering
+      <main className="flex-grow flex flex-col lg:flex-row relative z-10 pt-20">
+        {/* Left Side: Immersive Imagery & Branding */}
+        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen flex flex-col justify-end p-12 lg:p-24 overflow-hidden border-r border-white/5">
+          <div className="absolute inset-0 z-0">
+            {/* Tactical Grid Background */}
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#a67d48]/10 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/4" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#262626] blur-[120px] rounded-full pointer-events-none -translate-x-1/4 translate-y-1/4" />
           </div>
-          <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-6">
-            {dict.forge.contact_page.title}
-          </h1>
-          <p className="text-xl text-white/80 font-medium max-w-md font-inter">
-            {dict.forge.contact_page.subtitle}
-          </p>
-
-          <div className="mt-16 grid grid-cols-2 gap-8 pt-8 border-t border-white/20">
-            <div>
-              <p className="text-xs font-mono text-white/50 uppercase tracking-widest mb-1">Response Time</p>
-              <p className="font-bold text-lg">Under 2 hours</p>
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-[#262626]/50 backdrop-blur-md mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#bc9665] animate-pulse" />
+              <span className="text-xs font-mono text-[#bc9665] tracking-widest uppercase">System Online</span>
             </div>
-            <div>
-              <p className="text-xs font-mono text-white/50 uppercase tracking-widest mb-1">Direct Access</p>
-              <p className="font-bold text-lg">Senior Architects</p>
+            
+            <h1 className="text-5xl lg:text-7xl font-black tracking-tighter leading-[1.1] mb-6">
+              {dict.forge.contact_page.title}
+            </h1>
+            <p className="text-xl text-white/60 font-medium max-w-md font-inter">
+              {dict.forge.contact_page.subtitle}
+            </p>
+
+            <div className="mt-16 grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+              <div>
+                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">Response Time</p>
+                <p className="font-bold text-lg text-white">Under 2 hours</p>
+              </div>
+              <div>
+                <p className="text-xs font-mono text-[#bc9665] uppercase tracking-widest mb-2">Direct Access</p>
+                <p className="font-bold text-lg text-white">Senior Architects</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Right Side: The Form */}
-      <div className="lg:w-1/2 flex items-center justify-center p-6 py-24 lg:p-24 bg-background">
-        <div className="w-full max-w-xl">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground mb-3">Project Details</h2>
-            <p className="text-foreground/60 font-inter">Fill out the form below and we will prepare a tailored engineering proposal for your company.</p>
+        {/* Right Side: The Form */}
+        <div className="lg:w-1/2 flex items-center justify-center p-6 py-24 lg:p-24 relative">
+          <div className="w-full max-w-xl relative z-10">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-white mb-3">Project Details</h2>
+              <p className="text-white/50 font-inter">Fill out the form below and we will prepare a tailored engineering proposal for your company.</p>
+            </div>
+            <ForgeContactForm dict={dict} />
           </div>
-          <ForgeContactForm dict={dict} />
         </div>
-      </div>
+      </main>
     </div>
   )
 }
