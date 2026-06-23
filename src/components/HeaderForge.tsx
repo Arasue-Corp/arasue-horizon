@@ -50,13 +50,10 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
         >
           <div className="flex items-center justify-between w-full gap-8 relative">
             {/* Logo - Lockup */}
-            <Link href={`/${lang}/forge`} className="relative z-50 flex-shrink-0 flex items-center gap-3 h-full" onClick={() => setActiveMenu(null)}>
-              <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105" />
-              {!scrolled && (
-                <span className="hidden sm:block text-xl font-black tracking-tight text-foreground">
-                  Arasue Forge
-                </span>
-              )}
+            <Link href={`/${lang}/forge`} className="relative z-50 flex-shrink-0 flex items-center h-full w-12 md:w-16" onClick={() => setActiveMenu(null)}>
+              <div className="absolute top-1/2 -translate-y-1/2 -left-2 md:-left-4">
+                <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="h-16 md:h-24 w-auto object-contain transition-transform hover:scale-105 drop-shadow-2xl" />
+              </div>
             </Link>
             
             {/* Desktop Nav */}

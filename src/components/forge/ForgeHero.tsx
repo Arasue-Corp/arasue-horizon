@@ -15,6 +15,10 @@ export function ForgeHero({ dict }: { dict: any }) {
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
         className="container mx-auto max-w-6xl relative z-10 flex flex-col items-start border-x border-border/50 px-8 lg:px-16 py-12"
       >
+        <h2 className="text-primary font-black tracking-widest uppercase text-sm mb-8 flex items-center gap-4 opacity-80">
+          <span className="w-12 h-[1px] bg-primary/50"></span>
+          Arasue Forge
+        </h2>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary border border-border shadow-sm text-xs font-mono tracking-widest uppercase mb-12 text-foreground/80">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           {dict.badge}
