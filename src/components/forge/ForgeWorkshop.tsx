@@ -47,6 +47,34 @@ const demos = [
     category: "Local Business",
     tech: ["Next.js", "Tailwind CSS"],
     image: "https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: "web-corporativa",
+    title: "Corporate Website",
+    category: "B2B / Enterprise",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    id: "web-personal",
+    title: "Personal Branding",
+    category: "Portfolio",
+    tech: ["Next.js", "React", "GSAP"],
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop"
+  },
+  {
+    id: "hvac",
+    title: "HVAC Services",
+    category: "Local Business",
+    tech: ["Next.js", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop"
+  },
+  {
+    id: "concrete",
+    title: "Concrete Company",
+    category: "Construction",
+    tech: ["Next.js", "Tailwind CSS"],
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 

@@ -3,108 +3,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Search, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
-
-// UI Micro-Wireframes for Thumbnails
-const WireframeDashboard = () => (
-  <div className="absolute inset-0 bg-[#F4F4F5] flex p-4 gap-4 transition-transform duration-700 group-hover:scale-[1.02]">
-    {/* Sidebar */}
-    <div className="w-16 h-full bg-white rounded-lg border border-black/10 shadow-sm flex flex-col gap-3 p-3">
-      {/* Brand / Logo placeholder */}
-      <div className="w-full h-8 bg-black/80 rounded-md mb-2" />
-      <div className="w-full h-3 bg-black/10 rounded-sm" />
-      <div className="w-full h-3 bg-black/10 rounded-sm" />
-      <div className="w-full h-3 bg-black/10 rounded-sm" />
-      <div className="w-full h-3 bg-black/20 rounded-sm mt-auto" />
-    </div>
-    {/* Main Content */}
-    <div className="flex-1 flex flex-col gap-4">
-      {/* Header */}
-      <div className="w-full h-10 bg-white rounded-lg border border-black/10 shadow-sm flex items-center justify-between px-4">
-        <div className="w-32 h-2.5 bg-black/10 rounded-full" />
-        <div className="w-6 h-6 bg-black/5 rounded-full border border-black/10" />
-      </div>
-      {/* Chart Area */}
-      <div className="flex-1 bg-white rounded-lg border border-black/10 shadow-sm p-5 flex items-end gap-3">
-        {[40, 70, 45, 90, 65, 80, 50].map((h, i) => (
-          <div key={i} className={`flex-1 rounded-t-sm ${i === 3 ? 'bg-black/80' : 'bg-black/10'}`} style={{ height: `${h}%` }} />
-        ))}
-      </div>
-    </div>
-  </div>
-)
-
-const WireframeEcommerce = () => (
-  <div className="absolute inset-0 bg-[#F4F4F5] flex flex-col p-4 gap-4 transition-transform duration-700 group-hover:scale-[1.02]">
-    {/* Navbar */}
-    <div className="w-full h-12 bg-white rounded-lg border border-black/10 shadow-sm flex items-center justify-between px-5">
-      <div className="flex items-center gap-2">
-        <div className="w-4 h-4 bg-black/80 rounded-sm" />
-        <div className="w-20 h-2 bg-black/20 rounded-full" />
-      </div>
-      <div className="w-16 h-4 bg-black/5 rounded-md border border-black/10" />
-    </div>
-    {/* Product Grid */}
-    <div className="grid grid-cols-3 gap-4 flex-1">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="bg-white rounded-lg border border-black/10 shadow-sm flex flex-col p-3 gap-3">
-          {/* Product Image Placeholder */}
-          <div className="w-full flex-1 bg-zinc-100 rounded-md border border-black/5 flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full bg-black/5" />
-          </div>
-          <div className="w-3/4 h-2.5 bg-black/20 rounded-full" />
-          <div className="w-1/2 h-2.5 bg-black/80 rounded-full" />
-        </div>
-      ))}
-    </div>
-  </div>
-)
-
-const WireframeCorporate = () => (
-  <div className="absolute inset-0 bg-[#F4F4F5] flex flex-col p-0 transition-transform duration-700 group-hover:scale-[1.02]">
-    {/* Hero Section */}
-    <div className="w-full h-36 bg-zinc-200 border-b border-black/10 flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:12px_12px]" />
-      <div className="w-48 h-8 bg-white rounded-md border border-black/10 shadow-md relative z-10" />
-    </div>
-    {/* Content Section */}
-    <div className="p-6 flex gap-6 items-center">
-      <div className="flex-1 space-y-4">
-        <div className="w-5/6 h-3.5 bg-black/80 rounded-sm" />
-        <div className="w-full h-2.5 bg-black/20 rounded-sm" />
-        <div className="w-4/5 h-2.5 bg-black/20 rounded-sm" />
-        <div className="w-24 h-6 bg-black/5 rounded-full border border-black/10 mt-2" />
-      </div>
-      <div className="w-28 h-28 bg-white rounded-xl border border-black/10 shadow-sm" />
-    </div>
-  </div>
-)
-
-const WireframePersonal = () => (
-  <div className="absolute inset-0 bg-[#F4F4F5] flex items-center justify-center p-8 transition-transform duration-700 group-hover:scale-[1.02]">
-    <div className="w-full max-w-[220px] bg-white rounded-2xl border border-black/10 shadow-xl p-8 flex flex-col items-center text-center gap-5">
-      {/* Avatar */}
-      <div className="w-20 h-20 rounded-full bg-zinc-200 border border-black/10 shadow-inner flex items-end justify-center overflow-hidden">
-        <div className="w-12 h-10 bg-black/20 rounded-t-full" />
-      </div>
-      {/* Bio */}
-      <div className="space-y-3 w-full flex flex-col items-center">
-        <div className="w-32 h-3.5 bg-black/80 rounded-full" />
-        <div className="w-20 h-2.5 bg-black/20 rounded-full" />
-      </div>
-      {/* Action */}
-      <div className="w-full h-10 bg-black/5 border border-black/10 rounded-xl mt-2 flex items-center justify-center">
-        <div className="w-16 h-2 bg-black/20 rounded-full" />
-      </div>
-    </div>
-  </div>
-)
-
-const getWireframe = (category: string) => {
-  if (category.includes('SaaS')) return <WireframeDashboard />
-  if (category.includes('E-commerce')) return <WireframeEcommerce />
-  if (category.includes('Personal')) return <WireframePersonal />
-  return <WireframeCorporate />
-}
+import Image from 'next/image'
 
 // Define the demo types
 type DemoItem = {
@@ -112,6 +11,7 @@ type DemoItem = {
   title: string
   subtitle: string
   tags: string[]
+  image: string
 }
 
 export function WorkshopGalleryClient({ lang }: { lang: 'en' | 'es' }) {
@@ -138,16 +38,16 @@ export function WorkshopGalleryClient({ lang }: { lang: 'en' | 'es' }) {
   const categoryKeys = ["All", "Corporate", "Personal", "SaaS", "E-commerce", "Industrial", "Services"]
 
   const demos: DemoItem[] = [
-    { id: "web-corporativa", title: "Landscaping & Exteriors", subtitle: isEn ? "B2B/B2C Local Service Lead Gen" : "Generación de Leads B2B/B2C", tags: ["Corporate", "Services"] },
-    { id: "web-personal", title: "Personal Branding", subtitle: isEn ? "Authority & Portfolio" : "Marca Personal y Autoridad", tags: ["Personal"] },
-    { id: "dashboard-facturas", title: "Billing Dashboard", subtitle: isEn ? "SaaS UI & Data Viz" : "Interfaz SaaS y Datos", tags: ["SaaS"] },
-    { id: "ecommerce", title: "E-commerce Elite", subtitle: isEn ? "Frictionless Checkout" : "Checkout sin fricción", tags: ["E-commerce"] },
-    { id: "concrete-company", title: "Slabworks", subtitle: isEn ? "Brutalist Concrete Solutions" : "Soluciones en Concreto Brutalista", tags: ["Corporate", "Industrial"] },
-    { id: "construction-company", title: "Apex Construct", subtitle: isEn ? "B2B Commercial Contracting" : "Contratistas Comerciales B2B", tags: ["Corporate", "Industrial"] },
-    { id: "carpentry", title: "Oak & Iron", subtitle: isEn ? "Bespoke Millwork & Carpentry" : "Carpintería a Medida", tags: ["Corporate", "Services"] },
-    { id: "mechanic-shop", title: "Velocity Tech", subtitle: isEn ? "European Auto Diagnostics" : "Diagnóstico Automotriz Europeo", tags: ["Corporate", "Services"] },
-    { id: "roofing", title: "Shelter Pro", subtitle: isEn ? "Premium Roofing Estimator" : "Estimador de Techos Premium", tags: ["Corporate", "Services"] },
-    { id: "hvac", title: "Aerotherm", subtitle: isEn ? "HVAC System Sizing" : "Sistemas HVAC", tags: ["Corporate", "Services"] }
+    { id: "web-corporativa", title: "Landscaping & Exteriors", subtitle: isEn ? "B2B/B2C Local Service Lead Gen" : "Generación de Leads B2B/B2C", tags: ["Corporate", "Services"], image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" },
+    { id: "web-personal", title: "Personal Branding", subtitle: isEn ? "Authority & Portfolio" : "Marca Personal y Autoridad", tags: ["Personal"], image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop" },
+    { id: "dashboard-facturas", title: "Billing Dashboard", subtitle: isEn ? "SaaS UI & Data Viz" : "Interfaz SaaS y Datos", tags: ["SaaS"], image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" },
+    { id: "ecommerce", title: "E-commerce Elite", subtitle: isEn ? "Frictionless Checkout" : "Checkout sin fricción", tags: ["E-commerce"], image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop" },
+    { id: "concrete-company", title: "Slabworks", subtitle: isEn ? "Brutalist Concrete Solutions" : "Soluciones en Concreto Brutalista", tags: ["Corporate", "Industrial"], image: "https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070&auto=format&fit=crop" },
+    { id: "construction-company", title: "Apex Construct", subtitle: isEn ? "B2B Commercial Contracting" : "Contratistas Comerciales B2B", tags: ["Corporate", "Industrial"], image: "https://images.unsplash.com/photo-1541888087525-2bf54dea2fa7?q=80&w=2070&auto=format&fit=crop" },
+    { id: "carpentry", title: "Oak & Iron", subtitle: isEn ? "Bespoke Millwork & Carpentry" : "Carpintería a Medida", tags: ["Corporate", "Services"], image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=2069&auto=format&fit=crop" },
+    { id: "mechanic-shop", title: "Velocity Tech", subtitle: isEn ? "European Auto Diagnostics" : "Diagnóstico Automotriz Europeo", tags: ["Corporate", "Services"], image: "https://images.unsplash.com/photo-1503375894024-5db6050b4d45?q=80&w=2070&auto=format&fit=crop" },
+    { id: "roofing", title: "Shelter Pro", subtitle: isEn ? "Premium Roofing Estimator" : "Estimador de Techos Premium", tags: ["Corporate", "Services"], image: "https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop" },
+    { id: "hvac", title: "Aerotherm", subtitle: isEn ? "HVAC System Sizing" : "Sistemas HVAC", tags: ["Corporate", "Services"], image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop" }
   ]
 
   const [searchQuery, setSearchQuery] = useState("")
@@ -252,7 +152,12 @@ export function WorkshopGalleryClient({ lang }: { lang: 'en' | 'es' }) {
                   >
                     {/* Thumbnail Container */}
                     <div className="relative aspect-[4/3] rounded-2xl border border-black/10 bg-white overflow-hidden shadow-sm group-hover:shadow-md transition-shadow">
-                      {getWireframe(demo.tags[0] || "Corporate")}
+                      <Image
+                        src={demo.image}
+                        alt={demo.title}
+                        fill
+                        className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                      />
                     </div>
 
                     {/* Metadata */}
