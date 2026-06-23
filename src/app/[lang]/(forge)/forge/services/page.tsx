@@ -1,71 +1,26 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
-import { MotionDiv } from '@/components/Motion'
+import { ForgeServices } from '@/components/forge/ForgeServices'
+import { ForgeProcess } from '@/components/forge/ForgeProcess'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = await params
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
-  // Resolve title and description dynamically
-  const title = (dict as any).forge.services_page?.title || 'ForgeServicesPage'
-  const description = (dict as any).forge.services_page?.subtitle || 'Arasue Horizon'
+  const title = (dict as any).forge.services_page?.title || 'Services'
+  const description = (dict as any).forge.services_page?.subtitle || 'Arasue Forge Services'
 
-  return {
-    title: `${title} | Arasue`,
-    description: description
-  }
+  return { title: `${title} | Arasue Forge`, description }
 }
 
-export default async function ForgeServicesPage({
-  params
-}: {
-  params: Promise<{ lang: string }>
-}) {
+export default async function ForgeServicesPage({ params }: { params: Promise<{ lang: string }> }) {
   const resolvedParams = await params
   const dict = await getDictionary(resolvedParams.lang as Locale)
+  const currencySymbol = '$'
 
   return (
-    <div className="flex flex-col min-h-[80vh] pt-32 pb-24 px-6 bg-background text-foreground">
-      <div className="max-w-5xl mx-auto w-full">
-        <MotionDiv 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="space-y-6"
-        >
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-tight">
-            {dict.forge.services_page.title}
-          </h1>
-          <p className="text-xl md:text-2xl opacity-70 max-w-2xl">
-            {dict.forge.services_page.subtitle}
-          </p>
-        </MotionDiv>
-        
-          <MotionDiv 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-12 p-8 border border-current/10 bg-current/5 rounded-3xl"
-          >
-            <p className="text-lg font-bold">
-              {dict.forge.services_page.scarcity}
-            </p>
-          </MotionDiv>
-    
-        
-        {/* Image Placeholder */}
-        <MotionDiv 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
-        >
-          <img 
-            src="https://placehold.co/1200x675/1a1a1a/ffffff?text=Forge+Services+Image" 
-            alt="Forge Services" 
-            className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
-          />
-        </MotionDiv>
-      </div>
+    <div className="flex flex-col min-h-screen bg-background text-foreground pt-32">
+      <ForgeServices dict={dict.forge} currencySymbol={currencySymbol} />
+      <ForgeProcess dict={(dict.forge as any).process_section} />
     </div>
   )
 }
