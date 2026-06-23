@@ -503,21 +503,33 @@
     },
     "comparison": {
       "title": "Stop Eating Dead Honey.",
-      "subtitle": "Most honey on grocery shelves has been stripped of the very properties that make it a superfood. Heating and filtering leave you with nothing but glorified sugar syrup. Arasue Honey is different. We respect the bees and the ancient desert. You taste exactly what the hive created: thick, complex, and alive.",
+      "subtitle": "Most honey on supermarket shelves has been stripped of the properties that make it a superfood. Heating and filtering leaves you with glorified sugar syrup. Arasue Honey is different. We respect the bees and the ancient desert. You taste exactly what the hive created: thick, complex, and alive.",
       "bad_title": "Commercial Supermarket Honey",
-      "bad_1": "Flash-heated (destroys vital enzymes)",
+      "bad_1": "Flash-heated (destroys enzymes)",
       "bad_2": "Ultra-filtered (removes beneficial pollen)",
-      "bad_3": "Blended with hidden syrups & sugars",
+      "bad_3": "Blended with hidden syrups and sugars",
       "good_tag": "The Arasue Standard",
       "good_title": "100% Raw Sonoran Honey",
-      "good_1": "Cold-extracted to protect live nutrients",
+      "good_1": "Cold-extracted to protect nutrients",
       "good_2": "Unfiltered: rich in pollen and antioxidants",
-      "good_3": "Single-Origin: direct from the Sonoran Desert"
+      "good_3": "Single-Origin: direct from the Sonoran desert"
     },
     "origin": {
       "tag": "Extraction Node 01",
       "title": "Born in the Harshest Environment.",
-      "subtitle": "The Sonoran Desert is unforgiving. Only the most resilient flora survive here. Our bees forage these rare blooms, creating an organic product with a profile unlike anything you've ever experienced."
+      "subtitle": "The Sonoran Desert is unforgiving. Only the most resilient flora survive here. Our bees forage these rare blossoms, creating an organic product with a profile unlike anything you've ever experienced."
+    },
+    "shop_page": {
+      "title": "The Apiary",
+      "subtitle": "Limited batch organic honey harvests. Taste untouched nature."
+    },
+    "story_page": {
+      "title": "Our Origins",
+      "subtitle": "From dedicated beekeepers to premium extracts. The Arasue Labs journey."
+    },
+    "contact_page": {
+      "title": "Wholesale & Partnerships",
+      "subtitle": "Get in touch for bulk honey orders and premium retail partnerships."
     }
   },
   "corporate": {

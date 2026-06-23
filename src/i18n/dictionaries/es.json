@@ -518,6 +518,18 @@
       "tag": "Nodo de Extracción 01",
       "title": "Nacida en el Entorno Más Duro.",
       "subtitle": "El Desierto de Sonora es implacable. Solo la flora más resistente sobrevive aquí. Nuestras abejas recolectan estas flores raras, creando un producto orgánico con un perfil diferente a cualquier cosa que hayas experimentado."
+    },
+    "shop_page": {
+      "title": "El Apiario",
+      "subtitle": "Cosechas orgánicas de miel de lote limitado. Prueba la naturaleza intacta."
+    },
+    "story_page": {
+      "title": "Nuestros Orígenes",
+      "subtitle": "De apicultores dedicados a extractos premium. El viaje de Arasue Labs."
+    },
+    "contact_page": {
+      "title": "Mayoreo y Alianzas",
+      "subtitle": "Contáctanos para pedidos de miel por volumen y asociaciones premium."
     }
   },
   "corporate": {
