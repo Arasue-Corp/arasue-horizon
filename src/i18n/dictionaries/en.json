@@ -455,33 +455,69 @@
     }
   },
   "labs": {
-    "hero": {
-      "title": "Pure Organic Honey",
-      "subtitle": "Premium honey products and natural derivatives, sustainably sourced from our own reserves.",
-      "cta": "Shop Collection"
+    "macro": {
+      "tag": "Global Commodities & Supply",
+      "title": "Engineering the Physical World.",
+      "subtitle": "Arasue Labs LLC procures, refines, and scales the world's most premium physical goods. We apply our software engineering rigor to supply chains, ensuring uncompromising quality from origin to table.",
+      "scroll": "View Flagship Project"
     },
-    "products": {
-      "title": "Our Harvest",
-      "honey": {
-        "title": "Raw Organic Honey",
-        "desc": "100% pure, unpasteurized honey sourced directly from our deep forest reserves."
+    "flagship": {
+      "tag": "Project Sonoran",
+      "origin": "Direct from Sonora, Mexico",
+      "title": "The Purest Liquid Gold from the Desert.",
+      "subtitle": "100% Raw. Unfiltered. Single-origin. Experience the untamed sweetness and healing properties of wild desert flora.",
+      "cta": "Explore the Collection"
+    },
+    "derivatives": {
+      "title": "The Collection",
+      "honey_mesquite": {
+        "title": "Mesquite Honey",
+        "desc": "Earthy, buttery notes extracted from the resilient Mesquite trees."
       },
-      "wellness": {
-        "title": "Honey Derivatives",
-        "desc": "Potent wellness extracts, propolis, and royal jelly supplements."
+      "honey_multiflora": {
+        "title": "Desert Multiflora",
+        "desc": "A complex, wild flavor profile from diverse Sonoran blossoms."
+      },
+      "pollen": {
+        "title": "Raw Bee Pollen",
+        "desc": "Protein-rich granules packed with essential amino acids and vitamins."
+      },
+      "royal_jelly": {
+        "title": "Royal Jelly Extract",
+        "desc": "The exclusive, nutrient-dense superfood reserved for the queen."
+      },
+      "propolis": {
+        "title": "Propolis Tincture",
+        "desc": "Nature's ultimate defense. A powerful immune-boosting resin."
+      },
+      "wax": {
+        "title": "Pure Beeswax",
+        "desc": "Unbleached, triple-filtered wax for premium cosmetic and home use."
       }
     },
-    "shop_page": {
-      "title": "The Apiary",
-      "subtitle": "Limited-batch organic honey harvests. Taste the untouched nature."
+    "ritual": {
+      "tag": "The Daily Indulgence",
+      "title": "Transform Your Coffee Into a Ritual.",
+      "subtitle": "Forget bitter processed sugars. A single, velvety spoonful of Arasue Raw Honey adds complex, buttery notes to your brew, balancing the roast with unadulterated desert sweetness.",
+      "cta": "Experience the Flavor"
     },
-    "story_page": {
-      "title": "Our Origins",
-      "subtitle": "From dedicated beekeepers to premium extracts. The journey of Arasue Labs."
+    "comparison": {
+      "title": "Stop Eating Dead Honey.",
+      "subtitle": "Most honey on grocery shelves has been stripped of the very properties that make it a superfood. Heating and filtering leave you with nothing but glorified sugar syrup. Arasue Honey is different. We respect the bees and the ancient desert. You taste exactly what the hive created: thick, complex, and alive.",
+      "bad_title": "Commercial Supermarket Honey",
+      "bad_1": "Flash-heated (destroys vital enzymes)",
+      "bad_2": "Ultra-filtered (removes beneficial pollen)",
+      "bad_3": "Blended with hidden syrups & sugars",
+      "good_tag": "The Arasue Standard",
+      "good_title": "100% Raw Sonoran Honey",
+      "good_1": "Cold-extracted to protect live nutrients",
+      "good_2": "Unfiltered: rich in pollen and antioxidants",
+      "good_3": "Single-Origin: direct from the Sonoran Desert"
     },
-    "contact_page": {
-      "title": "Wholesale & Partnerships",
-      "subtitle": "Reach out for bulk honey orders and premium retail partnerships."
+    "origin": {
+      "tag": "Extraction Node 01",
+      "title": "Born in the Harshest Environment.",
+      "subtitle": "The Sonoran Desert is unforgiving. Only the most resilient flora survive here. Our bees forage these rare blooms, creating an organic product with a profile unlike anything you've ever experienced."
     }
   },
   "corporate": {
