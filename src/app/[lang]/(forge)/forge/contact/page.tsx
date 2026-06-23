@@ -1,5 +1,6 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
 import { ForgeContactForm } from '@/components/forge/ForgeContactForm'
+import { Video } from 'lucide-react'
 import { Metadata } from 'next'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -62,10 +63,28 @@ export default async function ForgeContactPage({
         {/* Right Side: The Form */}
         <div className="lg:w-1/2 flex items-center justify-center p-6 py-24 lg:p-24 relative">
           <div className="w-full max-w-xl relative z-10">
-            <div className="mb-12">
+            <div className="mb-10">
               <h2 className="text-3xl font-bold tracking-tight text-white mb-3">Project Details</h2>
               <p className="text-white/50 font-inter">Fill out the form below and we will prepare a tailored engineering proposal for your company.</p>
             </div>
+
+            <div className="mb-10 p-6 md:p-8 rounded-2xl border border-white/10 bg-[#262626]/50 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-[#bc9665]/30 transition-colors">
+               <div className="text-center sm:text-left">
+                  <h3 className="font-bold text-lg text-white mb-1">Prefer to talk directly?</h3>
+                  <p className="text-sm text-white/50 font-inter">Schedule a 30-min discovery video call with our architects.</p>
+               </div>
+               <a href="#" className="flex-shrink-0 px-6 py-3 rounded-full bg-[#bc9665] text-[#0c0c0c] font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(188,150,101,0.2)]">
+                 <Video className="w-4 h-4" />
+                 Book Call
+               </a>
+            </div>
+
+            <div className="flex items-center gap-4 mb-10">
+              <div className="flex-1 h-[1px] bg-white/10"></div>
+              <span className="text-xs font-mono text-white/30 uppercase tracking-widest">Or write to us</span>
+              <div className="flex-1 h-[1px] bg-white/10"></div>
+            </div>
+
             <ForgeContactForm dict={dict} />
           </div>
         </div>
