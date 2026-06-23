@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
   return {
-    title: `Arasue Labs | ${dict.labs?.hero?.title || 'Organic Products'}`,
-    description: dict.labs?.hero?.subtitle || 'Premium organic products, sustainably sourced and meticulously crafted.',
+    title: `Arasue Labs | ${(dict.labs as any)?.macro?.title || 'Organic Products'}`,
+    description: (dict.labs as any)?.macro?.subtitle || 'Premium organic products, sustainably sourced and meticulously crafted.',
     metadataBase: new URL('https://arasue.com'),
     alternates: {
       canonical: `/${resolvedParams.lang}/labs`,
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     openGraph: {
       title: 'Arasue Labs',
-      description: dict.labs?.hero?.subtitle,
+      description: (dict.labs as any)?.macro?.subtitle,
       url: `https://arasue.com/${resolvedParams.lang}/labs`,
       siteName: 'Arasue Labs',
       locale: resolvedParams.lang,
