@@ -41,7 +41,8 @@
       "services": "Services",
       "services_desc": "Premium software development.",
       "portfolio": "Portfolio",
-      "portfolio_desc": "See our latest work.",
+      "portfolio_desc": "View our recent work.",
+      "workshop": "Workshop",
       "contact": "Contact Us",
       "contact_desc": "Start your next project."
     },
@@ -248,7 +249,12 @@
     "cta": {
       "title": "Ready to build?",
       "subtitle": "Stop compromising on your engineering quality. Partner with us and scale your digital products today.",
-      "note": "Reply within 24 hours. No obligations."
+      "note": "24-hour response time. No commitments."
+    },
+    "workshop_section": {
+      "title": "Workshop & Demos",
+      "subtitle": "Explore interactive prototypes and reference architectures ready for deployment.",
+      "view_demo": "View Demo"
     },
     "faq": {
       "title": "Frequently Asked Questions",

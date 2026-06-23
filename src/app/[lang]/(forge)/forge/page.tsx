@@ -2,6 +2,7 @@ import { getDictionary, type Locale } from '@/i18n/dictionaries'
 import { ForgeHero } from '@/components/forge/ForgeHero'
 import { ForgeTechMarquee } from '@/components/forge/ForgeTechMarquee'
 import { ForgePortfolio } from '@/components/forge/ForgePortfolio'
+import { ForgeWorkshop } from '@/components/forge/ForgeWorkshop'
 import { ForgeProcess } from '@/components/forge/ForgeProcess'
 import { ForgeServices } from '@/components/forge/ForgeServices'
 import { ForgeEstimator } from '@/components/forge/ForgeEstimator'
@@ -29,6 +30,9 @@ export default async function ForgePage({
 
       {/* 3. Case Studies / Featured Work (Parallax) */}
       <ForgePortfolio dict={dict.forge.work} />
+
+      {/* 3.5 Live Lab / Workshop Demos */}
+      <ForgeWorkshop dict={(dict.forge as any).workshop_section} lang={resolvedParams.lang} />
 
       {/* 4. Process Flow (Sticky Scroll) */}
       <ForgeProcess dict={(dict.forge as any).process_section} />
