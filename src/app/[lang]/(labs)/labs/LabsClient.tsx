@@ -35,10 +35,10 @@ export function LabsClient({ dict }: { dict: any }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-xs tracking-[0.3em] uppercase font-sans text-white/70 block mb-6">
+            <span className="text-xs tracking-[0.3em] uppercase font-sans text-primary-foreground/70 block mb-6">
               Arasue Labs
             </span>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal tracking-tight leading-[0.9] text-white">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-normal tracking-tight leading-[0.9] text-primary-foreground">
               {dict.labs?.hero?.title || "Nature Meets Science."}
             </h1>
           </motion.div>
@@ -47,7 +47,7 @@ export function LabsClient({ dict }: { dict: any }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-lg md:text-xl mt-12 max-w-xl mx-auto font-sans text-white/80 font-light"
+            className="text-lg md:text-xl mt-12 max-w-xl mx-auto font-sans text-primary-foreground/80 font-light"
           >
             {dict.labs?.hero?.subtitle || "Premium organic products, sustainably sourced and meticulously crafted."}
           </motion.p>
@@ -137,7 +137,7 @@ export function LabsClient({ dict }: { dict: any }) {
                 </div>
                 <div className="text-right">
                   <p className="text-xl">$45</p>
-                  <button className="mt-2 text-xs font-sans uppercase tracking-widest text-accent hover:text-white transition-colors border-b border-accent/30 pb-0.5">
+                  <button className="mt-2 text-xs font-sans uppercase tracking-widest text-accent hover:text-primary-foreground transition-colors border-b border-accent/30 pb-0.5">
                     Add to Cart
                   </button>
                 </div>
@@ -168,7 +168,7 @@ export function LabsClient({ dict }: { dict: any }) {
                 </div>
                 <div className="text-right">
                   <p className="text-xl">$85</p>
-                  <button className="mt-2 text-xs font-sans uppercase tracking-widest text-accent hover:text-white transition-colors border-b border-accent/30 pb-0.5">
+                  <button className="mt-2 text-xs font-sans uppercase tracking-widest text-accent hover:text-primary-foreground transition-colors border-b border-accent/30 pb-0.5">
                     Add to Cart
                   </button>
                 </div>

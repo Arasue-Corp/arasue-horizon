@@ -24,7 +24,7 @@ export default async function LabsShopPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <div className="flex flex-col min-h-[80vh] pt-32 pb-24 px-6 font-serif text-[#1a2e1a]">
+    <div className="flex flex-col min-h-[80vh] pt-32 pb-24 px-6 font-serif text-foreground">
       <div className="max-w-5xl mx-auto w-full">
         <MotionDiv 
           initial={{ opacity: 0, y: 20 }}

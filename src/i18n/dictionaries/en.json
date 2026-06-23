@@ -408,32 +408,32 @@
   },
   "labs": {
     "hero": {
-      "title": "Nature Meets Science",
-      "subtitle": "Premium organic products, sustainably sourced and meticulously crafted.",
+      "title": "Pure Organic Honey",
+      "subtitle": "Premium honey products and natural derivatives, sustainably sourced from our own reserves.",
       "cta": "Shop Collection"
     },
     "products": {
-      "title": "Our Collection",
+      "title": "Our Harvest",
       "honey": {
         "title": "Raw Organic Honey",
-        "desc": "100% pure, unpasteurized honey sourced directly from our reserves."
+        "desc": "100% pure, unpasteurized honey sourced directly from our deep forest reserves."
       },
       "wellness": {
-        "title": "Wellness Extracts",
-        "desc": "Potent organic tinctures and health supplements."
+        "title": "Honey Derivatives",
+        "desc": "Potent wellness extracts, propolis, and royal jelly supplements."
       }
     },
     "shop_page": {
-      "title": "The Apothecary",
-      "subtitle": "Limited-batch organic harvests. Taste the untouched nature."
+      "title": "The Apiary",
+      "subtitle": "Limited-batch organic honey harvests. Taste the untouched nature."
     },
     "story_page": {
       "title": "Our Origins",
-      "subtitle": "From deep forests to premium extracts. The journey of Arasue Labs."
+      "subtitle": "From dedicated beekeepers to premium extracts. The journey of Arasue Labs."
     },
     "contact_page": {
-      "title": "Wholesale & Support",
-      "subtitle": "Reach out for bulk orders and premium partnerships."
+      "title": "Wholesale & Partnerships",
+      "subtitle": "Reach out for bulk honey orders and premium retail partnerships."
     }
   },
   "corporate": {

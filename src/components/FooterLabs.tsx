@@ -41,7 +41,7 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
                 placeholder="Your email address" 
                 className="bg-transparent w-full outline-none text-background placeholder:text-background/30"
               />
-              <button type="submit" disabled={isPending} className="uppercase tracking-widest text-xs font-bold text-accent hover:text-white transition-colors disabled:opacity-50">
+              <button type="submit" disabled={isPending} className="uppercase tracking-widest text-xs font-bold text-accent hover:text-primary-foreground transition-colors disabled:opacity-50">
                 {isPending ? '...' : (dict.footer?.subscribe || "Subscribe")}
               </button>
             </form>

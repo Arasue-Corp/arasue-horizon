@@ -22,9 +22,9 @@ export function Logo({ division, className = '', iconSize = 28 }: LogoProps) {
 
   const Icon = Icons[division]
 
-  // Use custom image logos for Horizon, Forge, Studios
-  const useCustomImage = division === 'Horizon' || division === 'Forge' || division === 'Studios'
-  const imageSrc = division === 'Horizon' ? '/logo-horizon-oro.png' : division === 'Forge' ? '/logo-forge-negro.png' : '/logo-studios-blanco.png'
+  // Use custom image logos for Horizon, Forge, Studios, Labs
+  const useCustomImage = division === 'Horizon' || division === 'Forge' || division === 'Studios' || division === 'Labs'
+  const imageSrc = division === 'Horizon' ? '/logo-horizon-oro.png' : division === 'Forge' ? '/logo-forge-negro.png' : division === 'Studios' ? '/logo-studios-blanco.png' : '/logo-labs-base.png'
 
   if (useCustomImage) {
     return (

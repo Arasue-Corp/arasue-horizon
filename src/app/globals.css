@@ -71,17 +71,17 @@ body {
 
 /* 3. Theme Labs (Organic Products) */
 .theme-labs {
-  --background: #F9F7F1;
-  --foreground: #1A2E1A;
-  --primary: #2C4A2C;
-  --primary-foreground: #F9F7F1;
-  --secondary: #8C9970;
-  --secondary-foreground: #1A2E1A;
-  --accent: #D9A05B;
-  --accent-foreground: #1A2E1A;
-  --muted: #E8E5DC;
-  --muted-foreground: #4A5D4A;
-  --border: #E8E5DC;
+  --background: #fdf5e6;
+  --foreground: #ad102f;
+  --primary: #dc143c;
+  --primary-foreground: #ffffff;
+  --secondary: #f9e2b7;
+  --secondary-foreground: #ad102f;
+  --accent: #ed365b;
+  --accent-foreground: #ffffff;
+  --muted: #ffffff;
+  --muted-foreground: #dc143c;
+  --border: #f9e2b7;
   --radius: 0.75rem;
 }
 

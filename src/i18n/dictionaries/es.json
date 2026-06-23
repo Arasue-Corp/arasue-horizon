@@ -408,32 +408,32 @@
   },
   "labs": {
     "hero": {
-      "title": "La Naturaleza se Une a la Ciencia",
-      "subtitle": "Productos orgánicos premium, obtenidos de manera sustentable y creados meticulosamente.",
+      "title": "Oro Líquido Orgánico",
+      "subtitle": "Productos de miel premium y derivados naturales, obtenidos de manera sustentable de nuestras propias reservas.",
       "cta": "Ver Colección"
     },
     "products": {
-      "title": "Nuestra Colección",
+      "title": "Nuestra Cosecha",
       "honey": {
         "title": "Miel Cruda Orgánica",
-        "desc": "Miel 100% pura y sin pasteurizar obtenida directamente de nuestras reservas."
+        "desc": "Miel 100% pura y sin pasteurizar obtenida directamente de nuestras reservas de bosque profundo."
       },
       "wellness": {
-        "title": "Extractos de Bienestar",
-        "desc": "Potentes tinturas orgánicas y suplementos para la salud."
+        "title": "Derivados de Miel",
+        "desc": "Potentes extractos de bienestar, propóleo y suplementos de jalea real."
       }
     },
     "shop_page": {
-      "title": "La Botica",
-      "subtitle": "Cosechas orgánicas de lote limitado. Prueba la naturaleza intacta."
+      "title": "El Apiario",
+      "subtitle": "Cosechas orgánicas de miel de lote limitado. Prueba la naturaleza intacta."
     },
     "story_page": {
       "title": "Nuestros Orígenes",
-      "subtitle": "De bosques profundos a extractos premium. El viaje de Arasue Labs."
+      "subtitle": "De apicultores dedicados a extractos premium. El viaje de Arasue Labs."
     },
     "contact_page": {
-      "title": "Mayoreo y Soporte",
-      "subtitle": "Contáctanos para pedidos por volumen y asociaciones premium."
+      "title": "Mayoreo y Alianzas",
+      "subtitle": "Contáctanos para pedidos de miel por volumen y asociaciones premium."
     }
   },
   "corporate": {
