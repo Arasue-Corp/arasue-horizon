@@ -29,6 +29,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       siteName: 'Arasue Labs',
       locale: resolvedParams.lang,
       type: 'website',
+    },
+    icons: {
+      icon: [
+        { url: '/icono-labs-negro.png', type: 'image/png' },
+      ],
+      apple: [
+        { url: '/icono-labs-negro.png', type: 'image/png' }
+      ]
     }
   }
 }

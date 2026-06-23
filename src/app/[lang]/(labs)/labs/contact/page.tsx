@@ -30,9 +30,9 @@ export default async function LabsContactPage({
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ad102f1a_1px,transparent_1px),linear-gradient(to_bottom,#ad102f1a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       </div>
 
-      <div className="flex-1 flex flex-col lg:flex-row w-full z-10 pt-24 lg:pt-0">
+      <div className="flex-1 flex flex-col lg:flex-row w-full z-10 pt-32 lg:pt-32">
         {/* Left Side: Extraction Node Map */}
-        <div className="w-full lg:w-1/2 p-8 lg:p-16 flex flex-col relative min-h-[40vh] lg:min-h-[100vh]">
+        <div className="w-full lg:w-1/2 p-8 lg:p-16 pt-0 lg:pt-0 flex flex-col relative min-h-[40vh] lg:min-h-[100vh]">
           {/* Tactical Map Grid */}
           <div className="absolute inset-0 z-0 opacity-30">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#ad102f33_1px,transparent_1px),linear-gradient(to_bottom,#ad102f33_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)]" />
