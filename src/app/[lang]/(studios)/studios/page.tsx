@@ -13,13 +13,13 @@ export default async function MediaPage({
   const dict = await getDictionary(resolvedParams.lang as Locale)
 
   return (
-    <div className="flex flex-col bg-black text-white font-sans selection:bg-purple-500/30">
+    <div className="flex flex-col bg-background text-foreground font-sans selection:bg-primary/30">
       {/* Hero Section */}
       <section className="min-h-[100vh] flex flex-col justify-center px-6 relative overflow-hidden">
         {/* Abstract/Video Placeholder Background */}
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000&auto=format&fit=crop" alt="Abstract Tech" className="w-full h-full object-cover opacity-40 mix-blend-luminosity" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
         </div>
 
         <MotionDiv 
@@ -28,20 +28,20 @@ export default async function MediaPage({
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="max-w-7xl mx-auto w-full z-10"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-sm font-bold tracking-widest uppercase mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase mb-8">
             Arasue Studios
           </div>
-          <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85] bg-clip-text text-transparent bg-gradient-to-br from-white to-white/40">
+          <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter uppercase leading-[0.85] bg-clip-text text-transparent bg-gradient-to-br from-foreground to-foreground/40">
             {dict.studios.hero.title}
           </h1>
-          <p className="text-xl md:text-3xl mt-12 max-w-2xl font-light opacity-80 leading-relaxed border-l-4 border-purple-500 pl-6">
+          <p className="text-xl md:text-3xl mt-12 max-w-2xl font-light opacity-80 leading-relaxed border-l-4 border-primary pl-6">
             {dict.studios.hero.subtitle}
           </p>
           <div className="pt-16 flex flex-wrap gap-6">
-            <button className="px-10 py-5 rounded-full bg-white text-black font-black text-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-wide">
+            <button className="px-10 py-5 rounded-full bg-foreground text-background font-black text-lg hover:scale-105 active:scale-95 transition-all uppercase tracking-wide">
               {dict.studios.hero.cta}
             </button>
-            <button className="px-10 py-5 rounded-full border-2 border-white/20 font-bold text-lg hover:bg-white/10 active:scale-95 transition-all uppercase tracking-wide">
+            <button className="px-10 py-5 rounded-full border-2 border-foreground/20 font-bold text-lg hover:bg-foreground/10 active:scale-95 transition-all uppercase tracking-wide">
               {dict.studios.hero.cta_contact}
             </button>
           </div>
@@ -49,7 +49,7 @@ export default async function MediaPage({
       </section>
 
       {/* Ticker / Brands Placeholder */}
-      <section className="py-12 border-y border-white/10 bg-white/5 overflow-hidden">
+      <section className="py-12 border-y border-border bg-secondary/10 overflow-hidden">
         <div className="flex gap-16 items-center whitespace-nowrap opacity-50 font-bold text-2xl uppercase tracking-widest">
           {/* Simulated marquee */}
           <span>NETFLIX</span> • <span>HBO MAX</span> • <span>TWITCH</span> • <span>YOUTUBE</span> • <span>SPOTIFY</span> • <span>RED BULL</span> •
@@ -160,19 +160,19 @@ export default async function MediaPage({
       </section>
 
       {/* Creators Roster */}
-      <section className="py-32 px-6">
+      <section className="py-32 px-6 bg-background">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">{dict.studios.creators_page.title}</h2>
-          <p className="text-xl text-white/50 mb-16">{dict.studios.creators_page.subtitle}</p>
+          <p className="text-xl text-foreground/50 mb-16">{dict.studios.creators_page.subtitle}</p>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="group cursor-pointer">
-                <div className="aspect-[3/4] bg-white/5 rounded-3xl overflow-hidden mb-6 relative">
+                <div className="aspect-[3/4] bg-secondary/50 rounded-3xl overflow-hidden mb-6 relative border border-border">
                   <img src={`https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop&sig=${i}`} alt={`Creator ${i}`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="font-bold">@creator{i}</div>
-                    <div className="text-sm text-purple-400">1.{i}M Followers</div>
+                    <div className="text-sm text-primary">1.{i}M Followers</div>
                   </div>
                 </div>
               </div>
@@ -187,11 +187,11 @@ export default async function MediaPage({
       </section>
 
       {/* Collab CTA */}
-      <section className="py-32 px-6 border-t border-white/10 text-center">
+      <section className="py-32 px-6 border-t border-border text-center bg-secondary/5">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8">{dict.studios.contact_page.title}</h2>
-          <p className="text-2xl text-white/60 mb-12">{dict.studios.contact_page.subtitle}</p>
-          <button className="px-12 py-6 rounded-full bg-purple-600 text-white font-black text-xl hover:bg-purple-500 active:scale-95 transition-all uppercase tracking-wide shadow-[0_0_40px_rgba(147,51,234,0.3)]">
+          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 text-primary">{dict.studios.contact_page.title}</h2>
+          <p className="text-2xl text-foreground/60 mb-12">{dict.studios.contact_page.subtitle}</p>
+          <button className="px-12 py-6 rounded-full bg-primary text-primary-foreground font-black text-xl hover:scale-105 active:scale-95 transition-all uppercase tracking-wide shadow-[0_0_40px_var(--primary)]">
             Send Brief
           </button>
         </div>

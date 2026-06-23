@@ -41,14 +41,14 @@ export function StudiosCaseStudies({ lang }: { lang: 'en' | 'es' }) {
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <div>
           <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">{t.title}</h2>
-          <p className="text-xl text-white/50 max-w-sm hidden md:block">{t.subtitle}</p>
+          <p className="text-xl text-foreground/50 max-w-sm hidden md:block">{t.subtitle}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {t.filters.map(f => (
             <button 
               key={f}
               onClick={() => setFilter(f)}
-              className={`px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest transition-colors ${filter === f ? 'bg-purple-500 text-white' : 'bg-white/5 text-white/50 hover:bg-white/10'}`}
+              className={`px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest transition-colors ${filter === f ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground hover:bg-primary/20'}`}
             >
               {f}
             </button>
@@ -66,17 +66,17 @@ export function StudiosCaseStudies({ lang }: { lang: 'en' | 'es' }) {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               key={project.id}
-              className="group cursor-pointer relative aspect-video bg-white/5 rounded-3xl overflow-hidden"
+              className="group cursor-pointer relative aspect-video bg-secondary/50 border border-border rounded-3xl overflow-hidden"
             >
               <img src={`https://images.unsplash.com/photo-${project.img}?q=80&w=800&auto=format&fit=crop`} alt={project.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
               
-              <div className="absolute top-6 right-6 px-4 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white font-mono text-xs">
+              <div className="absolute top-6 right-6 px-4 py-1 rounded-full bg-background/50 backdrop-blur-md border border-border text-foreground font-mono text-xs">
                 {project.reach} Impressions
               </div>
 
               <div className="absolute bottom-0 left-0 p-8 md:p-12 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <div className="text-purple-400 font-bold tracking-widest text-sm mb-3 uppercase">{project.brand} • {project.category}</div>
+                <div className="text-primary font-bold tracking-widest text-sm mb-3 uppercase">{project.brand} • {project.category}</div>
                 <h3 className="text-3xl md:text-5xl font-black uppercase">{project.title}</h3>
               </div>
             </motion.div>

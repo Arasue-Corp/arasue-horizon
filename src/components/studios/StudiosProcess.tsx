@@ -32,7 +32,7 @@ export function StudiosProcess({ lang }: { lang: 'en' | 'es' }) {
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-24">
         <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6">{t.title}</h2>
-        <p className="text-xl text-white/50 max-w-2xl mx-auto">{t.subtitle}</p>
+        <p className="text-xl text-foreground/50 max-w-2xl mx-auto">{t.subtitle}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -45,10 +45,10 @@ export function StudiosProcess({ lang }: { lang: 'en' | 'es' }) {
             transition={{ type: "spring", stiffness: 300, damping: 30, delay: i * 0.1 }}
             className="group"
           >
-            <div className="text-8xl font-black text-white/5 group-hover:text-purple-500/20 transition-colors mb-4">{item.step}</div>
-            <div className="border-t border-white/20 pt-6">
+            <div className="text-8xl font-black text-foreground/5 group-hover:text-primary/20 transition-colors mb-4">{item.step}</div>
+            <div className="border-t border-border pt-6">
               <h3 className="text-2xl font-bold uppercase mb-4">{item.title}</h3>
-              <p className="text-white/60 leading-relaxed font-light">{item.desc}</p>
+              <p className="text-foreground/60 leading-relaxed font-light">{item.desc}</p>
             </div>
           </motion.div>
         ))}

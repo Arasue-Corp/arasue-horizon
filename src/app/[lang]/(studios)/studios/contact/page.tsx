@@ -33,7 +33,7 @@ export default async function StudiosContactPage({
         <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen flex flex-col justify-end p-12 lg:p-24 overflow-hidden border-r border-border">
           <div className="absolute inset-0 z-0">
             {/* Tactical Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(#fdeeb90a_1px,transparent_1px),linear-gradient(90deg,#fdeeb90a_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/4" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary blur-[120px] rounded-full pointer-events-none -translate-x-1/4 translate-y-1/4" />
           </div>
@@ -77,7 +77,7 @@ export default async function StudiosContactPage({
                   <h3 className="font-bold text-lg text-foreground mb-1">{dict.studios.contact_page.talk_directly_title}</h3>
                   <p className="text-sm text-foreground/50 font-inter">{dict.studios.contact_page.talk_directly_subtitle}</p>
                </div>
-               <a href="https://cal.com/arasue/30min" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 px-6 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_var(--color-primary)]">
+               <a href="https://cal.com/arasue/30min" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 px-6 py-3 rounded-full bg-primary text-primary-foreground font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_var(--primary)]">
                  <Video className="w-4 h-4" />
                  {dict.studios.contact_page.book_call}
                </a>

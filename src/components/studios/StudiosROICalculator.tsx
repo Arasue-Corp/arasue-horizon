@@ -69,18 +69,18 @@ export function StudiosROICalculator({ lang }: { lang: 'en' | 'es' }) {
   const metrics = getMetrics()
 
   return (
-    <div className="max-w-5xl mx-auto bg-white/5 border border-white/10 rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
+    <div className="max-w-5xl mx-auto bg-secondary/20 border border-border rounded-[2rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">
       <div className="flex-1 p-8 lg:p-12">
         <div className="mb-12">
           <h2 className="text-3xl font-black uppercase mb-2">{t.title}</h2>
-          <p className="text-white/50">{t.subtitle}</p>
+          <p className="text-foreground/50">{t.subtitle}</p>
         </div>
 
         <div className="space-y-10">
           <div>
             <div className="flex justify-between mb-4">
-              <label className="font-bold text-xs uppercase tracking-widest text-purple-400">{t.budget}</label>
-              <span className="font-mono text-white/80">{isMexico ? `$${budget.toLocaleString()} MXN` : `$${budget.toLocaleString()} USD`}</span>
+              <label className="font-bold text-xs uppercase tracking-widest text-primary">{t.budget}</label>
+              <span className="font-mono text-foreground/80">{isMexico ? `$${budget.toLocaleString()} MXN` : `$${budget.toLocaleString()} USD`}</span>
             </div>
             <input 
               type="range" 
@@ -89,12 +89,12 @@ export function StudiosROICalculator({ lang }: { lang: 'en' | 'es' }) {
               step={isMexico ? 10000 : 1000}
               value={budget} 
               onChange={(e) => setBudget(Number(e.target.value))}
-              className="w-full accent-purple-500 h-2 bg-white/10 rounded-full appearance-none cursor-pointer"
+              className="w-full accent-primary h-2 bg-secondary rounded-full appearance-none cursor-pointer"
             />
           </div>
 
           <div>
-            <label className="font-bold text-xs uppercase tracking-widest text-purple-400 block mb-6">{t.platform}</label>
+            <label className="font-bold text-xs uppercase tracking-widest text-primary block mb-6">{t.platform}</label>
             <div className="flex flex-col gap-3">
               {t.platforms.map(opt => (
                 <button 
@@ -102,8 +102,8 @@ export function StudiosROICalculator({ lang }: { lang: 'en' | 'es' }) {
                   onClick={() => handlePlatformChange(opt.id)}
                   className={`py-4 px-6 rounded-xl border text-sm font-bold transition-all duration-200 text-left ${
                     platform === opt.id 
-                    ? 'border-purple-500 bg-purple-500/20 text-white' 
-                    : 'border-white/10 text-white/50 hover:border-white/30'
+                    ? 'border-primary bg-primary/20 text-foreground' 
+                    : 'border-border text-foreground/50 hover:border-primary/50'
                   }`}
                 >
                   {opt.label}
@@ -114,28 +114,28 @@ export function StudiosROICalculator({ lang }: { lang: 'en' | 'es' }) {
         </div>
       </div>
 
-      <div className="md:w-[400px] bg-purple-900/20 border-l border-white/10 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+      <div className="md:w-[400px] bg-secondary/30 border-l border-border p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
         
         <div className={`space-y-8 mb-8 transition-all duration-200 ${isCalculating ? 'blur-sm opacity-50' : 'blur-0 opacity-100'}`}>
           <div>
-            <h3 className="font-bold uppercase tracking-widest text-xs text-white/50 mb-2">{t.estReach}</h3>
-            <div className="text-5xl font-black tracking-tighter text-white">
+            <h3 className="font-bold uppercase tracking-widest text-xs text-foreground/50 mb-2">{t.estReach}</h3>
+            <div className="text-5xl font-black tracking-tighter text-foreground">
               {metrics.reach}
             </div>
           </div>
           <div>
-            <h3 className="font-bold uppercase tracking-widest text-xs text-white/50 mb-2">{t.estConv}</h3>
-            <div className="text-4xl font-black tracking-tighter text-purple-400">
+            <h3 className="font-bold uppercase tracking-widest text-xs text-foreground/50 mb-2">{t.estConv}</h3>
+            <div className="text-4xl font-black tracking-tighter text-primary">
               {metrics.conversions}
             </div>
           </div>
         </div>
         
-        <p className="text-white/40 text-xs mb-8 leading-relaxed font-medium">
+        <p className="text-foreground/40 text-xs mb-8 leading-relaxed font-medium">
           {t.note}
         </p>
         
-        <button className="w-full bg-white text-black font-black uppercase tracking-widest text-sm py-5 rounded-xl hover:bg-neutral-200 active:scale-95 transition-all shadow-[0_0_30px_rgba(168,85,247,0.3)]">
+        <button className="w-full bg-foreground text-background font-black uppercase tracking-widest text-sm py-5 rounded-xl hover:opacity-90 active:scale-95 transition-all shadow-[0_0_30px_var(--primary)]">
           {t.cta}
         </button>
       </div>
