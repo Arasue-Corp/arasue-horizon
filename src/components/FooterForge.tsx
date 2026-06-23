@@ -64,13 +64,13 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
             <div className="flex flex-col gap-4">
               <h4 className="text-foreground font-bold tracking-wide uppercase text-xs font-mono mb-2">Dispatch</h4>
               <p className="text-xs text-foreground/50 font-inter mb-2">Get technical insights and updates directly to your inbox.</p>
-              <form className="flex w-full" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex w-full">
                 <input 
                   type="email" 
                   placeholder="corporate@domain.com" 
                   className="bg-secondary/50 border border-border rounded-l-lg px-4 py-2.5 text-xs w-full focus:outline-none focus:border-primary/50 text-foreground placeholder:text-foreground/30 transition-colors"
                 />
-                <button type="submit" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2.5 rounded-r-lg transition-colors flex items-center justify-center">
+                <button type="button" className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2.5 rounded-r-lg transition-colors flex items-center justify-center">
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
