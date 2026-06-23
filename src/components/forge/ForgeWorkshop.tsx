@@ -25,7 +25,7 @@ const demos = [
     title: "Enterprise Landing",
     category: "Construction / Real Estate",
     tech: ["Framer Motion", "Next.js"],
-    image: "https://images.unsplash.com/photo-1541888087525-2bf54dea2fa7?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: "carpentry",
@@ -39,7 +39,7 @@ const demos = [
     title: "Auto Repair Shop",
     category: "Local Business",
     tech: ["Next.js", "Framer Motion"],
-    image: "https://images.unsplash.com/photo-1503375894024-5db6050b4d45?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2070&auto=format&fit=crop"
   },
   {
     id: "roofing",
@@ -74,7 +74,7 @@ const demos = [
     title: "Concrete Company",
     category: "Construction",
     tech: ["Next.js", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356f12?q=80&w=2070&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop"
   }
 ]
 
