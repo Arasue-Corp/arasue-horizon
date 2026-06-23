@@ -20,7 +20,7 @@ const projects = [
     dictKey: 3
   },
   {
-    image: "https://images.unsplash.com/photo-1503375894024-5db6050b4d45?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070&auto=format&fit=crop",
     tags: ["Next.js", "Framer Motion"],
     dictKey: 4
   },
