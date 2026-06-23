@@ -73,7 +73,7 @@ export default async function ForgeContactPage({
                   <h3 className="font-bold text-lg text-white mb-1">{dict.forge.contact_page.talk_directly_title}</h3>
                   <p className="text-sm text-white/50 font-inter">{dict.forge.contact_page.talk_directly_subtitle}</p>
                </div>
-               <a href="#" className="flex-shrink-0 px-6 py-3 rounded-full bg-[#bc9665] text-[#0c0c0c] font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(188,150,101,0.2)]">
+               <a href="https://cal.com/josue-pm/30min" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 px-6 py-3 rounded-full bg-[#bc9665] text-[#0c0c0c] font-bold text-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(188,150,101,0.2)]">
                  <Video className="w-4 h-4" />
                  {dict.forge.contact_page.book_call}
                </a>
