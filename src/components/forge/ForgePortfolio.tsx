@@ -32,109 +32,95 @@ const projects = [
 ]
 
 function PortfolioItem({ dict, project, index }: { dict: any, project: any, index: number }) {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  })
-  
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
-  
-  // Make the first item large and prominent
-  const isLarge = index === 0
-
+  // We'll use a local hover state for the image scale, but keep it mostly CSS driven
   return (
-    <div 
-      ref={ref} 
-      className={`relative w-full flex flex-col items-center justify-center overflow-hidden border-border group ${
-        isLarge 
-          ? 'aspect-square md:aspect-auto md:h-[70vh] md:col-span-2 border-b' 
-          : 'aspect-square md:aspect-auto md:h-[50vh] border-b last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 md:[&:nth-child(even)]:border-b'
-      }`}
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className="group relative w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[70vh] flex-shrink-0 rounded-2xl overflow-hidden border border-white/10 bg-[#131926] shadow-2xl"
     >
-      {/* Parallax Background */}
-      <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%] -top-[10%]">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <Image 
           src={project.image} 
           alt={dict[`project${project.dictKey}_title`]} 
           fill 
-          className="object-cover opacity-60 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+          className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/60 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-700" />
-      </motion.div>
+        {/* Deep Slate Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/40 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
+      </div>
 
       {/* Content Overlay */}
-      <div className={`relative z-10 w-full p-8 md:p-12 flex flex-col justify-end h-full`}>
-        <div className="max-w-3xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-primary font-mono text-xs md:text-sm uppercase tracking-widest mb-4 flex items-center gap-3"
-          >
-            <span className="w-8 h-[1px] bg-primary"></span>
+      <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-10">
+        <div className="overflow-hidden mb-4">
+          <div className="text-[#05F2DB] font-mono text-xs md:text-sm uppercase tracking-widest flex items-center gap-3 translate-y-0 group-hover:-translate-y-2 transition-transform duration-500">
+            <span className="w-8 h-[1px] bg-[#05F2DB]"></span>
             {dict[`project${project.dictKey}_category`]}
-          </motion.div>
-          <motion.h3 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className={`${isLarge ? 'text-4xl md:text-6xl' : 'text-3xl md:text-4xl'} font-black mb-4 tracking-tighter leading-tight text-white group-hover:text-primary-foreground transition-colors`}
-          >
+          </div>
+        </div>
+        
+        <div className="overflow-hidden mb-4">
+          <h3 className="text-3xl md:text-5xl font-black tracking-tighter leading-tight text-white translate-y-0 group-hover:-translate-y-2 transition-transform duration-500 delay-75">
             {dict[`project${project.dictKey}_title`]}
-          </motion.h3>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className={`${isLarge ? 'text-base md:text-lg' : 'text-sm'} text-white/70 font-medium mb-8 font-inter leading-relaxed max-w-xl`}
-          >
+          </h3>
+        </div>
+
+        <div className="overflow-hidden mb-8">
+          <p className="text-sm md:text-base text-white/70 font-inter leading-relaxed max-w-lg translate-y-0 group-hover:-translate-y-2 transition-transform duration-500 delay-100">
             {dict[`project${project.dictKey}_desc`]}
-          </motion.p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap gap-2 font-mono"
-          >
-            {project.tags.map((tag: string, i: number) => (
-              <span key={i} className="px-3 py-1.5 border border-white/10 bg-white/5 backdrop-blur-md text-[10px] md:text-xs uppercase tracking-wider text-white/90">
-                {tag}
-              </span>
-            ))}
-          </motion.div>
+          </p>
+        </div>
+        
+        <div className="flex flex-wrap gap-2 font-mono translate-y-0 group-hover:-translate-y-2 transition-transform duration-500 delay-150">
+          {project.tags.map((tag: string, i: number) => (
+            <span key={i} className="px-3 py-1.5 border border-white/10 bg-white/5 backdrop-blur-md text-[10px] md:text-xs uppercase tracking-wider text-white/90">
+              {tag}
+            </span>
+          ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
 export function ForgePortfolio({ dict }: { dict: any }) {
-  return (
-    <section id="work" className="py-32 px-6 bg-[#0B0F19] border-y border-border relative overflow-hidden">
-      {/* Premium ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+  const targetRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  })
 
-      <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="mb-24 md:mb-32 max-w-3xl">
+  // We have 5 items. We want to translate them to the left as we scroll down.
+  // 5 items * width of item + gap. Let's just use a percentage for simplicity.
+  // -80% works well for 5 items usually to see the last one.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"])
+
+  return (
+    <section ref={targetRef} id="work" className="relative h-[400vh] bg-[#0B0F19]">
+      {/* Sticky Container */}
+      <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden border-y border-white/5">
+        
+        {/* Background ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-[#0511F2]/10 blur-[150px] rounded-full pointer-events-none" />
+
+        {/* Section Header */}
+        <div className="container mx-auto px-6 md:px-12 w-full flex-shrink-0 mb-12 relative z-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold font-mono tracking-widest uppercase mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0511F2]/20 border border-[#0511F2]/30 text-[#05F2DB] text-xs font-bold font-mono tracking-widest uppercase mb-6"
           >
-            Case Studies
+            Showcase
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-black tracking-tighter mb-6 text-white leading-[1.1]"
+            className="text-4xl md:text-7xl font-black tracking-tighter text-white leading-[1.1] mb-4"
           >
             {dict.title}
           </motion.h2>
@@ -143,17 +129,19 @@ export function ForgePortfolio({ dict }: { dict: any }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-white/60 font-inter leading-relaxed"
+            className="text-lg md:text-xl text-white/50 font-inter max-w-2xl"
           >
             {dict.subtitle}
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-white/10 bg-[#0B0F19] rounded-2xl overflow-hidden shadow-2xl">
+        {/* Horizontal Scrolling Track */}
+        <motion.div style={{ x }} className="flex gap-8 px-6 md:px-12 w-[300vw] md:w-[250vw] lg:w-[230vw] relative z-20 items-center">
           {projects.map((project, i) => (
             <PortfolioItem key={i} dict={dict} project={project} index={i} />
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   )
