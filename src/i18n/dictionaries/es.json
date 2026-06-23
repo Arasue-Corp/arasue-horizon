@@ -225,7 +225,22 @@
       "project4_desc": "Experiencias de compra nativas ultrarrápidas desacopladas del backend tradicional para maximizar las ventas.",
       "project5_category": "Operaciones",
       "project5_title": "Soluciones para Negocios",
-      "project5_desc": "Sistemas de generación de leads y reservas automáticas integradas en sitios web para empresas de servicios locales."
+      "project5_desc": "Sistemas de generación de leads y reservas automáticas integradas en sitios web para empresas de servicios locales.",
+      "project6_category": "Infraestructura",
+      "project6_title": "Integraciones de Sistemas",
+      "project6_desc": "Conectamos herramientas, APIs y bases de datos dispares para crear un ecosistema unificado de datos.",
+      "project7_category": "Inteligencia Artificial",
+      "project7_title": "Implementación de IA",
+      "project7_desc": "Integramos modelos de lenguaje de última generación (LLMs) directamente en los flujos de su negocio.",
+      "project8_category": "Sistemas Autónomos",
+      "project8_title": "Despliegue de Agentes IA",
+      "project8_desc": "Sistemas multi-agente capaces de ejecutar investigaciones, atención al cliente y toma de decisiones 24/7.",
+      "project9_category": "Eficiencia",
+      "project9_title": "Automatizaciones (n8n)",
+      "project9_desc": "Flujos de trabajo hiper-optimizados para reducir horas manuales y eliminar errores operativos.",
+      "project10_category": "Estrategia",
+      "project10_title": "Project Management",
+      "project10_desc": "Liderazgo técnico y gestión ágil para garantizar entregas puntuales y de máxima calidad."
     },
     "process": {
       "title": "Cómo Trabajamos",

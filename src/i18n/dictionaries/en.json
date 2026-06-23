@@ -225,7 +225,22 @@
       "project4_desc": "Lightning-fast native shopping experiences decoupled from traditional backends to maximize sales.",
       "project5_category": "Operations",
       "project5_title": "Local Business Solutions",
-      "project5_desc": "Lead generation systems and automated bookings integrated into websites for local service companies."
+      "project5_desc": "Lead generation systems and automated bookings integrated into websites for local service companies.",
+      "project6_category": "Infrastructure",
+      "project6_title": "Systems Integrations",
+      "project6_desc": "We connect disparate tools, APIs, and databases to create a unified data ecosystem.",
+      "project7_category": "Artificial Intelligence",
+      "project7_title": "AI Implementation",
+      "project7_desc": "We integrate cutting-edge Large Language Models (LLMs) directly into your business workflows.",
+      "project8_category": "Autonomous Systems",
+      "project8_title": "AI Agent Deployment",
+      "project8_desc": "Multi-agent systems capable of executing research, customer support, and decision-making 24/7.",
+      "project9_category": "Efficiency",
+      "project9_title": "Automations (n8n)",
+      "project9_desc": "Hyper-optimized workflows designed to reduce manual hours and eliminate operational errors.",
+      "project10_category": "Strategy",
+      "project10_title": "Project Management",
+      "project10_desc": "Technical leadership and agile management to guarantee on-time, high-quality deliveries."
     },
     "process": {
       "title": "How We Work",

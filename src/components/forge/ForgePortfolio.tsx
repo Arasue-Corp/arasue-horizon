@@ -28,6 +28,31 @@ const projects = [
     image: "https://images.unsplash.com/photo-1632759145351-1d592919f522?q=80&w=2070&auto=format&fit=crop",
     tags: ["Next.js", "Tailwind CSS", "React"],
     dictKey: 5
+  },
+  {
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Webhooks", "REST APIs", "GraphQL"],
+    dictKey: 6
+  },
+  {
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    tags: ["OpenAI", "LangChain", "Vector DB"],
+    dictKey: 7
+  },
+  {
+    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2065&auto=format&fit=crop",
+    tags: ["Autogen", "Python", "Docker"],
+    dictKey: 8
+  },
+  {
+    image: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2070&auto=format&fit=crop",
+    tags: ["n8n", "Zapier", "Node.js"],
+    dictKey: 9
+  },
+  {
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop",
+    tags: ["Agile", "Jira", "Sprint"],
+    dictKey: 10
   }
 ]
 
@@ -92,13 +117,12 @@ export function ForgePortfolio({ dict }: { dict: any }) {
     target: targetRef,
   })
 
-  // We have 5 items. We want to translate them to the left as we scroll down.
-  // 5 items * width of item + gap. Let's just use a percentage for simplicity.
-  // -80% works well for 5 items usually to see the last one.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"])
+  // We have 10 items now. We need more scroll space.
+  // -90% translates the long track almost to the end.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-90%"])
 
   return (
-    <section ref={targetRef} id="work" className="relative h-[400vh] bg-[#0B0F19]">
+    <section ref={targetRef} id="work" className="relative h-[600vh] bg-[#0B0F19]">
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen flex flex-col items-start justify-center overflow-hidden border-y border-white/5">
         
@@ -136,7 +160,7 @@ export function ForgePortfolio({ dict }: { dict: any }) {
         </div>
 
         {/* Horizontal Scrolling Track */}
-        <motion.div style={{ x }} className="flex gap-8 px-6 md:px-12 w-[300vw] md:w-[250vw] lg:w-[230vw] relative z-20 items-center">
+        <motion.div style={{ x }} className="flex gap-8 px-6 md:px-12 w-[850vw] md:w-[620vw] lg:w-[480vw] relative z-20 items-center">
           {projects.map((project, i) => (
             <PortfolioItem key={i} dict={dict} project={project} index={i} />
           ))}
