@@ -15,11 +15,8 @@ export function FooterForge({ dict, lang }: { dict: any, lang: string }) {
           
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col items-start">
-            <Link href={`/${lang}/forge`} className="group flex items-center gap-3 mb-6">
-              <img src="/icono-forge-blanco.png" alt="Arasue Forge" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
-              <span className="text-2xl font-black tracking-tight text-foreground">
-                Arasue Forge
-              </span>
+            <Link href={`/${lang}/forge`} className="group flex items-center mb-8">
+              <img src="/logo-forge-blanco.png" alt="Arasue Forge" className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105" />
             </Link>
             <p className="text-foreground/60 text-sm max-w-sm mb-8 leading-relaxed font-inter">
               {dict.forge.hero.subtitle || "Premium software development and digital strategy agency. We build the infrastructure that defines industries."}
