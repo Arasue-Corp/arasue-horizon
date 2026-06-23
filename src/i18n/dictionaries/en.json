@@ -496,7 +496,13 @@
       },
       "gallery": {
         "title": "Visualizing the Standard",
-        "subtitle": "A Glimpse into the Arasue Labs Aesthetic"
+        "subtitle": "A Glimpse into the Arasue Labs Aesthetic",
+        "img1_title": "Pure Amber",
+        "img1_desc": "Unfiltered, unheated, raw perfection.",
+        "img2_title": "The Origin",
+        "img2_desc": "Deep within the Sonoran Desert.",
+        "img3_title": "The Ritual",
+        "img3_desc": "Elevate your daily culinary experience."
       },
       "comparison": {
         "title": "Stop Eating Dead Honey.",

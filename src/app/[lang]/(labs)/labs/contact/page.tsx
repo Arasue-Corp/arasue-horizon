@@ -64,10 +64,16 @@ export default async function LabsContactPage({
               transition={{ delay: 0.2, type: "spring" }}
               className="mt-12 relative w-full aspect-video rounded-3xl overflow-hidden border border-primary/20 bg-background shadow-2xl flex items-center justify-center"
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center opacity-40 grayscale sepia-[0.3] hue-rotate-[320deg]"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542838686-37ed7a93ccbc?q=80&w=2000&auto=format&fit=crop')" }}
-              />
+              <div className="absolute inset-0 opacity-50 grayscale sepia-[0.3] hue-rotate-[320deg] mix-blend-multiply pointer-events-none">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434685.044199611!2d-114.71764618774092!3d30.584347781079313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86cd37754ebdf51d%3A0xc0c8bdcc794bbcb4!2sSonoran%20Desert!5e1!3m2!1sen!2smx!4v1700000000000!5m2!1sen!2smx"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               
               {/* Radar Sweeper */}
               <div className="absolute inset-0 border-2 border-primary/20 rounded-full scale-[1.5] animate-ping opacity-20" />

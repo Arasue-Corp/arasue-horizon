@@ -5,18 +5,18 @@ import { motion } from 'framer-motion'
 const images = [
   {
     url: 'https://images.unsplash.com/photo-1587049352847-81a56d773c1c?q=80&w=1600&auto=format&fit=crop',
-    title: 'Pure Amber',
-    desc: 'Unfiltered, unheated, raw perfection.'
+    titleKey: 'img1_title',
+    descKey: 'img1_desc'
   },
   {
     url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop',
-    title: 'The Origin',
-    desc: 'Deep within the Sonoran Desert.'
+    titleKey: 'img2_title',
+    descKey: 'img2_desc'
   },
   {
     url: 'https://images.unsplash.com/photo-1559564022-777fc9a5e840?q=80&w=1600&auto=format&fit=crop',
-    title: 'The Ritual',
-    desc: 'Elevate your daily culinary experience.'
+    titleKey: 'img3_title',
+    descKey: 'img3_desc'
   }
 ]
 
@@ -54,8 +54,8 @@ export function LabsGallery({ dict }: { dict?: any }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
             <div className="absolute bottom-8 left-8 text-white">
-              <h3 className="font-serif text-3xl font-bold mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{images[0].title}</h3>
-              <p className="text-white/70 tracking-widest text-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{images[0].desc}</p>
+              <h3 className="font-serif text-3xl font-bold mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{dict?.[images[0].titleKey] || "Pure Amber"}</h3>
+              <p className="text-white/70 tracking-widest text-sm uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">{dict?.[images[0].descKey] || "Unfiltered, unheated, raw perfection."}</p>
             </div>
           </motion.div>
 
@@ -74,8 +74,8 @@ export function LabsGallery({ dict }: { dict?: any }) {
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500" />
               <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="font-serif text-xl font-bold mb-1">{images[1].title}</h3>
-                <p className="text-white/70 text-xs tracking-widest uppercase">{images[1].desc}</p>
+                <h3 className="font-serif text-xl font-bold mb-1">{dict?.[images[1].titleKey] || "The Origin"}</h3>
+                <p className="text-white/70 text-xs tracking-widest uppercase">{dict?.[images[1].descKey] || "Deep within the Sonoran Desert."}</p>
               </div>
             </motion.div>
             
@@ -92,8 +92,8 @@ export function LabsGallery({ dict }: { dict?: any }) {
               />
               <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-500" />
               <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="font-serif text-xl font-bold mb-1">{images[2].title}</h3>
-                <p className="text-white/70 text-xs tracking-widest uppercase">{images[2].desc}</p>
+                <h3 className="font-serif text-xl font-bold mb-1">{dict?.[images[2].titleKey] || "The Ritual"}</h3>
+                <p className="text-white/70 text-xs tracking-widest uppercase">{dict?.[images[2].descKey] || "Elevate your daily culinary experience."}</p>
               </div>
             </motion.div>
           </div>

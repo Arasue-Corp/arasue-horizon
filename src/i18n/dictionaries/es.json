@@ -493,7 +493,13 @@
       },
       "gallery": {
         "title": "Visualizando el Estándar",
-        "subtitle": "Un vistazo a la Estética de Arasue Labs"
+        "subtitle": "Un vistazo a la Estética de Arasue Labs",
+        "img1_title": "Ámbar Puro",
+        "img1_desc": "Perfección cruda, sin filtrar y sin calentar.",
+        "img2_title": "El Origen",
+        "img2_desc": "En las profundidades del Desierto de Sonora.",
+        "img3_title": "El Ritual",
+        "img3_desc": "Eleva tu experiencia culinaria diaria."
       },
       "press": {
         "tag": "Amada por chefs y foodies en todo el país"
