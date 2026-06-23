@@ -23,7 +23,10 @@ export function FooterLabs({ dict, lang }: { dict: any, lang: string }) {
         
         {/* Brand & Newsletter */}
         <div className="lg:col-span-2 space-y-8 flex flex-col items-center md:items-start">
-          <h2 className="text-3xl font-serif">Arasue Labs.</h2>
+          <div className="flex items-center gap-3">
+            <img src="/icono-labs-negro.png" alt="Arasue Labs" className="h-12 w-auto invert" />
+            <h2 className="text-3xl font-serif">Arasue Labs.</h2>
+          </div>
           <p className="text-background/60 max-w-sm font-light">
             {dict.footer?.newsletter_desc || "Subscribe to The Apothecary Journal for early access to limited harvests."}
           </p>

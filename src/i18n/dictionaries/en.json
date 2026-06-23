@@ -455,69 +455,90 @@
     }
   },
   "labs": {
-    "macro": {
-      "tag": "Global Commodities & Supply",
-      "title": "Engineering the Physical World.",
-      "subtitle": "Arasue Labs LLC procures, refines, and scales the world's most premium physical goods. We apply our software engineering rigor to supply chains, ensuring uncompromising quality from origin to table.",
-      "scroll": "View Flagship Project"
-    },
-    "flagship": {
-      "tag": "Project Sonoran",
-      "origin": "Direct from Sonora, Mexico",
-      "title": "The Purest Liquid Gold from the Desert.",
-      "subtitle": "100% Raw. Unfiltered. Single-origin. Experience the untamed sweetness and healing properties of wild desert flora.",
-      "cta": "Explore the Collection"
-    },
-    "derivatives": {
-      "title": "The Collection",
-      "honey_mesquite": {
-        "title": "Mesquite Honey",
-        "desc": "Earthy, buttery notes extracted from the resilient Mesquite trees."
+    "boutique": {
+      "modal": {
+        "tag": "Spring 2026 Harvest",
+        "title": "Strictly Limited Allocation.",
+        "subtitle": "Our raw desert honey is harvested in micro-batches to protect the bees and preserve peak enzymatic quality. Once it's gone, we wait until next season.",
+        "cta": "Enter the Boutique"
       },
-      "honey_multiflora": {
-        "title": "Desert Multiflora",
-        "desc": "A complex, wild flavor profile from diverse Sonoran blossoms."
+      "hero": {
+        "origin": "Direct from Sonora, Mexico",
+        "title": "The Purest Liquid Gold from the Desert.",
+        "subtitle": "100% Raw. Unfiltered. Single-origin. Experience the untamed sweetness and healing properties of wild desert flora.",
+        "cta": "Claim Your Jar",
+        "shipping": "Fast Shipping across the US"
       },
-      "pollen": {
-        "title": "Raw Bee Pollen",
-        "desc": "Protein-rich granules packed with essential amino acids and vitamins."
+      "press": {
+        "tag": "Loved by chefs and foodies nationwide"
       },
-      "royal_jelly": {
-        "title": "Royal Jelly Extract",
-        "desc": "The exclusive, nutrient-dense superfood reserved for the queen."
+      "comparison": {
+        "title": "Stop Eating Dead Honey.",
+        "subtitle1": "Most honey on grocery shelves has been stripped of the very properties that make it a superfood. Heating and filtering leave you with nothing but glorified sugar syrup.",
+        "subtitle2": "Arasue Honey is different. We respect the bees and the ancient desert. You taste exactly what the hive created: thick, complex, and alive.",
+        "bad_title": "Commercial Supermarket Honey",
+        "bad_1": "Flash-heated (destroys vital enzymes)",
+        "bad_2": "Ultra-filtered (removes beneficial pollen)",
+        "bad_3": "Blended with hidden syrups & sugars",
+        "good_tag": "The Arasue Standard",
+        "good_title": "100% Raw Sonoran Honey",
+        "good_1": "Cold-extracted to protect live nutrients",
+        "good_2": "Unfiltered: rich in pollen and antioxidants",
+        "good_3": "Single-Origin: direct from the Sonoran Desert"
       },
-      "propolis": {
-        "title": "Propolis Tincture",
-        "desc": "Nature's ultimate defense. A powerful immune-boosting resin."
+      "origin": {
+        "title": "Born in the Harshest Environment. Yielding the Sweetest Reward.",
+        "subtitle": "The Sonoran Desert is unforgiving. Only the most resilient flora survive here—Mesquite, Palo Verde, and Ironwood. Our bees forage these rare blooms, creating a honey with a flavor profile unlike anything you've ever experienced. Earthy, buttery, and profoundly rich.",
+        "use1_title": "Charcuterie",
+        "use1_desc": "Drizzle over aged cheddar or blue cheese.",
+        "use2_title": "Morning Ritual",
+        "use2_desc": "Stir into Earl Grey or pour over Greek yogurt.",
+        "use3_title": "Pure Spoonful",
+        "use3_desc": "Savor it raw for a daily immunity boost."
       },
-      "wax": {
-        "title": "Pure Beeswax",
-        "desc": "Unbleached, triple-filtered wax for premium cosmetic and home use."
+      "ritual": {
+        "tag": "The Daily Indulgence",
+        "title": "Transform Your Coffee Into a Ritual.",
+        "subtitle": "Forget bitter processed sugars. A single, velvety spoonful of Arasue Raw Honey adds complex, buttery notes to your brew, balancing the roast with unadulterated desert sweetness.",
+        "cta": "Discover the Flavor"
+      },
+      "shop": {
+        "title": "Secure Your Harvest",
+        "subtitle": "Small batch extraction. 100% Purity Guarantee.",
+        "product1_title": "The Tasting Jar",
+        "product1_desc": "1x 16oz Glass Jar",
+        "product1_price": "$28",
+        "product1_cta": "Add to Cart",
+        "product2_tag": "Most Popular",
+        "product2_title": "The Desert Reserve",
+        "product2_desc": "3x 16oz Glass Jars (Save 15%)",
+        "product2_price": "$71",
+        "product2_old_price": "$84",
+        "product2_shipping": "Free US Shipping",
+        "product2_cta": "Claim My 3 Jars",
+        "promise": "The Arasue Promise: If you don't agree this is the best honey you've ever tasted, we'll refund your order. No questions asked."
+      },
+      "testimonials": {
+        "title": "Taste the Difference",
+        "t1_text": "\"I've tried Manuka and local honeys, but Arasue has this incredible buttery texture and complex flavor. You can literally taste the desert flowers. I subscribe monthly now.\"",
+        "t1_author": "Sarah M., Phoenix, AZ",
+        "t2_text": "\"Finally, a real raw honey. It crystallized perfectly (which proves it's raw) and the taste is unbelievably rich. Makes my morning coffee ritual 10x better.\"",
+        "t2_author": "David L., Austin, TX",
+        "t3_text": "\"I bought the 3-pack and gifted one to my mother. It's thick, fragrant, and you can feel the quality. Beautiful packaging and lightning-fast shipping.\"",
+        "t3_author": "Elena G., Miami, FL"
+      },
+      "faq": {
+        "title": "Questions?",
+        "q1": "Why is my honey solidifying (crystallizing)?",
+        "a1": "Crystallization is the ultimate proof of pure, raw honey! Commercial honey stays liquid forever because it's boiled and ultra-filtered. To soften your honey, simply place the jar in a bowl of warm water (not boiling) for 15 minutes.",
+        "q2": "Where exactly does it come from?",
+        "a2": "Our hives are located deep in the Sonoran Desert in Mexico. The bees forage entirely on wild desert flora like Mesquite and Ironwood, untouched by pesticides or commercial agriculture.",
+        "q3": "How fast is shipping?",
+        "a3": "We ship nationwide across the US directly from our Arizona fulfillment center. Orders typically arrive within 3-5 business days. Shipping is completely free when you order 3 or more jars."
+      },
+      "footer": {
+        "desc": "Bringing the raw, untouched essence of the Sonoran Desert directly to your table."
       }
-    },
-    "ritual": {
-      "tag": "The Daily Indulgence",
-      "title": "Transform Your Coffee Into a Ritual.",
-      "subtitle": "Forget bitter processed sugars. A single, velvety spoonful of Arasue Raw Honey adds complex, buttery notes to your brew, balancing the roast with unadulterated desert sweetness.",
-      "cta": "Experience the Flavor"
-    },
-    "comparison": {
-      "title": "Stop Eating Dead Honey.",
-      "subtitle": "Most honey on supermarket shelves has been stripped of the properties that make it a superfood. Heating and filtering leaves you with glorified sugar syrup. Arasue Honey is different. We respect the bees and the ancient desert. You taste exactly what the hive created: thick, complex, and alive.",
-      "bad_title": "Commercial Supermarket Honey",
-      "bad_1": "Flash-heated (destroys enzymes)",
-      "bad_2": "Ultra-filtered (removes beneficial pollen)",
-      "bad_3": "Blended with hidden syrups and sugars",
-      "good_tag": "The Arasue Standard",
-      "good_title": "100% Raw Sonoran Honey",
-      "good_1": "Cold-extracted to protect nutrients",
-      "good_2": "Unfiltered: rich in pollen and antioxidants",
-      "good_3": "Single-Origin: direct from the Sonoran desert"
-    },
-    "origin": {
-      "tag": "Extraction Node 01",
-      "title": "Born in the Harshest Environment.",
-      "subtitle": "The Sonoran Desert is unforgiving. Only the most resilient flora survive here. Our bees forage these rare blossoms, creating an organic product with a profile unlike anything you've ever experienced."
     },
     "shop_page": {
       "title": "The Apiary",

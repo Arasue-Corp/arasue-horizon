@@ -83,9 +83,18 @@ export function LabsComparison({ dict }: { dict: any }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-foreground/70 font-sans leading-relaxed"
+            className="text-lg md:text-xl text-foreground/70 font-sans leading-relaxed mb-6"
           >
-            {dict.subtitle}
+            {dict.subtitle1}
+          </motion.p>
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl text-foreground/70 font-sans leading-relaxed font-bold"
+          >
+            {dict.subtitle2}
           </motion.p>
         </div>
 

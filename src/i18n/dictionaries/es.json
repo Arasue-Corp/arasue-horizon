@@ -455,69 +455,90 @@
     }
   },
   "labs": {
-    "macro": {
-      "tag": "Commodities y Suministro Global",
-      "title": "Ingeniería del Mundo Físico.",
-      "subtitle": "Arasue Labs LLC adquiere, refina y escala los bienes físicos más premium del mundo. Aplicamos nuestro rigor de ingeniería de software a las cadenas de suministro, garantizando una calidad intransigente desde el origen hasta tu mesa.",
-      "scroll": "Ver Proyecto Insignia"
-    },
-    "flagship": {
-      "tag": "Proyecto Sonora",
-      "origin": "Directo de Sonora, México",
-      "title": "El Oro Líquido Más Puro del Desierto.",
-      "subtitle": "100% Cruda. Sin filtrar. Origen único. Experimenta el dulzor indomable y las propiedades curativas de la flora silvestre del desierto.",
-      "cta": "Explorar la Colección"
-    },
-    "derivatives": {
-      "title": "La Colección",
-      "honey_mesquite": {
-        "title": "Miel de Mezquite",
-        "desc": "Notas terrosas y mantecosas extraídas de los resilientes árboles de Mezquite."
+    "boutique": {
+      "modal": {
+        "tag": "Cosecha Primavera 2026",
+        "title": "Asignación Estrictamente Limitada.",
+        "subtitle": "Nuestra miel del desierto se cosecha en microlotes para proteger a las abejas y preservar su calidad enzimática. Una vez que se agota, esperamos hasta la próxima temporada.",
+        "cta": "Entrar a la Boutique"
       },
-      "honey_multiflora": {
-        "title": "Multiflora del Desierto",
-        "desc": "Un perfil de sabor complejo y salvaje de diversas flores sonorenses."
+      "hero": {
+        "origin": "Directo desde Sonora, México",
+        "title": "El Oro Líquido Más Puro del Desierto.",
+        "subtitle": "100% Cruda. Sin filtrar. Origen único. Experimenta el dulzor indomable y las propiedades curativas de la flora silvestre del desierto.",
+        "cta": "Asegura Tu Frasco",
+        "shipping": "Envío rápido a todo EE.UU."
       },
-      "pollen": {
-        "title": "Polen de Abeja Crudo",
-        "desc": "Gránulos ricos en proteínas repletos de aminoácidos esenciales y vitaminas."
+      "press": {
+        "tag": "Amada por chefs y foodies en todo el país"
       },
-      "royal_jelly": {
-        "title": "Extracto de Jalea Real",
-        "desc": "El superalimento exclusivo y denso en nutrientes reservado para la reina."
+      "comparison": {
+        "title": "Deja de comer miel muerta.",
+        "subtitle1": "La mayoría de la miel de los supermercados ha sido despojada de las propiedades que la hacen un superalimento. Calentarla y filtrarla te deja solo con jarabe de azúcar glorificado.",
+        "subtitle2": "La miel Arasue es diferente. Respetamos a las abejas y al antiguo desierto. Pruebas exactamente lo que la colmena creó: espesa, compleja y viva.",
+        "bad_title": "Miel Comercial de Supermercado",
+        "bad_1": "Calentada rápidamente (destruye enzimas)",
+        "bad_2": "Ultra filtrada (elimina polen benéfico)",
+        "bad_3": "Mezclada con jarabes y azúcares ocultos",
+        "good_tag": "El Estándar Arasue",
+        "good_title": "100% Miel Cruda Sonorense",
+        "good_1": "Extracción en frío para proteger nutrientes",
+        "good_2": "Sin filtrar: rica en polen y antioxidantes",
+        "good_3": "Origen Único: directo del desierto de Sonora"
       },
-      "propolis": {
-        "title": "Tintura de Propóleo",
-        "desc": "La máxima defensa de la naturaleza. Una resina poderosa que potencia la inmunidad."
+      "origin": {
+        "title": "Nacida en el ambiente más duro. Produciendo la recompensa más dulce.",
+        "subtitle": "El desierto de Sonora es implacable. Solo la flora más resistente sobrevive aquí. Nuestras abejas recolectan estas flores raras, creando un perfil de sabor terroso, mantecoso y profundamente rico.",
+        "use1_title": "Charcuterie",
+        "use1_desc": "Rocía sobre cheddar añejo o queso azul.",
+        "use2_title": "Ritual Matutino",
+        "use2_desc": "Mezcla en té Earl Grey o yogur griego.",
+        "use3_title": "Cucharada Pura",
+        "use3_desc": "Saboréala cruda para tu inmunidad diaria."
       },
-      "wax": {
-        "title": "Cera de Abeja Pura",
-        "desc": "Cera sin blanquear, triplemente filtrada para uso cosmético y en el hogar premium."
+      "ritual": {
+        "tag": "La Indulgencia Diaria",
+        "title": "Transforma Tu Café En un Ritual.",
+        "subtitle": "Olvida el azúcar refinado amargo. Una sola cucharada aterciopelada de Miel Cruda Arasue añade notas complejas y mantecosas a tu café, equilibrando el tostado con dulzor puro del desierto.",
+        "cta": "Descubre el Sabor"
+      },
+      "shop": {
+        "title": "Asegura Tu Cosecha",
+        "subtitle": "Extracción en pequeños lotes. Garantía de Pureza 100%.",
+        "product1_title": "El Frasco de Cata",
+        "product1_desc": "1x Frasco 16oz",
+        "product1_price": "$28",
+        "product1_cta": "Añadir al Carrito",
+        "product2_tag": "Más Popular",
+        "product2_title": "La Reserva del Desierto",
+        "product2_desc": "3x Frascos 16oz (Ahorra 15%)",
+        "product2_price": "$71",
+        "product2_old_price": "$84",
+        "product2_shipping": "Envío Gratis a EE.UU.",
+        "product2_cta": "Pedir Mis 3 Frascos",
+        "promise": "Promesa Arasue: Si no estás de acuerdo en que es la mejor miel que has probado, te devolvemos tu dinero."
+      },
+      "testimonials": {
+        "title": "Prueba la Diferencia",
+        "t1_text": "\"He probado Manuka y mieles locales, pero Arasue tiene esta increíble textura mantecosa y sabor complejo. Literalmente puedes saborear las flores del desierto. Ahora estoy suscrita mensualmente.\"",
+        "t1_author": "Sarah M., Phoenix, AZ",
+        "t2_text": "\"Por fin, una miel cruda real. Se cristalizó perfectamente (lo que prueba que es cruda) y el sabor es increíblemente rico. Hace que mi ritual de café matutino sea 10 veces mejor.\"",
+        "t2_author": "David L., Austin, TX",
+        "t3_text": "\"Compré el paquete de 3 y le regalé uno a mi madre. Es espesa, aromática y se siente la calidad. Hermoso empaque y envío rapidísimo.\"",
+        "t3_author": "Elena G., Miami, FL"
+      },
+      "faq": {
+        "title": "¿Preguntas?",
+        "q1": "¿Por qué mi miel se está cristalizando?",
+        "a1": "La cristalización es la prueba de que la miel es pura y cruda. Para suavizarla, coloca el frasco en agua tibia (no hirviendo) por 15 minutos.",
+        "q2": "¿De dónde viene exactamente?",
+        "a2": "Nuestras colmenas están en lo profundo del desierto de Sonora en México. Las abejas se alimentan de flora silvestre libre de pesticidas.",
+        "q3": "¿Qué tan rápido es el envío?",
+        "a3": "Enviamos a todo EE.UU. desde Arizona. Las órdenes llegan en 3-5 días hábiles. El envío es gratis en la compra de 3 o más frascos."
+      },
+      "footer": {
+        "desc": "Llevando la esencia cruda e intacta del Desierto Sonorense directo a tu mesa."
       }
-    },
-    "ritual": {
-      "tag": "La Indulgencia Diaria",
-      "title": "Transforma Tu Café En un Ritual.",
-      "subtitle": "Olvida los azúcares procesados amargos. Una sola cucharada aterciopelada de Miel Cruda Arasue añade notas complejas y mantecosas a tu café, equilibrando el tueste con el dulzor puro del desierto.",
-      "cta": "Experimenta el Sabor"
-    },
-    "comparison": {
-      "title": "Deja de Comer Miel Muerta.",
-      "subtitle": "La mayoría de la miel en los estantes del supermercado ha sido despojada de las propiedades que la hacen un superalimento. Calentarla y filtrarla te deja solo con jarabe de azúcar glorificado. La Miel Arasue es diferente. Respetamos a las abejas y al antiguo desierto. Pruebas exactamente lo que la colmena creó: espesa, compleja y viva.",
-      "bad_title": "Miel Comercial de Supermercado",
-      "bad_1": "Calentada rápidamente (destruye enzimas)",
-      "bad_2": "Ultra filtrada (elimina polen benéfico)",
-      "bad_3": "Mezclada con jarabes y azúcares ocultos",
-      "good_tag": "El Estándar Arasue",
-      "good_title": "100% Miel Cruda Sonorense",
-      "good_1": "Extracción en frío para proteger nutrientes",
-      "good_2": "Sin filtrar: rica en polen y antioxidantes",
-      "good_3": "Origen Único: directo del desierto de Sonora"
-    },
-    "origin": {
-      "tag": "Nodo de Extracción 01",
-      "title": "Nacida en el Entorno Más Duro.",
-      "subtitle": "El Desierto de Sonora es implacable. Solo la flora más resistente sobrevive aquí. Nuestras abejas recolectan estas flores raras, creando un producto orgánico con un perfil diferente a cualquier cosa que hayas experimentado."
     },
     "shop_page": {
       "title": "El Apiario",
