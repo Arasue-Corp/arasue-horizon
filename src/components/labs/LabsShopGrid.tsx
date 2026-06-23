@@ -31,7 +31,7 @@ export function LabsShopGrid({ dict }: { dict: any }) {
             <div className="h-64 bg-primary/5 relative overflow-hidden flex items-center justify-center p-8">
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1587049352851-8d4e89134a62?q=80&w=800&auto=format&fit=crop')" }}
+                style={{ backgroundImage: "url('/images/labs/honey_jar_tasting.png')" }}
               />
             </div>
             <div className="p-8 flex flex-col flex-1">
@@ -61,7 +61,7 @@ export function LabsShopGrid({ dict }: { dict: any }) {
             <div className="h-64 bg-primary-dark relative overflow-hidden flex items-center justify-center p-8">
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-overlay"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579883547285-b9b5fc75797d?q=80&w=800&auto=format&fit=crop')" }}
+                style={{ backgroundImage: "url('/images/labs/honey_jars_reserve.png')" }}
               />
             </div>
             <div className="p-8 flex flex-col flex-1">

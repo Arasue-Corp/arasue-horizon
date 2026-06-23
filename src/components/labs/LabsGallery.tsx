@@ -4,17 +4,17 @@ import { motion } from 'framer-motion'
 
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1587049352847-81a56d773c1c?q=80&w=1600&auto=format&fit=crop',
+    url: '/images/labs/honey_macro_amber.png',
     titleKey: 'img1_title',
     descKey: 'img1_desc'
   },
   {
-    url: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1600&auto=format&fit=crop',
+    url: '/images/labs/desert_landscape_origin.png',
     titleKey: 'img2_title',
     descKey: 'img2_desc'
   },
   {
-    url: 'https://images.unsplash.com/photo-1559564022-777fc9a5e840?q=80&w=1600&auto=format&fit=crop',
+    url: '/images/labs/honey_culinary_ritual.png',
     titleKey: 'img3_title',
     descKey: 'img3_desc'
   }

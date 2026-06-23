@@ -8,7 +8,7 @@ export function LabsOriginClient({ dict }: { dict: any }) {
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat grayscale-[0.2]"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('/images/labs/desert_landscape_origin.png')" }}
       >
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
