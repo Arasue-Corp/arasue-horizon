@@ -46,9 +46,9 @@ export function HeaderForge({ dict, lang }: { dict: any, lang: string }) {
         <motion.div 
           layout
           transition={spring}
-          className={`pointer-events-auto flex flex-col bg-secondary/80 backdrop-blur-2xl border border-border shadow-2xl shadow-black/50 ${scrolled ? 'rounded-[1.5rem] px-5 py-2.5' : 'rounded-[1.5rem] px-6 py-3 lg:px-6'}`}
+          className={`pointer-events-auto flex flex-col bg-secondary/80 backdrop-blur-2xl border border-border shadow-2xl shadow-black/50 ${scrolled ? 'rounded-[1.5rem] px-5 py-2.5' : 'w-full max-w-6xl rounded-[1.5rem] px-6 py-4'}`}
         >
-          <div className="flex items-center justify-between gap-8 relative">
+          <div className="flex items-center justify-between w-full gap-8 relative">
             {/* Logo - Lockup */}
             <Link href={`/${lang}/forge`} className="relative z-50 flex-shrink-0 flex items-center h-full" onClick={() => setActiveMenu(null)}>
               <img src="/icono-forge-blanco.png" alt="Arasue Forge Icon" className="absolute top-1/2 -translate-y-1/2 left-0 h-16 md:h-20 w-auto object-contain transition-transform hover:scale-105 drop-shadow-2xl" />
