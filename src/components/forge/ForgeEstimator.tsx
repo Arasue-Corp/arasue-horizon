@@ -1,5 +1,5 @@
 "use client"
-import { useState, useTransition } from 'react'
+import { useState, useTransition, useEffect } from 'react'
 import { submitLead } from '@/app/actions/lead'
 import { motion } from 'framer-motion'
 
@@ -14,6 +14,18 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [isPending, startTransition] = useTransition()
+  const [isMexico, setIsMexico] = useState(false)
+
+  useEffect(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && (tz.includes('Mexico') || tz.includes('America/Monterrey') || tz.includes('America/Cancun'))) {
+        setIsMexico(true);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const handleTimelineChange = (val: string) => {
     setIsCalculating(true)
@@ -24,9 +36,9 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
   }
 
   const getPrice = () => {
-    const isMexico = currencySymbol === '$' 
     let base = 0;
     
+    // Using realistic enterprise web dev pricing
     if (complexity === 1) base = isMexico ? 150000 : 8000;
     if (complexity === 2) base = isMexico ? 350000 : 18000;
     if (complexity === 3) base = isMexico ? 800000 : 45000;
@@ -36,7 +48,9 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
     const min = Math.round((base * multiplier) * 0.9);
     const max = Math.round((base * multiplier) * 1.1);
     
-    return isMexico ? `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()} MXN` : `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()}`
+    return isMexico 
+      ? `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()} MXN` 
+      : `${currencySymbol}${min.toLocaleString()} - ${currencySymbol}${max.toLocaleString()} USD`
   }
 
   const handleRequest = () => {

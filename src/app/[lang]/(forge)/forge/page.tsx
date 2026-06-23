@@ -16,9 +16,8 @@ export default async function ForgePage({
 }) {
   const resolvedParams = await params;
   const dict = await getDictionary(resolvedParams.lang as Locale)
-  const isMexico = false
   
-  const currencySymbol = isMexico ? '$' : '$'
+  const currencySymbol = '$'
 
   return (
     <div className="flex flex-col bg-background text-foreground">

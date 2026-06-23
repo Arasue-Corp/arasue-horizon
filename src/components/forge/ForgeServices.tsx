@@ -1,6 +1,6 @@
 "use client"
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const servicesData = [
@@ -24,35 +24,47 @@ const servicesData = [
 
 export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySymbol: string }) {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [isMexico, setIsMexico] = useState(false)
+  
+  useEffect(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && (tz.includes('Mexico') || tz.includes('America/Monterrey') || tz.includes('America/Cancun'))) {
+        setIsMexico(true);
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const services = [
     {
       ...servicesData[0],
       title: dict.services.web_dev.title,
       desc: dict.services.web_dev.desc,
-      priceSetup: '500',
-      priceMo: '150',
+      priceSetup: isMexico ? '10,000' : '500',
+      priceMo: isMexico ? '3,000' : '150',
     },
     {
       ...servicesData[1],
       title: dict.services.brand_web.title,
       desc: dict.services.brand_web.desc,
-      priceSetup: '500',
-      priceMo: '150',
+      priceSetup: isMexico ? '10,000' : '500',
+      priceMo: isMexico ? '3,000' : '150',
     },
     {
       ...servicesData[2],
       title: dict.services.meta_ads.title,
       desc: dict.services.meta_ads.desc,
-      priceOneTime: '300',
-      priceRetainer: '250',
+      priceOneTime: isMexico ? '6,000' : '300',
+      priceRetainer: isMexico ? '5,000' : '250',
     },
     {
       ...servicesData[3],
       title: dict.services.automations.title,
       desc: dict.services.automations.desc,
-      priceSetup: '800',
-      priceMo: '200',
+      priceSetup: isMexico ? '16,000' : '800',
+      priceMo: isMexico ? '4,000' : '200',
     }
   ]
 
@@ -95,25 +107,25 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
                 {(service as any).priceSetup && (
                   <div className="flex justify-between items-center">
                     <span className="text-xs font-mono uppercase tracking-widest text-foreground/40">{dict.pricing.setup}</span>
-                    <span className="font-bold">{currencySymbol}{(service as any).priceSetup}</span>
+                    <span className="font-bold">{currencySymbol}{(service as any).priceSetup} <span className="text-[10px] text-foreground/50">{isMexico ? 'MXN' : 'USD'}</span></span>
                   </div>
                 )}
                 {(service as any).priceMo && (
                   <div className="flex justify-between items-center">
                     <span className="text-xs font-mono uppercase tracking-widest text-accent">{dict.pricing.mo}</span>
-                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceMo}</span>
+                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceMo} <span className="text-[10px] text-foreground/50">{isMexico ? 'MXN' : 'USD'}</span></span>
                   </div>
                 )}
                 {(service as any).priceOneTime && (
                   <div className="flex justify-between items-center">
                     <span className="text-xs font-mono uppercase tracking-widest text-foreground/40">{dict.pricing.one_time}</span>
-                    <span className="font-bold">{currencySymbol}{(service as any).priceOneTime}</span>
+                    <span className="font-bold">{currencySymbol}{(service as any).priceOneTime} <span className="text-[10px] text-foreground/50">{isMexico ? 'MXN' : 'USD'}</span></span>
                   </div>
                 )}
                 {(service as any).priceRetainer && (
                   <div className="flex justify-between items-center">
                     <span className="text-xs font-mono uppercase tracking-widest text-accent">{dict.pricing.retainer}</span>
-                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceRetainer}</span>
+                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceRetainer} <span className="text-[10px] text-foreground/50">{isMexico ? 'MXN' : 'USD'}</span></span>
                   </div>
                 )}
               </div>
