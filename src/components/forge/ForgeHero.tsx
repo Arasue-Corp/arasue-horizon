@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function ForgeHero({ dict }: { dict: any }) {
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-24 px-6 bg-background overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center pt-24 pb-16 px-6 bg-background overflow-hidden border-b border-border">
       
       {/* Absolute clean backdrop with extreme subtle gradient */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/10 via-background to-background pointer-events-none" />
@@ -13,14 +13,14 @@ export function ForgeHero({ dict }: { dict: any }) {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="container mx-auto max-w-7xl relative z-10 text-center flex flex-col items-center"
+        className="container mx-auto max-w-6xl relative z-10 flex flex-col items-start border-x border-border/50 px-8 lg:px-16 py-12"
       >
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-secondary border border-border shadow-sm text-sm font-medium mb-12 text-foreground/80">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary border border-border shadow-sm text-xs font-mono tracking-widest uppercase mb-12 text-foreground/80">
           <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
           {dict.badge}
         </div>
         
-        <h1 className="text-7xl md:text-[8rem] lg:text-[10rem] font-bold tracking-tighter leading-[0.85] text-foreground mb-8">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9] text-foreground mb-8 max-w-4xl">
           {dict.title.split(' ').map((word: string, i: number) => (
             <span key={i} className={i % 2 !== 0 ? "text-foreground/30" : ""}>
               {word}{' '}
@@ -28,15 +28,15 @@ export function ForgeHero({ dict }: { dict: any }) {
           ))}
         </h1>
         
-        <p className="text-2xl md:text-4xl text-foreground/60 max-w-3xl mt-8 font-medium tracking-tight font-inter">
+        <p className="text-lg md:text-2xl text-foreground/60 max-w-2xl mt-4 font-medium tracking-tight font-inter">
           {dict.subtitle}
         </p>
         
-        <div className="pt-16 flex flex-col sm:flex-row gap-6 font-inter items-center justify-center w-full">
-          <Link href="#services" className="group relative px-12 py-6 rounded-full bg-foreground text-background font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-foreground/10">
+        <div className="pt-12 flex flex-col sm:flex-row gap-4 font-inter items-start justify-start w-full">
+          <Link href="#services" className="group relative px-8 py-4 rounded-full bg-foreground text-background font-bold text-base hover:scale-105 active:scale-95 transition-all shadow-xl shadow-foreground/10">
             <span className="relative z-10">{dict.cta}</span>
           </Link>
-          <Link href="#work" className="px-12 py-6 rounded-full font-bold text-lg hover:bg-white/5 active:scale-95 transition-all text-foreground">
+          <Link href="#work" className="px-8 py-4 rounded-full font-bold text-base border border-border hover:bg-white/5 active:scale-95 transition-all text-foreground">
             {dict.secondary_cta}
           </Link>
         </div>

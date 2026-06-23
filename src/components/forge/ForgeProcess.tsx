@@ -25,16 +25,16 @@ export function ForgeProcess({ dict }: { dict: any }) {
       {/* Sticky Content Area */}
       <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden">
         
-        <div className="container mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 h-full items-center">
+        <div className="container mx-auto max-w-6xl px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-12 h-full items-center">
           
           {/* Left Side: Text and Steps */}
-          <div className="space-y-16">
-            <div>
-              <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">{dict.title}</h2>
-              <p className="text-xl text-foreground/60 font-inter max-w-md">{dict.subtitle}</p>
+          <div className="space-y-8">
+            <div className="border-b border-border/50 pb-6">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-2">{dict.title}</h2>
+              <p className="text-sm text-foreground/60 font-inter max-w-md">{dict.subtitle}</p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-6">
               {dict.steps.map((step: any, i: number) => {
                 const stepStart = i * stepSize;
                 const stepEnd = (i + 1) * stepSize;
@@ -56,21 +56,21 @@ export function ForgeProcess({ dict }: { dict: any }) {
                 const scale = useTransform(
                   scrollYProgress,
                   [inStart, inEnd, outStart, outEnd],
-                  [0.95, 1, 1, 0.95]
+                  [0.98, 1, 1, 0.98]
                 )
 
                 return (
                   <motion.div 
                     key={i}
                     style={{ opacity, scale }}
-                    className="flex gap-6"
+                    className="flex gap-4 p-4 border border-border/50 rounded-lg bg-background/50 backdrop-blur-sm"
                   >
-                    <div className="text-3xl font-mono text-accent font-bold mt-1">
+                    <div className="text-xl font-mono text-accent font-bold mt-1">
                       0{i + 1}
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold mb-3">{step.title}</h3>
-                      <p className="text-foreground/60 font-inter text-lg max-w-md leading-relaxed">{step.desc}</p>
+                      <h3 className="text-xl font-bold mb-2 tracking-tight">{step.title}</h3>
+                      <p className="text-foreground/60 font-inter text-sm max-w-md leading-relaxed">{step.desc}</p>
                     </div>
                   </motion.div>
                 )
@@ -79,7 +79,7 @@ export function ForgeProcess({ dict }: { dict: any }) {
           </div>
 
           {/* Right Side: Sticky Image Crossfade */}
-          <div className="hidden lg:block relative h-[70vh] rounded-3xl overflow-hidden shadow-2xl bg-secondary">
+          <div className="hidden lg:block relative h-[60vh] rounded-2xl overflow-hidden shadow-2xl bg-secondary border border-border/50">
             {images.map((src, i) => {
               const stepStart = i * stepSize;
               const stepEnd = (i + 1) * stepSize;

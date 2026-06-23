@@ -65,12 +65,12 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
   }
 
   return (
-    <div className="bg-secondary/50 backdrop-blur-3xl border border-border rounded-[2.5rem] overflow-hidden flex flex-col lg:flex-row shadow-2xl shadow-black max-w-6xl mx-auto">
+    <div className="bg-secondary/20 backdrop-blur-3xl border border-border overflow-hidden flex flex-col lg:flex-row shadow-2xl shadow-black max-w-5xl mx-auto">
       {/* Left side: Controls */}
-      <div className="flex-1 p-8 md:p-16">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tighter">{t.title}</h2>
-          <p className="text-foreground/60 font-inter text-lg">{t.subtitle}</p>
+      <div className="flex-1 p-6 md:p-10">
+        <div className="mb-10 border-b border-border/50 pb-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 tracking-tighter">{t.title}</h2>
+          <p className="text-foreground/60 font-inter text-sm">{t.subtitle}</p>
         </div>
 
         <div className="space-y-12">
@@ -97,12 +97,12 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
           {/* Timeline Buttons */}
           <div>
             <label className="font-mono text-xs uppercase tracking-widest text-foreground/50 mb-6 block">{t.timeline}</label>
-            <div className="flex flex-col sm:flex-row gap-4 bg-muted/50 p-2 rounded-3xl">
+            <div className="flex flex-col sm:flex-row gap-2 bg-muted/50 p-1.5 rounded-lg border border-border/50">
               {t.options.map((opt: any) => (
                 <button 
                   key={opt.id}
                   onClick={() => handleTimelineChange(opt.id)}
-                  className={`flex-1 py-5 px-6 rounded-2xl text-sm font-bold font-inter transition-all duration-300 ${
+                  className={`flex-1 py-3 px-4 rounded-md text-xs font-bold font-inter transition-all duration-300 ${
                     timeline === opt.id 
                     ? 'bg-primary text-primary-foreground shadow-md' 
                     : 'text-foreground/50 hover:bg-primary/20 hover:text-foreground'
@@ -117,25 +117,25 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
       </div>
 
       {/* Right side: Calculation & Output */}
-      <div className="lg:w-[450px] bg-foreground text-background p-8 md:p-16 flex flex-col justify-center relative overflow-hidden group">
+      <div className="lg:w-[350px] bg-foreground text-background p-6 md:p-10 flex flex-col justify-center relative overflow-hidden group">
         
         <div className="relative z-10">
           <h3 className="font-mono uppercase tracking-widest text-xs text-background/50 mb-6">{t.total}</h3>
           
           <div className={`mb-6 transition-all duration-300 ${isCalculating ? 'blur-md opacity-50 scale-95' : 'blur-0 opacity-100 scale-100'}`}>
-            <div className="text-4xl md:text-5xl font-black tracking-tighter">
+            <div className="text-3xl md:text-4xl font-black tracking-tighter">
               {getPrice()}
             </div>
           </div>
           
-          <p className="text-background/50 text-sm mb-12 leading-relaxed font-medium font-inter">
+          <p className="text-background/50 text-xs mb-8 leading-relaxed font-medium font-inter">
             {t.note}
           </p>
           
           {submitted ? (
             <motion.div 
               initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-              className="bg-accent/10 p-6 rounded-2xl text-center text-sm font-bold text-accent border border-accent/20"
+              className="bg-accent/10 p-4 rounded-lg text-center text-xs font-bold text-accent border border-accent/20"
             >
               {t.success}
             </motion.div>
@@ -152,7 +152,7 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
                     type="email" 
                     value={email}
                     onChange={e => setEmail(e.target.value)}
-                    className="w-full bg-black/5 border border-black/10 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:bg-black/10 text-black transition-all placeholder:text-black/30" 
+                    className="w-full bg-black/5 border border-black/10 rounded-lg px-4 py-3 text-xs focus:outline-none focus:bg-black/10 text-black transition-all placeholder:text-black/30" 
                     placeholder="corporate@domain.com"
                   />
                 </motion.div>
@@ -160,7 +160,7 @@ export function ForgeEstimator({ dict, currencySymbol }: { dict: any, currencySy
               <button 
                 onClick={handleRequest}
                 disabled={isPending}
-                className="w-full bg-background border border-border text-foreground font-bold text-base py-5 rounded-2xl hover:bg-secondary active:scale-95 transition-all disabled:opacity-50"
+                className="w-full bg-background border border-border text-foreground font-bold text-sm py-4 rounded-lg hover:bg-secondary active:scale-95 transition-all disabled:opacity-50"
               >
                 {isPending ? t.submitting : t.cta}
               </button>

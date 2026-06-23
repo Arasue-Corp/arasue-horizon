@@ -57,87 +57,68 @@ export function ForgeServices({ dict, currencySymbol }: { dict: any, currencySym
   ]
 
   return (
-    <section id="services" className="py-32 px-6 relative bg-background">
+    <section id="services" className="py-16 px-6 relative bg-background border-b border-border">
       <div className="container mx-auto max-w-7xl">
-        <div className="mb-24 flex flex-col md:flex-row md:justify-between md:items-end gap-8">
+        <div className="mb-12 flex flex-col md:flex-row md:justify-between md:items-end gap-8">
           <div>
-            <h2 className="text-6xl md:text-8xl font-black tracking-tighter mb-4 text-foreground">{dict.pricing.title}</h2>
-            <p className="text-2xl text-foreground/50 font-inter max-w-2xl">{dict.pricing.features}</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-4 text-foreground">{dict.pricing.title}</h2>
+            <p className="text-lg text-foreground/50 font-inter max-w-2xl">{dict.pricing.features}</p>
           </div>
         </div>
 
-        <div className="relative border-t border-border">
-          {/* Background Image Reveal (Dynamic Island style) */}
-          <div className="absolute right-0 top-0 w-1/3 h-full hidden lg:block pointer-events-none z-0">
-            <AnimatePresence>
-              {hoveredIndex !== null && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="absolute inset-y-8 right-8 left-8 rounded-3xl overflow-hidden shadow-2xl"
-                >
-                  <Image 
-                    src={services[hoveredIndex].image} 
-                    alt={services[hoveredIndex].title}
-                    fill
-                    className="object-cover"
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Interactive List */}
-          <div className="relative z-10 lg:w-2/3">
-            {services.map((service, i) => (
-              <div 
-                key={service.id}
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                className="group border-b border-border py-12 cursor-pointer transition-colors hover:bg-white/5 px-8 -mx-8 rounded-3xl"
-              >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                  <div className="flex-1">
-                    <h3 className="text-4xl md:text-5xl font-bold mb-4 text-foreground group-hover:text-accent transition-colors tracking-tight">
-                      {service.title}
-                    </h3>
-                    <p className="text-xl text-foreground/60 font-inter max-w-lg leading-relaxed">
-                      {service.desc}
-                    </p>
-                  </div>
-                  
-                  <div className="flex flex-row md:flex-col gap-8 md:gap-2 text-left md:text-right">
-                    {(service as any).priceSetup && (
-                      <div>
-                        <span className="block text-xs font-mono uppercase tracking-widest text-foreground/40 mb-1">{dict.pricing.setup}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceSetup}</span>
-                      </div>
-                    )}
-                    {(service as any).priceMo && (
-                      <div>
-                        <span className="block text-xs font-mono uppercase tracking-widest text-accent mb-1">{dict.pricing.mo}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceMo}</span>
-                      </div>
-                    )}
-                    {(service as any).priceOneTime && (
-                      <div>
-                        <span className="block text-xs font-mono uppercase tracking-widest text-foreground/40 mb-1">{dict.pricing.one_time}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceOneTime}</span>
-                      </div>
-                    )}
-                    {(service as any).priceRetainer && (
-                      <div>
-                        <span className="block text-xs font-mono uppercase tracking-widest text-accent mb-1">{dict.pricing.retainer}</span>
-                        <span className="text-2xl font-bold">{currencySymbol}{(service as any).priceRetainer}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-border">
+          {services.map((service, i) => (
+            <div 
+              key={service.id}
+              className="group border-r border-b border-border p-8 relative overflow-hidden bg-background hover:bg-secondary/20 transition-colors flex flex-col"
+            >
+              {/* Image Reveal Background */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0 pointer-events-none">
+                <Image 
+                  src={service.image} 
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
+
+              <div className="relative z-10 flex-1">
+                <h3 className="text-2xl font-bold mb-3 text-foreground tracking-tight group-hover:text-accent transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-foreground/60 font-inter leading-relaxed mb-8">
+                  {service.desc}
+                </p>
+              </div>
+              
+              <div className="relative z-10 pt-6 border-t border-border/50 flex flex-col gap-3">
+                {(service as any).priceSetup && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono uppercase tracking-widest text-foreground/40">{dict.pricing.setup}</span>
+                    <span className="font-bold">{currencySymbol}{(service as any).priceSetup}</span>
+                  </div>
+                )}
+                {(service as any).priceMo && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono uppercase tracking-widest text-accent">{dict.pricing.mo}</span>
+                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceMo}</span>
+                  </div>
+                )}
+                {(service as any).priceOneTime && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono uppercase tracking-widest text-foreground/40">{dict.pricing.one_time}</span>
+                    <span className="font-bold">{currencySymbol}{(service as any).priceOneTime}</span>
+                  </div>
+                )}
+                {(service as any).priceRetainer && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs font-mono uppercase tracking-widest text-accent">{dict.pricing.retainer}</span>
+                    <span className="font-bold text-lg">{currencySymbol}{(service as any).priceRetainer}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
