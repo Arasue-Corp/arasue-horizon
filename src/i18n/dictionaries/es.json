@@ -373,7 +373,14 @@
       "title": "Nuestras Capacidades",
       "content": "Producción de Contenido",
       "streams": "Transmisiones en Vivo",
-      "branding": "Branding Digital"
+      "branding": "Branding Digital",
+      "ads": "Manejo de Ads",
+      "marketing": "Marketing Digital",
+      "lead_gen": "Generación de Leads"
+    },
+    "services_page": {
+      "title": "Nuestros Servicios",
+      "subtitle": "Producción digital completa, desde el concepto hasta la escala viral."
     },
     "work_page": {
       "title": "Campañas Destacadas",

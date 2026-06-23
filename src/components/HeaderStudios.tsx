@@ -58,6 +58,9 @@ export function HeaderStudios({ dict, lang }: { dict: any, lang: string }) {
             
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-2">
+              <Link href={`/${lang}/studios/services`} className="px-4 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-white/5 transition-colors">
+                Services
+              </Link>
               <Link href={`/${lang}/studios/work`} className="px-4 py-2 rounded-lg text-sm font-semibold text-foreground/70 hover:text-foreground hover:bg-white/5 transition-colors">
                 Work
               </Link>
@@ -99,6 +102,7 @@ export function HeaderStudios({ dict, lang }: { dict: any, lang: string }) {
                 className="w-full flex flex-col gap-4 pt-6 border-t border-border mt-4 overflow-hidden"
               >
                 <div className="space-y-4 max-h-[70vh] overflow-y-auto pb-4">
+                  <Link href={`/${lang}/studios/services`} className="block text-foreground font-semibold text-lg">Services</Link>
                   <Link href={`/${lang}/studios/work`} className="block text-foreground font-semibold text-lg">Work</Link>
                   <Link href={`/${lang}/studios/creators`} className="block text-foreground font-semibold text-lg">Creators</Link>
                   <Link href={`/${lang}/studios/contact`} className="block text-foreground font-semibold text-lg">Partner</Link>

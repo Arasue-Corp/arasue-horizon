@@ -63,54 +63,99 @@ export default async function MediaPage({
       </section>
 
       {/* Services/Capabilities Grid */}
-      <section className="py-32 px-6 bg-white text-black">
+      <section className="py-32 px-6 bg-background text-foreground">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-16 uppercase">{dict.studios.services.title}</h2>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter mb-16 uppercase text-primary">{dict.studios.services.title}</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* 1. Content */}
             <MotionDiv 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="aspect-square bg-black text-white p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden"
+              className="aspect-square bg-secondary text-secondary-foreground p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:border-primary/50 transition-colors"
             >
-              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-white/10 flex items-center justify-center group-hover:scale-125 transition-transform">
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-background flex items-center justify-center group-hover:scale-125 transition-transform text-primary">
                 🎥
               </div>
               <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.content}</h3>
             </MotionDiv>
             
+            {/* 2. Streams */}
             <MotionDiv 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="aspect-square bg-black/5 p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden hover:bg-black hover:text-white transition-colors duration-500"
+              className="aspect-square bg-background p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:bg-secondary hover:text-secondary-foreground transition-colors duration-500"
             >
-              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-black/5 group-hover:bg-white/10 flex items-center justify-center transition-colors">
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-secondary group-hover:bg-primary/20 flex items-center justify-center transition-colors">
                 🔴
               </div>
               <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.streams}</h3>
             </MotionDiv>
             
+            {/* 3. Branding */}
             <MotionDiv 
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 20 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="aspect-square bg-black/5 p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden hover:bg-black hover:text-white transition-colors duration-500"
+              className="aspect-square bg-background p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:bg-secondary hover:text-secondary-foreground transition-colors duration-500"
             >
-              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-black/5 group-hover:bg-white/10 flex items-center justify-center transition-colors">
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-secondary group-hover:bg-primary/20 flex items-center justify-center transition-colors">
                 ✨
               </div>
               <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.branding}</h3>
+            </MotionDiv>
+
+            {/* 4. Ads */}
+            <MotionDiv 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="aspect-square bg-background p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:bg-secondary hover:text-secondary-foreground transition-colors duration-500"
+            >
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-secondary group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                📈
+              </div>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.ads}</h3>
+            </MotionDiv>
+
+            {/* 5. Marketing */}
+            <MotionDiv 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="aspect-square bg-background p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:bg-secondary hover:text-secondary-foreground transition-colors duration-500"
+            >
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-secondary group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                🎯
+              </div>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.marketing}</h3>
+            </MotionDiv>
+
+            {/* 6. Lead Generation */}
+            <MotionDiv 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="aspect-square bg-background p-10 rounded-[3rem] flex flex-col justify-end group cursor-pointer relative overflow-hidden border border-border hover:bg-secondary hover:text-secondary-foreground transition-colors duration-500"
+            >
+              <div className="absolute top-10 right-10 w-16 h-16 rounded-full bg-secondary group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                🚀
+              </div>
+              <h3 className="text-4xl font-black uppercase tracking-tight">{dict.studios.services.lead_gen}</h3>
             </MotionDiv>
           </div>
         </div>
       </section>
       {/* 4.5. Process */}
-      <section className="py-32 px-6 border-y border-white/10 bg-white/5">
+      <section className="py-32 px-6 border-y border-border bg-secondary/10">
         <StudiosProcess lang={resolvedParams.lang as 'en' | 'es'} />
       </section>
 

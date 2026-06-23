@@ -373,7 +373,14 @@
       "title": "Our Capabilities",
       "content": "Content Production",
       "streams": "Live Streaming",
-      "branding": "Digital Branding"
+      "branding": "Digital Branding",
+      "ads": "Ads Management",
+      "marketing": "Digital Marketing",
+      "lead_gen": "Lead Generation"
+    },
+    "services_page": {
+      "title": "What We Do",
+      "subtitle": "Complete digital production from concept to viral scale."
     },
     "work_page": {
       "title": "Selected Campaigns",
