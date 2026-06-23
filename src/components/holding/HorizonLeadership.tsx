@@ -46,11 +46,9 @@ export function HorizonLeadership({ dict }: { dict: any }) {
                 />
                 {leader.link && (
                   <>
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-                      <span className="bg-white text-[#162D59] font-bold px-6 py-3 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-auto peer cursor-pointer hover:scale-105 shadow-xl">
-                        {t.view_profile || 'View Profile'}
-                      </span>
-                    </div>
+                    <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-[#162D59] font-bold px-6 py-3 rounded-full text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 peer hover:scale-105 shadow-xl z-20">
+                      {t.view_profile || 'View Profile'}
+                    </span>
                     <div className="absolute inset-0 bg-black/20 opacity-0 transition-all duration-300 pointer-events-none peer-hover:opacity-100 peer-hover:backdrop-blur-md z-10" />
                   </>
                 )}
