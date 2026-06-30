@@ -17,10 +17,10 @@ export function HorizonGlobal({ dict }: { dict: any }) {
       {/* Background World Map / Network */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <Image 
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop" 
-          alt="Global Network" 
+          src="https://images.unsplash.com/photo-1550537687-c91072c4792d?q=80&w=2000&auto=format&fit=crop" 
+          alt="Global Footprint - Organic" 
           fill
-          className="object-cover mix-blend-screen" 
+          className="object-cover mix-blend-screen grayscale opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/80 to-[#0B0F19]" />
       </div>

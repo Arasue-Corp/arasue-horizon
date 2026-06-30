@@ -14,11 +14,11 @@ export function HorizonVision({ dict, lang }: { dict: any, lang: string }) {
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-[#162D59]/20 to-transparent z-10" />
           <Image 
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop" 
-            alt="Corporate Vision" 
+            src="https://images.unsplash.com/photo-1518557984649-7b161c230cfa?q=80&w=1000&auto=format&fit=crop" 
+            alt="Horizon Vision - Organic" 
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover grayscale opacity-80" 
+            className="object-cover grayscale opacity-80 transition-transform duration-700 hover:scale-105" 
           />
         </MotionDiv>
         <div className="space-y-8">

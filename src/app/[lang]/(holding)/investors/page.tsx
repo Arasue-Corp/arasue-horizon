@@ -32,8 +32,8 @@ export default async function InvestorsPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" 
-            alt="Holding Investors" 
+            src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2000&auto=format&fit=crop" 
+            alt="Holding Investors - Organic" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />
         </MotionDiv>

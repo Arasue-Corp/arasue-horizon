@@ -32,8 +32,8 @@ export default async function AboutPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" 
-            alt="Holding About" 
+            src="https://images.unsplash.com/photo-1506806732259-39c2d02684ce?q=80&w=2000&auto=format&fit=crop" 
+            alt="Holding About - Organic" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />
         </MotionDiv>
