@@ -28,37 +28,45 @@ export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ y: yBg }}
       >
-        <div 
+        <motion.div 
+          initial={{ scale: 1.1, filter: 'brightness(0.3)' }}
+          animate={{ scale: 1, filter: 'brightness(1)' }}
+          transition={{ duration: 4, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${bgImageUrl})` }}
         />
-        {/* Dark overlays to maintain contrast for text - Navy blue tinted */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#162D59]/80 to-[#162D59]/50" />
+        {/* Dark overlays to maintain contrast for text - Night to Dawn transition */}
+        <motion.div 
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ duration: 4, ease: "easeOut" }}
+          className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#162D59]/80 to-[#162D59]/50" 
+        />
         <div className="absolute inset-0 bg-[#0B0F19]/20 backdrop-blur-sm" />
       </motion.div>
 
-      {/* Lighthouse Beam & Mist Effects (Organic light, NO GRIDS) */}
+      {/* Sunrise & Mist Effects (Organic light, NO GRIDS) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Navy Mist */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.6, scale: 1 }}
-          transition={{ duration: 3, ease: "easeOut" }}
+          transition={{ duration: 4, ease: "easeOut" }}
           className="absolute -top-[20%] -right-[10%] w-[80%] h-[80%] rounded-full bg-[#162D59] mix-blend-multiply blur-[140px]"
         />
-        {/* Golden Lighthouse Beam Glow */}
+        {/* Sunrise Effect: Golden Glow rises from below */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.25, scale: 1 }}
-          transition={{ duration: 2.5, ease: "easeOut", delay: 0.5 }}
+          initial={{ opacity: 0, scale: 0.5, y: 300 }}
+          animate={{ opacity: 0.3, scale: 1, y: 0 }}
+          transition={{ duration: 5, ease: "easeOut" }}
           className="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-[#F2D3AC] mix-blend-screen blur-[180px]"
         />
         {/* Dynamic sweeping beam effect */}
         <motion.div 
-          initial={{ opacity: 0, rotate: -15 }}
-          animate={{ opacity: 0.15, rotate: 15 }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', ease: "easeInOut" }}
-          className="absolute top-0 right-1/4 w-[200%] h-[100%] origin-top-right bg-gradient-to-b from-[#F2D3AC] to-transparent blur-[100px] mix-blend-screen pointer-events-none"
+          initial={{ opacity: 0, rotate: -25 }}
+          animate={{ opacity: 0.2, rotate: 25 }}
+          transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse', ease: "easeInOut", delay: 1 }}
+          className="absolute top-0 right-1/4 w-[200%] h-[100%] origin-top-right bg-gradient-to-b from-[#F2D3AC] to-transparent blur-[120px] mix-blend-screen pointer-events-none"
         />
       </div>
 
