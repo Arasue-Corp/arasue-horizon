@@ -34,7 +34,7 @@ export default async function HoldingContactPage({
         <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen flex flex-col justify-end p-12 lg:p-24 overflow-hidden border-r border-white/5">
           <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
             <Image 
-              src="https://images.unsplash.com/photo-1414445831518-8097d745bc09?q=80&w=2000&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=2000&auto=format&fit=crop" 
               alt="Arasue Horizon Desert Dunes" 
               fill
               className="object-cover mix-blend-screen grayscale opacity-50"

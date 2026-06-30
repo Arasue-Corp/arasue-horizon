@@ -7,7 +7,7 @@ import { useRef } from 'react'
 const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 
 // Crisp, majestic lighthouse and ocean horizon
-const bgImageUrl = "https://images.unsplash.com/photo-1510414842594-a618698c0a2e?q=80&w=2070&auto=format&fit=crop"
+const bgImageUrl = "https://images.unsplash.com/photo-1527668752968-14ce7063f910?q=80&w=2070&auto=format&fit=crop"
 
 export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
   const containerRef = useRef<HTMLElement>(null)

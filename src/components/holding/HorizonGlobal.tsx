@@ -17,7 +17,7 @@ export function HorizonGlobal({ dict }: { dict: any }) {
       {/* Background World Map / Network */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
         <Image 
-          src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2000&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2000&auto=format&fit=crop" 
           alt="Global Footprint - Mountains" 
           fill
           className="object-cover mix-blend-screen grayscale opacity-50"

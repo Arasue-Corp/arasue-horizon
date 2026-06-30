@@ -32,7 +32,7 @@ export default async function InvestorsPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://images.unsplash.com/photo-1437326521995-bb0a2212a970?q=80&w=2000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop" 
             alt="Holding Investors - Desert Landscape" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />

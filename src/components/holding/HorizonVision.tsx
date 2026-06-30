@@ -14,7 +14,7 @@ export function HorizonVision({ dict, lang }: { dict: any, lang: string }) {
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-[#162D59]/20 to-transparent z-10" />
           <Image 
-            src="https://images.unsplash.com/photo-1495954484750-af469f2f9be5?q=80&w=1000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1000&auto=format&fit=crop" 
             alt="Horizon Vision - Peak" 
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
