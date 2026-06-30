@@ -1,10 +1,10 @@
 import { getDictionary, Locale } from '@/i18n/dictionaries'
-import { MotionDiv } from '@/components/Motion'
 import { HorizonContactForm } from '@/components/holding/HorizonContactForm'
 import Image from 'next/image'
 import { Mail, MapPin } from 'lucide-react'
+import { Metadata } from 'next'
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const resolvedParams = await params
   const dict = await getDictionary(resolvedParams.lang as Locale)
   
@@ -27,95 +27,88 @@ export default async function HoldingContactPage({
   const t = dict.corporate.contact
 
   return (
-    <div className="relative min-h-screen bg-[#0B0F19] text-[#F2F2F2] flex flex-col pt-32 pb-24 overflow-hidden">
-      {/* Background Architectural/Global Image */}
-      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <Image 
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" 
-          alt="Arasue Horizon Architecture" 
-          fill
-          className="object-cover mix-blend-screen"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19] via-transparent to-[#0B0F19]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19] via-transparent to-[#0B0F19]" />
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10 flex-grow flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full max-w-7xl mx-auto items-center">
+    <div className="min-h-screen bg-[#0B0F19] text-[#F2F2F2] flex flex-col relative overflow-hidden">
+      
+      <main className="flex-grow flex flex-col lg:flex-row relative z-10 pt-20">
+        {/* Left Side: Immersive Imagery & Branding */}
+        <div className="lg:w-1/2 relative min-h-[50vh] lg:min-h-screen flex flex-col justify-end p-12 lg:p-24 overflow-hidden border-r border-white/5">
+          <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <Image 
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" 
+              alt="Arasue Horizon Architecture" 
+              fill
+              className="object-cover mix-blend-screen grayscale"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19] via-transparent to-[#0B0F19]" />
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#162D59]/20 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/4" />
+          </div>
           
-          {/* Left Column: HQ Information */}
-          <MotionDiv 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="space-y-12"
-          >
-            <div>
-              <div className="inline-flex items-center space-x-3 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-[15px] text-xs font-semibold tracking-widest uppercase text-[#F2D3AC] mb-8">
-                <span className="w-2 h-2 rounded-full bg-[#F2D3AC] animate-pulse" />
-                <span>Contact HQ</span>
-              </div>
-              <h1 className="text-5xl md:text-7xl font-playfair tracking-tight leading-tight mb-6 text-[#F2F2F2]">
-                {t.title}
-              </h1>
-              <p className="text-xl md:text-2xl text-[#F2F2F2]/60 font-inter font-light max-w-lg">
-                {t.content}
-              </p>
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-[#162D59]/30 backdrop-blur-md mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#F2D3AC] animate-pulse" />
+              <span className="text-xs font-semibold text-[#F2D3AC] tracking-widest uppercase">Contact HQ</span>
             </div>
-
-            <div className="space-y-8 pt-8 border-t border-[#162D59]/50">
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0 group-hover:border-[#F2D3AC] transition-colors">
-                  <MapPin className="w-5 h-5 text-[#F2D3AC]" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">{t.info.hq_title}</h4>
-                  <p className="text-[#F2F2F2]/60 leading-relaxed max-w-sm">
-                    {dict.footer.address_val}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0 group-hover:border-[#F2D3AC] transition-colors">
-                  <Mail className="w-5 h-5 text-[#F2D3AC]" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">{t.info.investors}</h4>
-                  <p className="text-[#F2F2F2]/60 leading-relaxed">ir@arasue.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4 group">
-                <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0 group-hover:border-[#F2D3AC] transition-colors">
-                  <Mail className="w-5 h-5 text-[#F2D3AC]" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg mb-1">{t.info.press}</h4>
-                  <p className="text-[#F2F2F2]/60 leading-relaxed">press@arasue.com</p>
-                </div>
-              </div>
-            </div>
-          </MotionDiv>
-
-          {/* Right Column: Contact Form */}
-          <MotionDiv 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30, delay: 0.2 }}
-            className="w-full relative"
-          >
-            {/* Soft glow behind the form */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#162D59]/40 to-[#A65E44]/10 blur-3xl -z-10 rounded-[3rem]" />
             
-            <div className="bg-[#131926]/80 border border-[#162D59]/50 backdrop-blur-2xl p-8 md:p-12 rounded-3xl shadow-2xl">
+            <h1 className="text-5xl lg:text-7xl font-playfair tracking-tighter leading-[1.1] mb-6">
+              {t.title}
+            </h1>
+            <p className="text-xl text-[#F2F2F2]/60 font-light max-w-md font-inter">
+              {t.content}
+            </p>
+
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-white/10">
+              <div className="flex flex-col gap-2">
+                <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0 mb-2">
+                  <MapPin className="w-4 h-4 text-[#F2D3AC]" />
+                </div>
+                <p className="text-xs font-semibold text-[#F2D3AC] uppercase tracking-widest">{t.info.hq_title}</p>
+                <p className="font-bold text-lg text-white max-w-[200px] leading-tight">{dict.footer.address_val}</p>
+              </div>
+              
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0">
+                      <Mail className="w-3 h-3 text-[#F2D3AC]" />
+                    </div>
+                    <p className="text-xs font-semibold text-[#F2D3AC] uppercase tracking-widest">{t.info.investors}</p>
+                  </div>
+                  <p className="font-bold text-lg text-white">ir@arasue.com</p>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="w-8 h-8 rounded-full border border-white/10 bg-white/5 flex items-center justify-center shrink-0">
+                      <Mail className="w-3 h-3 text-[#F2D3AC]" />
+                    </div>
+                    <p className="text-xs font-semibold text-[#F2D3AC] uppercase tracking-widest">{t.info.press}</p>
+                  </div>
+                  <p className="font-bold text-lg text-white">press@arasue.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side: The Form */}
+        <div className="lg:w-1/2 flex items-center justify-center p-6 py-24 lg:p-24 relative">
+          {/* Soft glow behind the form */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#162D59]/20 to-[#A65E44]/5 blur-3xl -z-10" />
+          
+          <div className="w-full max-w-xl relative z-10">
+            <div className="mb-10">
+              <h2 className="text-3xl font-playfair font-bold tracking-tight text-white mb-3">Partner with Us</h2>
+              <p className="text-[#F2F2F2]/50 font-inter">Direct your inquiries to the appropriate department.</p>
+            </div>
+
+            <div className="bg-[#131926]/80 border border-[#162D59]/50 backdrop-blur-2xl p-8 rounded-3xl shadow-2xl">
               <HorizonContactForm dict={dict} />
             </div>
-          </MotionDiv>
-
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }
