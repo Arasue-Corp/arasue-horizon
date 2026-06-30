@@ -62,9 +62,9 @@ function TiltCard({ children, href, className }: { children: React.ReactNode, hr
 
 export function NewsroomBento({ dict, lang }: { dict: any, lang: string }) {
   const articles = [
-    { id: 1, img: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1000&auto=format&fit=crop" },
-    { id: 2, img: "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=800&auto=format&fit=crop" },
-    { id: 3, img: "https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=800&auto=format&fit=crop" }
+    { id: 1, img: "https://images.unsplash.com/photo-1534080517865-fb189b87fc15?q=80&w=1000&auto=format&fit=crop" },
+    { id: 2, img: "https://images.unsplash.com/photo-1518557984649-7b161c230cfa?q=80&w=800&auto=format&fit=crop" },
+    { id: 3, img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=800&auto=format&fit=crop" }
   ]
 
   return (

@@ -49,8 +49,8 @@ export default async function NewsroomPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=2000&auto=format&fit=crop" 
-            alt="Holding Newsroom - Organic" 
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop" 
+            alt="Holding Newsroom - Mountains" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />
         </MotionDiv>
