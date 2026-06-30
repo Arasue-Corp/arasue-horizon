@@ -1,144 +1,111 @@
 'use client'
 
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useRef } from 'react'
 import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 
-const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
-
-function TiltCard({ children, href, className }: { children: React.ReactNode, href: string, className: string }) {
-  const ref = useRef<HTMLAnchorElement>(null)
-  
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-  
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 })
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 })
-  
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"])
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!ref.current) return
-    const rect = ref.current.getBoundingClientRect()
-    const width = rect.width
-    const height = rect.height
-    const mouseX = e.clientX - rect.left
-    const mouseY = e.clientY - rect.top
-    const xPct = mouseX / width - 0.5
-    const yPct = mouseY / height - 0.5
-    x.set(xPct)
-    y.set(yPct)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-  }
-
-  return (
-    <motion.div
-      style={{ perspective: 1000 }}
-      className={className}
-    >
-      <motion.div
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="w-full h-full relative"
-      >
-        <Link 
-          ref={ref}
-          href={href} 
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className="group block w-full h-full relative rounded-[2rem] overflow-hidden bg-[#162D59]/5 shadow-xl"
-        >
-          {children}
-        </Link>
-      </motion.div>
-    </motion.div>
-  )
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
 }
 
 export function NewsroomBento({ dict, lang }: { dict: any, lang: string }) {
   const articles = [
-    { id: 1, img: "https://images.unsplash.com/photo-1534080517865-fb189b87fc15?q=80&w=1000&auto=format&fit=crop" },
-    { id: 2, img: "https://images.unsplash.com/photo-1518557984649-7b161c230cfa?q=80&w=800&auto=format&fit=crop" },
-    { id: 3, img: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?q=80&w=800&auto=format&fit=crop" }
+    { 
+      id: 1, 
+      img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=2000&auto=format&fit=crop",
+      date: "Q1 2026",
+      title: dict.horizon.news.article_title,
+      desc: dict.horizon.news.article_desc
+    },
+    { 
+      id: 2, 
+      img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=80&w=1200&auto=format&fit=crop",
+      date: "Q4 2025",
+      title: "Arasue Horizon Expands Global Footprint",
+      desc: "Strategic acquisitions in the European tech sector bolster our position in the international market."
+    },
+    { 
+      id: 3, 
+      img: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?q=80&w=1200&auto=format&fit=crop",
+      date: "Q3 2025",
+      title: "Sustainability and Peak Performance",
+      desc: "Our new ESG initiatives demonstrate how we balance aggressive growth with environmental responsibility."
+    }
   ]
 
   return (
-    <section className="py-32 px-6 container mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+    <section className="py-32 px-6 container mx-auto border-t border-black/5">
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={kowalskiSpring}
+          variants={fadeUp}
+          className="max-w-2xl"
         >
-          <h2 className="text-4xl md:text-6xl font-playfair tracking-tight text-[#162D59]">
+          <div className="text-sm font-semibold text-[#A65E44] tracking-widest uppercase mb-4">Newsroom</div>
+          <h2 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#162D59]">
             {dict.horizon.news.title}
           </h2>
         </motion.div>
+        
         <Link 
           href={`/${lang}/newsroom`} 
-          className="font-bold text-[#A65E44] hover:text-[#F28F6B] transition-colors inline-flex items-center gap-2"
+          className="group flex items-center gap-3 text-[#162D59] font-medium hover:text-[#A65E44] transition-colors"
         >
-          {dict.horizon.news.link} <span>→</span>
+          {dict.horizon.news.link} 
+          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-        {/* Featured Article (Bento Large) */}
-        <TiltCard href={`/${lang}/newsroom`} className="md:col-span-8 min-h-[400px]">
-          <motion.div 
-            initial={{ scale: 1.1 }}
-            whileHover={{ scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute inset-0"
-          >
-            <Image 
-              src={articles[0].img} 
-              alt="Featured News" 
-              fill
-              sizes="(max-width: 768px) 100vw, 66vw"
-              className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0" 
-            />
-          </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#162D59] via-[#162D59]/40 to-transparent" />
-          
-          <div className="absolute bottom-0 left-0 p-10 text-[#F2F2F2] pointer-events-none" style={{ transform: "translateZ(30px)" }}>
-            <div className="text-sm font-semibold text-[#F2D3AC] mb-3">Q1 2026 • {dict.horizon.news.tag}</div>
-            <h3 className="text-3xl md:text-5xl font-playfair font-bold mb-4">{dict.horizon.news.article_title}</h3>
-            <p className="text-[#F2F2F2]/70 max-w-xl font-inter line-clamp-2">{dict.horizon.news.article_desc}</p>
-          </div>
-        </TiltCard>
+      {/* Corporate Editorial Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Featured Article */}
+        <div className="lg:col-span-8 group cursor-pointer">
+          <Link href={`/${lang}/newsroom`}>
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#162D59]/5 mb-6">
+              <Image 
+                src={articles[0].img} 
+                alt={articles[0].title} 
+                fill
+                sizes="(max-width: 1024px) 100vw, 66vw"
+                className="object-cover transition-transform duration-1000 group-hover:scale-105" 
+              />
+            </div>
+            <div className="space-y-4">
+              <div className="text-sm font-semibold text-[#A65E44] uppercase tracking-widest">{articles[0].date}</div>
+              <h3 className="text-3xl md:text-4xl font-playfair font-bold text-[#162D59] group-hover:text-[#A65E44] transition-colors">
+                {articles[0].title}
+              </h3>
+              <p className="text-gray-600 max-w-2xl text-lg">
+                {articles[0].desc}
+              </p>
+            </div>
+          </Link>
+        </div>
 
-        {/* Small Articles (Bento Small) */}
-        <div className="md:col-span-4 flex flex-col gap-8">
+        {/* Sidebar Articles */}
+        <div className="lg:col-span-4 flex flex-col gap-12">
           {[1, 2].map((i) => (
-            <TiltCard href={`/${lang}/newsroom`} key={i} className="flex-1 min-h-[250px]">
-              <motion.div 
-                initial={{ scale: 1.1 }}
-                whileHover={{ scale: 1 }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="absolute inset-0"
-              >
+            <Link key={articles[i].id} href={`/${lang}/newsroom`} className="group flex flex-col gap-4 cursor-pointer">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#162D59]/5">
                 <Image 
                   src={articles[i].img} 
-                  alt={`News ${i}`} 
+                  alt={articles[i].title} 
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0 opacity-80" 
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105" 
                 />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#162D59]/90 to-transparent" />
-              
-              <div className="relative z-10 p-8 h-full flex flex-col justify-end text-[#F2F2F2] pointer-events-none" style={{ transform: "translateZ(20px)" }}>
-                <div className="text-xs font-semibold text-[#A65E44] mb-2">Q{i+1} 2026</div>
-                <h3 className="text-xl font-bold font-playfair line-clamp-2">{dict.horizon.news.article_title}</h3>
               </div>
-            </TiltCard>
+              <div className="space-y-2">
+                <div className="text-xs font-semibold text-[#A65E44] uppercase tracking-widest">{articles[i].date}</div>
+                <h3 className="text-xl font-bold font-playfair text-[#162D59] group-hover:text-[#A65E44] transition-colors leading-snug">
+                  {articles[i].title}
+                </h3>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
