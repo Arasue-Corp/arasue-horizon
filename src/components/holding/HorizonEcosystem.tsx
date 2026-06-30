@@ -7,22 +7,70 @@ const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 const dict = {
   usa: {
     title: 'The Arasue Ecosystem',
-    subtitle: 'Five interconnected divisions driving cultural and commercial momentum.',
+    subtitle: 'Four interconnected divisions driving cultural and commercial momentum.',
     divisions: [
-      { id: 'forge', name: 'Arasue Forge', desc: 'Great ideas mean nothing if they stay in the air. Arasue Forge is the development studio where advanced software and critical tech come to life with precision, power, and flawless performance.', color: 'from-[#0511F2] to-[#05F2DB]', link: '/forge' },
-      { id: 'media', name: 'Arasue Studios', desc: 'In a sea of constant noise, we create depth. Arasue Studios produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark.', color: 'from-[#fbe288] to-[#f9d657]', link: '/studios' },
-      { id: 'labs', name: 'Arasue Labs', desc: 'True excellence accepts no shortcuts. Arasue Labs bridges scientific rigor with nature\'s purity, managing the import and logistics of premium products with absolute traceability.', color: 'from-[#1a2e1a] to-emerald-800', link: '/labs' },
-      { id: 'protection', name: 'Arasue Protection', desc: 'Real success is never left to chance. Arasue Protection shields your life, health, and wealth with high-tier insurance solutions and absolute certainty.', color: 'from-[#162D59] to-slate-500', link: '/protection' }
+      { 
+        id: 'forge', 
+        name: 'Arasue Forge', 
+        desc: 'Great ideas mean nothing if they stay in the air. Arasue Forge is the development studio where advanced software and critical tech come to life with precision, power, and flawless performance.', 
+        image: 'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1200&auto=format&fit=crop', // Sharp majestic mountain
+        link: '/forge' 
+      },
+      { 
+        id: 'media', 
+        name: 'Arasue Studios', 
+        desc: 'In a sea of constant noise, we create depth. Arasue Studios produces, publishes, and distributes high-fidelity content that captures attention and leaves a real mark.', 
+        image: 'https://images.unsplash.com/photo-1490682143684-14369e18dce8?q=80&w=1200&auto=format&fit=crop', // Golden hour coast / lighthouse
+        link: '/studios' 
+      },
+      { 
+        id: 'labs', 
+        name: 'Arasue Labs', 
+        desc: 'True excellence accepts no shortcuts. Arasue Labs bridges scientific rigor with nature\'s purity, managing the import and logistics of premium products with absolute traceability.', 
+        image: 'https://images.unsplash.com/photo-1473215933618-1c49618fce9b?q=80&w=1200&auto=format&fit=crop', // Coastal mist
+        link: '/labs' 
+      },
+      { 
+        id: 'protection', 
+        name: 'Arasue Protection', 
+        desc: 'Real success is never left to chance. Arasue Protection shields your life, health, and wealth with high-tier insurance solutions and absolute certainty.', 
+        image: 'https://images.unsplash.com/photo-1495954484750-af469f2f9be5?q=80&w=1200&auto=format&fit=crop', // Immovable rocky cliff
+        link: '/protection' 
+      }
     ]
   },
   mex: {
     title: 'El Ecosistema Arasue',
-    subtitle: 'Cinco divisiones interconectadas impulsando el momento cultural y comercial.',
+    subtitle: 'Cuatro divisiones interconectadas impulsando el momento cultural y comercial.',
     divisions: [
-      { id: 'forge', name: 'Arasue Forge', desc: 'Las grandes ideas no sirven de nada si se quedan en el aire. Arasue Forge es el estudio de desarrollo donde el software avanzado y la tecnología crítica cobran vida con precisión, fuerza y un rendimiento impecable.', color: 'from-[#0511F2] to-[#05F2DB]', link: '/es/forge' },
-      { id: 'media', name: 'Arasue Studios', desc: 'En un mar de ruido constante, nosotros creamos profundidad. Arasue Studios produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real.', color: 'from-[#fbe288] to-[#f9d657]', link: '/es/studios' },
-      { id: 'labs', name: 'Arasue Labs', desc: 'La verdadera excelencia no acepta atajos. Arasue Labs une el rigor de la ciencia con la pureza de la naturaleza, controlando la importación y logística de productos premium con una trazabilidad absoluta.', color: 'from-[#1a2e1a] to-emerald-800', link: '/es/labs' },
-      { id: 'protection', name: 'Arasue Protection', desc: 'El éxito real no se deja al azar. Arasue Protection blinda tu vida, tu salud y tu patrimonio con soluciones de aseguramiento de alto nivel y total certeza.', color: 'from-[#162D59] to-slate-500', link: '/es/protection' }
+      { 
+        id: 'forge', 
+        name: 'Arasue Forge', 
+        desc: 'Las grandes ideas no sirven de nada si se quedan en el aire. Arasue Forge es el estudio de desarrollo donde el software avanzado y la tecnología crítica cobran vida con precisión, fuerza y un rendimiento impecable.', 
+        image: 'https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=1200&auto=format&fit=crop',
+        link: '/es/forge' 
+      },
+      { 
+        id: 'media', 
+        name: 'Arasue Studios', 
+        desc: 'En un mar de ruido constante, nosotros creamos profundidad. Arasue Studios produce, edita y distribuye contenido de alta fidelidad que captura la atención y deja una marca real.', 
+        image: 'https://images.unsplash.com/photo-1490682143684-14369e18dce8?q=80&w=1200&auto=format&fit=crop',
+        link: '/es/studios' 
+      },
+      { 
+        id: 'labs', 
+        name: 'Arasue Labs', 
+        desc: 'La verdadera excelencia no acepta atajos. Arasue Labs une el rigor de la ciencia con la pureza de la naturaleza, controlando la importación y logística de productos premium con una trazabilidad absoluta.', 
+        image: 'https://images.unsplash.com/photo-1473215933618-1c49618fce9b?q=80&w=1200&auto=format&fit=crop',
+        link: '/es/labs' 
+      },
+      { 
+        id: 'protection', 
+        name: 'Arasue Protection', 
+        desc: 'El éxito real no se deja al azar. Arasue Protection blinda tu vida, tu salud y tu patrimonio con soluciones de aseguramiento de alto nivel y total certeza.', 
+        image: 'https://images.unsplash.com/photo-1495954484750-af469f2f9be5?q=80&w=1200&auto=format&fit=crop',
+        link: '/es/protection' 
+      }
     ]
   }
 }
@@ -33,39 +81,43 @@ export function HorizonEcosystem({ lang }: { lang: 'en' | 'es' }) {
 
   return (
     <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-20">
+      <div className="text-center mb-24">
         <h2 className="text-5xl md:text-7xl font-playfair tracking-tight mb-6 text-[#162D59]">{t.title}</h2>
-        <p className="text-xl text-[#162D59]/60 max-w-2xl mx-auto font-inter">{t.subtitle}</p>
+        <p className="text-xl text-[#162D59]/70 max-w-2xl mx-auto font-inter">{t.subtitle}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="flex flex-col gap-12">
         {t.divisions.map((div, i) => (
-          <Link href={div.link} key={div.id}>
+          <Link href={div.link} key={div.id} className="block group">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ ...kowalskiSpring, delay: i * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="group relative h-[320px] rounded-[2rem] overflow-hidden bg-[#162D59]/[0.02] border border-[#162D59]/10 p-10 flex flex-col justify-between hover:border-[#162D59]/20 hover:bg-white/40 backdrop-blur-[15px] transition-all duration-500 shadow-[0_8px_32px_0_rgba(22,45,89,0.05)]"
+              className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 ${i % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
             >
-              {/* Glassmorphism Abstract Glow */}
-              <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${div.color} opacity-10 group-hover:opacity-20 rounded-full blur-[60px] transition-opacity duration-700 -mr-20 -mt-20`} />
-              
-              <div className="relative z-10">
-                <h3 className="text-3xl font-playfair font-bold mb-4 text-[#162D59]">{div.name}</h3>
-                <p className="text-[#162D59]/70 text-lg leading-relaxed max-w-md font-inter">{div.desc}</p>
-              </div>
-
-              <div className="flex items-center text-sm font-bold uppercase tracking-widest text-[#162D59]/50 group-hover:text-[#162D59] transition-colors relative z-10">
-                Explore Division 
-                <span className="ml-2 transform group-hover:translate-x-2 transition-transform">→</span>
+              {/* Natural Image Container - Replacing the rigid boxes */}
+              <div className="w-full md:w-1/2 h-[400px] rounded-3xl overflow-hidden relative shadow-2xl">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-1000 ease-out"
+                  style={{ backgroundImage: `url(${div.image})` }}
+                />
+                <div className="absolute inset-0 bg-[#162D59]/10 group-hover:bg-transparent transition-colors duration-700" />
               </div>
               
-              {/* Subtle hover layoutId morph simulation border */}
-              <motion.div 
-                className="absolute inset-0 border-2 border-transparent group-hover:border-[#A65E44]/20 rounded-[2rem] pointer-events-none transition-colors duration-500"
-              />
+              <div className="w-full md:w-1/2 space-y-6">
+                <div className="w-12 h-1 bg-[#F2D3AC] rounded-full" />
+                <h3 className="text-4xl md:text-5xl font-playfair font-bold text-[#162D59] group-hover:text-[#A65E44] transition-colors duration-300">
+                  {div.name}
+                </h3>
+                <p className="text-[#162D59]/70 text-xl leading-relaxed font-inter">
+                  {div.desc}
+                </p>
+                <div className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-[#162D59] group-hover:text-[#A65E44] transition-colors mt-4">
+                  Explore Division 
+                  <span className="ml-2 transform group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+              </div>
             </motion.div>
           </Link>
         ))}

@@ -6,8 +6,8 @@ import { useRef } from 'react'
 
 const kowalskiSpring = { type: "spring", stiffness: 300, damping: 30 } as const
 
-// High-quality architecture image from Unsplash
-const bgImageUrl = "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2070&auto=format&fit=crop"
+// High-quality lighthouse / coastal mountain image from Unsplash
+const bgImageUrl = "https://images.unsplash.com/photo-1510414842594-a618698c0a2e?q=80&w=2070&auto=format&fit=crop"
 
 export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
   const containerRef = useRef<HTMLElement>(null)
@@ -32,27 +32,34 @@ export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${bgImageUrl})` }}
         />
-        {/* Dark overlays to maintain contrast for text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/80 to-[#162D59]/50" />
-        <div className="absolute inset-0 bg-[#0B0F19]/40 backdrop-blur-[2px]" />
+        {/* Dark overlays to maintain contrast for text - Navy blue tinted */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#162D59]/80 to-[#162D59]/50" />
+        <div className="absolute inset-0 bg-[#0B0F19]/20 backdrop-blur-sm" />
       </motion.div>
 
-      {/* Abstract Elements (Glassmorphism + Gradients) over the image */}
+      {/* Lighthouse Beam & Mist Effects (Organic light, NO GRIDS) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Navy Mist */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#0511F2] mix-blend-screen blur-[140px]"
+          animate={{ opacity: 0.6, scale: 1 }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          className="absolute -top-[20%] -right-[10%] w-[80%] h-[80%] rounded-full bg-[#162D59] mix-blend-multiply blur-[140px]"
         />
+        {/* Golden Lighthouse Beam Glow */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.3, scale: 1 }}
-          transition={{ duration: 2.5, ease: "easeOut", delay: 0.2 }}
-          className="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#A65E44] mix-blend-screen blur-[160px]"
+          animate={{ opacity: 0.25, scale: 1 }}
+          transition={{ duration: 2.5, ease: "easeOut", delay: 0.5 }}
+          className="absolute -bottom-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-[#F2D3AC] mix-blend-screen blur-[180px]"
         />
-        {/* Strict Grid Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(242,242,242,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(242,242,242,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)]" />
+        {/* Dynamic sweeping beam effect */}
+        <motion.div 
+          initial={{ opacity: 0, rotate: -15 }}
+          animate={{ opacity: 0.15, rotate: 15 }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse', ease: "easeInOut" }}
+          className="absolute top-0 right-1/4 w-[200%] h-[100%] origin-top-right bg-gradient-to-b from-[#F2D3AC] to-transparent blur-[100px] mix-blend-screen pointer-events-none"
+        />
       </div>
 
       <motion.div 
@@ -84,7 +91,7 @@ export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...kowalskiSpring, delay: 0.3 }}
-            className="text-xl md:text-3xl text-[#F2F2F2]/70 max-w-2xl font-medium font-inter"
+            className="text-xl md:text-3xl text-[#F2F2F2]/80 max-w-2xl font-medium font-inter"
           >
             {dict.horizon.hero.subtitle}
           </motion.p>
@@ -97,7 +104,7 @@ export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
           >
             <Link 
               href={`/${lang}/forge`} 
-              className="relative group overflow-hidden px-8 py-4 rounded-full bg-[#F2D3AC] text-[#162D59] font-bold text-lg active:scale-[0.97] transition-all w-full sm:w-auto text-center"
+              className="relative group overflow-hidden px-8 py-4 rounded-full bg-[#F2D3AC] text-[#162D59] font-bold text-lg active:scale-[0.97] transition-all w-full sm:w-auto text-center shadow-[0_0_40px_-10px_#F2D3AC]"
             >
               <span className="relative z-10">{dict.horizon.hero.cta}</span>
               <motion.div 
@@ -110,10 +117,9 @@ export function HoldingHero({ dict, lang }: { dict: any, lang: string }) {
             
             <Link 
               href="#portfolio" 
-              className="relative group overflow-hidden px-8 py-4 rounded-full border border-white/10 bg-black/20 backdrop-blur-[10px] text-[#F2F2F2] font-bold text-lg hover:border-white/30 active:scale-[0.97] transition-all w-full sm:w-auto text-center"
+              className="relative group overflow-hidden px-8 py-4 rounded-full border border-white/10 bg-black/20 backdrop-blur-[10px] text-[#F2F2F2] font-bold text-lg hover:border-white/30 hover:bg-white/5 active:scale-[0.97] transition-all w-full sm:w-auto text-center"
             >
               <span className="relative z-10">{dict.horizon.hero.explore_portfolio}</span>
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
           </motion.div>
         </div>
