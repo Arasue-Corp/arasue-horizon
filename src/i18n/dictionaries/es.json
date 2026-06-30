@@ -594,11 +594,37 @@
   "corporate": {
     "about": {
       "title": "Nuestra Misión",
-      "content": "Arasue Horizon se dedica a construir ecosistemas escalables de software, medios y sustentabilidad."
+      "content": "Arasue Horizon se dedica a construir ecosistemas escalables de software, medios y sustentabilidad.",
+      "leadership_title": "Liderazgo y Visión",
+      "leadership_desc": "Arasue Horizon opera bajo un principio de excelencia descentralizada. Cada subsidiaria está empoderada para disrumpir su sector específico mientras comparte recursos, infraestructura y visión estratégica desde el nivel del holding."
     },
     "investors": {
       "title": "Relación con Inversores",
-      "content": "Accede a nuestros últimos reportes financieros, documentos de gobierno corporativo e información para accionistas."
+      "content": "Accede a nuestros últimos reportes financieros, documentos de gobierno corporativo e información para accionistas.",
+      "q3_results_title": "Resultados Financieros Q3",
+      "q3_results_desc": "Lee nuestro último reporte de ganancias trimestrales y declaraciones prospectivas.",
+      "q3_results_btn": "Descargar PDF",
+      "governance_title": "Gobierno Corporativo",
+      "governance_desc": "Revisa nuestra estructura de junta, pautas éticas y marcos de cumplimiento.",
+      "governance_btn": "Ver Documentos"
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "last_updated": "Última Actualización: Junio 2026",
+      "intro": "En Arasue Horizon, tu privacidad es una prioridad. Esta Política de Privacidad detalla los datos que recopilamos y cómo los usamos para proporcionarte servicios seguros y escalables.",
+      "data_collection_title": "1. Recopilación de Datos",
+      "data_collection_desc": "Recopilamos información que nos proporcionas directamente, como cuando creas una cuenta, te suscribes a nuestro boletín o solicitas soporte. Esto puede incluir tu nombre, correo y métricas de uso.",
+      "data_usage_title": "2. Uso de Datos",
+      "data_usage_desc": "Tus datos se utilizan estrictamente para mejorar nuestros servicios, fortalecer la seguridad y personalizar tu experiencia. No vendemos tus datos personales a terceros."
+    },
+    "terms": {
+      "title": "Términos y Condiciones",
+      "last_updated": "Última Actualización: Junio 2026",
+      "intro": "Estos Términos y Condiciones rigen tu uso de los sitios web y servicios de Arasue Horizon. Al acceder a nuestros servicios, aceptas estos términos.",
+      "usage_title": "1. Uso Aceptable",
+      "usage_desc": "Aceptas no hacer un mal uso de nuestros servicios ni ayudar a nadie más a hacerlo. Nuestros servicios están destinados para uso profesional y corporativo.",
+      "liability_title": "2. Limitación de Responsabilidad",
+      "liability_desc": "Arasue Horizon y sus subsidiarias no serán responsables de ningún daño indirecto, incidental o consecuente que surja de tu uso de nuestros servicios."
     },
     "newsroom": {
       "title": "Sala de Prensa",

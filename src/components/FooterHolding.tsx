@@ -48,8 +48,8 @@ export function FooterHolding({ dict, lang }: { dict: any, lang: string }) {
           <div className="space-y-4">
             <h4 className="font-bold text-lg">{dict.legal}</h4>
             <ul className="space-y-3 text-sm text-foreground/70">
-              <li><a href="#" className="hover:text-foreground transition-colors">{dict.privacy}</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">{dict.terms}</a></li>
+              <li><Link href={`/${lang}/privacy`} className="hover:text-foreground transition-colors">{dict.privacy}</Link></li>
+              <li><Link href={`/${lang}/terms`} className="hover:text-foreground transition-colors">{dict.terms}</Link></li>
             </ul>
           </div>
 

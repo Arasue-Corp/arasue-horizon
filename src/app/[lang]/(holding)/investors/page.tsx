@@ -42,15 +42,15 @@ export default async function InvestorsPage({
       <section className="py-24 px-6 border-t border-foreground/10">
         <div className="max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 bg-foreground/5 rounded-3xl">
-              <h3 className="text-2xl font-bold mb-2">Q3 Financial Results</h3>
-              <p className="opacity-70 mb-6">Read our latest quarterly earnings report and forward-looking statements.</p>
-              <button className="font-bold border-b border-foreground pb-1 active:scale-[0.97] transition-transform origin-left">Download PDF</button>
+            <div className="p-8 bg-foreground/5 rounded-3xl transition-transform hover:-translate-y-1 hover:bg-foreground/10">
+              <h3 className="text-2xl font-bold mb-2 font-playfair">{dict.corporate.investors.q3_results_title}</h3>
+              <p className="opacity-70 mb-6">{dict.corporate.investors.q3_results_desc}</p>
+              <button className="font-bold border-b border-foreground pb-1 active:scale-[0.97] transition-transform origin-left">{dict.corporate.investors.q3_results_btn}</button>
             </div>
-            <div className="p-8 bg-foreground/5 rounded-3xl">
-              <h3 className="text-2xl font-bold mb-2">Corporate Governance</h3>
-              <p className="opacity-70 mb-6">Review our board structure, ethical guidelines, and compliance frameworks.</p>
-              <button className="font-bold border-b border-foreground pb-1 active:scale-[0.97] transition-transform origin-left">View Documents</button>
+            <div className="p-8 bg-foreground/5 rounded-3xl transition-transform hover:-translate-y-1 hover:bg-foreground/10">
+              <h3 className="text-2xl font-bold mb-2 font-playfair">{dict.corporate.investors.governance_title}</h3>
+              <p className="opacity-70 mb-6">{dict.corporate.investors.governance_desc}</p>
+              <button className="font-bold border-b border-foreground pb-1 active:scale-[0.97] transition-transform origin-left">{dict.corporate.investors.governance_btn}</button>
             </div>
           </div>
         </div>

@@ -42,8 +42,8 @@ export default async function AboutPage({
       <section className="py-24 px-6 border-t border-foreground/10 bg-foreground/5">
         <div className="max-w-4xl space-y-12">
           <div>
-            <h2 className="text-3xl font-bold mb-4">Leadership & Vision</h2>
-            <p className="text-lg opacity-70">Arasue Horizon operates on a principle of decentralized excellence. Each subsidiary is empowered to disrupt its specific sector while sharing resources, infrastructure, and strategic vision from the holding level.</p>
+            <h2 className="text-3xl font-bold mb-4 font-playfair">{dict.corporate.about.leadership_title}</h2>
+            <p className="text-lg opacity-70 leading-relaxed">{dict.corporate.about.leadership_desc}</p>
           </div>
         </div>
       </section>
