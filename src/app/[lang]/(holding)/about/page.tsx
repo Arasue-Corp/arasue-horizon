@@ -32,7 +32,7 @@ export default async function AboutPage({
           className="mt-24 w-full aspect-video bg-foreground/5 rounded-3xl overflow-hidden border border-foreground/10"
         >
           <img 
-            src="https://images.unsplash.com/photo-1474433188271-d3f339f41911?q=80&w=2000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?q=80&w=2000&auto=format&fit=crop" 
             alt="Holding About - Desert Landscape" 
             className="w-full h-full object-cover opacity-80 mix-blend-luminosity"
           />
